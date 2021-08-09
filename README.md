@@ -1,5 +1,7 @@
 # 日本情報オリンピック (JOI) の問題文 (Markdown)
 
+合宿は対象外です．
+
 ## ライセンス
 JOI の過去問は [JCIOI の Web ページ](https://www.ioi-jp.org/problem_archive.php) で，[クリエイティブ・コモンズ 表示 - 継承 4.0 国際 ライセンス (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/deed.ja) の下で公開されています．このリポジトリも同ライセンスを適用します．
 
