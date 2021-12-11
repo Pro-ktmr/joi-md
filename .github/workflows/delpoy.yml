@@ -19,6 +19,8 @@ jobs:
           chmod 600 $HOME/.ssh/id_rsa
       - name: Checkout submodule
         run: git submodule update --init --force --recursive
+      - name: Install dependencies
+        run: pip install -r requirements.txt
       - name: Run a build script
         run: bash ./joi-md-private/build.sh
       - name: Run a deploy script
