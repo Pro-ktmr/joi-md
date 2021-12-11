@@ -20,6 +20,6 @@ jobs:
       - name: Checkout submodule
         run: git submodule update --init --force --recursive
       - name: Run a build script
-        run: ./joi-md-private/build.sh
+        run: bash ./joi-md-private/build.sh
       - name: Run a deploy script
-        run: ./joi-md-private/deploy.py ${{ secrets.USERNAME }} ${{ secrets.PASSWORD }} tasks.yaml
+        run: python3 ./joi-md-private/deploy.py ${{ secrets.USERNAME }} ${{ secrets.PASSWORD }} tasks.yaml
