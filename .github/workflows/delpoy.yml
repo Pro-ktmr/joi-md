@@ -1,0 +1,25 @@
+name: Deploy to AtCoder
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: SSH Setting
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
+        run: |
+          mkdir -p $HOME/.ssh/
+          echo -e "$TOKEN" > $HOME/.ssh/id_rsa
+          chmod 600 $HOME/.ssh/id_rsa
+      - name: Checkout submodule
+        run: git submodule update --init --force --recursive
+      - name: Run a build script
+        run: ./joi-md-private/build.sh
+      - name: Run a deploy script
+        run: ./joi-md-private/deploy.py ${{ secrets.USERNAME }} ${{ secrets.PASSWORD }} tasks.yaml
