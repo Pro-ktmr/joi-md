@@ -1,0 +1,3 @@
+[submodule "joi-md-private"]
+	path = joi-md-private
+	url = git@github.com:Pro-ktmr/joi-md-private.git
