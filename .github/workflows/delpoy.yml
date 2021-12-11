@@ -20,7 +20,7 @@ jobs:
       - name: Checkout submodule
         run: git submodule update --init --force --recursive
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r ./joi-md-private/requirements.txt
       - name: Run a build script
         run: bash ./joi-md-private/build.sh
       - name: Run a deploy script
