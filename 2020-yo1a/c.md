@@ -17,8 +17,8 @@
 ### 制約
 - $1 \leqq N \leqq 500$．
 - $1 \leqq M \leqq 500$．
-- $1 \leqq A_1 \leqq A_2 \leqq \cdots \leqq A_N \leqq 2000$．
-- $1 \leqq B_1 \leqq B_2 \leqq \cdots \leqq B_M \leqq 2000$．
+- $1 \leqq A_1 \leqq A_2 \leqq \cdots \leqq A_N \leqq 2\,000$．
+- $1 \leqq B_1 \leqq B_2 \leqq \cdots \leqq B_M \leqq 2\,000$．
 
 ---
 

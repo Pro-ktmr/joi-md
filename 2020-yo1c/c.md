@@ -8,7 +8,7 @@
 ### 制約
 
 - $1 \leqq N \leqq 100$．
-- $1 \leqq A_i \leqq 2020$ ($1 \leqq i \leqq N$)．
+- $1 \leqq A_i \leqq 2\,020$ ($1 \leqq i \leqq N$)．
 
 ---
 
