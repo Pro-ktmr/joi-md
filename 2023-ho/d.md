@@ -55,13 +55,13 @@ $A_{N-1}$ $B_{N-1}$
 
 ### 小課題
 
-- ($7$ 点) $A_i=i$，$B_i=i+1$ ($1 \leqq i \leqq N-1$)，$N \leqq 16$．
-- ($7$ 点) $A_i=i$，$B_i=i+1$ ($1 \leqq i \leqq N-1$)，$N \leqq 300$．
-- ($7$ 点) $A_i=i$，$B_i=i+1$ ($1 \leqq i \leqq N-1$)，$N \leqq 5\,000$．
-- ($10$ 点) $N \leqq 5\,000$．
-- ($20$ 点) $A_i=i$，$B_i=i+1$ ($1 \leqq i \leqq N-1$)．
-- ($23$ 点) $A_i=\left\lfloor \frac{i+1}{2} \right\rfloor$，$B_i=i+1$ ($1 \leqq i \leqq N-1$)．ただし，$\lfloor x \rfloor$ は $x$ の小数点以下を切り捨てた値を表す．
-- ($26$ 点) 追加の制約はない．
+1. ($7$ 点) $A_i=i$，$B_i=i+1$ ($1 \leqq i \leqq N-1$)，$N \leqq 16$．
+2. ($7$ 点) $A_i=i$，$B_i=i+1$ ($1 \leqq i \leqq N-1$)，$N \leqq 300$．
+3. ($7$ 点) $A_i=i$，$B_i=i+1$ ($1 \leqq i \leqq N-1$)，$N \leqq 5\,000$．
+4. ($10$ 点) $N \leqq 5\,000$．
+5. ($20$ 点) $A_i=i$，$B_i=i+1$ ($1 \leqq i \leqq N-1$)．
+6. ($23$ 点) $A_i=\left\lfloor \frac{i+1}{2} \right\rfloor$，$B_i=i+1$ ($1 \leqq i \leqq N-1$)．ただし，$\lfloor x \rfloor$ は $x$ の小数点以下を切り捨てた値を表す．
+7. ($26$ 点) 追加の制約はない．
 
 ---
 
