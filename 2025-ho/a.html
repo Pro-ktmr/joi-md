@@ -1,0 +1,388 @@
+<span class="lang">
+<span class="lang-en">
+<p>Score: <var>100</var> points</p>
+
+<div class="part">
+<section>
+<h3>Problem Statement</h3>
+<p>President K is designing a pattern represented by a grid with <var>N</var> rows and <var>N</var> columns. To achieve this, he has decided to paint each cell with a color represented by an integer number. Let us refer to the cell in the <var>i</var>-th row (<var>1 \leq i \leq N</var>) and <var>j</var>-th column (<var>1 \leq j \leq N</var>) as cell <var>(i,j)</var>.</p>
+<p>Currently, the cells in the first column and first row are already painted. Specifically, cell <var>(i,1)</var> (<var>1 \leq i \leq N</var>) is painted with color <var>A_i</var> and cell <var>(1,j)</var> (<var>1 \leq j \leq N</var>) is painted with color <var>B_j</var>. Note that <var>A_1 = B_1</var>.</p>
+<p>For the remaining unpainted cells, President K is going to paint them by the following procedure:</p>
+<ul>
+<li> For each <var>i=2,3,\dots,N</var> in order, paint the cells in the <var>i</var>-th row as follows:
+<ul>
+<li> For each <var>j=2,3,\dots,N</var> in order, paint cell <var>(i,j)</var> with the color that has the larger number between:
+<ul>
+<li> The color of cell <var>(i-1,j)</var>, and 
+<li> The color of cell <var>(i,j-1)</var>.
+</ul>
+If both colors have the same number, paint the cell with that color.
+</ul>
+</ul>
+
+<p>President K would like to determine the color that is painted on the largest number of cells after all <var>N^2</var> cells have been painted, as well as the number of cells painted with that color.</p>
+<p>Write a program that, given the size of the grid and the color information for the first column and first row, determines the color number painted on the largest number of cells and the number of cells painted with that color. If multiple colors are painted on the largest number of cells, output the <b>largest color number</b> among them.</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3>
+<p>Read the following data from the standard input.</p>
+<pre><var>N</var>
+<var>A_1</var> <var>A_2</var> <var>\cdots</var> <var>A_N</var>
+<var>B_1</var> <var>B_2</var> <var>\cdots</var> <var>B_N</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Output</h3>
+<p>Write one line to the standard output containing two integers separated by a space:</p>
+<ol>
+<li> The color number that is painted on the largest number of cells, and
+<li> The number of cells painted with that color.
+</ol>
+
+<p>If multiple colors are painted on the largest number of cells, output the largest color number among them.</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>Constraints</h3>
+<ul>
+<li> <var>2 \leq N \leq 200\,000</var>.
+<li> <var>1 \leq A_i \leq 10^9</var> (<var>1 \leq i \leq N</var>).
+<li> <var>1 \leq B_j \leq 10^9</var> (<var>1 \leq j \leq N</var>).
+<li> <var>A_1 = B_1</var>.
+<li> Given values are all integers.
+</ul>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Subtasks</h3>
+<ol>
+<li> (<var>15</var> points) <var>N \leq 500</var>, <var>A_i \leq 100\,000</var> (<var>1 \leq i \leq N</var>), <var>B_j \leq 100\,000</var> (<var>1 \leq j \leq N</var>).
+<li> (<var>10</var> points) <var>N \leq 500</var>.
+<li> (<var>20</var> points) <var>A_i \leq 2</var> (<var>1 \leq i \leq N</var>), <var>B_j \leq 2</var> (<var>1 \leq j \leq N</var>).
+<li> (<var>25</var> points) <var>A_i < A_{i+1}</var> (<var>1 \leq i \leq N-1</var>), <var>B_j < B_{j+1}</var> (<var>1 \leq j \leq N-1</var>).
+<li> (<var>30</var> points) No additional constraints.
+</ol>
+
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Input 1</h3>
+<pre>3
+5 2 5
+5 3 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 1</h3>
+<pre>5 4
+</pre>
+<p>In this sample, the color of each cell in the grid will be as follows:</p>
+<style>
+.table-bordered {
+    text-align: center;
+    width: 120px;
+    height: 120px;
+    max-width: 100%;
+}
+</style>
+
+<p>
+<table class="table-bordered">
+    <tr>
+        <td>5</td>
+        <td>3</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>3</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>5</td>
+        <td>5</td>
+    </tr>
+</table>
+</p>
+
+<p>The color number painted on the largest number of cells is <var>5</var>, which appears on <var>4</var> cells. Thus, print <var>5</var> and <var>4</var> in this order, separated by a space.</p>
+<p>This sample input satisfies the constraints of Subtasks <var>1</var>, <var>2</var>, and <var>5</var>.</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Input 2</h3>
+<pre>3
+1 7 8
+1 3 5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 2</h3>
+<pre>8 3
+</pre>
+<p>In this sample, the color of each cell in the grid will be as follows:</p>
+<p>
+<table class="table-bordered">
+    <tr>
+        <td>1</td>
+        <td>3</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>7</td>
+        <td>7</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>8</td>
+        <td>8</td>
+    </tr>
+</table>
+</p>
+
+<p>The color numbers painted on the largest number of cells are <var>7</var> and <var>8</var>, each painted on <var>3</var> cells. In this case, output the larger color number, <var>8</var>, followed by the number of cells, <var>3</var>, separated by a space.</p>
+<p>This sample input satisfies the constraints of Subtasks <var>1</var>, <var>2</var>, <var>4</var>, and <var>5</var>.</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Input 3</h3>
+<pre>4
+2 1 2 1
+2 1 1 2
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 3</h3>
+<pre>2 10
+</pre>
+<p>This sample input satisfies the constraints of Subtasks <var>1</var>, <var>2</var>, <var>3</var>, and <var>5</var>.</p></section>
+</div>
+</span>
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題文</h3>
+<p>K 理事長は縦 <var>N</var> 行，横 <var>N</var> 列のマス目で表される模様を作ろうとしている．そのために，各マスに整数の番号で表される色を塗ることにした．以降，上から <var>i</var> 行目 (<var>1 \leqq i \leqq N</var>)，左から <var>j</var> 列目 (<var>1 \leqq j \leqq N</var>) のマスをマス <var>(i,j)</var> と呼ぶことにする．</p>
+<p>現時点で，<var>1</var> 列目と <var>1</var> 行目のマスには既に色が塗られている．具体的には，マス <var>(i,1)</var> (<var>1 \leqq i \leqq N</var>) は色 <var>A_i</var> で，マス <var>(1,j)</var> (<var>1 \leqq j \leqq N</var>) は色 <var>B_j</var> で塗られている．ここで <var>A_1 = B_1</var> である．</p>
+<p>残りのマスについて，K 理事長は以下の手順で色を塗っていく．</p>
+<ul>
+<li> <var>i=2,3,\dots,N</var> の順に，以下の手順で <var>i</var> 行目のマスに色を塗る．
+<ul>
+<li> <var>j=2,3,\dots,N</var> の順に，マス <var>(i,j)</var> を
+<ul>
+<li> マス <var>(i-1,j)</var> に塗られている色
+<li> マス <var>(i,j-1)</var> に塗られている色
+</ul>
+のうち番号が大きい方の色で塗る．番号が同じ場合は，その色で塗る．
+</ul>
+</ul>
+
+<p>K 理事長は，最終的に <var>N^2</var> 個のマスすべてに色が塗られたとき，最も多くのマスに塗られた色の番号，およびその色が塗られているマスの個数を求めたい．</p>
+<p>マス目の大きさおよび <var>1</var> 列目と <var>1</var> 行目のマスの情報が与えられたとき，最も多くのマスに塗られた色の番号とその色が塗られているマスの個数を求めるプログラムを作成せよ．最も多くのマスに塗られた色の番号が複数存在する場合，そのうち<b>最も番号の大きいもの</b>を求め出力すること．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は以下の形式で標準入力から与えられる．</p>
+<pre><var>N</var>
+<var>A_1</var> <var>A_2</var> <var>\cdots</var> <var>A_N</var>
+<var>B_1</var> <var>B_2</var> <var>\cdots</var> <var>B_N</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，最も多くのマスに塗られた色の番号と，その色が塗られているマスの個数を空白区切りで <var>1</var> 行に出力せよ．最も多くのマスに塗られた色の番号が複数存在する場合，そのうち最も番号の大きいものを出力すること．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<ul>
+<li> <var>2 \leqq N \leqq 200\,000</var>．
+<li> <var>1 \leqq A_i \leqq 10^9</var> (<var>1 \leqq i \leqq N</var>)．
+<li> <var>1 \leqq B_j \leqq 10^9</var> (<var>1 \leqq j \leqq N</var>)．
+<li> <var>A_1 = B_1</var>．
+<li> 入力される値はすべて整数である．
+</ul>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<ol>
+<li> (<var>15</var> 点) <var>N \leqq 500</var>，<var>A_i \leqq 100\,000</var> (<var>1 \leqq i \leqq N</var>)，<var>B_j \leqq 100\,000</var> (<var>1 \leqq j \leqq N</var>)．
+<li> (<var>10</var> 点) <var>N \leqq 500</var>．
+<li> (<var>20</var> 点) <var>A_i \leqq 2</var> (<var>1 \leqq i \leqq N</var>)，<var>B_j \leqq 2</var> (<var>1 \leqq j \leqq N</var>)．
+<li> (<var>25</var> 点) <var>A_i < A_{i+1}</var> (<var>1 \leqq i \leqq N-1</var>)，<var>B_j < B_{j+1}</var> (<var>1 \leqq j \leqq N-1</var>)．
+<li> (<var>30</var> 点) 追加の制約はない．
+</ol>
+
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>3
+5 2 5
+5 3 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>5 4
+</pre>
+<p>最終的に各マスに塗られる色の番号は以下のようになる．</p>
+<style>
+.table-bordered {
+    text-align: center;
+    width: 120px;
+    height: 120px;
+    max-width: 100%;
+}
+</style>
+
+<p>
+<table class="table-bordered">
+    <tr>
+        <td>5</td>
+        <td>3</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>3</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>5</td>
+        <td>5</td>
+    </tr>
+</table>
+</p>
+
+<p>最も多くのマスに塗られた色の番号は <var>5</var> であり，これは <var>4</var> 個のマスに塗られているため，<var>5</var> と <var>4</var> を空白区切りで出力する．</p>
+<p>この入力例は小課題 <var>1,2,5</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>3
+1 7 8
+1 3 5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>8 3
+</pre>
+<p>最終的に各マスに塗られる色の番号は以下のようになる．</p>
+<p>
+<table class="table-bordered">
+    <tr>
+        <td>1</td>
+        <td>3</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>7</td>
+        <td>7</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>8</td>
+        <td>8</td>
+    </tr>
+</table>
+</p>
+
+<p>最も多くのマスに塗られた色の番号は <var>7</var> と <var>8</var> であり，それぞれ <var>3</var> 個のマスに塗られている．<var>2</var> つの色のうち最も番号が大きい色は <var>8</var> であるため，<var>8</var> と <var>3</var> を空白区切りで出力する．</p>
+<p>この入力例は小課題 <var>1,2,4,5</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>4
+2 1 2 1
+2 1 1 2
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>2 10
+</pre>
+<p>この入力例は小課題 <var>1,2,3,5</var> の制約を満たす．</p></section>
+</div>
+</span>
+</span>

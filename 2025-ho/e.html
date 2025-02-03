@@ -1,0 +1,459 @@
+<span class="lang">
+<span class="lang-en">
+<p>Score: <var>100</var> points</p>
+
+<div class="part">
+<section>
+<h3>Problem Statement</h3>
+<p>In the JOI country, there are <var>N</var> post offices, numbered from <var>1</var> to <var>N</var>.<br />
+Each post office has an assigned "destination," and the destination of post office <var>i</var> is post office <var>P_i</var>. Note that it is possible for <var>P_i = i</var>.<br />
+If a package is sent from post office <var>i</var> at time <var>t</var>, it will arrive at post office <var>P_i</var> at time <var>t + 1</var>. However, a post office cannot send another package while it is in the process of sending a package.<br />
+Each post office can store an unlimited number of packages at any given time.  </p>
+<p>Now, <var>M</var> packages need to be delivered in the JOI country.<br />
+The <var>j</var>-th package arrives at post office <var>A_j</var> at time <var>0</var>, and it must eventually be delivered to the assigned post office <var>B_j</var>.<br />
+Given the information about the post offices and the packages, write a program to determine whether it is possible to deliver all the packages to their assigned post offices, and if so, find the smallest possible time at which the last package arrives at its assigned post office.</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3>
+<p>Read the following data from the standard input.</p>
+<pre><var>N</var>
+<var>P_1</var> <var>P_2</var> <var>\cdots</var> <var>P_N</var>
+<var>M</var>
+<var>A_1</var> <var>B_1</var>
+<var>A_2</var> <var>B_2</var>
+<var>\vdots</var>
+<var>A_M</var> <var>B_M</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Output</h3>
+<p>Output a single line to the standard output.
+If it is possible to deliver all the packages to their assigned post offices, output the smallest possible time at which the last package arrives at its assigned post office.
+Otherwise, output <code>-1</code> instead.</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>Constraints</h3>
+<ul>
+<li> <var>2 \leqq N \leqq 200 \ 000</var>.
+<li> <var>1 \leqq M \leqq 200 \ 000</var>.
+<li> <var>1 \leqq P_i \leqq N</var> (<var>1 \leqq i \leqq N</var>).
+<li> <var>1 \leqq A_j, B_j \leqq N</var> (<var>1 \leqq j \leqq M</var>).
+<li> <var>A_j \neq B_j</var> (<var>1 \leqq j \leqq M</var>).
+<li> Given values are all integers.
+</ul>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Subtasks</h3>
+<ol>
+<li> (<var>3</var> points) <var>N \leqq 3 \ 000</var>， <var>M = 1</var>.
+<li> (<var>9</var> points) <var>N \leqq 3 \ 000</var>， <var>M \leqq 3 \ 000</var>.
+<li> (<var>13</var> points) <var>P = (1, 1, 2, \cdots, N-1)</var>, and <var>\max(B_1, B_2, \dots, B_M) < \min(A_1, A_2, \dots, A_M)</var>.
+<li> (<var>25</var> points) <var>P = (1, 1, 2, \cdots, N-1)</var>.
+<li> (<var>11</var> points) <var>P = (N, 1, 2, \cdots, N-1)</var>.
+<li> (<var>25</var> points) <var>P_1 = 1, \ P_i < i \ (2 \leqq i \leqq N)</var>.
+<li> (<var>14</var> points) No additional constraints.
+</ol>
+
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Input 1</h3>
+<pre>5
+1 1 2 3 4
+3
+3 2
+3 1
+3 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 1</h3>
+<pre>3
+</pre>
+<p>For example, by sending the packages in the following way, all the packages can be delivered to their assigned post offices by time <var>3</var>:</p>
+<ul> <li> At time <var>0</var>, packages <var>1</var>, <var>2</var>, and <var>3</var> are at post office <var>3</var>. Send package <var>2</var> to post office <var>2</var>. <li> At time <var>1</var>, package <var>2</var> is at post office <var>2</var>, and packages <var>1</var> and <var>3</var> are at post office <var>3</var>. From post office <var>2</var>, send package <var>2</var> to post office <var>1</var>, and from post office <var>3</var>, send package <var>3</var> to post office <var>2</var>. <li> At time <var>2</var>, package <var>2</var> is at post office <var>1</var>, package <var>3</var> is at post office <var>2</var>, and package <var>1</var> is at post office <var>3</var>. From post office <var>2</var>, send package <var>3</var> to post office <var>1</var>, and from post office <var>3</var>, send package <var>1</var> to post office <var>2</var>. <li> At time <var>3</var>, packages <var>2</var> and <var>3</var> are at post office <var>1</var>, and package <var>1</var> is at post office <var>2</var>. At this point, all the packages have reached their destinations. </ul>
+
+<p>Since it is not possible to deliver all the packages to their assigned post offices by time <var>2</var>, output <var>3</var>.</p>
+<p>This sample input satisfies the constraints of Subtasks <var>2, 3, 4, 6, 7</var>.</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Input 2</h3>
+<pre>3
+2 1 3
+1
+1 3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 2</h3>
+<pre>-1
+</pre>
+<p>No matter how the packages are sent, it is impossible to deliver a package from post office <var>1</var> to post office <var>3</var>, so output <code>-1</code>.</p>
+<p>This sample input satisfies the constraints of Subtasks <var>1, 2, 7</var>.</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Input 3</h3>
+<pre>7
+1 1 2 3 4 5 6
+6
+4 2
+5 1
+5 3
+6 2
+7 3
+7 6
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 3</h3>
+<pre>5
+</pre>
+<p>This sample input satisfies the constraints of Subtasks <var>2, 4, 6, 7</var>.</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Input 4</h3>
+<pre>4
+4 1 2 3
+4
+4 1
+4 1
+2 3
+2 3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 4</h3>
+<pre>4
+</pre>
+<p>This sample input satisfies the constraints of Subtasks <var>2, 5, 7</var>.</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Input 5</h3>
+<pre>7
+1 1 1 3 3 4 4
+5
+6 1
+6 3
+7 1
+5 1
+5 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 5</h3>
+<pre>5
+</pre>
+<p>This sample input satisfies the constraints of Subtasks <var>2, 6, 7</var>.</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Input 6</h3>
+<pre>11
+3 1 2 5 6 7 8 4 4 5 10
+6
+2 1
+9 8
+11 8
+10 4
+5 6
+5 7
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 6</h3>
+<pre>6
+</pre>
+<p>This sample input satisfies the constraints of Subtasks <var>2, 7</var>.</p></section>
+</div>
+</span>
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題文</h3>
+<p>JOI 国には <var>N</var> 個の郵便局があり，それぞれ <var>1</var> から <var>N</var> までの番号が付けられている．
+各郵便局には「送り先」が <var>1</var> つだけ指定されており，郵便局 <var>i</var> の送り先は郵便局 <var>P_i</var> である．ただし <var>P_i = i</var> である可能性もある．
+もし時刻 <var>t</var> に郵便局 <var>i</var> から荷物を一つ発送した場合， 時刻 <var>t + 1</var> に郵便局 <var>P_i</var> にその荷物が到着する．ただし，荷物を発送している間はその郵便局から別の荷物を発送することができない．
+また，各郵便局には個数の制限なく荷物を保管しておくことができる．</p>
+<p>さて，これから JOI 国では <var>M</var> 個の荷物を届けることになっている．
+<var>j</var> 個目の荷物は時刻 <var>0</var> に郵便局 <var>A_j</var> に到着し，最終的に指定の郵便局 <var>B_j</var> に届けなければならない．
+郵便局と荷物の情報が与えられたとき，すべての荷物を指定の郵便局に届けられるかを判定し，もし可能ならば最後に荷物が指定の郵便局に届く時刻として考えられる最も小さな値を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は以下の形式で標準入力から与えられる．</p>
+<pre><var>N</var>
+<var>P_1</var> <var>P_2</var> <var>\cdots</var> <var>P_N</var>
+<var>M</var>
+<var>A_1</var> <var>B_1</var>
+<var>A_2</var> <var>B_2</var>
+<var>\vdots</var>
+<var>A_M</var> <var>B_M</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に <var>1</var> 行で出力せよ．
+すべての荷物を指定の郵便局に届けられる場合は，最後に荷物が指定の郵便局に届く時刻として考えられる最も小さな値を出力せよ．
+そうでない場合は，代わりに <code>-1</code> を出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<ul>
+<li> <var>2 \leqq N \leqq 200 \ 000</var>．
+<li> <var>1 \leqq M \leqq 200 \ 000</var>．
+<li> <var>1 \leqq P_i \leqq N</var> (<var>1 \leqq i \leqq N</var>)．
+<li> <var>1 \leqq A_j, B_j \leqq N</var> (<var>1 \leqq j \leqq M</var>)．
+<li> <var>A_j \neq B_j</var> (<var>1 \leqq j \leqq M</var>)．
+<li> 入力はすべて整数である．
+</ul>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<ol>
+<li> (<var>3</var> 点) <var>N \leqq 3 \ 000</var>， <var>M = 1</var>．
+<li> (<var>9</var> 点) <var>N \leqq 3 \ 000</var>， <var>M \leqq 3 \ 000</var>．
+<li> (<var>13</var> 点) <var>P = (1, 1, 2, \cdots, N-1)</var>．また，<var>\max(B_1, B_2, \dots, B_M) < \min(A_1, A_2, \dots, A_M)</var> である．
+<li> (<var>25</var> 点) <var>P = (1, 1, 2, \cdots, N-1)</var>．
+<li> (<var>11</var> 点) <var>P = (N, 1, 2, \cdots, N-1)</var>．
+<li> (<var>25</var> 点) <var>P_1 = 1, \ P_i < i \ (2 \leqq i \leqq N)</var>．
+<li> (<var>14</var> 点) 追加の制約はない．
+</ol>
+
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>5
+1 1 2 3 4
+3
+3 2
+3 1
+3 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>3
+</pre>
+<p>例えば，以下のような送り方をすることによって時刻 <var>3</var> までにすべての荷物を指定の郵便局に届けることができる．</p>
+<ul>
+<li> 時刻 <var>0</var> には，郵便局 <var>3</var> に荷物 <var>1,2,3</var> がある．このうち荷物 <var>2</var> を郵便局 <var>2</var> へ発送する．
+<li> 時刻 <var>1</var> には，郵便局 <var>2</var> に荷物 <var>2</var>，郵便局 <var>3</var> に荷物 <var>1,3</var> がある．郵便局 <var>2</var> からは荷物 <var>2</var> を郵便局 <var>1</var> へ発送し，郵便局 <var>3</var> からは荷物 <var>3</var> を郵便局 <var>2</var> へ発送する．
+<li> 時刻 <var>2</var> には，郵便局 <var>1</var> に荷物 <var>2</var>，郵便局 <var>2</var> に荷物 <var>3</var>，郵便局 <var>3</var> に荷物 <var>1</var> がある．郵便局 <var>2</var> からは荷物 <var>3</var> を郵便局 <var>1</var> へ発送し，郵便局 <var>3</var> からは荷物 <var>1</var> を郵便局 <var>2</var> へ発送する．
+<li> 時刻 <var>3</var> には，郵便局 <var>1</var> に荷物 <var>2,3</var>，郵便局 <var>2</var> に荷物 <var>1</var> がある．このとき，すべての荷物が送り先に届いている．
+</ul>
+
+<p>時刻 <var>2</var> までにすべての荷物を指定の郵便局に届けることはできないため，<var>3</var> を出力する．</p>
+<p>この入力例は小課題 <var>2,3,4,6,7</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>3
+2 1 3
+1
+1 3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>-1
+</pre>
+<p>どのような送り方をしても郵便局 <var>1</var> から郵便局 <var>3</var> へ荷物を運ぶことはできないため，<code>-1</code> を出力する．</p>
+<p>この入力例は小課題 <var>1,2,7</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>7
+1 1 2 3 4 5 6
+6
+4 2
+5 1
+5 3
+6 2
+7 3
+7 6
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>5
+</pre>
+<p>この入力例は小課題 <var>2,4,6,7</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 4</h3>
+<pre>4
+4 1 2 3
+4
+4 1
+4 1
+2 3
+2 3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 4</h3>
+<pre>4
+</pre>
+<p>この入力例は小課題 <var>2,5,7</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 5</h3>
+<pre>7
+1 1 1 3 3 4 4
+5
+6 1
+6 3
+7 1
+5 1
+5 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 5</h3>
+<pre>5
+</pre>
+<p>この入力例は小課題 <var>2,6,7</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 6</h3>
+<pre>11
+3 1 2 5 6 7 8 4 4 5 10
+6
+2 1
+9 8
+11 8
+10 4
+5 6
+5 7
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 6</h3>
+<pre>6
+</pre>
+<p>この入力例は小課題 <var>2,7</var> の制約を満たす．</p></section>
+</div>
+</span>
+</span>
