@@ -45,8 +45,8 @@ Output a single integer, the minimum initial strength $x$ required for Bitaro to
 ### Subtasks
 
 <ol>
-<li> ($10$ points) $N \leq 2,000$, and the minimum initial strength $x$ is $10$ or less.
-<li> ($21$ points) $N \leq 2,000$.
+<li> ($10$ points) $N \leq 2\,000$, and the minimum initial strength $x$ is $10$ or less.
+<li> ($21$ points) $N \leq 2\,000$.
 <li> ($19$ points) The minimum initial strength $x$ is $10$ or less.
 <li> ($22$ points) $B_i = 1$ ($1 \leq i \leq N$).
 <li> ($28$ points) No additional constraints.

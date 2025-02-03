@@ -38,8 +38,8 @@ $A_M$ $B_M$
 ### 制約
 
 <ul>
-<li> $2 \leqq N \leqq 200 \ 000$．
-<li> $1 \leqq M \leqq 200 \ 000$．
+<li> $2 \leqq N \leqq 200\,000$．
+<li> $1 \leqq M \leqq 200\,000$．
 <li> $1 \leqq P_i \leqq N$ ($1 \leqq i \leqq N$)．
 <li> $1 \leqq A_j, B_j \leqq N$ ($1 \leqq j \leqq M$)．
 <li> $A_j \neq B_j$ ($1 \leqq j \leqq M$)．
@@ -49,12 +49,12 @@ $A_M$ $B_M$
 ### 小課題
 
 <ol>
-<li> ($3$ 点) $N \leqq 3 \ 000$， $M = 1$．
-<li> ($9$ 点) $N \leqq 3 \ 000$， $M \leqq 3 \ 000$．
+<li> ($3$ 点) $N \leqq 3 \,000$， $M = 1$．
+<li> ($9$ 点) $N \leqq 3 \,000$， $M \leqq 3 \,000$．
 <li> ($13$ 点) $P = (1, 1, 2, \cdots, N-1)$．また，$\max(B_1, B_2, \dots, B_M) < \min(A_1, A_2, \dots, A_M)$ である．
 <li> ($25$ 点) $P = (1, 1, 2, \cdots, N-1)$．
 <li> ($11$ 点) $P = (N, 1, 2, \cdots, N-1)$．
-<li> ($25$ 点) $P_1 = 1, \ P_i < i \ (2 \leqq i \leqq N)$．
+<li> ($25$ 点) $P_1 = 1$，$P_i < i$ ($2 \leqq i \leqq N$)．
 <li> ($14$ 点) 追加の制約はない．
 </ol>
 
