@@ -42,8 +42,8 @@ $N$
 $P_2$ $P_3$ $\cdots$ $P_N$
 $K_1$ $K_2$ $\cdots$ $K_N$
 $Q$
-(Query $1$)
-(Query $2$)
+$(\text{Query }1)$
+$(\text{Query }2)$
 $\vdots$
 (Query $Q$)
 ~~~
