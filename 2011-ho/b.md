@@ -69,6 +69,29 @@ $N$ 冊の本それぞれの基準価格とジャンルの番号が与えられ�
 
 この入力例では，$2$ 番目，$4$ 番目，$6$ 番目，$7$ 番目の $4$ 冊の本を売ったとき，ジャンル $2$ の本の買取価格が $1$ 冊あたり $2$ 円高くなるので，これらの本の買取価格は以下のようになる．
 
-<img src="https://img.atcoder.jp/joi2011ho/2011ho-b01.png" class="img-responsive center-block" style="max-width: 50%">
+<style>
+style + table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    margin: 1em;
+    th {
+        border: 1px solid black;
+    }
+    td {
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+    }
+    th, td {
+        padding: 0.2rem 1rem;
+    }
+}
+</style>
+
+| 番号 | 基準価格 | ジャンル | 買取価格 |
+|---|---|---|---|
+| 2 | 13 | 2 | 15 |
+| 4 | 14 | 2 | 16 |
+| 6 | 16 | 3 | 16 |
+| 7 | 11 | 2 | 13 |
 
 よって合計買取価格は $15 + 16 + 16 + 13 = 60$ 円である．このとき合計買取価格は最大となる．
