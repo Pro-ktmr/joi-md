@@ -45,7 +45,7 @@ $Q$
 $(\text{Query }1)$
 $(\text{Query }2)$
 $\vdots$
-(Query $Q$)
+$(\text{Query }Q)$
 ~~~
 
 各 (Query $j$) ($1\leqq j \leqq Q$) にはいくつかの整数が空白区切りで書かれている．そのうち $1$ 個目の整数を $T_j$ とすると，この行の内容は次のいずれかである．
