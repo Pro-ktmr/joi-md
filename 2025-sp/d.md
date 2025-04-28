@@ -80,7 +80,38 @@ $1$ 番目と $2$ 番目の患者をマス $(1, 1)$ にある病院へ，$3$ 番
 
 例えば，マス $(1, 1)$ にある病院に設置された救急車が次の順に動くと，この救急車は時刻 $8$ までに $1$ 番目と $2$ 番目の患者を病院へ搬送することができる．
 
-<img src="https://img.atcoder.jp/joisp2025/joisp2025-D01.png" class="img-responsive center-block" style="max-width: 80%">
+<style>
+style + table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    margin: 1em;
+    th {
+        border: 1px solid black;
+    }
+    td {
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+    }
+    th, td {
+        padding: 0.25rem 1rem;
+    }
+    th:nth-child(1), td:nth-child(1) {
+        border-right: 3px double black;
+    }
+}
+</style>
+
+| 時刻 | 救急車の状態 |
+|---|---|
+| $0$ | マス $(1, 1)$ を出発する |
+| $1$ | マス $(2, 1)$ に到着する |
+| $2$ | マス $(2, 2)$ に到着し，$2$ 番目の患者を乗せ，出発する |
+| $3$ | マス $(1, 2)$ に到着する |
+| $4$ | マス $(1, 1)$ に到着し，$2$ 番目の患者を降ろし，出発する |
+| $5$ | マス $(1, 2)$ に到着する |
+| $6$ | マス $(1, 3)$ に到着し，$1$ 番目の患者を乗せ，出発する |
+| $7$ | マス $(1, 2)$ に到着する |
+| $8$ | マス $(1, 1)$ に到着し，$1$ 番目の患者を降ろす |
 
 この入力例は小課題 $1,2,3,4,6,7$ の制約を満たす．
 
