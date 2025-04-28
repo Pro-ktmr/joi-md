@@ -4,7 +4,7 @@
 
 JOI くんは板に釘を刺して遊んでいる．下図のように，JOI くんは一辺 N 本の正三角形の形に釘を並べて刺した．上から $a$ 行目 $(1\leqq a\leqq N)$ には $a$ 本の釘が並んでいる．そのうち左から $b$ 本目 $(1\leqq b\leqq a)$ の釘を $(a, b)$ で表す．
 
-![](https://img.atcoder.jp/joi2012ho/t4-fig1.png)
+<img src="https://img.atcoder.jp/joi2012ho/t4-fig1.png" class="img-responsive center-block" style="width: 500px; max-width: 100%">
 
 釘を頂点とする正三角形が，「各辺が全体の正三角形の辺のいずれかと平行で，全体の正三角形と同じ向き」であるとき，この正三角形を「**よい正三角形**」と呼ぶ．すなわち，「よい正三角形」とは，$3$ 本の釘 $(a, b), (a + x, b), (a + x, b + x)$ を頂点とする正三角形のことである（ただし $a, b, x$ は $1 \leqq a < N, 1 \leqq b \leqq a, 1 \leqq x \leqq N − a$ をみたす）．
 
