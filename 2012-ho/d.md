@@ -10,7 +10,7 @@ JOI くんは板に釘を刺して遊んでいる．下図のように，JOI く
 
 JOI くんは，輪ゴムを使って，「よい正三角形」の周りを囲うことにした．
 
-![](https://img.atcoder.jp/joi2012ho/t4-fig2.png)
+<img src="https://img.atcoder.jp/joi2012ho/t4-fig2.png" class="img-responsive center-block" style="width: 500px; max-width: 100%">
 
 ### 課題
 
