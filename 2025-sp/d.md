@@ -93,10 +93,7 @@ style + table {
         border-right: 1px solid black;
     }
     th, td {
-        padding: 0.25rem 1rem;
-    }
-    th:nth-child(1), td:nth-child(1) {
-        border-right: 3px double black;
+        padding: 0.2rem 1rem;
     }
 }
 </style>
