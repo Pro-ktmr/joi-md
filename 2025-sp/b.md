@@ -6,7 +6,7 @@
 <h4>AtCoder での提出方法について</h4>
 <p><strong>C++ を使用する場合</strong></p>
 <ul>
-<li><code>fortune.h</code> を include し，問題文で指定された関数を実装してください．</li>
+<li><code>Anna.h</code> と <code>Bruno.h</code> を include し，全ての関数を <var>1</var> つのファイルに実装してください．</li>
 <li><strong>標準入出力やファイルへの入出力を使用しないでください．</strong></li>
 </ul>
 <p><strong>その他の言語を使用する場合</strong>
