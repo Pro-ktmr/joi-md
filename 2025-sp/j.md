@@ -1,13 +1,17 @@
 配点： $100$ 点
 
-### C++ を使用する場合
-
-- `circuit.h` を include し，問題文で指定された関数を実装してください．
-- **標準入出力やファイルへの入出力を使用しないでください．**
-
-### その他の言語を使用する場合
-
-- JOIG 版の問題文で指定された通りにやりとりを行ってください．
+> [配布ファイル](https://img.atcoder.jp/joisp2025/circuit.zip)
+> 
+> #### AtCoder での提出方法について
+> 
+> **C++ を使用する場合**
+> 
+> - `circuit.h` を include し，問題文で指定された関数を実装してください．
+> - **標準入出力やファイルへの入出力を使用しないでください．**
+> 
+> **その他の言語を使用する場合**
+> 
+> - JOIG 版の問題文で指定された通りにやりとりを行ってください．
 
 ---
 
@@ -51,7 +55,7 @@ AND 部品と OR 部品は見た目で区別することができないため，
 あなたは $1$ つのファイルを提出しなければならない．
 
 あなたの提出するファイルは `circuit.cpp` という名前である．
-そのプログラムは `\#include` プリプロセッサ指令によって `circuit.h` を読み込むこと．
+そのプログラムは `#include` プリプロセッサ指令によって `circuit.h` を読み込むこと．
 
 `circuit.cpp` は以下の関数を実装していなければならない．
 
@@ -156,6 +160,14 @@ $T$
 
 採点プログラムのサンプルが読み込む入力の例と，それに対応する関数の呼び出しの例を以下に示す．
 
+### 入力例 1
+
+```
+1 1
+1 2
+|
+```
+
 <img src="https://img.atcoder.jp/joisp2025/joisp2025-J02.png" class="img-responsive center-block" style="width: 500px; max-width: 100%">
 
 $1$ 回目の `query` の呼び出しでは，回路ボードの出力は以下のように計算できる．
@@ -169,7 +181,17 @@ $1$ 回目の `query` の呼び出しでは，回路ボードの出力は以下�
 
 ---
 
-<img src="https://img.atcoder.jp/joisp2025/joisp2025-J03.png" class="img-responsive center-block" style="width: 500px; max-width: 100%">
+### 入力例 2
+
+```
+3 3
+1 2
+3 4
+5 6
+&&|
+```
+
+<img src="https://img.atcoder.jp/joisp2025/joisp2025-J03.png" class="img-responsive center-block" style="width: 630px; max-width: 100%">
 
 問題文中の図がこの入力例の回路ボードを表している．
 
