@@ -4,7 +4,7 @@
 
 ある川で，一方の岸から石の上を次々と飛び移って反対側の岸まで行くという少々危険なゲームがはやっている．
 
-<img src="https://img.atcoder.jp/joi2008ho/97e2dff3ef521a45a704ef87dbc6daf9.png" class="img-responsive center-block" style="width: 630px; max-width: 60%">
+<img src="https://img.atcoder.jp/joi2008ho/97e2dff3ef521a45a704ef87dbc6daf9.png" class="img-responsive center-block" style="width: 450px; max-width: 100%;">
 
 今，図 4-1 のように，石はマス目の上に存在すると考える．行の数は $n$ である．
 図 4-1 では $n = 5$ である．

@@ -10,7 +10,7 @@ $2$ 個の文字列が与えられたとき，両方の文字列に含まれる�
 
 例 1: 文字列として `ABRACADABRA` と `ECADADABRBCRDARA` が与えられた場合,両方に含まれる文字列には `CA` や `CADA` や `ADABR` や空文字列などがある. そのうち最も長いのは `ADABR` であり，その長さは $5$ である. $2$ 個の文字列の中に含まれる `ADABR` の位置を図 2-1 に示す.
 
-<img src="https://img.atcoder.jp/joi2008ho/4f36b0406a34c7d4b698683f4d66a725.png" class="img-responsive center-block" style="width: 630px; max-width: 100%">
+<img src="https://img.atcoder.jp/joi2008ho/4f36b0406a34c7d4b698683f4d66a725.png" class="img-responsive center-block" style="width: 450px; max-width: 100%">
 
 例 2: 文字列として `UPWJCIRUCAXIIRGL` と `SBQNYBSBZDFNEV` が与えられた場合，両方に含まれる文字列は空文字列のみであり，その長さは $0$ である.
 
