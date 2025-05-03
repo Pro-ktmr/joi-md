@@ -80,7 +80,7 @@ $X_{k,T_k}$ $Y_{k,T_k}$
 <li> $A_{i, j}$ は $0$ または $1$ ($1 \leqq i \leqq H, 1 \leqq j \leqq W - 1$)．
 <li> $B_{i, j}$ は $0$ または $1$ ($1 \leqq i \leqq H - 1, 1 \leqq j \leqq W$)．
 <li> $C_i$ は $1$ または $2$ ($1 \leqq i \leqq H$)．
-<li> $2 \leqq T_k$ $(1 \leqq k \leqq Q)$．
+<li> $2 \leqq T_k$ ($1 \leqq k \leqq Q$)．
 <li> $T_1 + T_2 + \cdots + T_Q \leqq 200\,000$．
 <li> $1 \leqq X_{k, l} \leqq H$ ($1 \leqq k \leqq Q, 1 \leqq l \leqq T_k$)．
 <li> $1 \leqq Y_{k, l} \leqq W$ ($1 \leqq k \leqq Q, 1 \leqq l \leqq T_k$)．
