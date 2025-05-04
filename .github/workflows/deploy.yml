@@ -8,12 +8,16 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repository with submodules
         uses: actions/checkout@v4
         with:
           submodules: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: |
+            ${{ secrets.GITHUB_TOKEN }}
+            ${{ secrets.GH_PAT }}
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
