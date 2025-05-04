@@ -24,4 +24,4 @@ jobs:
       - name: Run a build script
         run: bash ./joi-md-private/build.sh
       - name: Run a deploy script
-        run: python3 ./joi-md-private/deploy.py ${{ secrets.USERNAME }} ${{ secrets.REVEL_SESSION }} tasks.yaml
+        run: python3 ./joi-md-private/deploy.py ${{ secrets.USERNAME }} ${{ secrets.TOKEN }} tasks.yaml
