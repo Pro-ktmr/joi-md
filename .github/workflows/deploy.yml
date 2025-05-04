@@ -31,8 +31,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install -U -r ./joi-md-private/requirements.txt
-      - name: Run a build script
-        run: bash ./joi-md-private/build.sh
       - name: Run a deploy script
         run: python3 ./joi-md-private/deploy.py ${{ secrets.USERNAME }} ${{ secrets.REVEL_SESSION }} tasks.yaml
       - name: Commit changes
