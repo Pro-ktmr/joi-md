@@ -1,0 +1,95 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>JOI 高校では，<var>1 \times 1</var> の正方形のタイルを使って <var>N \times N</var> の正方形の壁画を作り，文化祭で展示することになった．タイルの色は，赤，青，黄の <var>3</var> 種類である 壁画のデザインは次の通りである．まず，最も外側の周に赤のタイルを貼り，その内側の周に青のタイルを貼る．さらにその内側の周に黄色のタイルを貼る．これを <var>N \times N</var> の正方形が埋め尽くされるまで繰り返す．用いるタイルの色は，一番外側の周から順番に赤，青，黄，赤，青，黄，<var>\ldots</var> である．</p>
+<p>文化祭が近づいてきたある日，壁画のうち <var>K</var> 枚のタイルがはがれていることが判明した．そこで，新しいタイルを購入して，はがれた箇所に新しいタイルを貼ることにした．</p>
+<p>入力として壁画の一辺の長さ <var>N</var> と，はがれたタイルの枚数 <var>K</var>，<var>K</var> 枚のはがれたタイルの位置が与えられたとき，はがれたタイルの色を求めるプログラムを作成せよ．</p>
+<p>例えば，<var>N = 11</var> の場合，<var>11 \times 11</var> の壁画のデザインは下図の通りである．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2011yo/2011-yo-t3-fig01.png" /></p>
+<p>また，<var>N = 16</var> の場合，<var>16 \times 16</var> の壁画のデザインは下図の通りである．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2011yo/2011-yo-t3-fig02.png" /></p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は全部で <var>2 + K</var> 行からなる．<var>1</var> 行目には，壁画の一辺の長さ <var>N</var> (<var>1 \leqq N \leqq 1\,000\,000\,000 = 10^9</var>) が，<var>2</var> 行目には，はがれたタイルの枚数 <var>K</var> (<var>1 \leqq K \leqq 1000</var>) が書かれている．<var>2 + i</var> 行目 (<var>1 \leqq i \leqq K</var>) には，<var>2</var> つの整数 <var>a_i</var> と <var>b_i</var> (<var>1 \leqq a_i \leqq N, 1 \leqq b_i \leqq N</var>) が空白区切りで書かれており，<var>i</var> 枚目のはがれたタイルが，左から <var>a_i</var> 列目，上から <var>b_i</var> 行目のタイルであることを表す．</p>
+<p>入力の <var>3</var> 行目から <var>2 + K</var> 行目には同じタイルを表す行が重複して現れることはない．また，与えられる入力データの <var>40</var> %では，<var>N \leqq 1\,000</var> をみたしている．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>出力は <var>K</var> 行からなる．各行は <var>1</var> つの整数からなり，<var>i</var> 行目 (<var>1 \leqq i \leqq K</var>) の整数は，<var>i</var> 枚目のはがれたタイルが赤のときは <var>1</var> を，青のときは <var>2</var> を，黄色のときは <var>3</var> を表す．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>11
+4
+5 2
+9 7
+4 4
+3 9
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>2
+3
+1
+3
+</pre>
+<p>入力例 <var>1</var> において，<var>11 \times 11</var> の壁画は以下の図の通りである．<code>×</code> は，はがれたタイルを表す．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2011yo/2011-yo-t3-fig03.png" /></p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>16
+7
+3 7
+5 2
+11 6
+15 2
+9 7
+8 12
+15 16
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>3
+2
+3
+2
+1
+2
+1
+</pre></section>
+</div>
+</span>
+</span>

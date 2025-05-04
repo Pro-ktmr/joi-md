@@ -1,0 +1,129 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>ビ太郎は友人のビバ子から誕生日プレゼントに <code>J</code>，<code>O</code>，<code>I</code> の <var>3</var> 種類の文字からなる長さ <var>N</var> の文字列 <var>S</var> をもらった．</p>
+<p><var>K</var> を <var>1</var> 以上の整数とする．<var>K</var> 個の文字 <code>J</code>，<var>K</var> 個の文字 <code>O</code>，<var>K</var> 個の文字 <code>I</code> をこの順に並べた文字列を<strong>レベル <var>K</var> の JOI 文字列</strong>と呼ぶことにする．例えば，<code>JJOOII</code> はレベル <var>2</var> の JOI 文字列である．</p>
+<p>ビ太郎はレベル <var>K</var> の JOI 文字列が好きなので，以下の <var>3</var> 種類の操作を任意の回数，任意の順番で行うことで，文字列 <var>S</var> をレベル <var>K</var> の JOI 文字列に変換することにした．</p>
+<ul>
+<li><strong>操作 <var>1</var></strong> &nbsp; 文字列 <var>S</var> の先頭の文字を消す．</li>
+<li><strong>操作 <var>2</var></strong> &nbsp; 文字列 <var>S</var> の末尾の文字を消す．</li>
+<li><strong>操作 <var>3</var></strong> &nbsp; 文字列 <var>S</var> の先頭でも末尾でもない文字を消す．</li>
+</ul>
+<p>操作 <var>3</var> を行うのは面倒なので，操作 <var>3</var> を行う回数をできるだけ少なくして，文字列 <var>S</var> をレベル <var>K</var> の JOI 文字列に変換したい．</p>
+<p>長さ <var>N</var> の文字列 <var>S</var> と <var>1</var> 以上の整数 <var>K</var> が与えられたとき，文字列 <var>S</var> をレベル <var>K</var> の JOI 文字列に変換するのに必要な操作 <var>3</var> の回数の最小値を出力するプログラムを作成せよ．ただし，どのように操作を行っても文字列 <var>S</var> をレベル <var>K</var> の JOI 文字列に変換できない場合は，代わりに <var>−1</var> を出力せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は以下の形式で標準入力から与えられる．<var>N, K</var> は整数である．<var>S</var> は文字列である．</p>
+<pre><var>N</var> <var>K</var>
+<var>S</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>文字列 <var>S</var> をレベル <var>K</var> の JOI 文字列に変換するのに必要な操作 <var>3</var> の回数の最小値を <var>1</var> 行で出力せよ．ただし，どのように操作を行っても文字列 <var>S</var> をレベル <var>K</var> の JOI 文字列に変換できない場合は，代わりに <var>-1</var> を出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<ul>
+<li><var>3 \leqq N \leqq 200\,000</var>．</li>
+<li><var>1 \leqq K \leqq \frac{N}{3}</var>．</li>
+<li><var>S</var> は <code>J</code>，<code>O</code>，<code>I</code> の <var>3</var> 種類の文字からなる長さ <var>N</var> の文字列である．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<ol>
+<li>(<var>1</var> 点) <var>N \leqq 21</var>.</li>
+<li>(<var>12</var> 点) <var>N \leqq 3\,000</var>.</li>
+<li>(<var>87</var> 点) 追加の制約はない.</li>
+</ol>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>10 2
+OJIJOIOIIJ
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>2
+</pre>
+<p>次のように操作を行うことで，文字列 <var>S</var> をレベル <var>K</var> のJOI文字列に変換できる．</p>
+<ol>
+<li>まず操作 <var>1</var> を行う．文字列 <var>S</var> は <code>JIJOIOIIJ</code> になる．</li>
+<li>次に操作 <var>2</var> を行う．文字列 <var>S</var> は <code>JIJOIOII</code> になる．</li>
+<li>次に操作 <var>3</var> を行い，先頭から <var>2</var> 文字目を消す．文字列 <var>S</var> は <code>JJOIOII</code> になる．</li>
+<li>最後に操作 <var>3</var> を行い，先頭から <var>4</var> 文字目を消す．文字列 <var>S</var> は <code>JJOOII</code> になる．</li>
+</ol>
+<p><var>2</var> 回未満の操作 <var>3</var> で変換することは不可能なので，<var>2</var> を出力する．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>9 3
+JJJOOOIII
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>0
+</pre>
+<p>操作を行わなくてもよい．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>9 1
+IIIOOOJJJ
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>-1
+</pre>
+<p>この入力例では，どのように操作を行っても文字列 <var>S</var> をレベル <var>1</var> の JOI 文字列に変換できない．</p></section>
+</div>
+</span>
+</span>

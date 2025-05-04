@@ -1,0 +1,238 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+<blockquote>
+<p><a href="https://img.atcoder.jp/joisp2025/fortune.zip">配布ファイル</a></p>
+<h4>AtCoder での提出方法について</h4>
+<p><strong>C++ を使用する場合</strong></p>
+<ul>
+<li><code>Anna.h</code> と <code>Bruno.h</code> を include し，全ての関数を <var>1</var> つのファイルに実装してください．</li>
+<li><strong>標準入出力やファイルへの入出力を使用しないでください．</strong></li>
+</ul>
+<p><strong>その他の言語を使用する場合</strong>
+</p>
+<details>
+<ul>
+<li>ジャッジ</li>
+<li><code>argv[1]</code> を <code>0</code> として起動されたあなたのプログラム（Anna 側）</li>
+<li><code>argv[1]</code> を <code>1</code> として起動されたあなたのプログラム（Bruno 側）</li>
+</ul>
+<p>の <var>3</var> つのプログラムが実行されます．実行時間・使用メモリはこれらの合計で計測されます．</p>
+
+<h4>Anna 側</h4>
+<p><code>argv[1]</code> が <code>0</code> のとき，Anna 側として振る舞ってください．</p>
+<p>まず，以下の形式で入力を読み込んでください．</p>
+<pre><var>Q</var>
+</pre>
+<p>その後，<var>Q</var> 回の占いを行ってください．</p>
+<p><strong>占い</strong></p>
+<p>まず，以下の形式で入力を読み込んでください．</p>
+<pre><var>N</var>
+</pre>
+<p>次に，<code>-1</code> を <var>1</var> 行で出力してください．</p>
+<p>その後，以下を <var>N</var> 回繰り返してください．</p>
+<ol>
+<li>Anna が引いたカードに書かれた数 <var>A</var> が <var>1</var> 行で与えられます．</li>
+<li><var>-1 \leqq x \leqq l</var> を満たす整数 <var>x</var> を <var>1</var> 行で出力してください．</li>
+</ol>
+<p>最後に，<code>-1</code> を含む <var>1</var> 行を読み込んでください．</p>
+
+<h4>Bruno 側</h4>
+<p><code>argv[1]</code> が <code>1</code> のとき，Bruno 側として振る舞ってください．</p>
+<p>まず，以下の形式で入力を読み込んでください．</p>
+<pre><var>Q</var>
+</pre>
+<p>その後，<var>Q</var> 回の占いを行ってください．</p>
+<p><strong>占い</strong></p>
+<p>まず，以下の形式で入力を読み込んでください．</p>
+<pre><var>N</var>
+<var>L</var>
+<var>C[0]</var> <var>C[1]</var> <var>\cdots</var> <var>C[L-1]</var>
+</pre>
+<p>その後，占いの結果を <var>1</var> 行で出力してください．</p>
+
+<h4>その他</h4>
+<ul>
+<li><strong>各出力の後には必ず flush をしてください．</strong></li>
+<li>出力の形式が正しくない場合や不正解の条件に当てはまったとき，与えられる入力は <code>-2</code> となります．<strong>この場合，ただちにプログラムを終了してください．</strong></li>
+</ul>
+</details>
+</blockquote>
+
+<hr />
+
+<div class="part">
+<section>
+<h3>問題文</h3>
+<p>Anna と Bruno は占いが好きでいつも二人で様々な占いをしている．今日は <var>0</var> か <var>1</var> が書かれたカードを使って <var>Q</var> 回の占いを行うことにした．この占いは二人が協力して行う必要があり，<var>1</var> 回の占いを行う具体的な方法は次のようなものである．</p>
+<ol>
+<li><var>0</var> か <var>1</var> が書かれたカードをたくさん用意し，シャッフルして山札にする．</li>
+<li>Anna は山札からカードを <var>1</var> 枚ずつ，合計 <var>N (=900)</var> 枚引く．ここで，Anna と Bruno は <var>N</var> の値を知っている．Anna はカードを <var>1</var> 枚引く度にそのカードを捨てるか，場に出して並べるかを選択する．<ul>
+<li>場に出して並べることを選択した場合は，すでに場に並べてあるカードの列の好きな位置に，今回並べるカードを挿入して並べる．</li>
+<li>具体的には，すでに場に <var>l</var> 枚のカードが並べてある場合，非負整数 <var>x</var> (<var>0 \leqq x \leqq l</var>) を指定して，場に並べてあるカードの列の左から <var>x</var> 枚目のカードのすぐ右に挿入することができる．ただし <var>x=0</var> のときはカードの列の一番左に挿入するとする．</li>
+</ul>
+</li>
+<li>Anna が <var>N</var> 枚のカードを引き終わると，Anna の役割は終了である．引いた <var>N</var> 枚のカードのうち <var>1</var> の書かれたカードの枚数が占いの結果である．</li>
+<li>Bruno は最後に場に並べてあるカードの列のみを見て，占いの結果を推測する．Bruno が占いの結果を正しく答えることができれば占いは成功である．</li>
+</ol>
+<p>この占いにおいては，場に出すカードの枚数が少ないほど上手な占いであるとされる．Anna と Bruno が <var>Q</var> 回の占いを成功させるための戦略を実装したプログラムを作成せよ．この課題では，Anna が場に出すカードの枚数が少ないほど，あなたは高得点を得る．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>実装の詳細</h3>
+<p>あなたは <var>2</var> つのファイルを提出しなければならない．</p>
+<p><var>1</var> つ目のファイルは <code>Anna.cpp</code> という名前である．このファイルは Anna の戦略を実装したファイルであり，以下の関数を実装していなければならない．また，<code>#include</code> プリプロセッサ指令によって <code>Anna.h</code> を読み込むこと．</p>
+<ul>
+<li><code>void Anna(int N)</code><br />
+この関数は，合計 <var>Q</var> 回呼び出される．<var>i</var> 回目 (<var>1 \leqq i \leqq Q</var>) の呼び出しは，<var>i</var> 回目の占いにおける Anna の手順に相当する．</li>
+<li>引数 <code>N</code> は，Anna が山札からカードを引く枚数 <var>N</var> である．</li>
+</ul>
+<p>関数 Anna の <var>1</var> 回の呼び出しについて，以下の関数を <var>N+1</var> 回呼び出さなければならない．</p>
+<ul>
+<li><code>int DrawCard(int x)</code><br />
+この関数を用いて，山札からカードを引き，そのカードを捨てるか，場に出して並べるかを選択する．<var>j</var> 回目 (<var>1 \leqq j \leqq N</var>) の呼び出しの戻り値で，<var>j</var> 枚目に引いたカードに書かれた数を受け取る．<var>k</var> 回目 (<var>2 \leqq k \leqq N+1</var>) の呼び出しの引数で <var>k-1</var> 枚目に引いたカードに対する操作を指定する．<ul>
+<li><var>j</var> 回目 (<var>1\leqq j \leqq N</var>) の呼び出しにおける戻り値は <var>0</var> または <var>1</var> であり，Annaが <var>j</var> 枚目に引いたカードに書かれた数を表す．</li>
+<li><var>N+1</var> 回目の呼び出しにおける戻り値は <var>-1</var> であり，Annaが <var>N</var> 枚のカードを引き終えたことを表す．</li>
+<li><strong><var>1</var> 回目の呼び出しにおける引数 <var>x</var> は <var>x=-1</var> を満たさなければならない</strong>．これが満たされない場合 <strong>不正解 [1]</strong> と判定される．</li>
+<li><var>k</var> 回目 (<var>2\leqq k \leqq N+1</var>) の呼び出しにおける引数 <var>x</var> は <var>k-1</var> 枚目に引いたカードに対する操作を指定する．<var>x=-1</var> のとき，<var>k-1</var> 枚目に引いたカードを捨てることを表す．<var>0\leqq x</var>のとき，<var>k-1</var> 枚目に引いたカードをすでに場にあるカードの列の左から <var>x</var> 枚目のカードのすぐ右に挿入することを表す．ただし <var>x=0</var> のときはカードの列の一番左に挿入することを表す．ここで，すでに場にあるカードの枚数を <var>l</var> として <var>-1 \leqq x \leqq l</var> を満たさなければならない．これが満たされない場合，<strong>不正解 [2]</strong> と判定される．</li>
+<li>関数 <code>Anna</code> の実行の終了時に関数 <code>DrawCard</code> の呼び出し回数が <var>N+1</var> 回でなかった場合，<strong>不正解 [3]</strong> と判定される．</li>
+</ul>
+</li>
+</ul>
+<p><var>2</var> つ目のファイルは <code>Bruno.cpp</code> という名前である．
+このファイルは Bruno の戦略を実装したファイルであり，以下の関数を実装していなければならない．
+また，<code>#include</code> プリプロセッサ指令によって <code>Bruno.h</code> を読み込むこと．</p>
+<ul>
+<li><code>int Bruno(int N, int L, std::vector&lt;int&gt; C)</code><br />
+この関数は，Anna が一連の占いの手順を終える度に <var>1</var> 回，合計で <var>Q</var> 回呼び出される．<var>i</var> 回目 (<var>1 \leqq i \leqq Q</var>) の呼び出しは，<var>i</var> 回目の占いにおける Bruno の手順に相当する．Anna が山札から引いた <var>1</var> の書かれたカードの枚数を戻り値として返さなければならない．<ul>
+<li>引数 <code>N</code> は Anna が山札からカードを引いた枚数 <var>N</var> である．</li>
+<li>引数 <code>L</code> は場に並べられたカードの枚数 <var>L</var> である．</li>
+<li>引数 <code>C</code> は，長さ <var>L</var> の配列であり，<code>C[l-1]</code> は場の左から <var>l</var> 番目 (<var>1 \leqq l \leqq L</var>) に並べられたカードに書かれた数を表す．</li>
+<li>関数 <code>Bruno</code> の戻り値が Anna が山札から引いた <var>1</var> の書かれたカードの枚数と異なる場合，<strong>不正解 [4]</strong> と判定される．</li>
+</ul>
+</li>
+</ul>
+<h4>重要な注意</h4>
+<ul>
+<li>内部での使用のために他の関数を実装したり，グローバル変数を宣言するのは自由である．ただし，提出された <var>2</var> つのプログラムは，採点プログラムとまとめてリンクされて <var>1</var> つの実行ファイルになるので，各ファイル内のすべてのグローバル変数と内部関数を無名名前空間内で宣言して，他のファイルとの干渉を避ける必要がある．採点時には，このプログラムは Anna 側，Bruno 側として <var>2</var> 個のプロセスとして実行されるので，Anna 側と Bruno 側でプログラム中のグローバル変数を共有することはできない．</li>
+<li>あなたの提出したプログラムは，標準入力・標準出力，あるいは他のファイルといかなる方法でもやりとりしてはならない．ただし，標準エラー出力にデバッグ情報等を出力することは許される．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>コンパイル・実行の方法</h3>
+<p>作成したプログラムをテストするための，採点プログラムのサンプルが，コンテストサイトからダウンロードできるアーカイブの中に含まれている．このアーカイブには，提出しなければならないファイルのサンプルも含まれている．</p>
+<p>採点プログラムのサンプルは <var>1</var> つのファイルからなる．そのファイルは <code>grader.cpp</code> である．作成したプログラムをテストするには，<code>grader.cpp</code>，<code>Anna.cpp</code>，<code>Bruno.cpp</code>，<code>Anna.h</code>，<code>Bruno.h</code> を同じディレクトリに置き，次のようにコマンドを実行する．</p>
+<p><code>g++ -std=gnu++20 -O2 -o grader grader.cpp Anna.cpp Bruno.cpp</code></p>
+<p>なお，アーカイブの中に含まれている <code>compile.sh</code> というファイルを代わりに実行してもよい．その場合，次のようにコマンドを実行する．</p>
+<p><code>./compile.sh</code></p>
+<p>コンパイルが成功すれば，<code>grader</code> という実行ファイルが生成される．</p>
+<p>実際の採点プログラムは，採点プログラムのサンプルとは異なることに注意すること．採点プログラムのサンプルは単一のプロセスとして起動する．このプログラムは，標準入力から入力を読み込み，標準出力に結果を出力する．</p>
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>採点プログラムのサンプルの入力</h3>
+<p>採点プログラムのサンプルは標準入力から以下の形式で入力を読み込む．</p>
+<pre><var>Q</var> <var>N</var> 
+<var>A_{1,1}</var> <var>A_{1,2}</var> <var>\cdots</var> <var>A_{1,N}</var>
+<var>A_{2,1}</var> <var>A_{2,2}</var> <var>\cdots</var> <var>A_{2,N}</var>
+<var>\vdots</var>
+<var>A_{Q,1}</var> <var>A_{Q,2}</var> <var>\cdots</var> <var>A_{Q,N}</var>
+</pre>
+<p><var>A_{i,j}</var> (<var>1 \leqq i \leqq Q, 1 \leqq j \leqq N</var>) は Anna が <var>i</var> 回目の占いで <var>j</var> 枚目に引くカードに書かれた数を表す．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>採点プログラムのサンプルの出力</h3>
+<p>採点プログラムのサンプルは標準出力へ以下の情報を出力する(引用符は実際には出力されない)．</p>
+<ul>
+<li>正解の場合，すべての占いにおける Anna が場に出したカードの枚数 <var>L</var> の最大値が <code>Accepted: 100</code> のように出力される．</li>
+<li>不正解の場合，不正解の種類が <code>Wrong Answer [1]</code> のように出力される．</li>
+</ul>
+<p>実行するプログラムが複数の不正解の条件を満たした場合，
+表示される不正解の種類はそれらのうち <var>1</var> つのみである．
+採点プログラムのサンプルは，不正解の条件を満たした場合，途中で実行を打ち切ることがある．</p>
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>採点に関する注意</h3>
+<p>すべてのテストケースについて，実際の採点プログラムは適応的 (adaptive) <strong>ではない</strong>．これは，採点プログラムは初めから固定された山札から引くカードの列を持つということを意味する．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<p>すべての入力データは以下の条件を満たす．</p>
+<ul>
+<li><var>1 \leqq Q \leqq 100</var>．</li>
+<li><var>N = 900</var>．</li>
+<li><var>A_{i,j}</var> は <var>0</var> または <var>1</var> である (<var>1 \leqq i \leqq Q, 1 \leqq j \leqq N</var>)．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>採点基準</h3>
+<p>この課題のテストケースの中で，<var>1</var> つでも<strong>不正解 [1] ～ [4]</strong> (実装の詳細を参照) と判定されたものや，
+実行時間制限超過，メモリ制限超過，実行時エラーと判定されたものがあった場合，<var>0</var>点となる．</p>
+<p>またこの課題におけるすべてのテストケースに正解した場合，この課題のすべてのテストケースで，
+関数 Anna の <var>1</var> 回の呼び出しについて引数 <var>0 \leqq x</var> で関数 <code>DrawCard</code> を呼び出した回数の最大値を <var>L</var> として，以下のように採点される．</p>
+<ul>
+<li><var>500 &lt; L</var> のとき，<var>3</var> 点</li>
+<li><var>14 &lt; L \leqq 500</var> のとき，<var>\left\lfloor 100 \times \left(\dfrac{2.5}{L-11.5}\right)^{0.35} \right\rfloor</var> 点</li>
+<li><var>L \leqq 14</var> のとき，<var>100</var> 点</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>やり取りの例</h3>
+<p>採点プログラムのサンプルが読み込む入力の例と，それに対応する関数の呼び出しの例を以下に示す．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>2 5
+0 1 0 0 1
+1 1 0 1 0
+</pre>
+<p><img src="https://img.atcoder.jp/joisp2025/joisp2025-C01.png" class="img-responsive center-block" style="width: 540px; max-width: 100%"></p>
+<p>この入力例は <var>Q (=2)</var> 回の占いからなり，<var>2</var> 回の占いでAnnaが山札から引くカードの枚数は <var>N (=5)</var> 枚である．
+この例では，<var>1</var> 回目の占いは Anna は次のような手順で占いを行う．</p>
+<ol>
+<li>Anna が山札からカードを <var>1</var> 枚引く．引いたカードに書かれた数は <var>0</var> である．</li>
+<li>Anna は引いたカードを場に出して並べることを選択し，場に並べてあるカードの列の一番左に挿入する．場に並べられたカードの列は <var>0</var> になる．Anna は山札からカードを <var>1</var> 枚引く，引いたカードに書かれた数は <var>1</var> である．</li>
+<li>Anna は引いたカードを捨てることを選択する．Anna は山札からカードを <var>1</var> 枚引く，引いたカードに書かれた数は <var>0</var> である．</li>
+<li>Anna は引いたカードを場に出して並べることを選択し，場に並べてあるカードの列の左から <var>1</var> 枚目のカードのすぐ右に挿入する．場に並べられたカードの列は <var>0,0</var> になる．Anna は山札からカードを <var>1</var> 枚引く，引いたカードに書かれた数は <var>0</var> である．</li>
+<li>Anna は引いたカードを捨てることを選択する．Anna は山札からカードを <var>1</var> 枚引く，引いたカードに書かれた数は <var>1</var> である．</li>
+<li>Anna は引いたカードを場に出して並べることを選択し，場に並べてあるカードの列の左から <var>1</var> 枚目のカードのすぐ右に挿入する．場に並べられたカードの列は <var>0,1,0</var> になる．</li>
+</ol>
+<p>Bruno は <var>N</var> の値と場に並べられたカードの列 <var>0,1,0</var> をもとに，Anna が引いた <var>1</var> の書かれたカードの枚数が <var>2</var> であると答える．
+これは正しいため，占いは成功である．1回目の占いで Anna が場に出したカードの枚数 <var>L</var> は <var>3</var> である．</p>
+<p><var>2</var> 回目の占いで Anna が場に出したカードの枚数 <var>L</var> は <var>4</var> である．</p>
+<p>この入力例は<strong>制約を満たさない</strong>ことに注意すること．
+コンテストサイトからダウンロードできるファイルのうち，<code>sample-01-in.txt</code> は入力例 <var>1</var> に対応する．
+コンテストサイトからダウンロードできるファイルのうち，<code>sample-02-in.txt</code> は制約を満たす．</p></section>
+</div>
+</span>
+</span>

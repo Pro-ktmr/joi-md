@@ -1,0 +1,128 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>JOI 国には <var>N</var> 個の街があり，それらの間は <var>M</var> 本の双方向に通行可能な道路で結ばれている．国民は道路を通ってそれらの街を移動する．</p>
+<p>JOI 国の国民には，お祭りが好きな人が多く，現在，<var>K</var> 個の街でお祭りが開催されており，非常に賑わっている．一方で，一部の国民はお祭りを騒がしいとして嫌い，お祭りにできるだけ近づきたくないと思っている．</p>
+<p>そこで国王は，優秀なプログラマーであるあなたに，そのようなお祭りを嫌う国民のため，ある街からある街に移動するために，お祭りが開催されている街にどれだけ近づかずに移動することができるかを高速に調べることのできるプログラムの作成を依頼した．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p>道路の情報とお祭りが開催されている街の情報，および <var>Q</var> 個のクエリ（出発する街 <var>S_i</var> と行きたい街 <var>T_i</var> の組）が与えられる．各クエリ <var>i</var> に対し，街 <var>S_i</var> から街 <var>T_i</var> へのすべての経路のうち，お祭りまでの距離が最大となる経路の，お祭りまでの距離を求めるプログラムを作成せよ．ただし，ある経路のお祭りまでの距離とは，経路上の街からお祭りが開催されている街までの移動距離の最小値のことである．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><var>2 \leqq N \leqq 100000 \,(= 10^5)</var>&emsp;</td>
+<td>JOI 国の街の個数</td>
+</tr>
+<tr>
+<td><var>1 \leqq N \leqq 200000 \,(= 2\times 10^5)</var>&emsp;</td>
+<td>JOI 国の道路の本数</td>
+</tr>
+<tr>
+<td><var>1 \leqq K \leqq N</var>&emsp;</td>
+<td>お祭りが開催されている街の個数</td>
+</tr>
+<tr>
+<td><var>1 \leqq Q \leqq 100000 \,(= 10^5)</var>&emsp;</td>
+<td>クエリの個数</td>
+</tr>
+<tr>
+<td><var>1 \leqq L_i \leqq 1000</var>&emsp;</td>
+<td><var>i</var> 番目の道路の長さ</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下のデータを読み込め．</p>
+<ul>
+<li><var>1</var> 行目には整数 <var>N, M, K, Q</var> が空白を区切りとして書かれている．<var>N</var> は JOI 国の街の個数を，<var>M</var> は JOI 国の道路の本数を，<var>K</var> はお祭りが開催されている街の個数を，<var>Q</var> はクエリの個数をそれぞれ表す．街には <var>1,2,\ldots,N</var> の番号がつけられている．</li>
+<li>続く <var>M</var> 行は道路の情報を表す．<var>i + 1</var> 行目 (<var>1\leqq i\leqq M</var>) には整数 <var>A_i,B_i,L_i</var> (<var>1\leqq A_i\leqq N,1\leqq B_i\leqq N</var>) が空白を区切りとして書かれている．これは，<var>i</var> 番目の道路が街 <var>A_i</var> と街 <var>B_i</var> を結んでおり，長さが <var>L_i</var> であることを表す．道路の両端が同じ街であることはない．また，任意の <var>2</var> つの街 <var>p, q</var> に対し，<var>p</var> と <var>q</var> を結ぶ道路は <var>2</var> 本以上存在しない．どの街からどの街へもいくつかの道路をたどって行くことができる．</li>
+<li>続く <var>K</var> 行はお祭りが開催されている街の情報を表す．<var>i + M + 1</var> 行目 (<var>1\leqq i\leqq K</var>) には <var>1</var> つの整数 <var>F_i</var> (<var>1\leqq F_i\leqq N</var>) が書かれている．これは街 <var>F_i</var> でお祭りが開催されていることを表す．<var>F_1,\ldots,F_K</var> の中に同じ値が <var>2</var> 回以上現れることはない．</li>
+<li>続く <var>Q</var> 行はクエリを表す．<var>i + M + K + 1</var> 行目 (<var>1\leqq i\leqq Q</var>) には 2 つの整数 <var>S_i,T_i</var> (<var>1\leqq S_i\leqq N,1\leqq T_i\leqq N, S_i\neq T_i</var>) が空白を区切りとして書かれている．これは <var>i</var> 番目のクエリの出発する街が <var>S_i</var> であり行きたい街が <var>T_i</var> であることを表す．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，全クエリへの答えを <var>Q</var> 行で出力せよ．すなわち，<var>i</var> 行目に，街 <var>S_i</var> から街 <var>T_i</var> へのすべての経路のうち，お祭りまでの距離が最大となる経路の，お祭りまでの距離を表す整数を出力せよ．</p>
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>採点基準</h3>
+<p>採点用データのうち，</p>
+<p>配点の <var>10</var> %分については，<var>Q=1</var> を満たす．</p>
+<p>配点の <var>20</var> %分については，<var>N\leqq 5000,Q\leqq 5000</var> を満たす．</p>
+<p>配点の <var>30</var> %分については，これら <var>2</var> つの条件の少なくとも一方を満たす．また，これら <var>2</var> つの条件の両方を満たすような採点用データはない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>6 6 2 3
+1 2 5
+2 3 4
+2 4 6
+3 5 9
+4 5 3
+5 6 7
+1
+6
+3 4
+5 2
+1 4
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>7
+5
+0
+</pre>
+<p><var>6</var> つの街が <var>6</var> 本の道路で結ばれており，お祭りは街 <var>1, 6</var> の <var>2</var> つの街で開催されている．クエリは以下の <var>3</var> つである．</p>
+<ul>
+<li><var>1</var> つ目のクエリは街 <var>3</var> から街 <var>4</var> へ行くというものである．街 <var>2</var> を経由する経路ではお祭りまでの距離は <var>5</var>，街 <var>5</var> を経由する経路ではお祭りまでの距離は <var>7</var> となるため，答えは <var>7</var> である．</li>
+<li><var>2</var> つ目のクエリは街 <var>5</var> から街 <var>2</var> へ行くというものである．街 <var>3</var> と街 <var>4</var> のどちらを経由しても，街 <var>2</var> でお祭りまでの距離が最小となり，答えは <var>5</var> である．</li>
+<li><var>3</var> つ目のクエリは街 <var>1</var> から街 <var>4</var> へ行くというものである．街 <var>1</var> はお祭りが開催されている街であるため，答えは <var>0</var> となる．</li>
+</ul>
+<p><img alt="" src="https://img.atcoder.jp/joi2012ho/t5-fig1.png" /></p></section>
+</div>
+</span>
+</span>

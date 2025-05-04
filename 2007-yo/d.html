@@ -1,0 +1,96 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p><var>1</var> から <var>2n</var> の数が書かれた <var>2n</var> 枚のカードがあり，上から <var>1, 2, 3, \ldots, 2n</var> の順に積み重なっている．</p>
+<p>このカードを，次の方法を何回か用いて並べ替える．</p>
+<h4>整数 <var>k</var> でカット</h4>
+<p>上から <var>k</var> 枚のカードの山 A と 残りのカードの山 B に分けた後，山 A の上に山 B をのせる．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2007yo/card01.png" /></p>
+<h4>リフルシャッフル</h4>
+<p>上から <var>n</var> 枚の山 A と残りの山 B に分け，上から A の <var>1</var> 枚目，B の <var>1</var> 枚目，A の <var>2</var> 枚目，B の <var>2</var> 枚目，<var>\ldots</var>，A の <var>n</var> 枚目，B の <var>n</var> 枚目，となるようにして，<var>1</var> つの山にする．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2007yo/card02.png" /></p>
+<p>入力の指示に従い，カードを並び替えたあとのカードの番号を，上から順番に出力するプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<ul>
+<li><var>1</var> 行目には <var>n</var> (<var>1 \leqq n \leqq 100</var>) が書かれている．すなわちカードの枚数は <var>2n</var> 枚である．</li>
+<li><var>2</var> 行目には操作の回数 <var>m</var> (<var>1 \leqq m \leqq 1000</var>) が書かれている．</li>
+<li><var>3</var> 行目から <var>m + 2</var> 行目までの <var>m</var> 行には，<var>0</var> から <var>2n - 1</var> までのいずれか <var>1</var> つの整数 <var>k</var> が書かれており，カードを並べ替える方法を順に指定している．<ul>
+<li><var>k = 0</var> の場合は，リフルシャッフルを行う．</li>
+<li><var>1 \leqq k \leqq 2n-1</var> の場合は，<var>k</var> でカットを行う．</li>
+</ul>
+</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p><var>2n</var> 行出力せよ．<var>1</var> 行目には並べ替え終了後の一番上のカードの番号，<var>2</var> 行目には並べ替え終了後の上から <var>2</var> 番目のカードの番号というように，<var>i</var> 行目には上から <var>i</var> 番目のカードの番号を出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>2
+2
+1
+0
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>2
+4
+3
+1
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>3
+4
+2
+4
+0
+0
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>1
+5
+4
+3
+2
+6
+</pre></section>
+</div>
+</span>
+</span>

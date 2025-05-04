@@ -1,0 +1,92 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>K 理事長はロシアで開催される IOI 2016 に合わせて旗を作ることにした．K 理事長はまず倉庫から古い旗を取り出してきた．この旗は <var>N</var> 行 <var>M</var> 列のマス目に分けられていて，それぞれのマスには白・青・赤のいずれかの色が塗られている．</p>
+<p>K 理事長はこの旗のいくつかのマスを塗り替えてロシアの旗にしようとしている．ただし，この問題でいうロシアの旗とは以下のようなものである．</p>
+<ul>
+<li>上から何行か（<var>1</var> 行以上）のマスが全て白で塗られている．</li>
+<li>続く何行か（<var>1</var> 行以上）のマスが全て青で塗られている．</li>
+<li>それ以外の行（<var>1</var> 行以上）のマスが全て赤で塗られている．</li>
+</ul>
+<p>K 理事長が古い旗をロシアの旗にするために塗り替える必要のあるマスの個数の最小値を求めよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>1 + N</var> 行からなる．</p>
+<p><var>1</var> 行目には，<var>2</var> つの整数 <var>N, M</var> (<var>3 \leqq N \leqq 50</var>，<var>3 \leqq M \leqq 50</var>) が空白を区切りとして書かれている．これは，旗が <var>N</var> 行 <var>M</var> 列のマス目に区切られていることを表す．</p>
+<p>続く <var>N</var> 行にはそれぞれ <var>M</var> 文字からなる文字列が書かれており，古い旗のマス目に塗られている色の情報を表す．<var>N</var> 行のうちの <var>i</var> 行目の <var>j</var> 文字目 (<var>1 \leqq i \leqq N</var>，<var>1 \leqq j \leqq M</var>) は，古い旗のマス目の <var>i</var> 行目 <var>j</var> 列目のマスの色を表す <code>W</code>，<code>B</code>，<code>R</code> のいずれかの文字である． <code>W</code> は白，<code>B</code> は青，<code>R</code> は赤を表す．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>K 理事長が古い旗をロシアの旗にするために塗り替える必要のあるマスの個数の最小値を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>4 5
+WRWRW
+BWRWB
+WRWRW
+RWBWR
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>11
+</pre>
+<p>入出力例 <var>1</var> において，古い旗には下図のように色が塗られている．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2016yo/2016-yo-t3-fig01.png" /></p>
+<p>下図において，<code>X</code> の書かれた <var>11</var> 個のマスを塗り替える．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2016yo/2016-yo-t3-fig02.png" /></p>
+<p>これにより下図のようなロシアの旗にすることができる．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2016yo/2016-yo-t3-fig03.png" /></p>
+<p><var>11</var> 個未満のマスを塗り替えることではロシアの旗にすることはできないため，<var>11</var> を出力する．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>6 14
+WWWWWWWWWWWWWW
+WBBBWWRRWWBBBW
+WWBWWRRRRWWBWW
+BWBWWRRRRWWBWW
+WBBWWWRRWWBBBW
+WWWWWWWWWWWWWW
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>44
+</pre>
+<p>入出力例 <var>2</var> においては，古い旗には下図のように色が塗られている．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2016yo/2016-yo-t3-fig04.png" /></p></section>
+</div>
+</span>
+</span>

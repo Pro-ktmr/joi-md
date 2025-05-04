@@ -1,0 +1,102 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>あなたは星空の写真の中から星座を探している．写真には必ず，探したい星座と同じ形・向き・大きさの図形がちょうど一つ含まれている．ただし，写真の中には星座を構成する星以外に余分な星が写っている可能性がある．</p>
+<p>例えば，図 <var>1</var> の星座は図 <var>2</var> の写真に含まれている（丸で囲んで示した）．与えられた星座の星の座標を <var>x</var> 方向に <var>2</var>，y 方向に <var>-3</var> だけ平行移動すると写真の中の位置になる．</p>
+<p>探したい星座の形と写真に写っている星の位置が与えられたとき，星座の座標を写真の中の座標に変換するために平行移動するべき量を答えるプログラムを書け．</p>
+<p><img alt="図 <var>1</var>: 探したい星座" src="https://img.atcoder.jp/joi2008yo/2008-yo-t4-1.png" />
+<img alt="図 <var>2</var>: 星空の写真" src="https://img.atcoder.jp/joi2008yo/2008-yo-t4-2.png" /></p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力の <var>1</var> 行目には探したい星座を構成する星の個数 <var>m</var> が書かれている．続く <var>m</var> 行には探したい星座を構成する <var>m</var> 個の星の <var>x</var> 座標と <var>y</var> 座標を示す整数が空白区切りで書かれている．<var>m + 2</var> 行目には写真に写っている星の個数 <var>n</var> が書かれている．続く <var>n</var> 行には写真に写っている <var>n</var> 個の星の <var>x</var> 座標と <var>y</var> 座標を示す整数が空白区切りで書かれている．</p>
+<p>星座を構成する <var>m</var> 個の星の位置はすべて異なる．また，写真に写っている <var>n</var> 個の星の位置はすべて異なる．<var>1 \leqq m \leqq 200</var>，<var>1 \leqq n \leqq 1\,000</var> である．星の <var>x</var> 座標と <var>y</var> 座標はすべて <var>0</var> 以上 <var>1\,000\,000</var> 以下である．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>出力は <var>1</var> 行からなり，<var>2</var> 個の整数を空白区切りで書く．これらは探したい星座の座標をどれだけ平行移動すれば写真の中の座標になるかを表す．最初の整数が <var>x</var> 方向に平行移動する量，次の整数が <var>y</var> 方向に平行移動する量である．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>5
+8 5
+6 4
+4 3
+7 10
+0 10
+10
+10 5
+2 7
+9 7
+8 10
+10 2
+1 2
+8 1
+6 7
+6 0
+0 9
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>2 -3
+</pre>
+<p>入出力例 <var>1</var> は上の図に対応している．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>5
+904207 809784
+845370 244806
+499091 59863
+638406 182509
+435076 362268
+10
+757559 866424
+114810 239537
+519926 989458
+461089 424480
+674361 448440
+81851 150384
+459107 795405
+299682 6700
+254125 362183
+50795 541942
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>-384281 179674
+</pre></section>
+</div>
+</span>
+</span>

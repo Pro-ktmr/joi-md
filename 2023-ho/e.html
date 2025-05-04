@@ -1,0 +1,292 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題文</h3>
+<p>ビ太郎は，誕生日プレゼントとして JOI マシンをもらった．
+JOI マシンは，<var>1</var> 個の <strong>ボール</strong>，<var>N</var> 個の <strong>ライトタイル</strong>，<var>M</var> 個の <strong>ボタン</strong> からなる．
+ライトタイルにはそれぞれ <var>1</var> から <var>N</var> までの番号が付けられており，
+電源を入れると，ライトタイル <var>i</var> (<var>1 \leqq i \leqq N</var>) は色 <var>C_i</var> (青 (<code>B</code>)，赤 (<code>R</code>) のいずれか) で光るようになっている．
+また，ボタンにはそれぞれ <var>1</var> から <var>M</var> までの番号が付けられており，
+ボタン <var>j</var> (<var>1 \leqq j \leqq M</var>) を押すと，次のようなことが起こる．</p>
+<ol class="e-statement-list">
+<li>ライトタイル <var>A_j</var> の上にボールが置かれる．</li>
+<li>ライトタイル <var>A_j</var> の色が (元の色にかかわらず) 赤になる．</li>
+<li>
+<p>ボールが取り除かれるまで，以下のことが繰り返し行われる．</p>
+<div>
+<p>今，ボールが置かれているライトタイルの番号を <var>p</var> とする．</p>
+<dl>
+<dt>ライトタイル <var>p</var> の色が青の場合</dt>
+<dd>ライトタイル <var>p</var> の色が赤に変わる．その後，もし <var>p=1</var> の場合はボールが取り除かれ，そうでない場合はボールがライトタイル <var>p-1</var> の上に移動する．</dd>
+<dt>ライトタイル <var>p</var> の色が赤の場合</dt>
+<dd>ライトタイル <var>p</var> の色が青に変わる．その後，もし <var>p=N</var> の場合はボールが取り除かれ，そうでない場合はボールがライトタイル <var>p+1</var> の上に移動する．</dd>
+</dl>
+</div>
+</li>
+</ol>
+
+<p>JOI マシンに興味を持ったビ太郎は，<var>Q</var> 回の実験を計画している．
+<var>k</var> 回目 (<var>1 \leqq k \leqq Q</var>) の実験は，JOI マシンの電源を入れた後，ボタン <var>L_k, L_k+1, \ldots, R_k</var> をこの順に押すというものである．
+ただし，ボールが取り除かれるまでは，次のボタンを押さずに待つものとする．</p>
+<p>JOI マシンの情報および実験の情報が与えられるので，
+それぞれの実験について，実験が終わった後における，色が赤であるようなライトタイルの個数を求めるプログラムを作成せよ．</p>
+<style>
+.e-statement-list div {
+    margin-left: 2em; 
+}
+.e-statement-list dd {
+    margin-left: 2em;
+}
+</style>
+
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は以下の形式で標準入力から与えられる．</p>
+<pre><var>N</var> <var>M</var>
+<var>C_1C_2 \cdots C_N</var>
+<var>A_1</var> <var>A_2</var> <var>\cdots</var> <var>A_M</var>
+<var>Q</var>
+<var>L_1</var> <var>R_1</var>
+<var>L_2</var> <var>R_2</var>
+<var>\vdots</var>
+<var>L_Q</var> <var>R_Q</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に <var>Q</var> 行出力せよ．
+<var>k</var> 行目 (<var>1 \leqq k \leqq Q</var>) には，<var>k</var> 回目の実験が終わった後における，色が赤であるようなライトタイルの個数を出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<ul>
+<li><var>3 \leqq N \leqq 120\,000</var>．</li>
+<li><var>1 \leqq M \leqq 120\,000</var>．</li>
+<li><var>C_i</var> (<var>1 \leqq i \leqq N</var>) は <code>B</code> または <code>R</code> である．</li>
+<li><var>1 \leqq A_j \leqq N</var> (<var>1 \leqq j \leqq M</var>)．</li>
+<li><var>1 \leqq Q \leqq 120\,000</var>．</li>
+<li><var>1 \leqq L_k \leqq R_k \leqq M</var> (<var>1 \leqq k \leqq Q</var>)．</li>
+<li><var>N, M, A_j, Q, L_k, R_k</var> は整数である．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<ol>
+<li>(<var>3</var> 点) <var>N \leqq 300</var>，<var>M \leqq 300</var>，<var>Q = 1</var>．</li>
+<li>(<var>12</var> 点) <var>N \leqq 7\,000</var>，<var>M \leqq 7\,000</var>，<var>Q = 1</var>．</li>
+<li>(<var>10</var> 点) <var>Q \leqq 5</var>．</li>
+<li>(<var>11</var> 点) <var>N = 10</var>，<var>C_i</var> は <code>R</code> である (<var>1 \leqq i \leqq N</var>)．</li>
+<li>(<var>26</var> 点) <var>i \leqq t</var> ならば <var>C_i</var> が <code>R</code> であり，<var>i &gt; t</var> であれば <var>C_i</var> が <code>B</code> であるような整数 <var>t</var> (<var>0 \leqq t \leqq N</var>) が存在する．</li>
+<li>(<var>17</var> 点) <var>A_j \leqq 20</var> または <var>A_j &gt; N - 20</var> (<var>1 \leqq j \leqq M</var>)．</li>
+<li>(<var>21</var> 点) 追加の制約はない．</li>
+</ol>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>5 1
+RBRRB
+4
+1
+1 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>1
+</pre>
+<p><var>1</var> 回目の実験は次のように進行する．</p>
+<ol>
+<li>ボタン <var>1</var> が押され，ボールがライトタイル <var>4</var> の上に置かれる．</li>
+<li>ライトタイル <var>4</var> の色が赤になる．ただし，元からライトタイル <var>4</var> の色が赤なので，ライトタイル <var>4</var> の色は変わらない．</li>
+<li>その後，次のことが起こる．<ol>
+<li>現在のライトタイル <var>4</var> の色は赤なので，ライトタイル <var>4</var> の色が青に変わり，ボールがライトタイル <var>5</var> の上に移動する．</li>
+<li>現在のライトタイル <var>5</var> の色は青なので，ライトタイル <var>5</var> の色が赤に変わり，ボールがライトタイル <var>4</var> の上に移動する．</li>
+<li>現在のライトタイル <var>4</var> の色は青なので，ライトタイル <var>4</var> の色が赤に変わり，ボールがライトタイル <var>3</var> の上に移動する．</li>
+<li>現在のライトタイル <var>3</var> の色は赤なので，ライトタイル <var>3</var> の色が青に変わり，ボールがライトタイル <var>4</var> の上に移動する．</li>
+<li>現在のライトタイル <var>4</var> の色は赤なので，ライトタイル <var>4</var> の色が青に変わり，ボールがライトタイル <var>5</var> の上に移動する．</li>
+<li>現在のライトタイル <var>5</var> の色は赤なので，ライトタイル <var>5</var> の色が青に変わり，ボールが取り除かれる．</li>
+</ol>
+</li>
+</ol>
+<p>実験が終わった時点で，色が赤であるようなライトタイルはライトタイル <var>1</var> の <var>1</var> つのみであるため，<var>1</var> を出力する．</p>
+<p>この入力例は小課題 <var>1, 2, 3, 6, 7</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>5 3
+RBRBR
+1 3 4
+2
+2 3
+1 3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>5
+0
+</pre>
+<p><var>1</var> 回目の実験については，実験が終わった時点で，色が赤であるようなライトタイルはライトタイル <var>1, 2, 3, 4, 5</var> の <var>5</var> つであるため，<var>5</var> を出力する．</p>
+<p><var>2</var> 回目の実験については，実験が終わった時点で，色が赤であるようなライトタイルは存在しないため，<var>0</var> を出力する．</p>
+<p>この入力例は小課題 <var>3, 6, 7</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>10 3
+BBRRBRBRRB
+2 10 5
+1
+1 3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>2
+</pre>
+<p>この入力例は小課題 <var>1, 2, 3, 6, 7</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 4</h3>
+<pre>10 10
+RRRRRRRRRR
+3 1 4 1 5 9 2 6 5 3
+5
+1 7
+2 8
+3 9
+4 10
+1 10
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 4</h3>
+<pre>4
+8
+10
+0
+9
+</pre>
+<p>この入力例は小課題 <var>3, 4, 5, 6, 7</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 5</h3>
+<pre>10 10
+RRRBBBBBBB
+3 1 4 1 5 9 2 6 5 3
+5
+1 10
+2 9
+3 8
+4 7
+5 6
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 5</h3>
+<pre>2
+6
+0
+10
+7
+</pre>
+<p>この入力例は小課題 <var>3, 5, 6, 7</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 6</h3>
+<pre>30 10
+RRRBBRBBBRBBBRBRBRRRRRBBBBRBRR
+3 28 2 29 1 30 6 14 7 7
+10
+1 10
+2 3
+2 5
+2 8
+3 3
+3 6
+4 5
+4 7
+5 9
+10 10
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 6</h3>
+<pre>21
+15
+15
+4
+17
+16
+14
+20
+12
+23
+</pre>
+<p>この入力例は小課題 <var>6, 7</var> の制約を満たす．</p></section>
+</div>
+</span>
+</span>

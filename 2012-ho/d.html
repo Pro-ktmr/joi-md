@@ -1,0 +1,96 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>JOI くんは板に釘を刺して遊んでいる．下図のように，JOI くんは一辺 N 本の正三角形の形に釘を並べて刺した．上から <var>a</var> 行目 (<var>1\leqq a\leqq N</var>) には <var>a</var> 本の釘が並んでいる．そのうち左から <var>b</var> 本目 (<var>1\leqq b\leqq a</var>) の釘を <var>(a, b)</var> で表す．</p>
+<p><img src="https://img.atcoder.jp/joi2012ho/t4-fig1.png" class="img-responsive center-block" style="width: 500px; max-width: 100%"></p>
+<p>釘を頂点とする正三角形が，「各辺が全体の正三角形の辺のいずれかと平行で，全体の正三角形と同じ向き」であるとき，この正三角形を「<strong>よい正三角形</strong>」と呼ぶ．すなわち，「よい正三角形」とは，<var>3</var> 本の釘 <var>(a, b), (a + x, b), (a + x, b + x)</var> を頂点とする正三角形のことである（ただし <var>a, b, x</var> は <var>1 \leqq a &lt; N, 1 \leqq b \leqq a, 1 \leqq x \leqq N − a</var> をみたす）．</p>
+<p>JOI くんは，輪ゴムを使って，「よい正三角形」の周りを囲うことにした．</p>
+<p><img src="https://img.atcoder.jp/joi2012ho/t4-fig2.png" class="img-responsive center-block" style="width: 500px; max-width: 100%"></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p>正三角形の一辺に並んでいる釘の本数 <var>N</var> と，JOI くんが持っている輪ゴムの数 <var>M</var> と，<var>M</var> 本の輪ゴムによる「よい正三角形」の囲い方が与えられたとき，<var>1</var> 本以上の輪ゴムで囲われた釘の本数を求めるプログラムを作成せよ．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><var>2 \leqq N \leqq 5000</var>&emsp;</td>
+<td>一辺に並んでいる釘の本数</td>
+</tr>
+<tr>
+<td><var>1 \leqq N \leqq 500000 \,(= 5\times 10^5)</var>&emsp;</td>
+<td>輪ゴムの数</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下のデータを読み込め．</p>
+<ul>
+<li><var>1</var> 行目には整数 <var>N, M</var> が空白を区切りとして書かれている．<var>N</var> は正三角形の一辺に並んでいる釘の本数を，<var>M</var> は JOI くんの持っている輪ゴムの数をそれぞれ表す．</li>
+<li>続く <var>M</var> 行は輪ゴムによる「よい正三角形」の囲い方の情報を表す．<var>i + 1</var> 行目 (<var>1 \leqq i \leqq M</var>) には整数 <var>A_i,B_i,X_i</var> (<var>1\leqq A_i &lt; N, 1\leqq B_i\leqq A_i , 1\leqq X_i \leqq N-A_i</var>) が空白を区切りとして書かれている．これは，<var>i</var> 本目の輪ゴムは <var>3</var> 本の釘 <var>(A_i,B_i),(A_i+X_i,B_i),(A_i+X_i,B_i+X_i)</var> を頂点とする「よい正三角形」を囲っていることを表す．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，<var>1</var> 本以上の輪ゴムに囲われている釘の本数を <var>1</var> 行で出力せよ．</p>
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>採点基準</h3>
+<p>採点用データのうち，配点の <var>30</var> %分については，<var>M\leqq 10000</var> を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>5 2
+2 2 1
+2 1 3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>12
+</pre>
+<p>この例は図 <var>2</var> のような「よい正三角形」の囲い方に対応している．この例において，<var>(1, 1), (4, 4), (5, 5)</var> 以外の <var>12</var> 本の釘が <var>1</var> 本以上の輪ゴムで囲われている．</p></section>
+</div>
+</span>
+</span>

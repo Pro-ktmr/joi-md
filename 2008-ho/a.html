@@ -1,0 +1,96 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>20</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>白と黒の碁石をテーブルの上にならべて遊ぶ．まずテーブルの左端に碁石を置く．
+次に左から <var>2</var> 番目の場所に碁石を置く．これを <var>n</var> 回繰り返して <var>n</var> 個の碁石を横一列にならべる．ただし，新しく <var>i</var> 番目の碁石を置く際には，次のルールに従ってテーブル上の碁石を置き換える．</p>
+<ul>
+<li><var>i</var> が奇数の場合: テーブルに置いてあった碁石は置き換えず，新しい碁石を左から <var>i</var> 番目に置く．</li>
+<li><var>i</var> が偶数の場合: 新しく左から <var>i</var> 番目に置く碁石の色とテーブル上の右端の碁石の色が同じ場合は，テーブル上の碁石は置き換えず，新しい碁石を左から <var>i</var> 番目に置く．そうでない場合，すなわち，新しく左から <var>i</var> 番目に置く碁石の色とテーブル上の右端の碁石の色が異なる場合は，まずテーブル上の右端の連続した同色の碁石を全て取り除き，<var>i</var> 番目の碁石と同色の碁石に置き換える．そしてテーブルの右端に <var>i</var> 番目の碁石を置く．</li>
+</ul>
+<p>例えば，最初の <var>7</var> 個の碁石を置いた時点で，</p>
+<p><var>\gdef\W{\Large \kern-0.05em\raisebox{-0.05em}{○}\kern-0.05em}\gdef\B{\Large \kern-0.05em\raisebox{-0.05em}{●}\kern-0.05em}\W\W\B\B\W\W\W</var></p>
+<p>となっていたとする．（<var>\W</var> は白の碁石を，<var>\B</var> は黒の碁石を表す．）</p>
+<ul>
+<li><var>8</var> 番目の碁石が白（<var>\W</var>）の場合は，右端の碁石と同色なので，そのまま置く．したがって，テーブル上の碁石は <var>\W\W\B\B\W\W\W\W</var> となる．</li>
+<li><var>8</var> 番目の碁石が黒（<var>\B</var>）の場合は，右端の碁石（<var>\W</var>）と色が異なるので，まずテーブルの右端にある <var>3</var> 個の連続した白い碁石（<var>\W</var>）を取り除き，黒い碁石（<var>\B</var>）に置き換える．そして右端に <var>8</var> 番目の碁石を置く．したがって，テーブル上の碁石は <var>\W\W\B\B\B\B\B\B</var> となる．</li>
+</ul>
+<p>入力として置く碁石の順番が与えられたとき，<var>n</var> 個の碁石をならべ終わった後，テーブル上に置いてある白い碁石の個数を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力ファイルのファイル名は <code>input.txt</code> である．
+<var>1</var> 行目には正整数 <var>n</var> (<var>1 \leqq n \leqq 100000</var>) が書かれている．<var>2</var> 行目以降の第 <var>i + 1</var> 行目 (<var>1 \leqq i \leqq n</var>) には，<var>i</var> 番目に置く碁石の色を表す整数 <var>c_i</var> が書かれており，<var>c_i</var> が <var>0</var> なら <var>i</var> 番目に置く碁石の色が白であることを，<var>1</var> なら <var>i</var> 番目に置く碁石の色が黒であることを表す．</p>
+<p>採点用データのうち, 配点の <var>50</var> %分については, <var>n \leqq 10000</var> を満たす．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>出力ファイルのファイル名は <code>output.txt</code> である．</p>
+<p><code>output.txt</code> は，<var>n</var> 個の碁石をならべ終わった後にテーブル上に置いてある白い碁石の個数だけを含む <var>1</var> 行からなる．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>8
+1
+0
+1
+1
+0
+0
+0
+0
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>6
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>8
+1
+0
+1
+1
+0
+0
+0
+1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>2
+</pre></section>
+</div>
+</span>
+</span>

@@ -1,0 +1,97 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>あなたは <var>N</var> 個の指輪を持っている．どの指輪にも，アルファベットの大文字 <var>10</var> 文字からなる文字列が刻印されている．指輪には文字列の最初と最後がつながった形で文字が刻印されている．指輪に刻印された文字列を逆順に読む心配はない．</p>
+<p>探したい文字列が与えられたとき，その文字列を含む指輪が何個あるかを求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>2 + N</var> 行からなる．</p>
+<p><var>1</var> 行目には，<var>1</var> 文字以上 <var>10</var> 文字以下のアルファベットの大文字からなる探したい文字列が書かれている．</p>
+<p><var>2</var> 行目には，指輪の個数 <var>N</var> (<var>1 \leqq N \leqq 100</var>) が書かれている．</p>
+<p><var>2+i</var> 行目 (<var>1 \leqq i \leqq N</var>) には，<var>i</var> 個目の指輪に刻印されている <var>10</var> 文字からなる文字列が書かれている．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>探したい文字列を含む指輪の個数を表す整数を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>ABCD
+3
+ABCDXXXXXX
+YYYYABCDXX
+DCBAZZZZZZ
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>2
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>XYZ
+1
+ZAAAAAAAXY
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>1
+</pre>
+<p>入力例 <var>2</var> の指輪には <code>XYZ</code>という文字列が <var>1</var> つ含まれている．これは，指輪の文字列の最初と最後がつながっているためである．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>PQR
+3
+PQRAAAAPQR
+BBPQRBBBBB
+CCCCCCCCCC
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>2
+</pre>
+<p>入力例 <var>3</var> の <var>1</var> 個目の指輪には <code>PQR</code> という文字列が <var>2</var> つ含まれており，<var>2</var> 個目の指輪には <code>PQR</code> という文字列が <var>1</var> 個含まれており，<var>3</var> 個目の指輪には <code>PQR</code> という文字列が含まれていない．そのため <code>PQR</code> という文字列が含まれている指輪の数は <var>2</var> 個となる．</p></section>
+</div>
+</span>
+</span>

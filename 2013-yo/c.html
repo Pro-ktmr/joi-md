@@ -1,0 +1,63 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>JOI 君はお店の看板を作ることにした．</p>
+<p>文字が等間隔に書かれた古い看板が <var>N</var> 枚ある．JOI 君は古い看板からいくつかの文字を消すことで看板を作る．残った文字列がお店の名前になっていて，しかも残った文字が等間隔に並んでいるようにしたい．看板は <var>1</var> 枚の古い看板から作らなければならず，古い看板を切ったりつなげたりしてはならない．</p>
+<p>お店の名前と <var>N</var> 枚の古い看板の情報が与えられた時，JOI 君が作ることができる看板の枚数を求めるプログラムを作成せよ．ただし，<var>1</var> 枚の古い看板から作ることができる看板が複数考えられる場合も，作ることができる看板は <var>1</var> 枚であると考える．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>2 + N</var> 行からなる．</p>
+<p><var>1</var> 行目には，整数 <var>N</var> (<var>1 \leqq N \leqq 100</var>) が書かれており，古い看板の枚数を表す．</p>
+<p><var>2</var> 行目には，<var>3</var> 文字以上 <var>25</var> 文字以下のアルファベット小文字からなる文字列が書かれており，お店の名前を表す．</p>
+<p>続く <var>N</var> 行のうちの <var>i</var> 行目 (<var>1 \leqq i \leqq N</var>) には <var>1</var> 文字以上 <var>100</var> 文字以下のアルファベット小文字からなる文字列が書かれており，<var>i</var> 枚目の古い看板に書かれている文字列を表す．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>JOI 君が作ることができる看板の枚数を表す整数を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>4
+bar
+abracadabra
+bear
+bar
+baraxbara
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>3
+</pre>
+<p>お店の名前は <code>bar</code> である．</p>
+<p><var>1</var> 枚目の古い看板には文字列 <code>abracadabra</code> が書かれている．この古い看板から <var>2</var> 文字目，<var>6</var> 文字目，<var>10</var> 文字目以外を消すことで看板を作ることができる．</p>
+<p><var>2</var> 枚目は，<var>2</var> 文字目を消すと <code>bar</code> という文字列を作ることができるが，これは残った文字が等間隔に並んでいない．</p>
+<p><var>3</var> 枚目は，文字を何も消さなくても看板になっている．</p>
+<p><var>4</var> 枚目の古い看板から看板を作る方法は <var>2</var> 通りある．<var>1</var> つの方法は，<var>1</var> 文字目，<var>2</var> 文字目，<var>3</var> 文字目以外を消すことである．もう <var>1</var> つの方法は，<var>6</var> 文字目，<var>7</var> 文字目，<var>8</var> 文字目以外を消すことである．</p>
+<p>よって，JOI 君は <var>1</var> 枚目，<var>3</var> 枚目，<var>4</var> 枚目の古い看板から看板を作ることができるので，<var>3</var> を出力する．</p></section>
+</div>
+</span>
+</span>

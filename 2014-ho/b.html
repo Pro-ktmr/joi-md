@@ -1,0 +1,148 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>Incredible Okashi Inc. は「途方もなくおいしいお菓子 (incredible okashi)」を製作している会社である．ここでは略して IOI 社と呼ぶ．IOI 社は特製の IOI 饅頭を作ったので，それを販売することになった．IOI 社は <var>M</var> 種類の饅頭を <var>1</var> 個ずつ作った．作られた <var>M</var> 個の饅頭はすべて同じ大きさであるが，ひとつひとつ異なる味なので価格は様々であり，<var>i</var> 番目 (<var>1 \leqq i \leqq M</var>) の饅頭の価格は <var>P_i</var> 円である．</p>
+<p>ところで，あなたは Just Odd Inventions 社を知っているだろうか？ この会社の業務は「ただ奇妙な発明 (just odd inventions)」をすることである．ここでは略して JOI 社と呼ぶ．IOI 社は，饅頭を詰めるための高級な箱を JOI 社に発注することになった．JOI 社の製作する饅頭用の箱は <var>N</var> 種類あり，<var>j</var> 番目 (<var>1 \leqq j \leqq N</var>) の箱は最大で <var>C_j</var> 個の饅頭を詰められる大きさであり，販売価格は <var>E_j</var> 円である．これらの <var>N</var> 種類の箱のうちの何種類か (<var>0</var> 種類以上 <var>N</var> 種類以下) を <var>1</var> 個ずつ発注し，饅頭をそれらの箱に詰め分けてセットで販売することになった．各饅頭セットの価格は，それに含まれる饅頭の価格の合計である．</p>
+<p>すべての饅頭セットが売れるとした場合，IOI 社が得ることができる利益の最大値はいくらだろうか．ここで利益とは，販売した饅頭セットの価格の合計から，発注した箱の価格の合計を引いた値である．なお，箱に詰めなかった饅頭については，IOI 社のスタッフがおいしくいただくため，利益には影響しないものとする．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p>各饅頭の価格と，各箱の大きさと価格が与えられたとき，IOI 社が得ることができる利益の最大値を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下のデータを読み込め．</p>
+<ul>
+<li><var>1</var> 行目には，整数 <var>M, N</var> が空白を区切りとして書かれており，饅頭が <var>M</var> 個，箱が <var>N</var> 種類あることを表す．</li>
+<li>続く <var>M</var> 行のうちの <var>i</var> 行目 (<var>1 \leqq i \leqq M</var>) には，整数 <var>P_i</var> が書かれており，<var>i</var> 番目の饅頭の価格が <var>P_i</var> 円であることを表す．</li>
+<li>続く <var>N</var> 行のうちの <var>j</var> 行目 (<var>1 \leqq j \leqq N</var>) には，整数 <var>C_j, E_j</var> が空白を区切りとして書かれており，<var>j</var> 番目の箱は最大で <var>C_j</var> 個の饅頭を詰められる大きさであり，価格が <var>E_j</var> 円であることを表す．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，IOI 社が得られる利益の最大値を円単位で表す整数を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<p>すべての入力データは以下の条件を満たす．</p>
+<ul>
+<li><var>1 \leqq M \leqq 10\,000</var>．</li>
+<li><var>1 \leqq N \leqq 500</var>．</li>
+<li><var>1 \leqq P_i \leqq 10\,000</var> (<var>1 \leqq i \leqq M</var>)．</li>
+<li><var>1 \leqq C_j \leqq 10\,000</var> (<var>1 \leqq j \leqq N</var>)．</li>
+<li><var>1 \leqq E_j \leqq 10\,000</var> (<var>1 \leqq j \leqq N</var>)．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<h4>小課題 1 [25 点]</h4>
+<p><var>N \leqq 10</var> を満たす．</p>
+<h4>小課題 2 [35 点]</h4>
+<p><var>C_j \leqq 10</var> (<var>1 \leqq j \leqq N</var>) を満たす．</p>
+<h4>小課題 3 [40 点]</h4>
+<p>追加の制限はない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>4 3
+180
+160
+170
+190
+2 100
+3 120
+4 250
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>480
+</pre>
+<p>この例では，<var>1</var> 番目の箱 (<var>100</var> 円) と <var>2</var> 番目の箱 (<var>120</var> 円) を発注し，たとえば <var>1</var> 番目の箱に <var>1</var> 番目の饅頭と <var>2</var> 番目の饅頭を詰めて <var>180 + 160 = 340</var> 円のセットとして販売，<var>2</var> 番目の箱に <var>3</var> 番目の饅頭と <var>4</var> 番目の饅頭を詰めて <var>170 + 190 = 360</var> 円のセットとして販売すると，IOI 社の利益は <var>700 - 220 = 480</var> 円となる．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>2 2
+1000
+2000
+1 6666
+1 7777
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>0
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>10 4
+200
+250
+300
+300
+350
+400
+500
+300
+250
+200
+3 1400
+2 500
+2 600
+1 900
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>450
+</pre></section>
+</div>
+</span>
+</span>

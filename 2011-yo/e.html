@@ -1,0 +1,101 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>今年も JOI 町のチーズ工場がチーズの生産を始め，ねずみが巣から顔を出した．JOI 町は東西南北に区画整理されていて，各区画は巣，チーズ工場，障害物，空き地のいずれかである．ねずみは巣から出発して全てのチーズ工場を訪れチーズを <var>1</var> 個ずつ食べる．</p>
+<p>この町には，<var>N</var> 個のチーズ工場があり，どの工場も <var>１</var> 種類のチーズだけを生産している．チーズの硬さは工場によって異なっており，硬さ <var>1</var> から <var>N</var> までのチーズを生産するチーズ工場がちょうど <var>1</var> つずつある．</p>
+<p>ねずみの最初の体力は <var>1</var> であり，チーズを <var>1</var> 個食べるごとに体力が <var>1</var> 増える．ただし，ねずみは自分の体力よりも硬いチーズを食べることはできない．</p>
+<p>ねずみは，東西南北に隣り合う区画に <var>1</var> 分で移動することができるが，障害物の区画には入ることができない．チーズ工場をチーズを食べずに通り過ぎることもできる．すべてのチーズを食べ終えるまでにかかる最短時間を求めるプログラムを書け．ただし，ねずみがチーズを食べるのにかかる時間は無視できる．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>H+1</var> 行ある．<var>1</var> 行目には <var>3</var> つの整数 <var>H，W，N</var> (<var>1 \leqq H \leqq 1000</var>，<var>1 \leqq W \leqq 1000</var>，<var>1 \leqq N \leqq 9</var>) がこの順に空白で区切られて書かれている．<var>2</var> 行目から <var>H + 1</var> 行目までの各行には，<code>S</code>，<code>1</code>，<code>2</code>，<var>\ldots</var>，<code>9</code>，<code>X</code>，<code>.</code> からなる <var>W</var> 文字の文字列が書かれており，各々が各区画の状態を表している．北から <var>i</var> 番目，西から <var>j</var> 番目の区画を <var>(i, j)</var> と記述することにすると (<var>1 \leqq i \leqq H</var>，<var>1 \leqq j \leqq W</var>)，第 <var>i + 1</var> 行目の <var>j</var> 番目の文字は，区画 <var>(i, j)</var> が巣である場合は <code>S</code> となり，障害物である場合は <code>X</code> となり，空き地である場合は <code>.</code> となり，硬さ <var>1</var>，<var>2</var>，<var>\ldots</var>，<var>9</var> のチーズを生産する工場である場合はそれぞれ <code>1</code>，<code>2</code>，<var>\ldots</var>，<code>9</code> となる．入力には巣と硬さ <var>1</var>，<var>2</var>，<var>\ldots</var>，<var>N</var> のチーズを生産する工場がそれぞれ <var>1</var> つずつある．他のマスは障害物または空き地であることが保証されている．ねずみは全てのチーズを食べられることが保証されている．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>すべてのチーズを食べ終えるまでにかかる最短時間（分）を表す整数を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>3 3 1
+S..
+...
+..1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>4
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>4 5 2
+.X..1
+....X
+.XX.S
+.2.X.
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>12
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>10 10 9
+.X...X.S.X
+6..5X..X1X
+...XXXX..X
+X..9X...X.
+8.X2X..X3X
+...XX.X4..
+XX....7X..
+X..X..XX..
+X...X.XX..
+..X.......
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>91
+</pre></section>
+</div>
+</span>
+</span>

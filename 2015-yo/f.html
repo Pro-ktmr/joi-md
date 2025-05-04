@@ -1,0 +1,81 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>盗賊の Anna と Bruno は大富豪の邸宅に忍び込み，財宝 <var>1</var> から財宝 <var>N</var> までの <var>N</var> 個の財宝を見つけた．これらの財宝を Anna と Bruno で分配することになった．財宝のうちのいくつかを Anna が取り，残りの財宝のうちのいくつかを Bruno が取る．同じ財宝を <var>2</var> 人が取ることはできない．Anna や Bruno は財宝を <var>1</var> 個も取らなくてもよい．また，残った財宝は邸宅に残しておくので，<var>2</var> 人とも取らない財宝があってもよい．</p>
+<p>それぞれの財宝には「市場価値」と「貴重度」という <var>2</var> つの値が定まっている．Anna が取った財宝の市場価値の合計と Bruno が取った財宝の市場価値の合計の差の絶対値が <var>D</var> 以下なら，Anna は公平だと思って満足する．一方，Bruno は，Anna より貴重度の大きい財宝が欲しいと思っている．</p>
+<p>Anna が満足するように財宝を分配したときの，Bruno が取った財宝の貴重度の合計から Anna が取った財宝の貴重度の合計を引いた値の最大値を求めよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>1 + N</var> 行からなる．</p>
+<p><var>1</var> 行目には，<var>2</var> つの整数 <var>N, D</var> (<var>1 \leqq N \leqq 30</var>，<var>0 \leqq D \leqq 10^{15}</var>) が空白を区切りとして書かれている．これは，財宝の個数が <var>N</var> 個であり，Anna が取った財宝の市場価値の合計と Bruno が取った財宝の市場価値の合計の差の絶対値が <var>D</var> 以下なら Anna が満足することを表す．</p>
+<p>続く <var>N</var> 行のうちの <var>i</var> 行目 (<var>1 \leqq i \leqq N</var>) には，<var>2</var> つの整数 <var>X_i, Y_i</var> (<var>0 \leqq X_i \leqq 10^{15}</var>，<var>0 \leqq Y_i \leqq 10^{15}</var>) が空白を区切りとして書かれている．これは，財宝 <var>i</var> の市場価値が <var>X_i</var> であり，貴重度が <var>Y_i</var> であることを表す．</p>
+<p>与えられる <var>5</var> つの入力データのうち，入力 <var>1</var> では <var>N \leqq 10</var> を満たす．また，入力 <var>2</var> では <var>D = 0</var> を満たす．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>Anna が満足するように財宝を分配したときの，Bruno が取った財宝の貴重度の合計から Anna が取った財宝の貴重度の合計を引いた値の最大値を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>6 15
+50 900
+30 200
+40 100
+80 600
+60 100
+70 700
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>1200
+</pre>
+<p>入出力例 <var>1</var> においては，Anna が財宝 <var>2</var> と財宝 <var>3</var> と財宝 <var>5</var> を取り，Bruno が財宝 <var>1</var> と財宝 <var>6</var> を取ると，取った財宝の市場価値の合計は Anna が <var>130</var>，Bruno が <var>120</var> となり，差の絶対値 <var>10</var> が <var>D = 15</var> 以下なので Anna は満足する．このとき，取った財宝の貴重度の合計は Anna が <var>400</var>，Bruno が <var>1\,600</var> となり，Bruno が取った財宝の貴重度の合計から Anna が取った財宝の貴重度の合計を引いた値は <var>1\,200</var> となる．これが最大である．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>5 0
+0 1000000000000000
+0 1000000000000000
+1 1
+1000000000000000 0
+1000000000000000 0
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>2000000000000000
+</pre></section>
+</div>
+</span>
+</span>

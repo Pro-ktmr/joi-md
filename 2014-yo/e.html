@@ -1,0 +1,77 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>IOI 国は町 <var>1</var> から町 <var>N</var> までの <var>N</var> 個の町からなり，町と町とは道路で結ばれている．IOI 国には <var>K</var> 本の道路があり，すべての道路は異なる <var>2</var> つの町を結んでいる．車は道路を双方向に自由に移動できるが，道路以外を通ってある町から別の町に行くことはできない．</p>
+<p>IOI 国の町 <var>1</var> に住む JOI 君は，町 <var>N</var> に住む祖母の家までタクシーで行くことにした．IOI 国にはタクシー会社 <var>1</var> からタクシー会社 <var>N</var> までの <var>N</var> 個のタクシー会社がある．IOI 国のタクシー会社には次のような少々特殊な規則がある．</p>
+<ul>
+<li>タクシー会社 <var>i</var> のタクシーには，町 <var>i</var> でのみ乗車できる．</li>
+<li>タクシー会社 <var>i</var> のタクシーの運賃は，利用した距離によらず <var>C_i</var> である．</li>
+<li>タクシー会社 <var>i</var> のタクシーは，乗車してから連続して最大 <var>R_i</var> 本の道路しか通ることができない．</li>
+</ul>
+<p>たとえば <var>R_1 = 2</var> の場合，町 <var>1</var> からタクシー会社 <var>1</var> のタクシーに乗車すると，最大 <var>2</var> 本の道路しか通ることができないため，道路を <var>3</var> 本以上通るためには途中の町でタクシーを乗り換える必要がある．</p>
+<p>JOI 君は町以外の地点でタクシーに乗ったりタクシーから降りたりすることはできない．また，タクシー以外の移動手段を用いることもできない．JOI 君が町 <var>N</var> に到達するために必要な運賃の合計の最小値を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>1 + N + K</var> 行からなる．</p>
+<p><var>1</var> 行目には， <var>2</var> つの整数 <var>N, K</var> (<var>2 \leqq N \leqq 5\,000</var>，<var>N - 1 \leqq K \leqq 10\,000</var>) が空白を区切りとして書かれている．これは，IOI 国が <var>N</var> 個の町からなることと，IOI 国の道路の本数が <var>K</var> 本であることを表す．</p>
+<p>続く <var>N</var> 行のうちの <var>i</var> 行目 (<var>1 \leqq i \leqq N</var>) には，<var>2</var> つの整数 <var>C_i, R_i</var> (<var>1 \leqq C_i \leqq 10\,000</var>，<var>1 \leqq R_i \leqq N</var>) が空白を区切りとして書かれている．これは，タクシー会社 <var>i</var> のタクシーの運賃が <var>C_i</var> で，乗車してから連続して最大 <var>R_i</var> 本の道路しか通ることができないことを表す．</p>
+<p>続く <var>K</var> 行のうちの <var>j</var> 行目 (<var>1 \leqq j \leqq K</var>) には，異なる <var>2</var> つの整数 <var>A_j, B_j</var> (<var>1 \leqq Aj &lt; Bj \leqq N</var>) が空白を区切りとして書かれている．これは，町 <var>A_j</var> と町 <var>B_j</var> との間に道路が存在することを表す．同じ <var>(A_j, B_j)</var> の組が <var>2</var> 回以上書かれていることはない．</p>
+<p>与えられる入力データにおいては，どの町から別のどの町へもタクシーを乗り継いで行くことができることが保証されている．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>JOI 君が町 <var>1</var> から町 <var>N</var> まで行くのに必要な運賃の合計の最小値を表す整数を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>6 6
+400 2
+200 1
+600 3
+1000 1
+300 5
+700 4
+1 2
+2 3
+3 6
+4 6
+1 5
+2 4
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>700
+</pre>
+<p>上の入出力例は，以下の図に対応している．円は町を，線は道路を表す．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2014yo/2014-yo-t5-fig01.png" /></p>
+<p>この入出力例で JOI 君が最小の運賃で町 <var>6</var> に到達するには，以下のようにする．</p>
+<p>町 <var>1</var> からタクシーに乗って町 <var>5</var> に行く．(運賃 <var>400</var>)<br />
+町 <var>5</var> からタクシーに乗って町 <var>6</var> に行く．(運賃 <var>300</var>)<br />
+JOI 君がこのようなルートを通った場合の運賃の合計は <var>400 + 300 = 700</var> であるので，<var>700</var> を出力する．</p></section>
+</div>
+</span>
+</span>

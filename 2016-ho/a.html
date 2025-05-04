@@ -1,0 +1,198 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>あなたは Juicy Orange Industry 社を知っているだろうか? この会社の業務は美味しいオレンジを栽培して出荷することである．ここでは略して JOI 社と呼ぶ．</p>
+<p>JOI 社では，収穫された <var>N</var> 個のオレンジを箱詰めして出荷することになった．オレンジは工場にあるベルトコンベアの上に並べられており，ベルトコンベアの前から順番に <var>1</var> から <var>N</var> までの番号が付けられている．オレンジは大小さまざまであり，オレンジ <var>i</var> (<var>1 \leqq i \leqq N</var>) の大きさは <var>A_i</var> である．</p>
+<p>これらのオレンジを前から順番にいくつかの箱に分けて詰める．ひとつの箱には連続した番号のオレンジしか詰めることができない．</p>
+<p>ひとつの箱には最大で <var>M</var> 個までのオレンジを詰めることができる．ある箱にいくつかのオレンジを詰めるためにかかるコストは，箱に詰める最大のオレンジの大きさを <var>a</var>，箱に詰める最小のオレンジの大きさを <var>b</var>，箱に詰めるオレンジの個数を <var>s</var> としたときに，<var>K + s \times (a - b)</var> で求めることができる．ここで，<var>K</var> は箱にかかるコストであり，すべての箱で共通の値である．</p>
+<p>適切な個数の箱を用意して，すべてのオレンジを適切に箱詰めすることで，箱詰めにかかるコストの総和をできるだけ小さくしたい．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p>ベルトコンベア上に並んでいるオレンジの情報と，ひとつの箱に詰められるオレンジの個数の最大値および，箱にかかるコストが与えられたとき，箱詰めにかかるコストの総和の最小値を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下の入力を読み込め．</p>
+<ul>
+<li><var>1</var> 行目には，<var>3</var> 個の整数 <var>N, M, K</var> が空白を区切りとして書かれている．これは，オレンジが <var>N</var> 個あり，ひとつの箱に詰められるオレンジの個数の最大値が <var>M</var> であって，箱にかかるコストが <var>K</var> であることを表す．</li>
+<li>続く <var>N</var> 行のうちの <var>i</var> 行目 (<var>1 \leqq i \leqq N</var>) には，整数 <var>A_i</var> が書かれている．これは，オレンジ <var>i</var> の大きさが <var>A_i</var> であることを表す．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，箱詰めにかかるコストの総和の最小値を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<p>すべての入力データは以下の条件を満たす．</p>
+<ul>
+<li><var>1 \leqq N \leqq 20\,000</var>．</li>
+<li><var>1 \leqq M \leqq 1\,000</var>．</li>
+<li><var>0 \leqq K \leqq 1\,000\,000\,000</var>．</li>
+<li><var>1 \leqq A_i \leqq 1\,000\,000\,000</var> (<var>1 \leqq i \leqq N</var>)．</li>
+<li><var>M \leqq N</var>．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<h4>小課題 1 [20 点]</h4>
+<ul>
+<li><var>N \leqq 20</var> を満たす．</li>
+</ul>
+<h4>小課題 2 [50 点]</h4>
+<p>以下の条件を満たす．</p>
+<ul>
+<li><var>N \leqq 2\,000</var>．</li>
+<li><var>M \leqq 100</var>．</li>
+</ul>
+<h4>小課題 3 [30 点]</h4>
+<p>追加の制限はない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>6 3 6
+1
+2
+3
+1
+2
+1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>21
+</pre>
+<p><var>1</var> 番目の箱にオレンジ <var>1</var> からオレンジ <var>3</var> までの <var>3</var> 個のオレンジを詰め，<var>2</var> 番目の箱にオレンジ <var>4</var> からオレンジ <var>6</var> までの <var>3</var> 個のオレンジを詰めると，箱詰めにかかるコストの総和は <var>(6 + 3 \times (3 - 1)) + (6 + 3 \times (2 - 1)) = 21</var> となる．</p>
+<p>どのように詰めても箱詰めにかかるコストの総和が <var>21</var> を下回ることはないので，<var>21</var> を出力する．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>16 4 12
+3
+10
+13
+10
+19
+9
+12
+16
+11
+2
+19
+9
+13
+2
+13
+19
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>164
+</pre>
+<p><var>11</var> 個の箱を用意して，それぞれの箱に前から順に <var>1</var> 個，<var>3</var> 個，<var>1</var> 個，<var>1</var> 個，<var>3</var> 個，<var>1</var> 個，<var>1</var> 個，<var>2</var> 個，<var>1</var> 個，<var>1</var> 個，<var>1</var> 個のオレンジを詰めることで，箱詰めにかかるコストの総和が最小となる．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>16 6 14
+19
+7
+2
+15
+17
+7
+14
+12
+3
+14
+5
+10
+17
+20
+19
+12
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>177
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 4</h3>
+<pre>10 1 1000000000
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 4</h3>
+<pre>10000000000
+</pre>
+<p>答えが <var>32</var> ビット符号付き整数の範囲に収まるとは限らないことに注意せよ．</p></section>
+</div>
+</span>
+</span>

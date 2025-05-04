@@ -1,0 +1,71 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>次のようなゲームを考える．<var>1</var> から <var>n</var> までの数が <var>1</var> つずつ書かれた <var>n</var> 枚のカードが <var>k</var> 組ある．これら <var>kn</var> 枚のカードをよくシャッフル（よく切ること）して，<var>k</var> 枚ずつの山を作り横一列に並べる．このようにしてできる <var>n</var> 個の山の左から <var>i</var> 番目の（<var>k</var> 枚のカードの）山を「山 <var>i</var>」と呼ぶことにする．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2006yo/2006-yo-t5-fig_base.png" /></p>
+<p>ゲームは山 <var>1</var> から始める．山の一番上のカード <var>1</var> 枚を引き（引いたカードは元の山に戻さない），そのカードに書かれていた数が <var>i</var> だった場合には山 <var>i</var> の一番上のカード <var>1</var> 枚を引く．このようにして，引いたカードに書かれていた数を番号とする山の一番上のカード <var>1</var> 枚を引くことを繰り返し，すべての山にカードが無くなれば成功である．まだカードが残っている山があるのに，次にカードを引くべき山が無くなっていた場合は失敗である．</p>
+<p>途中で失敗した場合には，そのまま失敗で終了するか，または残ったカードの山をそのまま（山の番号もそのまま）にしてゲームを再開する．ゲームを再開する場合は，最初に引くカードはカードが残っている山のうちの一番左の山からとする（その山の一番上のカードが最初に引かれるカードとなる）．再開後も再開前と同様の方法でゲームを進め，すべての山にカードが無くなれば成功であり，まだカードが残っている山があるのに，次にカードを引くべき山が無くなった場合は失敗である．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2006yo/2006-yo-t5-fig_sample.png" /></p>
+<p>このようなゲームの再開を最大 <var>m</var> 回まで行うものとする．ただし，<var>m</var> は <var>0</var> か <var>1</var> である．つまり，<var>1</var> 回も再開しないか，<var>1</var> 回だけ再開するかのいずれかである．ゲーム開始前のシャッフルの仕方によりカードの初期配置は異なる．当然，カードの初期配置により，再開せずに成功することもあれば，再開して成功することも，再開して失敗することもある．十分シャッフルしているので，どの初期配置も全て同じ確率で現れるものと考えることにして，再開が <var>m</var> 回以内で成功する確率 <var>p</var> を求めたい．この確率 <var>p</var> を小数で表し，小数第 <var>r</var> 位まで求めて出力するプログラムを作りなさい．ただし，次の条件を満たすように出力すること．</p>
+<p>十分大きい正整数 <var>K</var> を取ると <var>p \times 10^K</var> が 整数となる場合，小数部は途中から <var>0</var> が続くが，その <var>0</var> も出力すること．例えば，<var>p = 3/8 = 0.375</var> の場合，<var>r = 5</var> なら <var>0.37500</var> と出力し，<var>r = 2</var> なら <var>0.37</var> と出力する．<var>p = 1.0</var> の場合も同様に，例えば <var>r = 3</var> なら <var>1.000</var> と出力すること．
+例えば <var>0.150000\cdots</var> は循環小数 <var>0.1499999\cdots</var> として表すこともできるが，このような場合，前者の表し方を用いる．
+入力の <var>1</var> 行目には整数 <var>n, k, m, r</var> がこの順に空白を区切り文字として書いてある．<var>1 \leqq n \leqq 10\,000</var>，<var>1 \leqq k \leqq 100</var>，<var>m = 0</var> または <var>m = 1</var>，<var>1 \leqq r \leqq 10\,000</var> である．</p>
+<p>出力においては，指定通りに出力した <var>p</var> の後に改行を入れること．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>2 1 0 5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>0.50000
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>3 1 1 3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>0.833
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>2 2 1 3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>1.000
+</pre></section>
+</div>
+</span>
+</span>

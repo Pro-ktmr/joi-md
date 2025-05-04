@@ -1,0 +1,154 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>あなたは団子を作る職人である．今，あなたは団子に串を刺そうとしているところである．</p>
+<p>団子は，縦 <var>N</var> 行，横 <var>M</var> 列に仕切られたマスの中に配置されている．各マスには団子が <var>1</var> 個ずつ入っている．それぞれの団子には，赤 (R)，緑 (G)，白 (W) のいずれかの色が付いている．あなたは，左から右の方向，または，上から下の方向に連続する <var>3</var> マスから団子を取り出し，この順に <var>1</var> 本の串にちょうど <var>3</var> 個刺すことができる．</p>
+<p>今あなたは，赤，緑，白の団子が <var>1</var> 個ずつこの順に刺さった串を可能な限り多く作りたい．串に刺す順番は，マスから取り出した順番と同じでなければならない．また，同じ団子に <var>2</var> 本以上の串を刺すことはできない．</p>
+<p>あなたは，団子が刺さった串を最大何本作ることができるだろうか．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p>マスの中に配置された団子の色の情報が与えられたとき，赤，緑，白の団子が <var>1</var> 個ずつこの順に刺さった串が最大何本作れるかを求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下の入力を読み込め．</p>
+<ul>
+<li><var>1</var> 行目には，整数 <var>N</var> と <var>M</var> が空白を区切りとして書かれている．</li>
+<li>続く <var>N</var> 行のうちの <var>i</var> 行目 (<var>1 \leqq i \leqq N</var>) には，<code>R</code>, <code>G</code>, <code>W</code> からなる長さ <var>M</var> の文字列が書かれている．この文字列の <var>j</var> 文字目 (<var>1 \leqq j \leqq M</var>) は，上から <var>i</var> 行目，左から <var>j</var> 列目のマスの団子の色を表す．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，団子が刺さった串の本数の最大値を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<p>すべての入力データは以下の条件を満たす．</p>
+<ul>
+<li><var>1 \leqq N \leqq 3\,000</var>．</li>
+<li><var>1 \leqq M \leqq 3\,000</var>．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<h4>小課題 1 [13 点]</h4>
+<p>以下の条件を満たす．</p>
+<ul>
+<li><var>N \leqq 4</var>．</li>
+<li><var>M \leqq 4</var>．</li>
+</ul>
+<h4>小課題 2 [20 点]</h4>
+<p>以下の条件を満たす．</p>
+<ul>
+<li><var>N \leqq 10</var>．</li>
+<li><var>M \leqq 10</var>．</li>
+</ul>
+<h4>小課題 3 [67 点]</h4>
+<p>追加の制限はない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>3 4
+RGWR
+GRGG
+RGWW
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>3
+</pre>
+<p>次のように串に刺すことで，団子が刺さった串を <var>3</var> 本作ることができる．</p>
+<ul>
+<li>上から <var>1</var> 行目，左から <var>1</var> 列目の団子から右方向に <var>3</var> 個の団子を取り出し，この順に串に刺す．</li>
+<li>上から <var>1</var> 行目，左から <var>4</var> 列目の団子から下方向に <var>3</var> 個の団子を取り出し，この順に串に刺す．</li>
+<li>上から <var>3</var> 行目，左から <var>1</var> 列目の団子から右方向に <var>3</var> 個の団子を取り出し，この順に串に刺す．</li>
+</ul>
+<p><var>4</var> 本以上の串を作ることはできないので，<var>3</var> を出力する．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>4 4
+RGWR
+GRRG
+WGGW
+WWWR
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>4
+</pre>
+<p>次のように串に刺すことで，団子が刺さった串を <var>4</var> 本作ることができる．</p>
+<ul>
+<li>上から <var>1</var> 行目，左から <var>1</var> 列目の団子から右方向に <var>3</var> 個の団子を取り出し，この順に串に刺す．</li>
+<li>上から <var>1</var> 行目，左から <var>4</var> 列目の団子から下方向に <var>3</var> 個の団子を取り出し，この順に串に刺す．</li>
+<li>上から <var>2</var> 行目，左から <var>2</var> 列目の団子から下方向に <var>3</var> 個の団子を取り出し，この順に串に刺す．</li>
+<li>上から <var>2</var> 行目，左から <var>3</var> 列目の団子から下方向に <var>3</var> 個の団子を取り出し，この順に串に刺す．</li>
+</ul>
+<p><var>5</var> 本以上の串を作ることはできないので，<var>4</var> を出力する．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>5 5
+RGRGW
+GRRGW
+WGGWR
+RWRGW
+RGWGW
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>6
+</pre></section>
+</div>
+</span>
+</span>

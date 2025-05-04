@@ -1,0 +1,243 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>JOI 国には <var>N</var> 個の街があり，街には <var>1</var> から <var>N</var> までの番号が付けられている．
+これらの街の間を結ぶ <var>N-1</var> 本の <strong>一方通行</strong> の道路がある．
+具体的には，各 <var>i = 2, 3, \ldots, N</var> について，街 <var>i</var> から街 <var>P_i</var> に向かう道路がある．
+ここで，<var>1 \leqq P_i &lt; i</var> が保証される．</p>
+<p><var>N</var> 個の街にはそれぞれ <strong>危険度</strong> が定義されている．
+首都である街 <var>1</var> の危険度は <var>0</var> である．
+街 <var>i</var> (<var>2\leqq i \leqq N</var>) の危険度は，街 <var>i</var> から街 <var>1</var> へ向かう経路において通る道路の本数として定義される．
+ここで，JOI 国の構造上，街 <var>i</var> から街 <var>1</var> へ向かう経路はちょうど <var>1</var> つ存在することに注意せよ．</p>
+<p>現在街 <var>i</var> (<var>1\leqq i \leqq N</var>) には <var>K_i</var> 匹のビーバーが住んでいる．
+JOI 国の大統領であるビ太郎はビーバーたちの移住計画を立てた．
+移住計画はこれから <var>Q</var> 日間にわたって実行される．
+<var>j</var> 日目 (<var>1\leqq j \leqq Q</var>) には次の <var>3</var> 種類のうちいずれか <var>1</var> つのイベントが発生する．</p>
+<ul>
+<li>
+<p><strong>移住</strong><br />
+  その時点で危険度 <var>X_j</var> の街に住んでいるビーバー全員が，各々が住んでいる街から何本かの道路を通ってたどり着くことのできる危険度 <var>Y_j</var> の街へ移住する．ここで，<var>0\leqq Y_j &lt; X_j</var> が保証される．JOI 国の構造上，各ビーバーについて，移住先が一意に定まることに注意せよ．</p>
+</li>
+<li>
+<p><strong>移民受け入れ</strong><br />
+  JOI 国外からの移民を受け入れることで，街 <var>A_j</var> に住むビーバーの数が <var>L_j</var> だけ増加する．</p>
+</li>
+<li>
+<p><strong>調査</strong><br />
+  その時点で街 <var>B_j</var> に住んでいるビーバーの数を調査する．</p>
+</li>
+</ul>
+<p>ビ太郎の部下であるあなたは，各調査イベントにおいて実際にその街を訪れなくとも移住計画の情報のみによってビーバーの数を計算できることに気づいた．</p>
+<p>JOI 国の構造，現在住んでいるビーバーの数，および移住計画についての情報が与えられたとき，各調査イベントの結果を計算するプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は以下の形式で標準入力から与えられる．</p>
+<pre><var>N</var>
+<var>P_2</var> <var>P_3</var> <var>\cdots</var> <var>P_N</var>
+<var>K_1</var> <var>K_2</var> <var>\cdots</var> <var>K_N</var>
+<var>Q</var>
+<var>(\text{Query }1)</var>
+<var>(\text{Query }2)</var>
+<var>\vdots</var>
+<var>(\text{Query }Q)</var>
+</pre>
+<p>各 <var>(\text{Query }j)</var> (<var>1\leqq j \leqq Q</var>) にはいくつかの整数が空白区切りで書かれている．そのうち <var>1</var> 個目の整数を <var>T_j</var> とすると，この行の内容は次のいずれかである．</p>
+<ul>
+<li><var>T_j = 1</var> のとき，この行には続いて，<var>2</var> つの整数 <var>X_j, Y_j</var> がこの順に書かれている．これは <var>j</var> 日目のイベントが移住イベントで，その時点で危険度 <var>X_j</var> の街に住んでいるビーバー全員が，各々が住んでいる街から何本かの道路を通ってたどり着くことのできる危険度 <var>Y_j</var> の街へ移住することを表す．</li>
+<li><var>T_j = 2</var> のとき，この行には続いて，<var>2</var> つの整数 <var>A_j, L_j</var> がこの順に書かれている．これは <var>j</var> 日目のイベントが移民受け入れイベントで，街 <var>A_j</var> に住むビーバーの数が <var>L_j</var> だけ増加することを表す．</li>
+<li><var>T_j = 3</var> のとき，この行には続いて，<var>1</var> つの整数 <var>B_j</var> が書かれている．これは <var>j</var> 日目のイベントが調査イベントで，その時点で街 <var>B_j</var> に住んでいるビーバーの数を調査することを表す．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p><var>j</var> 日目のイベントが調査イベント，つまり <var>T_j = 3</var> である <var>j</var> (<var>1 \leqq j \leqq Q</var>) それぞれに対して，調査イベントの結果を標準出力に順に <var>1</var> 行ずつ出力せよ．</p>
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<ul>
+<li><var>2 \leqq N \leqq 2\,000\,000</var>．</li>
+<li><var>1 \leqq P_i &lt; i</var> (<var>2 \leqq i \leqq N</var>)．</li>
+<li><var>0 \leqq K_i \leqq 100</var> (<var>1 \leqq i \leqq N</var>)．</li>
+<li><var>1 \leqq Q \leqq 2\,000\,000</var>．</li>
+<li><var>T_j</var> は <var>1, 2, 3</var> のいずれかである (<var>1\leqq j \leqq Q</var>)．</li>
+<li><var>T_j=1</var> のとき，<var>0 \leqq Y_j &lt; X_j \leqq N-1</var> (<var>1\leqq j \leqq Q</var>)．</li>
+<li><var>T_j=2</var> のとき，<var>1\leqq A_j \leqq N</var>，<var>1 \leqq L_j \leqq 100</var> (<var>1\leqq j \leqq Q</var>)．</li>
+<li><var>T_j=3</var> のとき， <var>1 \leqq B_j \leqq N</var> (<var>1\leqq j \leqq Q</var>)．</li>
+<li><var>T_j=3</var> となる <var>j</var> (<var>1\leqq j \leqq Q</var>) が <var>1</var> つ以上存在する．</li>
+<li>入力される値はすべて整数である．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<p>街の危険度の最大値を <var>D</var> とする．</p>
+<ol>
+<li>(<var>4</var> 点) <var>D = 1</var>．</li>
+<li>(<var>8</var> 点) <var>N \leqq 20</var>．</li>
+<li>(<var>13</var> 点) <var>D\leqq 20</var>．</li>
+<li>(<var>15</var> 点) <var>T_j\neq 2</var> (<var>1\leqq j\leqq Q</var>)．さらに，<var>T_j = 3</var> となる <var>j</var> (<var>1\leqq j\leqq Q</var>) の個数は <var>5</var> 以下．</li>
+<li>(<var>15</var> 点) <var>T_j = 3</var> となる <var>j</var> (<var>1\leqq j\leqq Q</var>) の個数は <var>5</var> 以下．</li>
+<li>(<var>27</var> 点) <var>T_j\neq 2</var> (<var>1\leqq j\leqq Q</var>)．</li>
+<li>(<var>18</var> 点) 追加の制約はない．</li>
+</ol>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>4
+1 1 2
+1 3 4 3
+6
+3 1
+1 1 0
+3 1
+3 2
+1 2 1
+3 2
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>1
+8
+0
+3
+</pre>
+<p>最初，街 <var>1,2,3,4</var> にはそれぞれ <var>1,3,4,3</var> 匹のビーバーが住んでいる．
+また，各街の危険度はそれぞれ <var>0,1,1,2</var> である．</p>
+<p><var>1</var> 日目は調査イベントが発生する．
+したがって，<var>1</var> 行目にはその時点で街 <var>1</var> に住むビーバーの数である <var>1</var> を出力する．</p>
+<p><var>2</var> 日目は移住イベントが発生する．
+その時点で街 <var>2</var> に住んでいるビーバーは街 <var>1</var> に移動する．
+また，その時点で街 <var>3</var> に住んでいるビーバーも街 <var>1</var> に移動する．
+<var>2</var> 日目の終了時点で，街 <var>1,2,3,4</var> にはそれぞれ <var>8,0,0,3</var> 匹のビーバーが住んでいる．</p>
+<p><var>3</var> 日目は調査イベントが発生する．
+したがって，<var>2</var> 行目にはその時点で街 <var>1</var> に住むビーバーの数である <var>8</var> を出力する．</p>
+<p><var>4</var> 日目は調査イベントが発生する．
+したがって，<var>3</var> 行目にはその時点で街 <var>2</var> に住むビーバーの数である <var>0</var> を出力する．</p>
+<p><var>5</var> 日目は移住イベントが発生する．
+その時点で街 <var>4</var> に住んでいるビーバーは街 <var>2</var> に移動する．
+<var>5</var> 日目の終了時点で，街 <var>1,2,3,4</var> にはそれぞれ <var>8,3,0,0</var> 匹のビーバーが住んでいる．</p>
+<p><var>6</var> 日目は調査イベントが発生する．
+したがって，<var>4</var> 行目にはその時点で街 <var>2</var> に住むビーバーの数である <var>3</var> を出力する．</p>
+<p>この入力例は小課題 <var>2,3,4,5,6,7</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>3
+1 1
+3 1 4
+11
+2 2 5
+1 2 0
+3 1
+1 1 0
+3 1
+3 2
+2 3 4
+3 3
+1 1 0
+3 3
+3 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>3
+13
+0
+4
+0
+17
+</pre>
+<p>最初，街 <var>1,2,3</var> にはそれぞれ <var>3,1,4</var> 匹のビーバーが住んでいる．
+また，各街の危険度はそれぞれ <var>0,1,1</var> である．</p>
+<p><var>1</var> 日目は移民受け入れイベントが発生する．
+街 <var>2</var> に住むビーバーの数が <var>5</var> だけ増える．
+<var>1</var> 日目の終了時点で，街 <var>1,2,3</var> にはそれぞれ <var>3,6,4</var> 匹のビーバーが住んでいる．</p>
+<p><var>2</var> 日目は移住イベントが発生する．
+その時点で危険度が <var>2</var> の街に住んでいるビーバーはいないため，移動は起こらない．</p>
+<p><var>3</var> 日目は調査イベントが発生する．
+したがって，<var>1</var> 行目にはその時点で街 <var>1</var> に住むビーバーの数である <var>3</var> を出力する．</p>
+<p><var>4</var> 日目は移住イベントが発生する．
+その時点で街 <var>2</var> に住んでいるビーバーは街 <var>1</var> に移動する．
+また，その時点で街 <var>3</var> に住んでいるビーバーも街 <var>1</var> に移動する．
+<var>4</var> 日目の終了時点で，街 <var>1,2,3</var> にはそれぞれ <var>13,0,0</var> 匹のビーバーが住んでいる．</p>
+<p><var>5</var> 日目は調査イベントが発生する．
+したがって，<var>2</var> 行目にはその時点で街 <var>1</var> に住むビーバーの数である <var>13</var> を出力する．</p>
+<p><var>6</var> 日目は調査イベントが発生する．
+したがって，<var>3</var> 行目にはその時点で街 <var>2</var> に住むビーバーの数である <var>0</var> を出力する．</p>
+<p><var>7</var> 日目以降も同様にイベントが発生するが，ここでは説明を省略する．</p>
+<p>この入力例は小課題 <var>1,2,3,7</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>7
+1 2 1 3 3 2
+5 2 8 9 4 0 5
+10
+1 3 1
+2 4 10
+3 2
+1 6 3
+1 2 0
+3 1
+3 4
+2 5 6
+3 5
+3 3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>6
+18
+19
+6
+0
+</pre>
+<p>この入力例は小課題 <var>2,3,5,7</var> の制約を満たす．</p></section>
+</div>
+</span>
+</span>

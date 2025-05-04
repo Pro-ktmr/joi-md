@@ -1,0 +1,186 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>JOI 国には <var>N</var> 個の都市があり，<var>1</var> から <var>N</var> までの番号が付いている．また，都市と都市を一方向に結ぶ <var>M</var> 本のバス路線があり，<var>1</var> から <var>M</var> までの番号が付いている．バス路線 <var>i</var> (<var>1 \leqq i \leqq M</var>) は都市 <var>U_i</var> から都市 <var>V_i</var> へ向けて運行されており，運賃は <var>C_i</var> 円である．バス路線 <var>i</var> (<var>1 \leqq i \leqq M</var>) では，都市 <var>U_i</var> 以外で乗ったり，都市 <var>V_i</var> 以外で降りることはできない．ある都市からある都市へ向けて運行されるバス路線が複数存在するかもしれない．</p>
+<p>JOI 国では間もなくオリンピックが開催される．JOI 国の運輸大臣である <var>K</var> 理事長は，バス路線を高々 <var>1</var> つ選び，オリンピック期間中，運賃を変更せずにそのバス路線の運行方向を反転させることにした．つまり，バス路線 <var>i</var> (<var>1 \leqq i \leqq M</var>) を選んだ場合，オリンピック期間中，そのバス路線は都市 <var>U_i</var> から都市 <var>V_i</var> へ向けて運行されるのではなく，都市 <var>V_i</var> から都市 <var>U_i</var> へ向けて運行されるようになる．ただし，バス路線 <var>i</var> の運行方向の反転には <var>D_i</var> 円かかり，これは K 理事長のポケットマネーにより賄われる．また，混乱を避けるため，オリンピック期間の途中でバス路線を反転させることはできない．</p>
+<p>運輸大臣である K 理事長は，オリンピック期間中，都市 <var>1</var> と都市 <var>N</var> の間をバス路線を乗り継いで往復する予定である．運行方向を反転させるバス路線をうまく選ぶことで，往復の合計運賃と運行方向の反転の費用との和を最小化したい．</p>
+<p>都市の個数と，バス路線の情報が与えられたとき，運行方向を反転させるバス路線をうまく選ぶことで，都市 <var>1</var> と都市 <var>N</var> の間の往復の合計運賃と，運行方向の反転の費用との和の最小値を求めるプログラムを作成せよ．ただし，どのようにバス路線を選んでも都市 <var>1</var> と都市 <var>N</var> の間を往復することができない場合は，代わりに <var>−1</var> を出力せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は以下の形式で標準入力から与えられる．入力される値はすべて整数である．</p>
+<pre><var>N</var> <var>M</var>
+<var>U_1</var> <var>V_1</var> <var>C_1</var> <var>D_1</var>
+<var>\vdots</var>
+<var>U_M</var> <var>V_M</var> <var>C_M</var> <var>D_M</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>都市 <var>1</var> と都市 <var>N</var> の間の往復の合計運賃と，運行方向の反転の費用との和の最小値を，標準出力に <var>1</var> 行で出力せよ．ただし，どのようにバス路線を選んでも都市 <var>1</var> と都市 <var>N</var> の間を往復することができない場合は，代わりに <var>−1</var> を出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<ul>
+<li><var>2 \leqq N \leqq 200</var>．</li>
+<li><var>1 \leqq M \leqq 50\,000</var>．</li>
+<li><var>1 \leqq U_i \leqq N</var> (<var>1 \leqq i \leqq M</var>)．</li>
+<li><var>1 \leqq V_i \leqq N</var> (<var>1 \leqq i \leqq M</var>)．</li>
+<li><var>U_i \neq V_i</var> (<var>1 \leqq i \leqq M</var>)．</li>
+<li><var>0 \leqq C_i \leqq 1\,000\,000</var> (<var>1 \leqq i \leqq M</var>)．</li>
+<li><var>0 \leqq D_i \leqq 1\,000\,000\,000</var> (<var>1 \leqq i \leqq M</var>)．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<ol>
+<li>(<var>5</var> 点) <var>M \leqq 1\,000</var>．</li>
+<li>(<var>11</var> 点) <var>M</var> は偶数，<var>U_{2i − 1} = U_{2i}</var>，<var>V_{2i − 1} = V_{2i}</var>，<var>C_{2i − 1} = C_{2i}</var> (<var>1 \leqq i \leqq \frac{M}{2}</var>)．</li>
+<li>(<var>21</var> 点) <var>C_i = 0</var> (<var>1 \leqq i \leqq M</var>)．</li>
+<li>(<var>63</var> 点) 追加の制約はない．</li>
+</ol>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>4 5
+1 2 4 4
+1 3 2 1
+4 3 1 2
+4 1 6 1
+2 4 2 5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>10
+</pre>
+<p>バス路線 <var>2</var> の運行方向を費用 <var>1</var> で反転させると，都市 <var>1</var> から都市 <var>4</var> への移動にかかる運賃は最小で <var>6</var>，都市 <var>4</var> から都市 <var>1</var> への移動にかかる運賃は最小で <var>3</var> となり，都市 <var>1</var> と都市 <var>4</var> の間の往復の合計運賃と，運行方向の反転の費用との和は <var>10</var> となる．</p>
+<p>都市 <var>1</var> と都市 <var>4</var> の間の往復の合計運賃と，運行方向の反転の費用との和を <var>10</var> より小さくすることはできないので，<var>10</var> を出力する．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>4 10
+1 2 4 4
+1 2 4 4
+1 3 2 1
+1 3 2 1
+4 3 1 2
+4 3 1 2
+4 1 6 1
+4 1 6 1
+2 4 2 5
+2 4 2 5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>10
+</pre>
+<p>この入出力例は小課題 <var>2</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>4 4
+1 2 0 4
+1 3 0 1
+4 3 0 2
+4 1 0 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>2
+</pre>
+<p>この入出力例は小課題 <var>3</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 4</h3>
+<pre>4 5
+1 2 4 4
+1 3 2 4
+4 3 1 5
+4 1 6 1
+2 4 2 5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 4</h3>
+<pre>12
+</pre>
+<p>バス路線の運行方向を反転させなくてもよい．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 5</h3>
+<pre>4 5
+2 1 4 4
+1 3 2 1
+4 3 1 2
+4 3 6 1
+2 4 2 5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 5</h3>
+<pre>-1
+</pre>
+<p>この入力例では，都市 <var>4</var> から都市 <var>3</var> へと運行されるバス路線が <var>2</var> 本存在する．</p></section>
+</div>
+</span>
+</span>

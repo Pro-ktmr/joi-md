@@ -1,0 +1,157 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>JOI 平原は東西方向に広がるとても大きな平原である．この平原は数直線と見なすことができ，各地点は東向きを正とする座標であらわされる．JOI 平原は冬を迎え <var>N</var> 個の雪玉が異なる座標に作られた．雪玉には西から順に <var>1</var> から <var>N</var> までの番号が付いている．最初，雪玉 <var>i</var> (<var>1 \leqq i \leqq N</var>) の座標は整数 <var>X_i</var> であった．</p>
+<p>また JOI 平原は冬に強い風が吹くことで知られている．あなたは <var>Q</var> 日間の風の観測データを入手した．<var>j</var> 日目 (<var>1 \leqq j \leqq Q</var>) の風のデータは整数 <var>W_j</var> であらわされる．<var>W_j</var> が負のときは西向きに，<var>W_j</var> が負でないときは東向きに，強さ <var>\lvert W_j \rvert</var> の風が吹いたことを意味する．</p>
+<p>風が吹くと，雪玉は風と同じ向きに，風の強さと同じ距離だけ転がる．すなわち <var>j</var> 日目 (<var>1 \leqq j \leqq Q</var>) の始めに座標 <var>x</var> に雪玉があったとき，その雪玉は座標 <var>x</var> から座標 <var>x + W_j</var> まで転がる．<var>j</var> 日目の終わりには，その雪玉の座標は <var>x + W_j</var> になる．ただし，各日においてすべての雪玉が同時に，同じ速さで転がる．</p>
+<p>最初，JOI 平原全体に雪が積もっていた．雪が積もっている範囲を雪玉が転がると，雪が付着し，雪玉の重さが増え，その範囲の雪はなくなる．すなわち，<var>a</var>を整数とし，座標 <var>a</var> から座標 <var>a + 1</var> までの範囲に雪が残っているとする．このとき，雪玉がこの範囲を転がると，その雪玉の重さが <var>1</var> 増えて，座標 <var>a</var> から座標 <var>a + 1</var> までの範囲の雪がなくなる．ただし，雪が残っていない範囲を雪玉が転がったとしても，雪玉の重さは変わらない．</p>
+<p>最初，すべての雪玉の重さは <var>0</var> であった．また，観測した <var>Q</var> 日間に新たに雪は降らなかった．</p>
+<p>あなたは <var>Q</var> 日目の終わりにおける雪玉の重さを知りたい．</p>
+<p>雪玉の最初の座標，<var>Q</var> 日間の風の観測データが与えられたとき，<var>Q</var> 日目の終わりにおける，それぞれの雪玉の重さを求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は以下の形式で標準入力から与えられる．入力される値はすべて整数である．</p>
+<pre><var>N</var> <var>Q</var>
+<var>X_1</var> <var>\cdots</var> <var>X_N</var>
+<var>W_1</var>
+<var>\vdots</var>
+<var>W_Q</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に <var>N</var> 行で出力せよ．<var>i</var> 行目 (<var>1 \leqq i \leqq N</var>) には <var>Q</var> 日目の終わりにおける，雪玉 <var>i</var> の重さを出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<ul>
+<li><var>1 \leqq N \leqq 200\,000</var>．</li>
+<li><var>1 \leqq Q \leqq 200\,000</var>．</li>
+<li><var>\lvert X_i \rvert \leqq 1\,000\,000\,000\,000 \ (= 10^{12})</var> (<var>1 \leqq i \leqq N</var>)．</li>
+<li><var>X_i &lt; X_{i + 1}</var> (<var>1 \leqq i \leqq N - 1</var>)．</li>
+<li><var>\lvert W_j \rvert \leqq 1\,000\,000\,000\,000 \ (= 10^{12})</var> (<var>1 \leqq j \leqq Q</var>)．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<ol>
+<li>(<var>33</var> 点) <var>N \leqq 2\,000</var>，<var>Q \leqq 2\,000</var>．</li>
+<li>(<var>67</var> 点) 追加の制約はない．</li>
+</ol>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>4 3
+-2 3 5 8
+2
+-4
+7
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>5
+4
+2
+6
+</pre>
+<p>この入力例では，雪玉の座標と重さは以下のように変化する．</p>
+<ul>
+<li>最初，各雪玉の座標は，雪玉 <var>1</var> から順に <var>-2, 3, 5, 8</var> である．各雪玉の重さは，雪玉 <var>1</var> から順に <var>0, 0, 0, 0</var> である．</li>
+<li><var>1</var> 日目には東向きに強さ <var>2</var> の風が吹く．<var>1</var> 日目の終わりにおける，各雪玉の座標は，雪玉 <var>1</var> から順に <var>0, 5, 7, 10</var> である．各雪玉の重さは，雪玉 <var>1</var> から順に <var>2, 2, 2, 2</var> である．</li>
+<li><var>2</var> 日目には西向きに強さ <var>4</var> の風が吹く．<var>2</var> 日目の終わりにおける，各雪玉の座標は，雪玉 <var>1</var> から順に <var>-4, 1, 3, 6</var> である．各雪玉の重さは，雪玉 <var>1</var> から順に <var>4, 4, 2, 3</var> である．</li>
+<li><var>3</var> 日目には東向きに強さ <var>7</var> の風が吹く．<var>3</var> 日目の終わりにおける，各雪玉の座標は，雪玉 <var>1</var> から順に <var>3, 8, 10, 13</var> である．各雪玉の重さは，雪玉 <var>1</var> から順に <var>5, 4, 2, 6</var> である．</li>
+</ul>
+<p>よって<var>3</var> 日目の終わりにおける，各雪玉の重さ <var>5, 4, 2, 6</var> を順に出力する．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>1 4
+1000000000000
+1000000000000
+-1000000000000
+-1000000000000
+-1000000000000
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>3000000000000
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>10 10
+-56 -43 -39 -31 -22 -5 0 12 18 22
+-3
+0
+5
+-4
+-2
+10
+-13
+-1
+9
+6
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>14
+8
+7
+9
+11
+10
+9
+8
+5
+10
+</pre></section>
+</div>
+</span>
+</span>

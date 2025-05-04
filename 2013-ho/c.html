@@ -1,0 +1,168 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>あなたは，ある大きな屋敷に迷い込んでしまった．この屋敷は正方形の部屋が東西南北に格子状に，東西方向に <var>M</var> 列，南北方向に <var>N</var> 行の合計 <var>M \times N</var> 個並んだ構造をしている．西から <var>x</var> 列目 (<var>1 \leqq x \leqq M</var>)，南から <var>y</var> 行目 (<var>1 \leqq y \leqq N</var>) にある部屋を <var>(x, y)</var> で表す．</p>
+<p>東西南北に隣り合う <var>2</var> 部屋の間は，壁の中央にある扉により結ばれている．それぞれの扉は，閉じていて通行不可能な状態か，開いていて通行可能な状態のいずれかにある．扉が開いているとき，それらの部屋の中央間を移動するのに <var>1</var> 分間かかる．また，いくつかの部屋の中央にはスイッチがあり，スイッチを <var>1</var> 分間押し続けると，屋敷内のすべての扉の開閉の状態が切り替わる．</p>
+<p>今，東西に隣り合う <var>2</var> 部屋を結ぶすべての扉は閉じていて，南北に隣り合う <var>2</var> 部屋を結ぶすべての扉は開いている．あなたは今部屋 <var>(1, 1)</var> の中央にいて，部屋 <var>(M, N)</var> の中央まで最短時間で移動したい．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p>屋敷の大きさ <var>M, N</var> および，スイッチのある <var>K</var> 個の部屋の位置 <var>(X_1, Y_1), (X_2, Y_2), \ldots, (X_K, Y_K)</var> が与えられる．東西に隣り合う <var>2</var> 部屋を結ぶすべての扉は閉じていて，南北に隣り合う <var>2</var> 部屋を結ぶすべての扉は開いている状態から始めて，部屋 <var>(1, 1)</var> の中央から部屋 <var>(M, N)</var> の中央まで移動するのに最短で何分かかるかを求めるプログラムを作成せよ．ただし，部屋 <var>(M, N)</var> に辿り着くことができないときはそれを指摘せよ．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><var>2 \leqq M \leqq 100\,000</var>&emsp;</td>
+<td>屋敷の東西方向の部屋の個数</td>
+</tr>
+<tr>
+<td><var>2 \leqq N \leqq 100\,000</var>&emsp;</td>
+<td>屋敷の南北方向の部屋の個数</td>
+</tr>
+<tr>
+<td><var>1 \leqq K \leqq 200\,000</var>&emsp;</td>
+<td>スイッチのある部屋の個数</td>
+</tr>
+<tr>
+<td><var>1 \leqq X_i \leqq M</var>&emsp;</td>
+<td>スイッチのある部屋の東西方向の位置</td>
+</tr>
+<tr>
+<td><var>1 \leqq Y_i \leqq N</var>&emsp;</td>
+<td>スイッチのある部屋の南北方向の位置</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下のデータを読み込め．</p>
+<ul>
+<li><var>1</var> 行目には，整数 <var>M, N, K</var> が空白を区切りとして書かれている．<var>M</var> は屋敷の東西方向の部屋の個数，<var>N</var> は屋敷の南北方向の部屋の個数，<var>K</var> はスイッチのある部屋の個数を表す．</li>
+<li>続く <var>K</var> 行のうちの <var>i</var> 行目 (<var>1 \leqq i \leqq K</var>) には，整数 <var>X_i, Y_i</var> が空白を区切りとして書かれている．これは，部屋 <var>(X_i, Y_i)</var> の中央にスイッチがあることを表す．<var>K</var> 個の組 <var>(X_1, Y_1), (X_2, Y_2), \ldots, (X_K, Y_K)</var> は互いに異なる．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，移動に最短で何分かかるかを表す整数を <var>1</var> 行で出力せよ．ただし，部屋 <var>(M, N)</var> に辿り着くことができないときは代わりに整数 <var>-1</var> を出力せよ．</p>
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>採点基準</h3>
+<p>採点用データのうち，配点の <var>20</var> %分については，<var>M \leqq 1\,000</var>，<var>N \leqq 1\,000</var> を満たす．</p>
+<p>採点用データのうち，配点の <var>30</var> %分については，<var>K \leqq 2\,000</var> を満たす．</p>
+<p>採点用データのうち，配点の <var>50</var> %分については，これら <var>2</var> つの条件の少なくとも一方を満たす．また，これら <var>2</var> つの条件の両方を満たすような採点用データはない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>3 2 1
+1 2
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>4
+</pre>
+<p>この例では，以下の行動によって <var>4</var> 分間で部屋 <var>(1, 1)</var> の中央から部屋 <var>(3, 2)</var> の中央へ移動することができ，これが最短である．</p>
+<ul>
+<li>部屋 <var>(1, 2)</var> の中央へ移動する．</li>
+<li>部屋 <var>(1, 2)</var> の中央のスイッチを押す．</li>
+<li>部屋 <var>(2, 2)</var> の中央へ移動する．</li>
+<li>部屋 <var>(3, 2)</var> の中央へ移動する．</li>
+</ul>
+<p>このときの屋敷の様子が以下の図に表されている．図では右方向が東，上方向が北であり，×印はあなたの位置，○印はスイッチを表す．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2013ho/088a24305fc2470b9ff17a0cd60c556b.png" /></p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>3 2 1
+2 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>-1
+</pre>
+<p>この例では，あなたは部屋 <var>(3, 2)</var> に辿り着くことができない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>8 9 15
+3 1
+3 2
+3 7
+3 8
+1 1
+4 5
+4 3
+5 6
+5 8
+6 3
+6 2
+7 5
+8 9
+8 6
+8 5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>25
+</pre>
+<p>この例では，最初の屋敷の様子は以下の図のようになっている．部屋 <var>(1, 1)</var> や部屋 <var>(M, N)</var> の中央にスイッチがある可能性もあることに注意せよ．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2013ho/128c91a07269803fa720723600260cea.png" /></p></section>
+</div>
+</span>
+</span>

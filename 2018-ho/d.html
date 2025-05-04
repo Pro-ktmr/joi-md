@@ -1,0 +1,238 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>JOI 君が住む都市には <var>N</var> 個の駅があり，それぞれ <var>1, 2, \ldots, N</var> の番号が付けられている．また，<var>M</var> 本の鉄道路線があり，それぞれ <var>1, 2, \ldots, M</var> の番号が付けられている．鉄道路線 <var>i</var> (<var>1 \leqq i \leqq M</var>) は駅 <var>A_i</var> と駅 <var>B_i</var> を双方向に結んでおり，乗車運賃は <var>C_i</var> 円である．</p>
+<p>JOI 君は駅 <var>S</var> の近くに住んでおり，駅 <var>T</var> の近くの IOI 高校に通っている．そのため，両者を結ぶ定期券を購入することにした．定期券を購入する際には，駅 <var>S</var> と駅 <var>T</var> の間を最小の運賃で移動する経路を一つ指定しなければならない．この定期券を用いると，指定した経路に含まれる鉄道路線は双方向に自由に乗り降りできる．</p>
+<p>JOI 君は，駅 <var>U</var> および駅 <var>V</var> の近くにある書店もよく利用している．そこで，駅 <var>U</var> から駅 <var>V</var> への移動にかかる運賃ができるだけ小さくなるように定期券を購入したいと考えた．</p>
+<p>駅 <var>U</var> から駅 <var>V</var> への移動の際は，まず駅 <var>U</var> から駅 <var>V</var> への経路を <var>1</var> つ選ぶ．この経路に含まれる鉄道路線 <var>i</var> において支払うべき運賃は，</p>
+<ul>
+<li>鉄道路線 <var>i</var> が定期券を購入する際に指定した経路に含まれる場合，<var>0</var> 円</li>
+<li>鉄道路線 <var>i</var> が定期券を購入する際に指定した経路に含まれない場合，<var>C_i</var> 円</li>
+</ul>
+<p>となる．この運賃の合計が，駅 <var>U</var> から駅 <var>V</var> への移動にかかる運賃である．定期券を購入する際に指定する経路をうまく選んだときの，駅 <var>U</var> から駅 <var>V</var> への移動にかかる運賃の最小値を求めたい．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p>定期券を購入する際に指定する経路をうまく選んだときの，駅 <var>U</var> から駅 <var>V</var> への移動にかかる運賃の最小値を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下の入力を読み込め．</p>
+<ul>
+<li><var>1</var> 行目には，<var>2</var> 個の整数 <var>N, M</var> が書かれている．これらは，JOI 君が住む都市に <var>N</var> 個の駅と <var>M</var> 本の鉄道路線があることを表す．</li>
+<li><var>2</var> 行目には，<var>2</var> 個の整数 <var>S, T</var> が書かれている．これらは，JOI 君が駅 <var>S</var> から駅 <var>T</var> への定期券を購入することを表す．</li>
+<li><var>3</var> 行目には，<var>2</var> 個の整数 <var>U, V</var> が書かれている．これらは，JOI 君が駅 <var>U</var> から駅 <var>V</var> への移動にかかる運賃を最小化したいことを表す．</li>
+<li>続く <var>M</var> 行のうちの <var>i</var> 行目 (<var>1 \leqq i \leqq M</var>) には，<var>3</var> 個の整数 <var>A_i</var>, <var>B_i</var>, <var>C_i</var> が書かれている．これらは，鉄道路線 <var>i</var> が駅 <var>A_i</var> と駅 <var>B_i</var> を双方向に結び，その運賃が <var>C_i</var> 円であることを表す．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，定期券を購入する際に駅 <var>S</var> から駅 <var>T</var> への経路をうまく指定したときの，駅 <var>U</var> から駅 <var>V</var> への移動にかかる運賃の最小値を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<p>すべての入力データは以下の条件を満たす．</p>
+<ul>
+<li><var>2 \leqq N \leqq 100\,000</var>．</li>
+<li><var>1 \leqq M \leqq 200\,000</var>．</li>
+<li><var>1 \leqq S \leqq N</var>．</li>
+<li><var>1 \leqq T \leqq N</var>．</li>
+<li><var>1 \leqq U \leqq N</var>．</li>
+<li><var>1 \leqq V \leqq N</var>．</li>
+<li><var>S \neq T</var>．</li>
+<li><var>U \neq V</var>．</li>
+<li><var>S \neq U</var> または <var>T \neq V</var>．</li>
+<li>どの駅から他のどの駅へも <var>1</var> 本以上の鉄道路線を用いて到達できる．</li>
+<li><var>1 \leqq A_i &lt; B_i \leqq N</var> (<var>1 \leqq i \leqq M</var>)．</li>
+<li><var>1 \leqq i &lt; j \leqq M</var> に対し，<var>A_i \neq A_j</var> または <var>B_i \neq B_j</var>．</li>
+<li><var>1 \leqq Ci \leqq 1\,000\,000\,000</var> (<var>1 \leqq i \leqq M</var>)．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<h4>小課題 1 [16 点]</h4>
+<ul>
+<li><var>S = U</var> を満たす．</li>
+</ul>
+<h4>小課題 2 [15 点]</h4>
+<ul>
+<li>駅 <var>S</var> から駅 <var>T</var> へ最小の運賃で移動するときに用いることができる経路は <var>1</var> 通りしかない．</li>
+</ul>
+<h4>小課題 3 [24 点]</h4>
+<ul>
+<li><var>N \leqq 300</var> を満たす．</li>
+</ul>
+<h4>小課題 4 [45 点]</h4>
+<ul>
+<li>追加の制限はない．</li>
+</ul>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>6 6
+1 6
+1 4
+1 2 1
+2 3 1
+3 5 1
+2 4 3
+4 5 2
+5 6 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>2
+</pre>
+<p>この入力例では，定期券を買う際に指定できる経路は駅 <var>1</var> → 駅 <var>2</var> → 駅 <var>3</var> → 駅 <var>5</var> → 駅 <var>6</var> という経路に限られる．</p>
+<p>駅 <var>1</var> から駅 <var>4</var> への移動にかかる運賃を最小化するには，駅 <var>1</var> → 駅 <var>2</var> → 駅 <var>3</var> → 駅 <var>5</var> → 駅 <var>4</var> という経路を選べばよい．この経路を選んだ場合，各鉄道路線において支払うべき運賃は，</p>
+<ul>
+<li>駅 <var>4</var> と駅 <var>5</var> を結ぶ鉄道路線 <var>5</var> においては，<var>2</var> 円．</li>
+<li>それ以外の鉄道路線においては，<var>0</var> 円．</li>
+</ul>
+<p>となるので，かかる運賃の合計は <var>2</var> 円となる．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>6 5
+1 2
+3 6
+1 2 1000000000
+2 3 1000000000
+3 4 1000000000
+4 5 1000000000
+5 6 1000000000
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>3000000000
+</pre>
+<p>この入力例では，駅 <var>3</var> から駅 <var>6</var> への移動に定期券を用いない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>8 8
+5 7
+6 8
+1 2 2
+2 3 3
+3 4 4
+1 4 1
+1 5 5
+2 6 6
+3 7 7
+4 8 8
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>15
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 4</h3>
+<pre>5 5
+1 5
+2 3
+1 2 1
+2 3 10
+2 4 10
+3 5 10
+4 5 10
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 4</h3>
+<pre>0
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 5</h3>
+<pre>10 15
+6 8
+7 9
+2 7 12
+8 10 17
+1 3 1
+3 8 14
+5 7 15
+2 3 7
+1 10 14
+3 6 12
+1 5 10
+8 9 1
+2 9 7
+1 4 1
+1 8 1
+2 4 7
+5 6 16
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 5</h3>
+<pre>19
+</pre></section>
+</div>
+</span>
+</span>

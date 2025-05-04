@@ -1,0 +1,150 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>情報オリンピック日本委員会では，台湾大会に向かう選手を応援するために新しい JOI 旗を作成することにした．</p>
+<p>JOI 旗は，正方形が縦に <var>M</var> 行，横に <var>N</var> 列並んだ形をしており，各正方形には <code>J</code>，<code>O</code>，<code>I</code> のいずれかの文字が <var>1</var> つずつ書かれている．</p>
+<p><img alt="JOI 旗の例" src="https://img.atcoder.jp/joi2014ho/1-1.jpg" /></p>
+<p>情報オリンピック日本委員会は JOI 旗とは別に JOI 紋章というものを決めている．JOI 紋章は，正方形が縦に <var>2</var> 行，横に <var>2</var> 列並んだ形をしており，各正方形には <code>J</code>，<code>O</code>，<code>I</code> のいずれかの文字が <var>1</var> つずつ書かれている．</p>
+<p><img alt="JOI 紋章の例" src="https://img.atcoder.jp/joi2014ho/1-2.jpg" /></p>
+<p>JOI 旗に含まれる JOI 紋章の個数とは，JOI 旗に含まれる縦 <var>2</var> 行，横 <var>2</var> 列の領域のうち，その領域の <code>J</code>，<code>O</code>，<code>I</code> の配置が JOI 紋章と (回転や裏返しをせずに) 一致しているものの個数のことである．条件を満たす縦 <var>2</var> 行，横 <var>2</var> 列の領域同士が重なっていてもそれらを別々に数えるものとする．</p>
+<p>情報オリンピック日本委員会は古い JOI 旗と <var>1</var> 枚の白紙を持っている．白紙は JOI 旗を構成する正方形 <var>1</var> 個分の大きさで，<code>J</code>，<code>O</code>，<code>I</code> のうち好きな <var>1</var> 文字を書き込むことができる．情報オリンピック日本委員会は以下のいずれか <var>1</var> つの操作をして，新しい JOI 旗を作成することにした．</p>
+<ul>
+<li>古い JOI 旗に対して何も操作せず，そのまま新しい JOI 旗とする．白紙は使用しない．</li>
+<li>白紙に <var>1</var> 文字書き込み，古い JOI 旗のいずれかの正方形に重ねて貼り付けることで古い JOI 旗のうち <var>1</var> 箇所を変更する．変更後の JOI 旗を新しい JOI 旗とする．</li>
+</ul>
+<p>情報オリンピック日本委員会は新しい JOI 旗に含まれる JOI 紋章の個数をできるだけ多くしたいと思っている．あなたは新しい JOI 旗に含まれる JOI 紋章の個数の最大値を求めることになった．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p>古い JOI 旗と JOI 紋章の情報が与えられたとき，新しい JOI 旗に含まれる JOI 紋章の個数の最大値を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下のデータを読み込め．</p>
+<ul>
+<li><var>1</var> 行目には <var>2</var> 個の整数 <var>M, N</var> が空白を区切りとして書かれている．これは JOI 旗が正方形が縦に <var>M</var> 行，横に <var>N</var> 列並んだ形であることを表している．</li>
+<li>続く <var>M</var> 行の各行には，それぞれ <var>N</var> 文字からなる文字列が書かれている．各文字は <code>J</code>，<code>O</code>，<code>I</code> のいずれかであり，<var>M</var> 行のうち上から <var>i</var> 行目 (<var>1 \leqq i \leqq M</var>) に書かれている文字列の左から <var>j</var> 文字目 (<var>1 \leqq j \leqq N</var>) は古い JOI 旗の上から <var>i</var> 行目，左から <var>j</var> 列目の正方形に書かれている文字を表す．</li>
+<li>続く <var>2</var> 行の各行には，それぞれ <var>2</var> 文字からなる文字列が書かれている．各文字は <code>J</code>，<code>O</code>，<code>I</code> のいずれかであり，<var>2</var> 行のうち上から <var>i</var> 行目 (<var>1 \leqq i \leqq 2</var>) に書かれている文字列の左から <var>j</var> 文字目 (<var>1 \leqq j \leqq 2</var>) は JOI 紋章の上から <var>i</var> 行目，左から <var>j</var> 列目の正方形に書かれている文字を表す．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，新しい JOI 旗に含まれる JOI 紋章の個数の最大値を表す整数を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<p>すべての入力データは以下の条件を満たす．</p>
+<ul>
+<li><var>2 \leqq M \leqq 1\,000</var>．</li>
+<li><var>2 \leqq N \leqq 1\,000</var>．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<h4>小課題 1 [30 点]</h4>
+<p>以下の条件を満たす．</p>
+<ul>
+<li><var>M \leqq 50</var>．</li>
+<li><var>N \leqq 50</var>．</li>
+</ul>
+<h4>小課題 2 [70 点]</h4>
+<p>追加の制限はない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>3 5
+JOIJO
+IJOOO
+IIJIJ
+JO
+IJ
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>3
+</pre>
+<p>古い JOI 旗と JOI 紋章は問題文中の例の通りである．上から <var>2</var> 行目，左から <var>4</var> 列目の正方形を白紙を用いて <code>J</code> に変更すると，次のような形になる．</p>
+<p><img alt="JOI 旗の <var>1</var> 箇所を変更した例" src="https://img.atcoder.jp/joi2014ho/1-3.jpg" /></p>
+<p>このように変更した後の JOI 旗には次に示す <var>3</var> 箇所に JOI 紋章と同じ配置の領域がある．</p>
+<p><img alt="JOI 紋章と同じ配置の領域" src="https://img.atcoder.jp/joi2014ho/1-4.jpg" /></p>
+<p>JOI 紋章と同じ配置の領域が <var>4</var> 箇所以上となる新しい JOI 旗は存在しないので，新しい JOI 旗に含まれる JOI 紋章の個数の最大値は <var>3</var> である．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>2 6
+JOJOJO
+OJOJOJ
+OJ
+JO
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>2
+</pre>
+<p>白紙を使用しなくても最大値が得られる場合があることに注意せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>2 2
+JI
+IJ
+JJ
+JJ
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>0
+</pre>
+<p>この入出力例の場合，考えられるどの新しい JOI 旗においても，JOI 紋章が <var>1</var> つも含まれない．</p></section>
+</div>
+</span>
+</span>

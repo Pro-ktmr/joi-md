@@ -1,0 +1,74 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>オーストラリア大陸の西には，広いインド洋が広がっている．海洋研究者である JOI 氏は，インド洋に生息しているある <var>N</var> 種類の魚の性質について研究している．</p>
+<p>それぞれの魚の種類に対して，海の中に直方体状の生息範囲が定まっている．魚は境界も含めて生息範囲の中のどの場所にも移動できるが，生息範囲の外に出ることは決してない．海の中の点は，<var>3</var> つの実数 <var>(x, y, d)</var> によって表される： <var>(x, y, d)</var> は，上空から見たときにある地点を基準にして東に <var>x</var> ，北に <var>y</var> 進んだ位置であり，海面からの深さが <var>d</var> の点を表す．ただし，海面は平面であるとする．</p>
+<p>JOI 氏は，<var>K</var> 種類以上の魚の生息範囲が重なる場所がどのくらいあるかを知りたい．そのような場所全体の体積を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>1 + N</var> 行からなる．</p>
+<p><var>1</var> 行目には，<var>2</var> つの整数 <var>N, K</var> (<var>1 \leqq K \leqq N \leqq 50</var>) が空白を区切りとして書かれている．これは，魚が <var>N</var> 種類であり，<var>K</var> 種類以上の魚の生息範囲が重なる場所の体積を求めたいことを表す．</p>
+<p>続く <var>N</var> 行のうちの <var>i</var> 行目 (<var>1 \leqq i \leqq N</var>) には，<var>6</var> つの整数 <var>X_{i,1}, Y_{i,1}, D_{i,1}, X_{i,2}, Y_{i,2}, D_{i,2}</var> (<var>0 \leqq X_{i,1} &lt; X_{i,2} \leqq 1\,000\,000 \ (= 10^6)</var>，<var>0 \leqq Y_{i,1} &lt; Y_{i,2} \leqq 1\,000\,000 \ (= 10^6)</var>，<var>0 \leqq D_{i,1} &lt; D_{i,2} \leqq 1\,000\,000 \ (= 10^6)</var>) が書かれている．これは，<var>i</var> 種類目の魚の生息範囲が <var>8</var> 点 <var>(X_{i,1}, Y_{i,1}, D_{i,1})</var>, <var>(X_{i,2}, Y_{i,1}, D_{i,1})</var>, <var>(X_{i,2}, Y_{i,2}, D_{i,1})</var>, <var>(X_{i,1}, Y_{i,2}, D_{i,1})</var>, <var>(X_{i,1}, Y_{i,1}, D_{i,2})</var>, <var>(X_{i,2}, Y_{i,1}, D_{i,2})</var>, <var>(X_{i,2}, Y_{i,2}, D_{i,2})</var>, <var>(X_{i,1}, Y_{i,2}, D_{i,2})</var> を頂点とする直方体であることを表す．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p><var>K</var> 種類以上の魚の生息範囲が重なる場所全体の体積を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>3 2
+30 50 0 50 70 100
+10 20 20 70 90 60
+40 60 20 90 90 70
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>49000
+</pre>
+<p>入出力例 <var>1</var> において，例えば，点 <var>(45, 65, 65)</var> は <var>1</var> 種類目の魚と <var>3</var> 種類目の魚の生息範囲であるので，条件を満たす場所である．一方，点 <var>(25, 35, 45)</var> は <var>2</var> 種類目の魚のみの生息範囲であるので，条件を満たす場所ではない．また，魚の生息範囲は下の図のようになっている．点 <var>O</var> は海面上の基準の地点を表す．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2013yo/2013-yo-t5-fig01.png" /></p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>1 1
+0 0 0 1000000 1000000 1000000
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>1000000000000000000
+</pre></section>
+</div>
+</span>
+</span>

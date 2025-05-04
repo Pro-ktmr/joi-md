@@ -1,0 +1,89 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>JOI 君は友達とゲームをすることにした．このゲームには <var>N</var> 人のプレイヤーが参加する．<var>1</var> 回のゲームのルールは次のようなものである：</p>
+<p>それぞれのプレイヤーは <var>1</var> 以上 <var>100</var> 以下の好きな整数をカードに書いて提出する．各プレイヤーは，自分と同じ数を書いた人が他にいなかった場合，自分の書いた数と同じ得点を得る．自分と同じ数を書いた人が他にいた場合は得点を得られない．</p>
+<p>JOI 君たちはこのゲームを <var>3</var> 回行った．各プレイヤーが <var>3</var> 回のゲームにおいて書いた数が与えられたとき，各プレイヤーが <var>3</var> 回のゲームで得た合計得点を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>1 + N</var> 行からなる．</p>
+<p><var>1</var> 行目には整数 <var>N</var> (<var>2 \leqq N \leqq 200</var>) が書かれており，プレイヤーの人数を表す．</p>
+<p>続く <var>N</var> 行のうちの <var>i</var> 行目 (<var>1 \leqq i \leqq N</var>) には <var>3</var> つの <var>1</var> 以上 <var>100</var> 以下の整数が空白を区切りとして書かれており，それぞれ <var>i</var> 人目のプレイヤーが <var>1</var> 回目，<var>2</var> 回目，<var>3</var> 回目のゲームで書いた数を表す．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>出力は <var>N</var> 行からなる．</p>
+<p><var>i</var> 行目 (<var>1 \leqq i \leqq N</var>) には <var>i</var> 人目のプレイヤーが <var>3</var> 回のゲームで得た合計得点を表す整数を出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>5
+100 99 98
+100 97 92
+63 89 63
+99 99 99
+89 97 98
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>0
+92
+215
+198
+89
+</pre>
+<p>入力例 <var>1</var> では，各プレイヤーが <var>3</var> 回のゲームで得た得点の詳細は次のようになる：<br />
+プレイヤー <var>1</var>：<var>0 + 0 + 0 = 0</var><br />
+プレイヤー <var>2</var>：<var>0 + 0 + 92 = 92</var><br />
+プレイヤー <var>3</var>：<var>63 + 89 + 63 = 215</var><br />
+プレイヤー <var>4</var>：<var>99 + 0 + 99 = 198</var><br />
+プレイヤー <var>5</var>：<var>89 + 0 + 0 = 89</var></p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>3
+89 92 77
+89 92 63
+89 63 77
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>0
+63
+63
+</pre></section>
+</div>
+</span>
+</span>

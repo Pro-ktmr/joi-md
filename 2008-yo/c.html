@@ -1,0 +1,97 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>次のような <var>2</var> 人で行うカードゲームがある．</p>
+<ul>
+<li>このゲームでは，<var>1</var> から <var>2n</var> までの各整数が書かれた全部で <var>2n</var> 枚のカードを使用する．ここで，<var>n</var> は <var>1</var> 以上 <var>100</var> 以下の整数である．</li>
+<li>このカードを <var>2</var> 人に <var>n</var> 枚ずつ配る．</li>
+<li>次のルールに従って交互にカードを <var>1</var> 枚ずつ場に出す．<ul>
+<li>場にカードが出ていないならば，好きなカードを出すことができる．</li>
+<li>場にカードが出ているならば，最後に場に出たカードよりも大きい数の書かれたカードを出すことができる．
+カードが出せる場合は，必ず場にカードを出す必要がある．</li>
+<li>出せるカードが無い場合はパスとなり，相手の番になる．このとき，場に出ているカードは無くなる．</li>
+</ul>
+</li>
+<li>ゲームは場にカードが出ていない状態で始める．</li>
+<li>どちらかの手持ちのカードが無くなった時点でゲームは終了する．</li>
+<li>ゲーム終了時に相手の持っているカードの枚数を得点とする．</li>
+</ul>
+<p>太郎と花子は，このゲームで対戦することになった．ゲームは太郎の番から始める．<var>2</var> 人は共に，出すことのできるカードのうち必ず一番小さい数が書かれたカードを出すことにしている．</p>
+<p>太郎に配られるカードが入力されたとき，太郎と花子の得点を出力するプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>n + 1</var> 行ある．<var>1</var> 行目には整数 <var>n</var> が書かれている．<var>2</var> 行目から <var>n + 1</var> 行目までの各行には整数が <var>1</var> つずつ書かれており，太郎に配られるカードに書かれた整数を表す．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>出力は <var>2</var> 行からなる．<var>1</var> 行目には太郎の得点を，<var>2</var> 行目には花子の得点を出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>5
+1
+7
+9
+6
+10
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>3
+0
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>10
+8
+7
+14
+18
+4
+11
+3
+17
+5
+19
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>2
+0
+</pre></section>
+</div>
+</span>
+</span>

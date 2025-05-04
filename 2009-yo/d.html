@@ -1,0 +1,88 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>冬の寒いある日，JOI 太郎君は広場にはった薄氷を割って遊ぶことにした．広場は長方形で，東西方向に <var>m</var> 個，南北方向に <var>n</var> 個，つまり，<var>m \times n</var> の区画に区切られている．また，薄氷が有る区画と無い区画がある．JOI 太郎君は，次のルールにしたがって，薄氷を割りながら区画を移動することにした．</p>
+<ul>
+<li>薄氷があるどの区画からも薄氷を割り始めることができる．</li>
+<li>東西南北のいずれかの方向に隣接し，まだ割られていない薄氷のある区画に移動できる．</li>
+<li>移動した先の区画の薄氷をかならず割る．</li>
+</ul>
+<p>JOI 太郎君が薄氷を割りながら移動できる区画数の最大値を求めるプログラムを作成せよ．ただし，<var>1 \leqq m \leqq 90</var>，<var>1 \leqq n \leqq 90</var> である．与えられる入力データでは，移動方法は <var>20</var> 万通りを超えない．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>n+2</var> 行ある．<var>1</var> 行目には整数 <var>m</var> が書かれている．<var>2</var> 行目には整数 <var>n</var> が書かれている．<var>3</var> 行目から <var>n+2</var> 行目までの各行には，<var>0</var> もしくは <var>1</var> が，空白で区切られて <var>m</var> 個書かれており，各区画に薄氷があるか否かを表している．北から <var>i</var> 番目，西から <var>j</var> 番目の区画を <var>(i, j)</var> と記述することにすると (<var>1 \leqq i \leqq n</var>，<var>1 \leqq j \leqq m</var>)，第 <var>i+2</var> 行目の <var>j</var> 番目の値は，区画 <var>(i, j)</var> に薄氷が存在する場合は <var>1</var> となり，区画 <var>(i, j)</var> に薄氷が存在しない場合は <var>0</var> となる．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>移動できる区画数の最大値を出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>3
+3
+1 1 0
+1 0 1
+1 1 0
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>5
+</pre>
+<p>入力例 <var>1</var> に対して，最大値を与える移動方法の例</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2009yo/2009-yo-t4-1.jpg" /></p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>5
+3
+1 1 1 0 1
+1 1 0 0 0
+1 0 0 0 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>5
+</pre>
+<p>入力例 <var>2</var> に対して，最大値を与える移動方法の例</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2009yo/2009-yo-t4-2.jpg" /></p>
+<p>入力例 <var>2</var> に対して，最大値を与えない移動方法の例</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2009yo/2009-yo-t4-2-1.jpg" />
+<img alt="" src="https://img.atcoder.jp/joi2009yo/2009-yo-t4-2-2.jpg" />
+<img alt="" src="https://img.atcoder.jp/joi2009yo/2009-yo-t4-2-3.jpg" />
+<img alt="" src="https://img.atcoder.jp/joi2009yo/2009-yo-t4-2-4.jpg" />
+<img alt="" src="https://img.atcoder.jp/joi2009yo/2009-yo-t4-2-5.jpg" /></p></section>
+</div>
+</span>
+</span>

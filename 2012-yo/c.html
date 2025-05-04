@@ -1,0 +1,81 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>K 理事長は，JOI 市の中心部にある JOI ピザ店の常連客である．彼はある事情により，今月から節約生活を始めることにした．そこで彼は，JOI ピザ店で注文できるピザのうち，<var>1</var> ドルあたりのカロリーが最大となるようなピザを注文したいと思った．このようなピザを「最高のピザ」と呼ぶことにしよう．「最高のピザ」は <var>1</var> 種類とは限らない．</p>
+<p>JOI ピザでは <var>N</var> 種類のトッピングから何種類かを自由に選び，基本の生地の上に載せたものを注文することができる．同種のトッピングを <var>2</var> つ以上載せることはできない．生地にトッピングを <var>1</var> 種類も載せないピザも注文できる．生地の値段は <var>A</var> ドルであり，トッピングの値段はいずれも <var>B</var> ドルである．ピザの値段は，生地の値段と載せたトッピングの値段の合計である．すなわち，トッピングを <var>k</var> 種類 (<var>0 \leqq k \leqq N</var>) 載せたピザの値段は <var>A + k \times B</var> ドルである．ピザ全体のカロリーは，生地のカロリーと載せたトッピングのカロリーの合計である．</p>
+<p>生地の値段とトッピングの値段，および，生地と各トッピングのカロリーの値が与えられたとき，「最高のピザ」の <var>1</var> ドルあたりのカロリー数を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>N + 3</var> 行からなる．</p>
+<p><var>1</var> 行目にはトッピングの種類数を表す <var>1</var> つの整数 <var>N</var> (<var>1 \leqq N \leqq 100</var>) が書かれている． <var>2</var> 行目には <var>2</var> つの整数 <var>A, B</var> (<var>1 \leqq A \leqq 1\,000</var>，<var>1 \leqq B \leqq 1\,000</var>) が空白を区切りとして書かれている． <var>A</var> は生地の値段，<var>B</var> はトッピングの値段を表す． <var>3</var> 行目には，生地のカロリー数を表す <var>1</var> つの整数 <var>C</var> (<var>1 \leqq C \leqq 10\,000</var>) が書かれている．</p>
+<p><var>3 + i</var> 行目 (<var>1 \leqq i \leqq N</var>) には，<var>i</var> 番目のトッピングのカロリー数を表す <var>1</var> つの整数 <var>D_i</var> (<var>1 \leqq D_i \leqq 10\,000</var>) が書かれている．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>「最高のピザ」の <var>1</var> ドルあたりのカロリー数を <var>1</var> 行で出力せよ．ただし，小数点以下は切り捨てて整数値で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>3
+12 2
+200
+50
+300
+100
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>37
+</pre>
+<p>入出力例 <var>1</var> では，<var>2</var> 番目と <var>3</var> 番目のトッピングを載せると，<var>200 + 300 + 100 = 600</var> カロリーで <var>12 + 2 \times 2 = 16</var> ドルのピザになる． 
+このピザは <var>1</var> ドルあたり <var>600 / 16 = 37.5</var> カロリーになる．これが「最高のピザ」となるので，<var>37.5</var> の小数点以下を切り捨てた <var>37</var> を出力する．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>4
+20 3
+900
+300
+100
+400
+1300
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>100
+</pre></section>
+</div>
+</span>
+</span>

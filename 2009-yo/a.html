@@ -1,0 +1,55 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>JOI 商事では社員の在社時間をタイムカードで管理している．社員は，出社すると専用の装置を使ってタイムカードに出社時刻を刻印する．勤務を終え退社するときにも，タイムカードに退社時刻を刻印する．時刻は <var>24</var> 時間制で扱われる．</p>
+<p>防犯上の理由から，社員の出社時刻は <var>7</var> 時以降である．また，全ての社員は <var>23</var> 時より前に退社する．社員の退社時刻は常に出社時刻より後である．</p>
+<p>入力として JOI 商事の <var>3</var> 人の社員 A さん，B さん，C さんの出社時刻と退社時刻が与えられたとき，それぞれの社員の在社時間を計算するプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>3</var> 行からなる．<var>1</var> 行目には A さんの出社時刻と退社時刻，<var>2</var> 行目には B さんの出社時刻と退社時刻，<var>3</var> 行目には C さんの出社時刻と退社時刻がそれぞれ空白で区切られ書かれている．</p>
+<p>時刻はそれぞれ空白で区切られた3つの整数で書かれている．3つの整数 <var>h, m, s</var> は <var>h</var> 時 <var>m</var> 分 <var>s</var> 秒を表す．<var>7 \leqq h \leqq 22</var>，<var>0 \leqq m \leqq 59</var>，<var>0 \leqq s \leqq 59</var> である．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p><var>1</var> 行目に A さんの在社時間，<var>2</var> 行目に B さんの在社時間，<var>3</var> 行目に C さんの在社時間を出力せよ．</p>
+<p>出力する在社時間が <var>h</var> 時間 <var>m</var> 分 <var>s</var> 秒の場合，<var>h, m, s</var> の順に空白で区切って出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>9 0 0 18 0 0
+9 0 1 18 0 0
+12 14 52 12 15 30
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>9 0 0
+8 59 59
+0 0 38
+</pre></section>
+</div>
+</span>
+</span>

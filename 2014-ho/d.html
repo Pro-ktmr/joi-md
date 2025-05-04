@@ -1,0 +1,161 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>フクロモモンガの JOI 君が住んでいる森にはユーカリの木が <var>N</var> 本生えており，それらの木には <var>1</var> から <var>N</var> の番号がついている．木 <var>i</var> の高さは <var>H_i</var> メートルである．</p>
+<p>JOI 君が相互に直接飛び移ることのできる木の組が <var>M</var> 組あり，各組の木の間を飛び移るためにかかる時間が定まっている．JOI 君が木の間を飛び移っている間は，地面からの高さが <var>1</var> 秒あたり <var>1</var> メートル下がる．すなわち，JOI 君の現在の地面からの高さが <var>h</var> メートル，木の間を飛び移るためにかかる時間が <var>t</var> 秒であるとき，飛び移った後の地面からの高さは <var>h - t</var> メートルとなる．ただし，<var>h - t</var> が <var>0</var> よりも小さくなる場合や行き先の木の高さよりも大きくなる場合は飛び移ることができない．</p>
+<p>さらに，JOI 君は木の側面を上下に移動することによって，地面からの高さを <var>0</var> メートルから今いる木の高さの範囲で増減させることができる．JOI 君が地面からの高さを <var>1</var> メートル増加または減少させるためには <var>1</var> 秒の時間がかかる．</p>
+<p>JOI 君は，木 <var>1</var> の高さ <var>X</var> メートルの位置から木 <var>N</var> の頂上 (高さ <var>H_N</var> メートルの位置) に行こうとしており，そのためにかかる時間の最小値を知りたい．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p>各木の高さと，JOI 君が直接飛び移ることができる木の組の情報と，最初 JOI 君がいる場所の高さが与えられる．木 <var>N</var> の頂上に行くためにかかる時間の最小値を求めるプログラムを作成せよ.</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下のデータを読み込め．</p>
+<ul>
+<li><var>1</var> 行目には，整数 <var>N, M, X</var> が空白を区切りとして書かれている．これは，木の本数が <var>N</var> 本，移動できる木の組が <var>M</var> 組あり，最初 JOI 君が木 <var>1</var> の高さ <var>X</var> メートルの位置にいることを表す．</li>
+<li>続く <var>N</var> 行のうちの <var>i</var> 行目 (<var>1 \leqq i \leqq N</var>) には，整数 <var>H_i</var> が書かれている．これは，木 <var>i</var> の高さが <var>H_i</var> メートルであることを表す．</li>
+<li>続く <var>M</var> 行のうちの <var>j</var> 行目 (<var>1 \leqq j \leqq M</var>) には，整数 <var>A_j, B_j, T_j</var> (<var>1 \leqq A_j \leqq N</var>，<var>1 \leqq B_j \leqq N</var>，<var>A_j \neq B_j</var>) が空白を区切りとして書かれている．これは，木 <var>A_j</var> と木 <var>B_j</var> の間を相互に <var>T_j</var> 秒で飛び移ることができることを表している．また，<var>1 \leqq j &lt; k \leqq M</var> ならば，<var>(A_j, B_j) \neq (A_k, B_k)</var> および <var>(A_j, B_j) \neq (B_k, A_k)</var> を満たす．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，木 <var>1</var> の高さ <var>X</var> メートルの位置から木 <var>N</var> の頂上に行くためにかかる時間の最小値を秒単位で表す整数を <var>1</var> 行で出力せよ．ただし，そのような方法がない場合は代わりに <var>-1</var> を出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<p>すべての入力データは以下の条件を満たす．</p>
+<ul>
+<li><var>2 \leqq N \leqq 100\,000</var>．</li>
+<li><var>1 \leqq M \leqq 300\,000</var>．</li>
+<li><var>1 \leqq H_i \leqq 1\,000\,000\,000</var> (<var>1 \leqq i \leqq N</var>)．</li>
+<li><var>1 \leqq T_j \leqq 1\,000\,000\,000</var> (<var>1 \leqq j \leqq M</var>)．</li>
+<li><var>0 \leqq X \leqq H_1</var>．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<h4>小課題 1 [25 点]</h4>
+<p>以下の条件を満たす．</p>
+<ul>
+<li><var>N \leqq 1\,000</var>．</li>
+<li><var>M \leqq 3\,000</var>．</li>
+<li><var>H_i \leqq 100</var> (<var>1 \leqq i \leqq N</var>)．</li>
+<li><var>T_j \leqq 100</var> (<var>1 \leqq j \leqq M</var>)．</li>
+</ul>
+<h4>小課題 2 [25 点]</h4>
+<p>以下の条件を満たす．</p>
+<ul>
+<li><var>X = 0</var>．</li>
+</ul>
+<h4>小課題 3 [50 点]</h4>
+<p>追加の制限はない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>5 5 0
+50
+100
+25
+30
+10
+1 2 10
+2 5 50
+2 4 20
+4 3 1
+5 4 20
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>110
+</pre>
+<p>例えば，以下のように移動すればよい．</p>
+<ol>
+<li>木 <var>1</var> を <var>50</var> メートル登る．</li>
+<li>木 <var>1</var> から木 <var>2</var> に飛び移る．</li>
+<li>木 <var>2</var> から木 <var>4</var> に飛び移る．</li>
+<li>木 <var>4</var> から木 <var>5</var> に飛び移る．</li>
+<li>木 <var>5</var> を <var>10</var> メートル登る．</li>
+</ol>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>2 1 0
+1
+1
+1 2 100
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>-1
+</pre>
+<p>JOI 君は木 <var>1</var> から木 <var>2</var> に飛び移ることができない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>4 3 30
+50
+10
+20
+50
+1 2 10
+2 3 10
+3 4 10
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>100
+</pre></section>
+</div>
+</span>
+</span>

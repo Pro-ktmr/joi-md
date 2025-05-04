@@ -1,0 +1,158 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題文</h3>
+<p>JOI 国には <var>N</var> 人の住人がおり，<var>1</var> から <var>N</var> までの番号が付けられている．
+住人 <var>i</var> (<var>1 \leqq i \leqq N</var>) は数直線上の座標 <var>X_i</var> に住んでおり，その<strong>影響力</strong>は <var>E_i</var> である．同じ座標に複数の住人が住んでいることもある．
+影響力が高い住人ほど宣伝効果が大きい一方で，本を買うのに慎重になる．</p>
+<p>理恵さんは情報科学の本を出版した．本を多くの人に買ってもらうため，何人かの住人に献本をすることができる．
+住民 <var>i</var> (<var>1 \leqq i \leqq N</var>) に献本した場合，住人 <var>i</var> は理恵さんの本を手に入れる．
+さらに，まだ理恵さんの本を持っていない住人のうち，次の条件を満たすようなすべての住人 <var>j</var> (<var>1 \leqq j \leqq N</var>) は理恵さんの本を買って手に入れる．</p>
+<ul>
+<li>住人 <var>i</var> と住人 <var>j</var> との数直線上での距離が <var>E_i - E_j</var> 以下である．すなわち <var>|X_i - X_j| \leqq E_i - E_j</var> である．</li>
+</ul>
+<p>もし理恵さんの本が JOI 国のすべての住人に読まれれば，情報オリンピックの知名度は大きく向上するだろう．
+JOI 国の住人全員が理恵さんの本を手に入れるために，最小で何人に献本する必要があるかを求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は以下の形式で標準入力から与えられる．</p>
+<pre><var>N</var>
+<var>X_1</var> <var>E_1</var>
+<var>X_2</var> <var>E_2</var>
+<var>\vdots</var>
+<var>X_N</var> <var>E_N</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，理恵さんが献本すべき住人の人数の最小値を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<ul>
+<li><var>1 \leqq N \leqq 500\,000</var>．</li>
+<li><var>1 \leqq X_i \leqq 10^9</var> (<var>1 \leqq i \leqq N</var>)．</li>
+<li><var>1 \leqq E_i \leqq 10^9</var> (<var>1 \leqq i \leqq N</var>)．</li>
+<li>入力される値はすべて整数である．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<ol>
+<li>(<var>10</var> 点) <var>E_1 = E_2 = \cdots = E_N</var>．</li>
+<li>(<var>23</var> 点) <var>N \leqq 16</var>．</li>
+<li>(<var>36</var> 点) <var>N \leqq 1\,000</var>．</li>
+<li>(<var>31</var> 点) 追加の制約はない．</li>
+</ol>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>4
+4 2
+2 3
+3 4
+6 5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>2
+</pre>
+<p>たとえば次のように献本すると，JOI 国の住人全員が理恵さんの本を手に入れることができる．</p>
+<ul>
+<li>
+<p>住人 <var>3</var> に献本する．</p>
+<ul>
+<li><var>|X_3 - X_1| = 1, E_3 - E_1 = 2</var> より，住人 <var>1</var> は理恵さんの本を買って手に入れる．</li>
+<li><var>|X_3 - X_2| = 1, E_3 - E_2 = 1</var> より，住人 <var>2</var> は理恵さんの本を買って手に入れる．</li>
+<li><var>|X_3 - X_4| = 3, E_3 - E_4 = -1</var> より，住人 <var>4</var> は理恵さんの本を買わない．  </li>
+</ul>
+<p>よって，住人 <var>1, 2, 3</var> が理恵さんの本を手に入れることになる．</p>
+</li>
+<li>
+<p>住人 <var>4</var> に献本する．住人 <var>4</var> 以外の住人はいずれも既に理恵さんの本を手に入れているので，これで JOI 国の住人全員が理恵さんの本を手に入れたことになる．</p>
+</li>
+</ul>
+<p><var>2</var> 人未満への献本で JOI 国の住人全員が理恵さんの本を手に入れるようにすることはできないので，<var>2</var> を出力する．<br />
+この入力例は小課題 <var>2, 3, 4</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>3
+7 10
+10 10
+7 10
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>2
+</pre>
+<p>この入出力例はすべての小課題の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>10
+31447678 204745778
+430226982 292647686
+327782937 367372305
+843320852 822224390
+687565054 738216211
+970840050 766211141
+563662348 742939240
+103739645 854320982
+294864525 601612333
+375952316 469655019
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>5
+</pre>
+<p>この入力例は小課題 <var>2, 3, 4</var> の制約を満たす．</p></section>
+</div>
+</span>
+</span>

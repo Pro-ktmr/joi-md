@@ -1,0 +1,107 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>JOI さんは一人ですごろく遊びをしている．このすごろくには一直線上に <var>N</var> 個のマスがあり，それぞれ移動の指示が書かれている．スタート地点は <var>1</var> マス目であり，ゴールは <var>N</var> マス目である．JOI さんはゴールするまで次を繰り返す．</p>
+<p>サイコロを振って出た目の数だけ現在のマスから進み，そのマスの指示に従う．指示に従って移動した先のマスの指示には従わない．</p>
+<p>ちょうど <var>N</var> マス目に止まる時だけでなく，移動先が <var>N</var> マス目を超える場合もゴールとなる．</p>
+<p>すごろくの盤面と，<var>M</var> 回分のサイコロの出る目が与えられたとき，サイコロを何回振ったところでゴールするかを出力するプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>1 + N + M</var> 行からなる．</p>
+<p>入力の <var>1</var> 行目には <var>2</var> つの整数 <var>N,M</var> (<var>2 \leqq N \leqq 1\,000</var>，<var>1 \leqq M \leqq 1\,000</var>) が空白を区切りとして書かれている．<var>N</var> はすごろくのマス目の個数を，<var>M</var> は与えられるサイコロの目の個数を表す．</p>
+<p>続く <var>N</var> 行には <var>-999</var> 以上 <var>999</var> 以下の整数が１つずつ書かれている．<var>1+i</var> 行目 (<var>1 \leqq i \leqq N</var>) の整数は，すごろくの <var>i</var> 番目のマスの指示を表す．書かれている整数を <var>X</var> とする．<var>X = 0</var> のときは「何もしない」を，<var>X &gt; 0</var> のときは「<var>X</var> マス進む」を，<var>X&lt;0</var> のときは「<var>|X|</var> マス戻る」の指示を表す．ただし，<var>|X|</var> は <var>X</var> の絶対値を表す．</p>
+<p>続く <var>M</var> 行には <var>1</var> 以上 <var>6</var> 以下の整数が <var>1</var> つずつ書かれており，<var>1 + N + j</var> 行目 (<var>1 \leqq j \leqq M</var>) の数は <var>j</var> 回目に出るサイコロの目を表す．</p>
+<p>ただし，<var>2</var> 行目と <var>1 + N</var> 行目の数は必ず <var>0</var> である．<var>1</var> マス目よりも前のマスに移動させる指示が書かれているマスはない．また，どの採点用入力データにおいてもサイコロを振る回数が <var>M</var> 以下でゴールできる．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>出力は，サイコロを何回振ったところでゴールするかを表す整数のみを含む <var>1</var> 行からなる．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>10 5
+0
+0
+5
+6
+-3
+8
+1
+8
+-4
+0
+1
+3
+5
+1
+5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>5
+</pre>
+<p><img alt="" src="https://img.atcoder.jp/joi2010yo/2010-yo-t2-fig01.png" /></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>10 10
+0
+-1
+-1
+4
+4
+-5
+0
+1
+-6
+0
+1
+5
+2
+4
+6
+5
+5
+4
+1
+6
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>6
+</pre>
+<p><img alt="" src="https://img.atcoder.jp/joi2010yo/2010-yo-t2-fig02.png" /></p></section>
+</div>
+</span>
+</span>

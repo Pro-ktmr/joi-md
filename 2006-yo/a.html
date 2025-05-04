@@ -1,0 +1,74 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>A と B の <var>2</var> 人のプレーヤーが，<var>0</var> から <var>9</var> までの数字が書かれたカードを使ってゲームを行う．最初に，<var>2</var> 人は与えられた <var>n</var> 枚ずつのカードを，裏向きにして横一列に並べる．その後，<var>2</var> 人は各自の左から <var>1</var> 枚ずつカードを表向きにしていき，書かれた数字が大きい方のカードの持ち主が，その <var>2</var> 枚のカードを取る．このとき，その <var>2</var> 枚のカードに書かれた数字の合計が，カードを取ったプレーヤーの得点となるものとする．ただし，開いた <var>2</var> 枚のカードに同じ数字が書かれているときには，引き分けとし，各プレーヤーが自分のカードを <var>1</var> 枚ずつ取るものとする．</p>
+<p>例えば，A，B の持ち札が，以下の入力例 <var>1</var> から <var>3</var> のように並べられている場合を考えよう．ただし，入力は <var>n + 1</var> 行からなり，<var>1</var> 行目には各プレーヤのカード枚数 <var>n</var> が書かれており，<var>i + 1</var> 行目（<var>i = 1, 2, \ldots, n</var>）には A の左から <var>i</var> 枚目のカードの数字と B の左から <var>i</var> 枚目の カードの数字が，空白を区切り文字としてこの順で書かれている．すなわち，入力の <var>2</var> 行目以降は，左側の列が A のカードの並びを，右側の列が B のカードの並びを，それぞれ表している．このとき，ゲーム終了後の A と B の得点は，それぞれ，対応する出力例に示したものとなる．</p>
+<p>入力に対応するゲームが終了したときの A の得点と B の得点を，この順に空白を区切り文字として <var>1</var> 行に出力するプログラムを作成しなさい．ただし，<var>n \leqq 10\,000</var> とする．</p>
+<p>出力においては，出力の後（B の得点の後）に改行を入れること．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>3
+9 1
+5 4
+0 8
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>19 8
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>3
+9 1
+5 4
+1 0
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>20 0
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>3
+9 1
+5 5
+1 8
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>15 14
+</pre></section>
+</div>
+</span>
+</span>

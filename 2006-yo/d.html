@@ -1,0 +1,99 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>大きさが異なる <var>n</var> 個のコップと <var>3</var> つのトレイ（お盆）A，B，C があり，それらのコップは <var>3</var> つのトレイの上にそれぞれ何個かずつ一山に重ねて置かれている．ただし，どのトレイにおいても，そのトレイの中で一番小さいコップが一番下に，<var>2</var> 番目に小さいコップがその上に，<var>3</var> 番目に小さいコップがその上にと，小さい順に伏せて重ねてある．例えば，下図の右側は，<var>n = 5</var> 個のコップがトレイ A，B，C にそれぞれ <var>2</var> 個，<var>0</var> 個，<var>3</var> 個重ねて置かれている状態を示している．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2006yo/2006-yo-t4-fig1.png" /></p>
+<p>このように，コップの初期状態が与えられたとき，次の規則 <var>1</var> ～ <var>3</var> を守りながら，すべてのコップを A または C のどちらかのトレイに移動させるには何回移動を行えばよいかを求めたい．</p>
+<p>（規則 <var>1</var>） <var>1</var> 回に <var>1</var> つのコップだけを移動させることができる．それは，そのトレイにあるコップの中で一番上のコップ （つまり，一番大きいコップ）である．<br />
+（規則 <var>2</var>） 大きいコップの上に小さいコップを重ねてはいけない．<br />
+（規則 <var>3</var>） コップ <var>1</var> 個の直接移動は，トレイ A から B，B から A，B から C，C から B のみが許され，A から C への直接移動や C から A への直接移動は許されない．</p>
+<p><var>n</var> 個のコップの初期状態と整数 <var>m</var> が与えられたとき，<var>m</var> 回以内の移動で，A または C のどちらかのトレイにすべてのコップをまとめて重ねることができるかどうかを判定し，可能な場合には移動回数の最小値を，不可能な場合には <var>-1</var> を出力するプログラムを作成しなさい．</p>
+<p>入力の <var>1</var> 行目には，<var>n</var> と <var>m</var> がこの順に空白を区切り文字として書いてある．<var>1 \leqq n \leqq 15</var> であり，<var>1 \leqq m \leqq 15\,000\,000</var> である．<var>2</var> 行目，<var>3</var> 行目，<var>4</var> 行目には，<var>1</var> から <var>n</var> までの整数を何個かずつ <var>3</var> つのグループに分けて，それぞれのグループ内で小さい順（昇順）に並べたものが書いてある．ただし，各行の先頭（それらの整数の前）には，それらの個数が書いてある．<var>2</var> 行目に書かれている整数（先頭の <var>1</var> つを除く）はトレイ A の上に重ねられている各コップの大きさを表す．同様に，<var>3</var> 行目に書かれている整数（先頭の <var>1</var> つを除く）はトレイ B の上に重ねられている各コップの大きさを表し，<var>4</var> 行目に書かれている整数（先頭の <var>1</var> つを除く）はトレイ C の上に重ねられている各コップの大きさを表す．</p>
+<p>出力においては，出力（移動回数または <var>-1</var>）の後に改行を入れること．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>3 10
+0
+1 1
+2 2 3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>9
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>4 20
+2 1 2
+1 3
+1 4
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>3
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>2 5
+2 1 2
+0
+0
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>0
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 4</h3>
+<pre>3 3
+0
+1 1
+2 2 3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 4</h3>
+<pre>-1
+</pre></section>
+</div>
+</span>
+</span>

@@ -1,0 +1,154 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>20XX 年に IOI 国で行われるオリンピックに備え，IOI 国にある JOI 公園を整備することになった．JOI公園には <var>N</var> 個の広場があり，広場には <var>1</var> から <var>N</var> の番号がついている．広場を繋ぐ <var>M</var> 本の道があり，道には <var>1</var> から <var>M</var> の番号がついている．道 <var>i</var> (<var>1 \leqq i \leqq M</var>) は広場 <var>A_i</var> と広場 <var>B_i</var> を双方向に繋いでおり，長さは <var>D_i</var> である．どの広場からどの広場へもいくつかの道を辿って行くことができる．</p>
+<p>整備計画では，まず，<var>0</var> 以上の整数 <var>X</var> を選び，広場 <var>1</var> からの距離が <var>X</var> 以下であるような広場 (広場 <var>1</var> を含む) どうしをすべて相互に地下道で結ぶ．ただし，広場 <var>i</var> と広場 <var>j</var> の距離とは，広場 <var>i</var> から広場 <var>j</var> に行くときに通る道の長さの和の最小値である．整備計画では地下道の整備コストに関する整数 <var>C</var> が定まっている．地下道の整備にかかるコストは <var>C \times X</var> である．</p>
+<p>次に，地下道で結ばれた広場どうしを結ぶ道をすべて撤去する．道の撤去にコストはかからない．</p>
+<p>最後に，撤去されずに残った道をすべて補修する．長さ <var>d</var> の道を補修するためにかかるコストは <var>d</var> である．</p>
+<p>整備計画実施前の JOI 公園には地下道はない．JOI 公園の整備にかかるコストの和の最小値を求めよ．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p>JOI 公園の広場の情報と，地下道の整備コストに関する整数が与えられたとき，JOI 公園の整備にかかるコストの和の最小値を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下のデータを読み込め．</p>
+<ul>
+<li><var>1</var> 行目には，整数 <var>N, M, C</var> が空白を区切りとして書かれている．これは，広場が <var>N</var> 個，道が <var>M</var> 本あり，地下道の整備コストに関する整数が <var>C</var> であることを表す．</li>
+<li>続く <var>M</var> 行のうちの <var>i</var> 行目 (<var>1 \leqq i \leqq M</var>) には，整数 <var>A_i, B_i, D_i</var> が空白を区切りとして書かれている．これは，道 <var>i</var> が広場 <var>A_i</var> と広場 <var>B_i</var> を繋ぎ，長さが <var>D_i</var> であることを表す．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，JOI 公園の整備にかかるコストの和の最小値を表す整数を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<p>すべての入力データは以下の条件を満たす．</p>
+<ul>
+<li><var>2 \leqq N \leqq 100\,000</var>．</li>
+<li><var>1 \leqq M \leqq 200\,000</var>．</li>
+<li><var>1 \leqq C \leqq 100\,000</var>．</li>
+<li><var>1 \leqq A_i \leqq N</var> (<var>1 \leqq i \leqq M</var>)．</li>
+<li><var>1 \leqq B_i \leqq N</var> (<var>1 \leqq i \leqq M</var>)．</li>
+<li><var>A_i \neq B_i</var> (<var>1 \leqq i \leqq M</var>)．</li>
+<li><var>(A_i, B_i) \neq (A_j, B_j)</var> および <var>(A_i, B_i) \neq (B_j, A_j)</var> (<var>1 \leqq i &lt; j \leqq M</var>)．</li>
+<li><var>1 \leqq D_i \leqq 100\,000</var> (<var>1 \leqq i \leqq M</var>)．</li>
+<li>与えられる入力データにおいては，どの広場からどの広場へもいくつかの道を辿ることにより行けることが保証されている．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<h4>小課題 1 [15 点]</h4>
+<p>以下の条件を満たす．</p>
+<ul>
+<li><var>N \leqq 100</var>．</li>
+<li><var>M \leqq 200</var>．</li>
+<li><var>C \leqq 100</var>．</li>
+<li><var>D_i \leqq 10</var> (<var>1 \leqq i \leqq M</var>)．</li>
+</ul>
+<h4>小課題 2 [45 点]</h4>
+<p>以下の条件を満たす．</p>
+<ul>
+<li><var>N \leqq 100</var>．</li>
+<li><var>M \leqq 4\,000</var>．</li>
+</ul>
+<h4>小課題 3 [40 点]</h4>
+<p>追加の制限はない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>5 5 2
+2 3 1
+3 1 2
+2 4 3
+1 2 4
+2 5 5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>14
+</pre>
+<p>この入力例では，<var>X = 3</var> として，広場 <var>1</var> からの距離が <var>3</var> 以下であるような広場 (広場 <var>1</var>，広場 <var>2</var>，広場 <var>3</var>) どうしをすべて相互に地下道で結んだとき，整備にかかるコストの和は <var>2 \times 3 + 3 + 5 = 14</var> となる．これが最小値である．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>5 4 10
+1 2 3
+2 3 4
+3 4 3
+4 5 5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>15
+</pre>
+<p>この入力例では，<var>X = 0</var> のとき整備にかかるコストの和が最小になる．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>6 5 2
+1 2 2
+1 3 4
+1 4 3
+1 5 1
+1 6 5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>10
+</pre>
+<p>この入力例では，<var>X = 5</var> としてすべての広場を相互に地下道で結んだとき，整備にかかるコストの和が最小になる．</p></section>
+</div>
+</span>
+</span>

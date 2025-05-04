@@ -1,0 +1,81 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>20</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>あなたは以下のルールでダーツゲームをすることになった．</p>
+<blockquote>
+<p>あなたは，矢を的（まと）に向かって <var>4</var> 本まで投げることができる．必ずしも <var>4</var> 本全てを投げる必要はなく，<var>1</var> 本も投げなくてもかまわない．的は <var>N</var> 個の部分に区切られていて，各々の部分に点数 <var>P_1,\ldots,P_N</var> が書かれている．矢が刺さった場所の点数の合計 <var>S</var> があなたの得点の基礎となる．<var>S</var> があらかじめ決められたある点数 <var>M</var> 以下の場合は <var>S</var> がそのまま
+あなたの得点となる．しかし，<var>S</var> が <var>M</var> を超えた場合はあなたの得点は <var>0</var> 点となる．</p>
+</blockquote>
+<p>的に書かれている点数と <var>M</var> の値が与えられたとき，あなたが得ることのできる点数の最大値を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力ファイルのファイル名は <code>input.txt</code> である．</p>
+<p><var>1</var> 行目には，整数 <var>N</var> (<var>1\leqq N\leqq 1000</var>) と <var>M</var> (<var>1\leqq M\leqq 200000000=2\times 10^8</var>) がこの順に空白区切りで書かれている．<var>2</var> 行目以降の第 <var>1 + i</var> 行目 (<var>1\leqq i\leqq N</var>) には， <var>P_i</var> (<var>1 \leqq P_i\leqq 100000000=10^8</var>) が書かれている．</p>
+<p>採点用データのうち, 配点の <var>20</var> %分は <var>N \leqq 100</var> を満たし，配点の <var>50</var> %分は <var>N \leqq 300</var> を満たす．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>出力ファイルのファイル名は <code>output.txt</code> である．</p>
+<p><code>output.txt</code> は 1 行だけからなり，あなたが得ることのできる点数の最大値を含む．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>4 50
+3
+14
+15
+9
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>48
+</pre>
+<p>この例では，<var>15</var> 点の部分に <var>3</var> 本，<var>3</var> 点の部分に <var>1</var> 本の矢が刺さった場合にあなたの得点は最大になり，その得点は <var>48</var> 点である．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>3 21
+16
+11
+2
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>20
+</pre>
+<p>この例では，<var>16</var> 点の場所に <var>1</var> 本，<var>2</var> 点の場所に <var>2</var> 本の矢が刺さった場合にあなたの得点は最大になり，その得点は <var>20</var> 点である．</p></section>
+</div>
+</span>
+</span>

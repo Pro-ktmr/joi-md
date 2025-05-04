@@ -1,0 +1,126 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>JOI 君は，長年にわたる家庭菜園の経験を生かして，自宅の庭で新たにジョイ草という植物を育てている．庭には東西方向に並んだ <var>N</var> 個のプランターがあり，西側から順に <var>1</var> から <var>N</var> までの番号がついている．ジョイ草は全部で <var>N</var> 株あり，それぞれのプランターに <var>1</var> 株ずつ植えてある．</p>
+<p>春になって様子を見に行った JOI 君は，ジョイ草が予想に反して色とりどりの葉を付けていることに気がついた．さらに，ジョイ草が思ったほど生育していないことに気がついた．JOI 君はこれらのことを不思議に思い，本で調べたところ，次のことがわかった：</p>
+<ul>
+<li>ジョイ草には <var>3</var> 種類あり，それぞれ赤，緑，黄の葉を付ける．</li>
+<li>葉の色が同じジョイ草を近くに置くと，その成長が阻害されてしまう．</li>
+</ul>
+<p>そこで，JOI 君は，ジョイ草を並び替えて，葉の色が同じジョイ草が隣り合わないようにすることにした．このとき，JOI 君は隣り合う <var>2</var> つのジョイ草を入れ替えることしかできない．つまり，<var>1</var> 回の操作で JOI 君はプランター <var>i</var> (<var>1 \leqq i \leqq N - 1</var>) を任意に <var>1</var> つ選び，プランター <var>i</var> のジョイ草とプランター <var>i + 1</var> のジョイ草を入れ替えることができる．JOI 君は，できるだけ少ない回数の操作で，葉の色が同じジョイ草が隣り合わないようにしたい．</p>
+<p>ジョイ草の数と，それぞれのジョイ草の葉の色が与えられたとき，葉の色が同じジョイ草が隣り合わないように並び替えるために必要な操作回数の最小値を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は以下の形式で標準入力から与えられる．</p>
+<pre><var>N</var>
+<var>S</var>
+</pre>
+<p><var>S</var> は長さ <var>N</var> の文字列で，その <var>i</var> 文字目 (<var>1 \leqq i \leqq N</var>) は，プランター <var>i</var> に植えてあるジョイ草の葉の色が赤ならば <code>R</code>，緑ならば <code>G</code>，黄ならば <code>Y</code> である．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，必要な操作回数の最小値を <var>1</var> 行で出力せよ．ただし，葉の色が同じジョイ草が隣り合わないように並び替えることが不可能ならば，代わりに <var>-1</var> を出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<ul>
+<li><var>1 \leqq N \leqq 400</var>．</li>
+<li><var>S</var> は長さ <var>N</var> の文字列である．</li>
+<li><var>S</var> の各文字は <code>R</code>，<code>G</code>，<code>Y</code> のいずれかである．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<ol>
+<li>(<var>5</var> 点) <var>N \leqq 15</var>．</li>
+<li>(<var>55</var> 点) <var>N \leqq 60</var>．</li>
+<li>(<var>15</var> 点) <var>S</var> の各文字は <code>R</code>，<code>G</code> のいずれかである．</li>
+<li>(<var>25</var> 点) 追加の制約はない．</li>
+</ol>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>5
+RRGYY
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>2
+</pre>
+<p>この入力例では，例えば次のようにすると，葉の色が同じジョイ草が隣り合わないようにすることができる．</p>
+<ul>
+<li>まず，プランター <var>3</var> のジョイ草とプランター <var>4</var> のジョイ草を入れ替える．</li>
+<li>次に，プランター <var>2</var> のジョイ草とプランター <var>3</var> のジョイ草を入れ替える．</li>
+</ul>
+<p>このようにすると，ジョイ草の並びは <code>RYRGY</code> のようになる．<var>1</var> 回以下の操作で葉の色が同じジョイ草が隣り合わないようにすることはできないので，<var>2</var> を出力する．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>6
+RRRRRG
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>-1
+</pre>
+<p>この入力例では，どのように操作をしても，葉の色が同じジョイ草が隣り合わないようにすることはできない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>20
+YYGYYYGGGGRGYYGRGRYG
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>8
+</pre></section>
+</div>
+</span>
+</span>

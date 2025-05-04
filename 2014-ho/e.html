@@ -1,0 +1,152 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>JOI 君はペーパークラフトが趣味である．今日も JOI 君はペーパークラフトの作品を作ろうとしている．</p>
+<p>まず，JOI 君は設計図にしたがって <var>1</var> 枚の長方形の紙に <var>N</var> 本の切り取り線を印刷した．各切り取り線は，紙の縦または横の辺に平行な線分である．紙を切り出してできるすべての部分は作品の中で何らかの部品として用いられる．当然のことながら，部品数の多い作品は製作が大変である．JOI 君は，すべての切り取り線にしたがって紙を切り出したとき，紙がいくつの部分に分かれるかを知りたい．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p>紙の大きさと，<var>N</var> 本の切り取り線の情報が与えられる．これらの切り取り線にしたがって紙を切り分けたとき，紙がいくつの部分に分かれるかを求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下のデータを読み込め．</p>
+<ul>
+<li><var>1</var> 行目には，整数 <var>W, H, N</var> が空白を区切りとして書かれている．<var>W</var> は紙の横の辺の長さを，<var>H</var> は紙の縦の辺の長さを，<var>N</var> は切り取り線の本数をそれぞれ表す．紙の左下，右下，左上，右上を，それぞれ座標 <var>(0, 0), (W, 0), (0, H), (W, H)</var> で表す．</li>
+<li>続く <var>N</var> 行のうちの <var>i</var> 行目 (<var>1 \leqq i \leqq N</var>) には，整数 <var>A_i, B_i, C_i, D_i</var> (<var>0 \leqq A_i \leqq C_i \leqq W</var>，<var>0 \leqq B_i \leqq D_i \leqq H</var>) が空白を区切りとして書かれている．これは <var>i</var> 番目の切り取り線が <var>(A_i, B_i)</var> と <var>(C_i, D_i)</var> を結ぶ線分であることを表す．この線分は紙のいずれかの辺に平行な線分である．すなわち，<var>A_i = C_i</var> と <var>B_i = D_i</var> のうちのちょうど <var>1</var> つが成り立つ．また，ある切り取り線と，それに平行な他の切り取り線が共有点を持つことはなく，ある切り取り線と，それに平行な紙の辺が共有点を持つこともない．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，紙がいくつの部分に分かれるかを表す整数を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<p>すべての入力データは以下の条件を満たす．</p>
+<ul>
+<li><var>1 \leqq W \leqq 1\,000\,000\,000</var>．</li>
+<li><var>1 \leqq H \leqq 1\,000\,000\,000</var>．</li>
+<li><var>1 \leqq N \leqq 100\,000</var>．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<h4>小課題 1 [5 点]</h4>
+<p>以下の条件を満たす．</p>
+<ul>
+<li><var>W \leqq 1\,000</var>．</li>
+<li><var>H \leqq 1\,000</var>．</li>
+<li><var>N \leqq 1\,000</var>．</li>
+</ul>
+<h4>小課題 2 [5 点]</h4>
+<p>以下の条件を満たす．</p>
+<ul>
+<li><var>N \leqq 1\,000</var>．</li>
+</ul>
+<h4>小課題 3 [20 点]</h4>
+<p>共有点を持つような異なる <var>2</var> つの切り取り線の組の個数は，<var>100\,000</var> 以下である．</p>
+<h4>小課題 4 [20 点]</h4>
+<p>切り取り線上の任意の点から紙のある辺上の点まで，いくつかの切り取り線をたどって行くことができる．</p>
+<h4>小課題 5 [50 点]</h4>
+<p>追加の制限はない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>10 10 5
+6 0 6 7
+0 6 7 6
+2 3 9 3
+2 3 2 10
+1 9 8 9
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>4
+</pre>
+<p>この入力の場合，切り取り線は下図のようになる．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2014ho/2014-ho-t5-fig01.png" /></p>
+<p>よって，切り取り線によって紙は <var>4</var> つの部分に分かれる．なお，この入力は小課題 <var>4</var> の条件を満たしている．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>13 7 28
+1 1 4 1
+1 1 1 3
+2 2 3 2
+2 2 2 3
+1 3 2 3
+3 2 3 6
+4 1 4 6
+3 6 4 6
+5 1 8 1
+5 1 5 6
+6 2 7 2
+6 2 6 5
+7 2 7 5
+6 5 7 5
+8 1 8 6
+5 6 8 6
+9 1 12 1
+9 1 9 2
+9 2 10 2
+12 1 12 2
+11 2 12 2
+10 2 10 5
+9 5 10 5
+9 5 9 6
+11 2 11 5
+11 5 12 5
+12 5 12 6
+9 6 12 6
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>5
+</pre>
+<p>この入力の場合，切り取り線は下図のようになる．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2014ho/2014-ho-t5-fig02.png" /></p>
+<p>よって，切り取り線によって紙は <var>5</var> つの部分に分かれる．なお，この入力は小課題 <var>4</var> の条件を満たしていない．</p></section>
+</div>
+</span>
+</span>

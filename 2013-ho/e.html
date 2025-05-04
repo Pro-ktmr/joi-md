@@ -1,0 +1,158 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>バブルソートとは，列をソートするアルゴリズムの <var>1</var> つである．長さ <var>N</var> の数列 <var>A</var> を昇順にソートしたいとしよう．バブルソートは，隣り合う <var>2</var> つの数で大小関係が崩れているものがあれば，それらの位置を交換する．これを，数列を前から順に走査しながら行う．すなわち，<var>A_i &gt; A_{i + 1}</var> となっている場所があれば，その <var>2</var> 数を交換するということを，<var>i = 1, 2, \ldots, N - 1</var> に対してこの順で行うのが <var>1</var> 回の走査である．この走査を <var>N − 1</var> 回繰り返すことで，数列を昇順にソートできることが知られている．</p>
+<p>数列 <var>A</var> のバブルソートによる交換回数とは，数列 <var>A</var> に上記のアルゴリズムを適用した時に，整数の交換が行われる回数である．（バブルソートとして知られるアルゴリズム及び実装には，ループの順番や範囲，及び終了条件など，細かな差異がある場合がある．ただし，同じ数列に適用した際の整数の交換回数はそれらの差異により変化しないことが知られている．）</p>
+<p>例えば，以下のプログラムは長さ <code>n</code> の整数の配列 <code>a</code> をバブルソートによりソートする関数を C 言語で記述したものである．</p>
+<pre><code class="language-cpp">void bubble_sort(int *a, int n) {
+  int i, j;
+  for (i = 0; i &lt; n - 1; ++i) {
+    for (j = 0; j &lt; n - 1; ++j) {
+      if (a[j] &gt; a[j + 1]) {
+        /* 以下 3 行が 1 回の整数の交換に相当 */
+        int x = a[j];
+        a[j] = a[j + 1];
+        a[j + 1] = x;
+      }
+    }
+  }
+}
+</code></pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p>長さ <var>N</var> の数列 <var>A</var> が与えられる．数列 <var>A</var> の任意の場所の <var>2</var> つの整数を <var>1</var> 回だけ交換した数列 <var>A'</var> を作るとする．数列 <var>A'</var> のバブルソートによる交換回数の最小値を求めるプログラムを作成せよ．（最初に交換する <var>2</var> つの整数は必ずしも隣り合っている必要はないことに注意せよ．）</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span style="color: red"><var>2 \leqq N \leqq 100\,000</var></span>&emsp;</td>
+<td>数列 <var>A</var> の長さ</td>
+</tr>
+<tr>
+<td><var>1 \leqq A_i \leqq 1\,000\,000\,000</var>&emsp;</td>
+<td>数列 <var>A</var> に含まれる数字の大きさ</td>
+</tr>
+</tbody>
+</table>
+<p><span style="color: red">（注）過去問移植時に制約を修正．</span></p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下のデータを読み込め．</p>
+<ul>
+<li><var>1</var> 行目には，整数 <var>N</var> が書かれている．<var>N</var> は数列 <var>A</var> の長さを表す．</li>
+<li>続く <var>N</var> 行のうちの <var>i</var> 行目 (<var>1 \leqq i \leqq N</var>) には，整数 <var>A_i</var> が書かれている．これは数列 <var>A</var> の <var>i</var> 番目の整数を表す．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，数列 <var>A'</var> のバブルソートによる交換回数の最小値を表す整数を <var>1</var> 行で出力せよ．</p>
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>採点基準</h3>
+<p>採点用データのうち，配点の <var>10</var> %分については，<var>N \leqq 1 000</var> を満たし，任意の <var>i, j</var> (<var>1 \leqq i &lt; j \leqq N</var>) について <var>A_i \neq A_j</var> を満たす．</p>
+<p>採点用データのうち，配点の <var>30</var> %分については，<var>N \leqq 5\,000</var> を満たし，任意の <var>i, j</var> (<var>1 \leqq i &lt; j \leqq N</var>) について <var>A_i \neq A_j</var> を満たす．</p>
+<p>採点用データのうち，配点の <var>80</var> %分については，任意の <var>i, j</var> (<var>1 \leqq i &lt; j \leqq N</var>) について <var>A_i \neq A_j</var> を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>5
+10
+3
+6
+8
+1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>0
+</pre>
+<p>数列 <var>A</var> の最初の <var>10</var> と最後の <var>1</var> を交換することにすると，数列 <var>A'</var> はソート済みの列となり，バブルソートの交換回数は <var>0</var> となる．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>5
+3
+1
+7
+9
+5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>2
+</pre>
+<p>数列 <var>A</var> の <var>3</var> 番目の <var>7</var> と最後の <var>5</var> を交換することで，数列 <var>A'</var> は <var>3, 1, 5, 9, 7</var> となる．<var>A'</var> のバブルソートによる交換回数は <var>2</var> である．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>3
+1
+2
+3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>1
+</pre>
+<p>最初から数列 <var>A</var> がソートされている場合でも，数列 <var>A'</var> を作る際に交換を行わなければならない．</p></section>
+</div>
+</span>
+</span>

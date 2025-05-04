@@ -1,0 +1,201 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p><var>N+1</var> 層からなるダンジョンがあり，ダンジョン内には <var>M</var> 人のプレイヤーがいる．ダンジョンの階層には入口から近い順に第 <var>1</var> 層から第 <var>N+1</var> 層までの番号が付いている．また，プレイヤーには <var>1</var> から <var>M</var> までの番号が付いている．</p>
+<p>ダンジョンのある階層から次の階層へ進むには体力を要する．プレイヤーは，第 <var>i</var> 層 (<var>1 \leqq i \leqq N</var>) から第 <var>i + 1</var> 層に進む際に体力を <var>A_i</var> 消費する．また，このダンジョンは一方通行であり，可能な階層間の移動は第 <var>i</var> 層 (<var>1 \leqq i \leqq N</var>) から第 <var>i + 1</var> 層への移動のみである．</p>
+<p>第 <var>1</var> 層から第 <var>N</var> 層までの各階層には <var>1</var> つの回復の泉がある．第 <var>i</var> 層 (<var>1 \leqq i \leqq N</var>) にある回復の泉では，プレイヤーは <var>B_i</var> 枚のコインを消費することで体力を <var>1</var> 回復させることができる．回復の泉は，コインがある限り何回でも使用することができる．ただし，プレイヤーの体力には上限があり，回復の泉を使っても，体力がその上限を超えることはない．</p>
+<p>プレイヤー <var>j</var> (<var>1 \leqq j \leqq M</var>) は現在第 <var>S_j</var> 層にいる．現在の体力は <var>0</var> であり，体力の上限は <var>U_j</var> である．プレイヤー <var>j</var> は，体力を <var>0</var> 未満にすることなく第 <var>T_j</var> 層まで進もうとしている．そのためには何枚のコインが必要であろうか．</p>
+<p>ダンジョンの情報と各プレイヤーの情報が与えられたとき，各プレイヤーが体力を <var>0</var> 未満にせずに目標の階層まで進むことが可能かを判定し，可能な場合には必要なコインの枚数の最小値を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は以下の形式で標準入力から与えられる．入力される値はすべて整数である．</p>
+<pre><var>N</var> <var>M</var>
+<var>A_1</var> <var>\cdots</var> <var>A_N</var>
+<var>B_1</var> <var>\cdots</var> <var>B_N</var>
+<var>S_1</var> <var>T_1</var> <var>U_1</var>
+<var>\vdots</var>
+<var>S_M</var> <var>T_M</var> <var>U_M</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に <var>M</var> 行で出力せよ．第 <var>j</var> 行目 (<var>1 \leqq j \leqq M</var>) にはプレイヤー <var>j</var> が第 <var>T_j</var> 層まで進むために必要なコインの枚数の最小値を出力せよ．ただし，プレイヤー <var>j</var> が第 <var>T_j</var> 層まで進むことができない場合は <var>-1</var> を出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<ul>
+<li><var>1 \leqq N \leqq 200\,000</var>．</li>
+<li><var>1 \leqq M \leqq 200\,000</var>．</li>
+<li><var>1 \leqq A_i \leqq 200\,000</var> (<var>1 \leqq i \leqq N</var>)．</li>
+<li><var>1 \leqq B_i \leqq 200\,000</var> (<var>1 \leqq i \leqq N</var>)．</li>
+<li><var>1 \leqq S_j &lt; T_j \leqq N+1</var> (<var>1 \leqq j \leqq M</var>)．</li>
+<li><var>1 \leqq U_j \leqq 100\,000\,000</var> (<var>1 \leqq j \leqq M</var>)．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<ol>
+<li>(<var>11</var> 点) <var>N \leqq 3\,000</var>，<var>M \leqq 3\,000</var>．</li>
+<li>(<var>14</var> 点) <var>U_1 = U_2 = \cdots = U_M</var>．</li>
+<li>(<var>31</var> 点) <var>T_j = N+1</var> (<var>1 \leqq j \leqq M</var>)．</li>
+<li>(<var>44</var> 点) 追加の制約はない．</li>
+</ol>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>5 4
+3 4 1 1 4
+2 5 1 2 1
+1 6 3
+1 6 4
+3 5 1
+2 5 9
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>-1
+29
+3
+22
+</pre>
+<p>プレイヤー <var>1</var> は，体力の上限が <var>3</var> であるため，第 <var>2</var> 層から第 <var>3</var> 層へ進むことができない．そのため，<var>1</var> 行目の出力は <var>-1</var> となる．</p>
+<p>一方で，プレイヤー <var>2</var> は体力の上限が <var>4</var> であるため，以下のようにして第 <var>6</var> 層まで進むことができる．</p>
+<ul>
+<li>第 <var>1</var> 層でコインを <var>8</var> 枚使って体力を <var>4</var> にし，第 <var>2</var> 層に進む．このとき，体力は <var>1</var> となる．</li>
+<li>第 <var>2</var> 層でコインを <var>15</var> 枚使って体力を <var>4</var> にし，第 <var>3</var> 層に進む．このとき，体力は <var>0</var> となる．</li>
+<li>第 <var>3</var> 層でコインを <var>4</var> 枚使って体力を <var>4</var> にし，第 <var>4</var> 層に進む．このとき，体力は <var>3</var> となる．</li>
+<li>第 <var>4</var> 層ではコインを使わずに，第 <var>5</var> 層に進む．このとき，体力は <var>2</var> となる．</li>
+<li>第 <var>5</var> 層でコインを <var>2</var> 枚使って体力を <var>4</var> にし，第 <var>6</var> 層に進む．このとき，体力は <var>0</var> となる．</li>
+</ul>
+<p>合計 <var>29</var> 枚のコインを使う．<var>29</var> 枚未満のコインで第 <var>6</var> 層まで進むことはできないので，<var>2</var> 行目の出力は <var>29</var> となる．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>10 10
+1 8 9 8 1 5 7 10 6 6
+10 10 2 8 10 3 9 8 3 7
+2 11 28
+5 11 28
+7 11 28
+1 11 18
+3 11 18
+8 11 18
+4 11 11
+6 11 11
+10 11 11
+9 11 5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>208
+112
+179
+248
+158
+116
+234
+162
+42
+-1
+</pre>
+<p>この入力例は小課題 <var>3</var> の制約を満たしている．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>20 20
+2 3 2 11 4 6 9 15 17 14 8 17 3 12 20 4 19 8 4 5
+19 3 18 2 13 7 5 19 10 1 12 8 1 15 20 1 13 2 18 6
+12 15 67
+7 15 18
+16 17 14
+9 21 97
+1 19 43
+3 18 31
+16 20 70
+7 20 28
+1 16 61
+3 5 69
+9 10 15
+2 13 134
+11 19 23
+16 20 14
+5 21 16
+15 20 11
+7 11 54
+7 16 16
+13 17 10
+3 15 135
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>151
+591
+4
+284
+339
+517
+35
+581
+254
+58
+-1
+178
+519
+-1
+-1
+-1
+219
+-1
+-1
+214
+</pre></section>
+</div>
+</span>
+</span>

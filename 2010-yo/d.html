@@ -1,0 +1,79 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>花子さんは <var>n</var> 枚 (<var>4 \leqq n \leqq 10</var>) のカードを並べて遊んでいる．それぞれのカードには <var>1</var> 以上 <var>99</var> 以下の整数が <var>1</var> つずつ書かれている．花子さんは，これらのカードの中から <var>k</var> 枚 (<var>2 \leqq k \leqq 4</var>) を選び，横一列に並べて整数を作ることにした．花子さんは全部で何種類の整数を作ることができるだろうか．</p>
+<p>例えば，<var>1, 2, 3, 13, 21</var> の <var>5</var> 枚のカードが与えられ，そこから <var>3</var> 枚を選び整数を作ることを考える．<var>2, 1, 13</var> をこの順に並べると，整数 <var>2113</var> を作ることができる．また，<var>21, 1, 3</var> をこの順に並べても，同じ整数 <var>2\,113</var> を作ることができる．このように，異なるカードの組み合わせから同じ整数が作られることもある．</p>
+<p><var>n</var> 枚のカードに書かれた整数が与えられたとき，その中から <var>k</var> 枚を選び，横一列に並べることで作ることができる整数の個数を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>2+n</var> 行からなる．<var>1</var> 行目にはカードの枚数 <var>n</var> (<var>4 \leqq n \leqq 10</var>) が，<var>2</var> 行目にはカードを選ぶ枚数 <var>k</var> (<var>2 \leqq k \leqq 4</var>) が書かれている．<var>2+i</var> 行目 (<var>1 \leqq i \leqq n</var>) には <var>i</var> 枚目のカードに書かれている <var>1</var> 以上 <var>99</var> 以下の整数が書かれている．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>出力は，花子さんが作ることができる整数の個数のみを含む <var>1</var> 行からなる．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>4
+2
+1
+2
+12
+1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>7
+</pre>
+<p>入力例 <var>1</var> において，<var>1, 2, 12, 1</var> の <var>4</var> 枚のカードの中から <var>2</var> 枚を選び，横一列に並べて作ることができる整数は，<var>11, 12, 21, 112, 121, 122, 212</var> の <var>7</var> 個である．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>6
+3
+72
+2
+12
+7
+2
+1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>68
+</pre></section>
+</div>
+</span>
+</span>

@@ -1,0 +1,84 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>20</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p><var>2</var> 個の文字列が与えられたとき，両方の文字列に含まれる文字列のうち最も長いものを探し，その長さを答えるプログラムを作成せよ.</p>
+<p>ここで，文字列 <var>s</var> が文字列 <var>t</var> に含まれるとは，<var>t</var> の中に <var>s</var> が連続して現れることをいう. 空文字列，すなわち長さ <var>0</var> の文字列は，どんな文字列にも含まれる. 例えば，文字列 <code>ABRACADABRA</code> には次の文字列が含まれる: <code>ABRA</code>，<code>RAC</code>，<code>D</code>，<code>ACADABRA</code>，<code>ABRACADABRA</code>，空文字列など. 一方，文字列 <code>ABRACADABRA</code> には次の文字列は含まれない: <code>ABRC</code>，<code>RAA</code>，<code>BA</code>，<code>K</code> など.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>例</h3>
+<p>例 1: 文字列として <code>ABRACADABRA</code> と <code>ECADADABRBCRDARA</code> が与えられた場合,両方に含まれる文字列には <code>CA</code> や <code>CADA</code> や <code>ADABR</code> や空文字列などがある. そのうち最も長いのは <code>ADABR</code> であり，その長さは <var>5</var> である. <var>2</var> 個の文字列の中に含まれる <code>ADABR</code> の位置を図 2-1 に示す.</p>
+<div style="text-align: center;">
+<img src="https://img.atcoder.jp/joi2008ho/d4e7adc205f60d55a3bccf7db589f961.png" style="max-width: 100%; width: 200px;" />
+<p>図 2-1 例 1 の文字列の中に現れる <var>\texttt{ADABR}</var> の位置</p>
+</div>
+
+<p>例 2: 文字列として <code>UPWJCIRUCAXIIRGL</code> と <code>SBQNYBSBZDFNEV</code> が与えられた場合，両方に含まれる文字列は空文字列のみであり，その長さは <var>0</var> である.</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力ファイルのファイル名は <code>input.txt</code> である．</p>
+<p>入力は <var>2</var> 行からなり，<var>1</var> 行目に <var>1</var> 個目の文字列が，<var>2</var> 行目に <var>2</var> 個目の文字列が与えられる. 文字列は英大文字からなり，各々の文字列の長さは <var>1</var> 以上 <var>4000</var> 以下である.</p>
+<p>採点用データのうち，配点の <var>30</var> %分については，各々の文字列の長さは <var>1</var> 以上 <var>50</var> 以下である.</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>出力ファイルのファイル名は <code>output.txt</code> である．</p>
+<p><code>output.txt</code> は，与えられた <var>2</var> 個の文字列の両方に含まれる文字列のうち最も長
+いものの長さだけを含む <var>1</var> 行からなる．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>ABRACADABRA
+ECADADABRBCRDARA
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>5
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>UPWJCIRUCAXIIRGL
+SBQNYBSBZDFNEV
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>0
+</pre></section>
+</div>
+</span>
+</span>

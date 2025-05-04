@@ -1,0 +1,92 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>JOI 君の住む IOI 市は，南北方向に <var>H</var> 区画，東西方向に <var>W</var> 区画の長方形の形をしており，<var>H \times W</var> 個の区画に区切られている．北から <var>i</var> 番目，西から <var>j</var> 番目の区画を <var>(i, j)</var> と表す．現在，IOI 市で開催されている国際的なプログラミングコンテストを記念して，大規模なお祭りが開催されている．いくつかの区画には屋台が出ており，それぞれ違う種類のお菓子を販売している． 区画 <var>(1, 1)</var>，区画 <var>(H, W)</var> およびそれらに東西南北に隣接する区画には屋台はない．</p>
+<p>JOI 君は区画 <var>(1, 1)</var> から区画 <var>(H, W)</var> に移動する．移動時間を短くするため，JOI 君は東あるいは南のみに移動を行う．JOI 君はお菓子が好きなので，区画に入るごとに順に次の行動をとる．</p>
+<ul>
+<li>現在の区画にまだ買っていないお菓子を販売している屋台が出ている場合，その屋台でお菓子を購入する．</li>
+<li>現在の区画の東西南北に隣接する区画にまだ買っていないお菓子を販売している屋台が出ている場合，それらの屋台のうち <var>1</var> つを除く全ての屋台から販売員を呼んで，お菓子を購入する．</li>
+</ul>
+<p>JOI 君は同じ種類のお菓子を複数回購入することはない．</p>
+<p>IOI 市の大きさ，屋台の位置と，それぞれの屋台のお菓子の値段が与えられたとき，JOI 君が区画 <var>(1, 1)</var> から区画 <var>(H, W)</var> に移動する間に購入するお菓子の総額の最小値を求めよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>1 + H</var> 行からなる．</p>
+<p><var>1</var> 行目には，<var>2</var> つの整数 <var>H, W</var> (<var>3 \leqq H \leqq 1\,000</var>，<var>3 \leqq W \leqq 1\,000</var>) が空白を区切りとして書かれている．これは，IOI 市が <var>H \times W</var> 個の区画に区切られていることを表す．</p>
+<p>続く <var>H</var> 行にはそれぞれ <var>W</var> 文字からなる文字列が書かれており，IOI 市のそれぞれの区画の情報を表す．<var>H</var> 行のうちの <var>i</var> 行目の左から <var>j</var> 番目の文字 (<var>1 \leqq i \leqq H</var>，<var>1 \leqq j \leqq W</var>) は，区画 <var>(i, j)</var> に屋台がない場合には <code>.</code> （ピリオド）である．屋台がある場合には <code>1</code>, <code>2</code>, <var>\ldots</var>, <code>9</code> のいずれかであり，その屋台で販売しているお菓子の値段を表す．</p>
+<p>与えられる <var>5</var> つの入力データのうち，入力 <var>1</var> では，屋台のある区画の数は <var>20</var> 以下である．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>JOI 君が区画 <var>(1, 1)</var> から区画 <var>(H, W)</var> に移動する間に購入するお菓子の総額の最小値を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>5 5
+..483
+.59.9
+3.866
+79...
+4.8..
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>20
+</pre>
+<p>入出力例 <var>1</var> においては，区画 <var>(1, 1)</var>，区画 <var>(2, 1)</var>，区画 <var>(3, 1)</var>，区画 <var>(3, 2)</var>，区画 <var>(4, 2)</var>，区画 <var>(4, 3)</var>，区画 <var>(4, 4)</var>，区画 <var>(4, 5)</var>，区画 <var>(5, 5)</var> の順番に移動して，区画 <var>(3, 1)</var>，区画 <var>(3, 3)</var>，区画 <var>(4, 2)</var> の屋台で販売しているお菓子を購入すると，購入するお菓子の総額が最小となる．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>12 10
+..498522.4
+.633527629
+54.4621596
+634.213458
+1924518685
+7739539767
+276155.3.6
+87716372.2
+.858877595
+7998739511
+3438.5852.
+568.9319..
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>63
+</pre></section>
+</div>
+</span>
+</span>

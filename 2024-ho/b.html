@@ -1,0 +1,199 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題文</h3>
+<p>JOI 国には <var>N</var> 個の駅があり，<var>1</var> から <var>N</var> までの番号が付けられている．また，JOI 国には <var>M</var> 本の鉄道路線があり，<var>1</var> から <var>M</var> までの番号が付けられている．鉄道路線 <var>i</var> (<var>1 \leqq i \leqq M</var>) は駅 <var>A_i</var> と駅 <var>B_i</var> を双方向に結んでおり，その移動には <var>C_i</var> 分を要する．</p>
+<p>JOI 国の大臣であるあなたは，以下のように鉄道路線を新たに <var>1</var> 本建設することにした．</p>
+<ul>
+<li> <var>1 \leqq u < v \leqq N</var> を満たす整数 <var>u, v</var> を選ぶ．駅 <var>u</var> と駅 <var>v</var> を双方向に結び，その移動に <var>L</var> 分を要する鉄道路線を JOI 国に建設する．すでに駅 <var>u</var> と駅 <var>v</var> を双方向に結ぶ鉄道路線があってもよいことに注意せよ．
+</ul>
+
+<p>あなたが建設を行った後に，駅 <var>S</var> から駅 <var>T</var> までいくつかの鉄道路線を用いて <var>K</var> 分以内に移動できるようになっている場合，国王は喜ぶ．なお，鉄道路線の乗り換え時間や待ち時間は考えないものとする．</p>
+<p>建設する際の <var>2</var> つの整数 <var>u, v</var> の選び方は <var>\frac{N \left( N - 1 \right)}{2}</var> 通りあるが，このうち国王が喜ぶような選び方が何通りあるかあなたは知りたい．</p>
+<p>駅と鉄道路線，国王の要望の情報が与えられたとき，国王が喜ぶような <var>2</var> つの整数の選び方が何通りあるかを求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は以下の形式で標準入力から与えられる．</p>
+<pre><var>N</var> <var>M</var>
+<var>S</var> <var>T</var> <var>L</var> <var>K</var>
+<var>A_1</var> <var>B_1</var> <var>C_1</var>
+<var>A_2</var> <var>B_2</var> <var>C_2</var>
+<var>\vdots</var>
+<var>A_M</var> <var>B_M</var> <var>C_M</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，国王が喜ぶような <var>2</var> つの整数の選び方が何通りあるかを <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<ul>
+<li> <var>2 \leqq N \leqq 200\,000</var>．
+<li> <var>1 \leqq M \leqq 200\,000</var>．
+<li> <var>1 \leqq S < T \leqq N</var>．
+<li> <var>1 \leqq L \leqq 10^{9}</var>．
+<li> <var>1 \leqq K \leqq 10^{15}</var>．
+<li> <var>1 \leqq A_i < B_i \leqq N</var> (<var>1 \leqq i \leqq M</var>)．
+<li> <var>(A_i, B_i) \neq (A_j, B_j)</var> (<var>1 \leqq i < j \leqq M</var>)．
+<li> <var>1 \leqq C_i \leqq 10^9</var> (<var>1 \leqq i \leqq M</var>)．
+<li> 入力される値はすべて整数である．
+</ul>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<ol>
+
+<li> (<var>8</var> 点) <var>L = 1</var>，<var>K = 2</var>，<var>C_i = 1</var> (<var>1 \leqq i \leqq M</var>)．
+<li> (<var>16</var> 点) <var>N \leqq 50</var>，<var>M \leqq 50</var>．
+<li> (<var>29</var> 点) <var>N \leqq 3\,000</var>，<var>M \leqq 3\,000</var>．
+<li> (<var>47</var> 点) 追加の制約はない．
+</ol>
+
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>7 8
+6 7 1 2
+1 2 1
+1 6 1
+2 3 1
+2 4 1
+3 5 1
+3 7 1
+4 5 1
+5 6 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>4
+</pre>
+<p>たとえば，あなたが <var>u = 3, v = 6</var> と選んだとする．駅 <var>3</var> と駅 <var>6</var> を双方向に結び，その移動に <var>1</var> 分を要する鉄道路線が JOI 国に建設される．</p>
+<p>このとき，以下のようにして，駅 <var>6</var> から駅 <var>7</var> まで鉄道路線を用いて <var>2</var> 分で移動できる．駅 <var>6</var> から駅 <var>7</var> まで <var>2</var> 分以内に移動できるようになっているため，国王は喜ぶ．</p>
+<ol>
+<li> 駅 <var>3</var> と駅 <var>6</var> を双方向に結ぶ路線を用いて，駅 <var>6</var> から駅 <var>3</var> に移動する．これには <var>1</var> 分を要する．
+<li> 駅 <var>3</var> と駅 <var>7</var> を双方向に結ぶ路線を用いて，駅 <var>3</var> から駅 <var>7</var> に移動する．これには <var>1</var> 分を要する．
+</ol>
+
+<p>国王が喜ぶような <var>2</var> つの整数の選び方はこの場合を含めて <var>4</var> 通りある．したがって，<var>4</var> を出力する．</p>
+<p>この入力例は小課題 <var>1,2,3,4</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>3 2
+1 3 1 2
+1 2 1
+2 3 1       
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>3
+</pre>
+<p>あなたがどのように <var>2</var> つの整数を選んでも，国王は喜ぶ．すなわち，国王が喜ぶような <var>2</var> つの整数の選び方は <var>3</var> 通りある．したがって，<var>3</var> を出力する．</p>
+<p>この入力例は小課題 <var>1,2,3,4</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>6 4
+2 5 1000000000 1
+1 2 1000000000
+2 3 1000000000
+2 4 1000000000
+5 6 1000000000
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>0
+</pre>
+<p>あなたがどのように <var>2</var> つの整数を選んでも，国王が喜ぶことはない．したがって，<var>0</var> を出力する．</p>
+<p>この入力例は小課題 <var>2,3,4</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 4</h3>
+<pre>18 21
+4 8 678730772 3000000062
+5 13 805281073
+8 17 80983648
+3 8 996533440
+10 16 514277428
+2 5 57914340
+6 11 966149890
+8 12 532734310
+2 9 188599710
+2 3 966306014
+12 16 656457780
+16 18 662633078
+1 15 698078877
+2 8 665665772
+2 6 652261981
+14 15 712798281
+7 13 571169114
+13 14 860543313
+6 7 454251187
+9 14 293590683
+6 14 959532841
+3 11 591245645  
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 4</h3>
+<pre>16
+</pre>
+<p>この入力例は小課題 <var>2,3,4</var> の制約を満たす．</p></section>
+</div>
+</span>
+</span>

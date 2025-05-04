@@ -1,0 +1,176 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+<p>IOI 国では海から陸に向かって常に風が吹いている．風は地点 <var>0</var> から地点 <var>1</var>，地点 <var>2</var>，<var>\ldots</var> という経路を通りながら地点 <var>N</var> まで吹く．地点 <var>N</var> には JOI 君の家が建てられている．地点 <var>0</var> の標高は <var>A_0 = 0</var> であり，地点 <var>i</var> (<var>1 \leqq i \leqq N</var>) の標高は <var>A_i</var> である．</p>
+<p>風は地表面に沿って吹き，高度の変化に応じて風の温度が変化する．海に接している地点 <var>0</var> での風の温度は <var>0</var> 度であり，すべての <var>i</var> (<var>0 \leqq i \leqq N - 1</var>) に対して，地点 <var>i</var> から地点 <var>i + 1</var> にかけての風の温度の変化はその時点における <var>A_i</var> と <var>A_{i + 1}</var> にのみ依存しており，以下のようになっている．</p>
+<ul>
+<li><var>A_i &lt; A_{i + 1}</var> のとき，標高が <var>1</var> 上がるごとに風の温度は <var>S</var> 度下がる．</li>
+<li><var>A_i \geqq A_{i + 1}</var> のとき，標高が <var>1</var> 下がるごとに風の温度は <var>T</var> 度上がる．</li>
+</ul>
+<p>IOI 国の領土では地殻変動が盛んである．あなたは，<var>Q</var> 日間の地殻変動のデータを入手した．<var>j</var> 日目 (<var>1 \leqq j \leqq Q</var>) には，<var>L_j \leqq k \leqq R_j</var> (<var>1 \leqq L_j \leqq R_j \leqq N</var>) を満たす地点の標高 <var>A_k</var> が <var>X_j</var> だけ変化する．<var>X_j</var> が非負のときは，標高が <var>X_j</var> だけ上がることを意味し，<var>X_j</var> が負のときは，標高が <var>|X_j|</var> だけ下がることを意味する．</p>
+<p>あなたの仕事は，各地殻変動が起こった後の，JOI 君の家に吹く風の温度を求めることである．</p>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p>地殻変動が起きる前の標高と地殻変動の情報が与えられたとき，すべての整数 <var>j</var> (<var>1 \leqq j \leqq Q</var>) に対し，<var>j</var> 日目の地殻変動が起こった後の JOI 君の家に吹く風の温度を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下の入力を読み込め．</p>
+<ul>
+<li><var>1</var> 行目には， <var>4</var> 個の整数 <var>N, Q, S, T</var> が空白を区切りとして書かれている．これらは，JOI 君の家が地点 <var>N</var> に建てられており，地殻変動の回数が <var>Q</var> であり，標高が <var>1</var> 上がるごとに風の温度が <var>S</var> 度下がり，<var>1</var> 下がるごとに <var>T</var> 度上がることを表す．</li>
+<li>続く <var>N + 1</var> 行のうちの <var>i</var> 行目 (<var>1 \leqq i \leqq N + 1</var>) には，地点 <var>i - 1</var> での地殻変動が起こる前の標高を表す整数 <var>A_{i - 1}</var> が書かれている．</li>
+<li>続く <var>Q</var> 行のうちの <var>j</var> 行目 (<var>1 \leqq j \leqq Q</var>) には，<var>3</var> 個の整数 <var>L_j, R_j, X_j</var> が空白を区切りとして書かれている．これらは，<var>j</var> 日目の地殻変動で地点 <var>L_j</var> から <var>R_j</var> までの標高が <var>X_j</var> だけ変化することを表す．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>出力は <var>Q</var> 行からなる．標準出力の <var>j</var> 行目 (<var>1 \leqq j \leqq Q</var>) には，<var>j</var> 日目の地殻変動が起こった後の JOI 君の家に吹く風の温度を出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<p>すべての入力データは以下の条件を満たす．</p>
+<ul>
+<li><var>1 \leqq N \leqq 200\,000</var>．</li>
+<li><var>1 \leqq Q \leqq 200\,000</var>．</li>
+<li><var>1 \leqq S \leqq 1\,000\,000</var>．</li>
+<li><var>1 \leqq T \leqq 1\,000\,000</var>．</li>
+<li><var>A_0 = 0</var>．</li>
+<li><var>-1\,000\,000 \leqq A_i \leqq 1\,000\,000</var> (<var>1 \leqq i \leqq N</var>)．</li>
+<li><var>1 \leqq L_j \leqq R_j \leqq N</var> (<var>1 \leqq j \leqq Q</var>)．</li>
+<li><var>-1\,000\,000 \leqq X_j \leqq 1\,000\,000</var> (<var>1 \leqq j \leqq Q</var>)．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<h4>小課題 1 [30 点]</h4>
+<p>以下の条件を満たす．</p>
+<ul>
+<li><var>N \leqq 2\,000</var>．</li>
+<li><var>Q \leqq 2\,000</var>．</li>
+</ul>
+<h4>小課題 2 [10 点]</h4>
+<ul>
+<li><var>S = T</var> を満たす．</li>
+</ul>
+<h4>小課題 3 [60 点]</h4>
+<ul>
+<li>追加の制限はない．</li>
+</ul>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>3 5 1 2
+0
+4
+1
+8
+1 2 2
+1 1 -2
+2 3 5
+1 2 -1
+1 3 5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>-5
+-7
+-13
+-13
+-18
+</pre>
+<p>最初，地点 <var>0, 1, 2, 3</var> の標高はそれぞれ <var>0, 4, 1, 8</var> である．<var>1</var> 日目の地殻変動の後，標高はそれぞれ <var>0, 6, 3, 8</var>となる．このとき，地点 <var>0, 1, 2, 3</var> での風の温度はそれぞれ <var>0, -6, 0, -5</var> となる．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>2 2 5 5
+0
+6
+-1
+1 1 4
+1 2 8
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>5
+-35
+</pre>
+<p>この入力例は，小課題 <var>2</var> の条件を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>7 8 8 13
+0
+4
+-9
+4
+-2
+3
+10
+-9
+1 4 8
+3 5 -2
+3 3 9
+1 7 4
+3 5 -1
+5 6 3
+4 4 9
+6 7 -10
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>277
+277
+322
+290
+290
+290
+290
+370
+</pre></section>
+</div>
+</span>
+</span>

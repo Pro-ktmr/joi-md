@@ -1,0 +1,78 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>あなたはクリスマスパーティーに学校内の自分の友達と，自分の友達の友達を招待することにした．あなたの通う学校の生徒数は <var>n</var> 人であり，それぞれの生徒には <var>1</var> から <var>n</var> までの番号が割り振られている．あなたの番号は <var>1</var> である．あなたの手元には，誰と誰が友達であるかを記したリストがある．このリストをもとに，あなたがクリスマスパーティーに招待する生徒数を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力の <var>1</var> 行目には学校の生徒数 <var>n</var> (<var>2 \leqq n \leqq 500</var>) が，<var>2</var> 行目にはリストの長さ <var>m</var> (<var>1 \leqq m \leqq 10\,000</var>) が書かれている．入力は全部で <var>2 + m</var> 行からなる．<var>2 + i</var> 行目 (<var>1 \leqq i \leqq m</var>) には <var>2</var> つの整数 <var>a_i</var> と <var>b_i</var> (<var>1 \leqq a_i &lt; b_i \leqq n</var>) が空白区切りで書かれており，番号 <var>a_i</var> と番号 <var>b_i</var> の生徒が友達同士であることを表す．入力の <var>3</var> 行目から <var>2 + m</var> 行目には同じ友達関係を表す行が重複して現れることはない．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>出力は，あなたがクリスマスパーティーに招待する生徒数のみを含む <var>1</var> 行からなる．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>6
+5
+1 2
+1 3
+3 4
+2 3
+4 5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>3
+</pre>
+<p>入力例 <var>1</var> において，あなたの友達は番号 <var>2</var> と番号 <var>3</var> の生徒の <var>2</var> 人である．また，番号 <var>3</var> と番号 <var>4</var> の生徒は友達同士であるので，番号 <var>4</var> の生徒はあなたの友達の友達である．番号 <var>5</var> と番号 <var>6</var> の生徒はあなたの友達でもなく，あなたの友達の友達でもない．したがって，あなたは番号 <var>2, 3, 4</var> の <var>3</var> 人の生徒をクリスマスパーティーに招待する．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>6
+5
+2 3
+3 4
+4 5
+5 6
+2 5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>0
+</pre>
+<p>入力例 <var>2</var> において，あなたには友達はいない．したがって，あなたがクリスマスパーティーに招待する生徒数は <var>0</var> 人である．</p></section>
+</div>
+</span>
+</span>

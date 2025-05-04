@@ -1,0 +1,130 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>とある合宿の最終日，合宿の参加者 <var>N</var> 人で集合写真を撮ることとなった．参加者には身長の低い順に <var>1</var> から <var>N</var> までの番号が付けられている．参加者 <var>h</var> の身長は <var>h</var> である (<var>1 \leqq h \leqq N</var>)．</p>
+<p>集合写真は，階段の上に並んで撮影する．この階段はちょうど <var>N</var> 段からなり，低い方から順に <var>1</var> から <var>N</var> までの番号が付けられている．段 <var>i + 1</var> は段 <var>i</var> よりもちょうど <var>2</var> だけ高い (<var>1 \leqq i \leqq N - 1</var>)．階段の幅はとても狭いため，それぞれの段に参加者が <var>1</var> 人ずつ立って，縦一列に並んで撮影する．</p>
+<p>間もなく撮影が行われようとしており，それぞれの段に参加者が立っている．現在，段 <var>i</var> (<var>1 \leqq i \leqq N</var>) に立っている参加者は，参加者 <var>H_i</var> である．</p>
+<p>ところが，あまりにも参加者の身長が違いすぎるため，この並び順では写真に写らない参加者がいるかもしれない．そこで，あなたは参加者の位置を並べ替えて，少なくとも全員の頭の上部が写るようにしたい．すなわち，次の条件が満たされるようにしたい．</p>
+<ul>
+<li>段 <var>i</var> (<var>1 \leqq i \leqq N</var>) に立っている参加者の身長を <var>a_i</var> とする．
+このとき，すべての <var>i</var> (<var>1 \leqq i \leqq N - 1</var>) に対し，<var>a_{i} &lt; a_{i + 1} + 2</var> が成り立つ．</li>
+</ul>
+<p>ただし，あなたは隣り合う参加者の位置を入れ替えることしかできない．すなわち，<var>1</var> 回の操作において，段 <var>i</var> (<var>1 \leqq i \leqq N - 1</var>) を任意に一つ選び，段 <var>i</var> の参加者と段 <var>i + 1</var> の参加者を入れ替えることができる．</p>
+<p>この操作をできるだけ少ない回数行うことで，条件が満たされるようにしたい．</p>
+<p>現在の参加者の並び順が与えられたとき，必要な操作回数の最小値を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は以下の形式で標準入力から与えられる．入力される値はすべて整数である．</p>
+<pre><var>N</var>
+<var>H_1</var> <var>\cdots</var> <var>H_N</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>必要な操作回数の最小値を，標準出力に <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<ul>
+<li><var>3 \leqq N \leqq 5\,000</var>．</li>
+<li><var>1 \leqq H_i \leqq N</var> (<var>1 \leqq i \leqq N</var>)．</li>
+<li><var>H_i \neq H_j</var> (<var>1 \leqq i &lt; j \leqq N</var>)．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<ol>
+<li>(<var>5</var> 点) <var>N \leqq 9</var>．</li>
+<li>(<var>7</var> 点) <var>N \leqq 20</var>．</li>
+<li>(<var>32</var> 点) <var>N \leqq 200</var>．</li>
+<li>(<var>20</var> 点) <var>N \leqq 800</var>．</li>
+<li>(<var>36</var> 点) 追加の制約はない．</li>
+</ol>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>5
+3 5 2 4 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>3
+</pre>
+<p>以下のように操作を <var>3</var> 回行うことで，条件を満たすようにできる．</p>
+<ul>
+<li>まず，段 <var>2</var> の参加者と段 <var>3</var> の参加者を入れ替える．参加者の身長は前から順に <var>3, 2, 5, 4, 1</var> となる．</li>
+<li>次に，段 <var>4</var> の参加者と段 <var>5</var> の参加者を入れ替える．参加者の身長は前から順に <var>3, 2, 5, 1, 4</var> となる．</li>
+<li>最後に，段 <var>3</var> の参加者と段 <var>4</var> の参加者を入れ替える．参加者の身長は前から順に <var>3, 2, 1, 5, 4</var> となり，条件を満たす．</li>
+</ul>
+<p><var>2</var> 回以下の操作で条件を満たす状態にすることはできないので，<var>3</var> を出力する．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>5
+3 2 1 5 4
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>0
+</pre>
+<p>すでに条件を満たしているので，操作を行う必要はない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>9
+6 1 3 4 9 5 7 8 2
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>9
+</pre></section>
+</div>
+</span>
+</span>

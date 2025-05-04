@@ -1,0 +1,101 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>現在カザフスタンがある地域には，古くは「シルクロード」と呼ばれる交易路があった．</p>
+<p>シルクロード上には <var>N + 1</var> 個の都市があり，西から順に都市 <var>0</var>, 都市 <var>1</var>, <var>\ldots</var>, 都市 <var>N</var> と番号がつけられている．都市 <var>i - 1</var> と都市 <var>i</var> の間の距離 (<var>1 \leqq i \leqq N</var>) は <var>D_i</var> である．</p>
+<p>貿易商である JOI 君は，都市 <var>0</var> から出発して，都市を順番に経由し，都市 <var>N</var> まで絹を運ぶことになった．都市 <var>0</var> から都市 <var>N</var> まで <var>M</var> 日以内に移動しなければならない．JOI 君は，それぞれの日の行動として，以下の <var>2</var> つのうちいずれか <var>1</var> つを選ぶ．</p>
+<ul>
+<li>移動：現在の都市から <var>1</var> つ東の都市へ <var>1</var> 日かけて移動する．現在都市 <var>i - 1</var> (<var>1 \leqq i \leqq N</var>) にいる場合は，都市 <var>i</var> に移動する．</li>
+<li>待機：移動を行わず，現在いる都市で <var>1</var> 日待機する．</li>
+</ul>
+<p>移動は大変であり，移動するたびに疲労度が溜まっていく．シルクロードでは日毎に天候の変動があり，天候が悪い日ほど移動には苦労を要する．</p>
+<p>JOI 君が絹を運ぶのに使える <var>M</var> 日間のうち <var>j</var> 日目 (<var>1 \leqq j \leqq M</var>) の天候の悪さは <var>C_j</var> であることが分かっている．都市 <var>i - 1</var> から都市 <var>i</var> (<var>1 \leqq i \leqq N</var>) に <var>j</var> 日目 (<var>1 \leqq j \leqq M</var>) に移動する場合，疲労度が <var>D_i \times C_j</var> だけ溜まってしまう．移動を行わず待機している日は疲労度は溜まらない．</p>
+<p>JOI 君は，それぞれの日の行動をうまく選ぶことで，できるだけ疲労度を溜めずに移動したい．JOI 君が <var>M</var> 日以内に都市 <var>N</var> に移動するときの，移動を開始してから終了するまでに溜まる疲労度の合計の最小値を求めよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>1 + N + M</var> 行からなる．</p>
+<p><var>1</var> 行目には，<var>2</var> つの整数 <var>N, M</var> (<var>1 \leqq N \leqq M \leqq 1\,000</var>) が空白を区切りとして書かれている．これは，シルクロードが <var>N + 1</var> 個の都市からなり，JOI 君が絹を都市 <var>0</var> から都市 <var>N</var> まで <var>M</var> 日以内に運ばなければならないことを表す．</p>
+<p>続く <var>N</var> 行のうちの <var>i</var> 行目 (<var>1 \leqq i \leqq N</var>) には，整数 <var>D_i</var> (<var>1 \leqq D_i \leqq 1\,000</var>) が書かれている．これは，都市 <var>i - 1</var> と都市 <var>i</var> の間の距離が <var>D_i</var> であることを表す．</p>
+<p>続く <var>M</var> 行のうちの <var>j</var> 行目 (<var>1 \leqq j \leqq M</var>) には，整数 <var>C_j</var> (<var>1 \leqq C_j \leqq 1\,000</var>) が書かれている．これは，<var>j</var> 日目の天候の悪さが <var>C_j</var> であることを表す．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>JOI 君が <var>M</var> 日以内に都市 <var>N</var> に移動するときの，移動を開始してから終了するまでに溜まる疲労度の合計の最小値を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>3 5
+10
+25
+15
+50
+30
+15
+40
+30
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>1125
+</pre>
+<p>入出力例 <var>1</var> において，溜まる疲労度の合計を最小にするように JOI 君が移動するには次のようにする．</p>
+<ul>
+<li><var>1</var> 日目は待機する．</li>
+<li><var>2</var> 日目に都市 <var>0</var> から都市 <var>1</var> へ移動する．このとき溜まる疲労度は <var>10 \times 30 = 300</var> である．</li>
+<li><var>3</var> 日目に都市 <var>1</var> から都市 <var>2</var> へ移動する．このとき溜まる疲労度は <var>25 \times 15 = 375</var> である．</li>
+<li><var>4</var> 日目は待機する．</li>
+<li><var>5</var> 日目に都市 <var>2</var> から都市 <var>3</var> へ移動する．このとき溜まる疲労度は <var>15 \times 30 = 450</var> である．</li>
+</ul>
+<p>JOI 君がこのように移動した場合に溜まる疲労度の合計は <var>300 + 375 + 450 = 1\,125</var> である．これが最小値である．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>2 6
+99
+20
+490
+612
+515
+131
+931
+1000
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>31589
+</pre></section>
+</div>
+</span>
+</span>

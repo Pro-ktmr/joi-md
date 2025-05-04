@@ -1,0 +1,282 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題文</h3>
+<p>JOI 街道は東西に伸びる長さ <var>L</var> メートルの道路であり，道路の西端から <var>l</var> メートル (<var>0 \leqq l \leqq L</var>) 進んだ場所は地点 <var>l</var> と呼ばれている．</p>
+<p>さて，今年は JOI 街道で初めてマラソン大会が開催されることとなった．このマラソン大会は通常のルールとは異なり，次のようなルールに基づいて行われる．</p>
+<ul>
+<li> 道路上に <var>N</var> 個のボールが置かれており，<var>i</var> 番目 (<var>1 \leqq i \leqq N</var>) のボールは地点 <var>X_i</var> に置かれている．複数のボールが同じ地点に置かれていることもある．
+<li> 参加者は定められたスタート地点から出発する．
+<li> <var>N</var> 個のボールをすべて持った状態で，定められたゴール地点に制限時間内にたどり着くと<b>完走</b>となる．ただし，一度持ったボールを地面に置くと失格となる．
+</ul>
+
+<p>この大会のスタート地点，ゴール地点および制限時間はまだ公開されていないが，<var>Q</var> 個のシナリオのいずれかになることは既に公開されている．
+<var>j</var> 番目 (<var>1 \leqq j \leqq Q</var>) のシナリオでは，スタート地点が地点 <var>S_j</var>，ゴール地点が地点 <var>G_j</var>，制限時間が <var>T_j</var> 秒である．</p>
+<p>マラソン大会の参加者である理恵さんは，ボールを <var>1</var> 個拾うのに <var>1</var> 秒かかり，<var>x</var> 個のボールを持った状態で道路上を <var>1</var> メートル走るのに <var>x+1</var> 秒かかる．</p>
+<p>JOI 街道，ボール，シナリオに関する情報が与えられたとき，それぞれのシナリオについて，理恵さんが完走する方法が存在するかを判定するプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は以下の形式で標準入力から与えられる．</p>
+<pre><var>N</var> <var>L</var>
+<var>X_1</var> <var>X_2</var> <var>\cdots</var> <var>X_N</var>
+<var>Q</var>
+<var>S_1</var> <var>G_1</var> <var>T_1</var>
+<var>S_2</var> <var>G_2</var> <var>T_2</var>
+<var>\vdots</var>
+<var>S_Q</var> <var>G_Q</var> <var>T_Q</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に <var>Q</var> 行で出力せよ．
+<var>j</var> 行目 (<var>1 \leqq j \leqq Q</var>) には，<var>j</var> 番目のシナリオにおいて理恵さんが完走する方法が存在する場合 <code>Yes</code>，そうでない場合 <code>No</code> を出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<ul>
+<li> <var>1 \leqq N \leqq 500\,000</var>．
+<li> <var>1 \leqq L \leqq 500\,000</var>．
+<li> <var>0 \leqq X_i \leqq L</var> (<var>1 \leqq i \leqq N</var>)．
+<li> <var>1 \leqq Q \leqq 500\,000</var>．
+<li> <var>0 \leqq S_j \leqq L</var> (<var>1 \leqq j \leqq Q</var>)．
+<li> <var>0 \leqq G_j \leqq L</var> (<var>1 \leqq j \leqq Q</var>)．
+<li> <var>1 \leqq T_j \leqq 500\,000</var> (<var>1 \leqq j \leqq Q</var>)．
+<li> 入力される値はすべて整数である．
+</ul>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<ol>
+<li> (<var>7</var> 点) <var>N \leqq 7</var>，<var>Q \leqq 10</var>，<var>S_j = 0</var>，<var>G_j = 0</var> (<var>1 \leqq j \leqq Q</var>)．
+<li> (<var>7</var> 点) <var>N \leqq 7</var>，<var>Q \leqq 10</var>．
+<li> (<var>10</var> 点) <var>N \leqq 14</var>，<var>Q \leqq 10</var>．
+<li> (<var>28</var> 点) <var>N \leqq 100</var>，<var>Q \leqq 10</var>．
+<li> (<var>10</var> 点) <var>N \leqq 2\,000</var>，<var>Q \leqq 10</var>．
+<li> (<var>19</var> 点) <var>N \leqq 2\,000</var>．
+<li> (<var>19</var> 点) 追加の制約はない．
+</ol>
+
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>3 100
+30 80 30
+3
+0 100 403
+0 100 300
+0 100 262
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>Yes
+Yes
+No
+</pre>
+<p><var>1</var> 番目のシナリオでは，スタート地点は地点 <var>0</var>，ゴール地点は地点 <var>100</var>，制限時間は <var>403</var> 秒である．以下のようにして，制限時間内の <var>263</var> 秒で完走することができる．よって，<var>1</var> 行目には <code>Yes</code> を出力する．</p>
+<style>
+.example-01-table th,
+.example-01-table td {
+    text-align: center;
+    border: solid 1px;
+    padding: 4px 8px;
+}
+.example-01-table tr > *:nth-last-child(4) {
+    border-right: double 3px;
+}
+</style>
+
+<table class="example-01-table">
+<thead>
+<tr>
+<th>順番</th>
+<th>行動</th>
+<th>消費時間</th>
+<th>累計時間</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>地点 <var>0</var> から出発し，地点 <var>30</var> に移動する．</td>
+<td><var>30</var> 秒</td>
+<td><var>30</var> 秒</td>
+</tr>
+<tr>
+<td>2</td>
+<td><var>1</var> 番目のボールを拾う．</td>
+<td><var>1</var> 秒</td>
+<td><var>31</var> 秒</td>
+</tr>
+<tr>
+<td>3</td>
+<td><var>3</var> 番目のボールを拾う．</td>
+<td><var>1</var> 秒</td>
+<td><var>32</var> 秒</td>
+</tr>
+<tr>
+<td>4</td>
+<td>地点 <var>30</var> から地点 <var>80</var> に移動する．</td>
+<td><var>150</var> 秒</td>
+<td><var>182</var> 秒</td>
+</tr>
+<tr>
+<td>5</td>
+<td><var>2</var> 番目のボールを拾う．</td>
+<td><var>1</var> 秒</td>
+<td><var>183</var> 秒</td>
+</tr>
+<tr>
+<td>6</td>
+<td>地点 <var>80</var> から地点 <var>100</var> に移動し，完走する．</td>
+<td><var>80</var> 秒</td>
+<td><var>263</var> 秒</td>
+</tr>
+</tbody>
+</table>
+
+<p><var>2</var> 番目のシナリオでは，スタート地点とゴール地点は <var>1</var> 番目のシナリオと同じであるが，制限時間は <var>300</var> 秒となっている．前と同じ方法で，制限時間内の <var>263</var> 秒で完走することができる．よって，<var>2</var> 行目には <code>Yes</code> を出力する．</p>
+<p><var>3</var> 番目のシナリオでは，スタート地点とゴール地点は <var>1, 2</var> 番目のシナリオと同じであるが，制限時間は <var>262</var> 秒となっている．制限時間内に完走する方法は存在しない．よって，<var>3</var> 行目には <code>No</code> を出力する．</p>
+<p>この入力例は小課題 <var>2, 3, 4, 5, 6, 7</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>3 100
+30 80 30
+3
+0 0 403
+0 0 300
+0 0 262
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>Yes
+No
+No
+</pre>
+<p><var>1</var> 番目のシナリオでは，スタート地点は地点 <var>0</var>，ゴール地点は地点 <var>0</var>，制限時間は <var>403</var> 秒である．以下のようにして，制限時間内の <var>403</var> 秒で完走することができる．よって，<var>1</var> 行目には <code>Yes</code> を出力する．</p>
+<table class="example-01-table">
+<thead>
+<tr>
+<th>順番</th>
+<th>行動</th>
+<th>消費時間</th>
+<th>累計時間</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>地点 <var>0</var> から出発し，地点 <var>30</var> に移動する．</td>
+<td><var>30</var> 秒</td>
+<td><var>30</var> 秒</td>
+</tr>
+<tr>
+<td>2</td>
+<td><var>1</var> 番目のボールを拾う．</td>
+<td><var>1</var> 秒</td>
+<td><var>31</var> 秒</td>
+</tr>
+<tr>
+<td>3</td>
+<td>地点 <var>30</var> から地点 <var>80</var> に移動する．</td>
+<td><var>100</var> 秒</td>
+<td><var>131</var> 秒</td>
+</tr>
+<tr>
+<td>4</td>
+<td><var>2</var> 番目のボールを拾う．</td>
+<td><var>1</var> 秒</td>
+<td><var>132</var> 秒</td>
+</tr>
+<tr>
+<td>5</td>
+<td>地点 <var>80</var> から地点 <var>30</var> に移動する．</td>
+<td><var>150</var> 秒</td>
+<td><var>282</var> 秒</td>
+</tr>
+<tr>
+<td>6</td>
+<td><var>3</var> 番目のボールを拾う．</td>
+<td><var>1</var> 秒</td>
+<td><var>283</var> 秒</td>
+</tr>
+<tr>
+<td>7</td>
+<td>地点 <var>30</var> から地点 <var>0</var> に移動し，完走する．</td>
+<td><var>120</var> 秒</td>
+<td><var>403</var> 秒</td>
+</tr>
+</tbody>
+</table>
+
+<p><var>2, 3</var> 番目のシナリオでは，スタート地点とゴール地点は <var>1</var> 番目のシナリオと同じであるが，制限時間はそれぞれ <var>300</var> 秒，<var>262</var> 秒となっている．どちらについても，制限時間内に完走する方法は存在しない．よって，<var>2</var> 行目には <code>No</code> を，<var>3</var> 行目には <code>No</code> を出力する．</p>
+<p>この入力例は小課題 <var>1, 2, 3, 4, 5, 6, 7</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>6 100
+0 50 100 0 50 100
+4
+20 70 600
+70 20 600
+10 40 600
+40 10 600
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>No
+Yes
+No
+Yes
+</pre>
+<p>この入力例は小課題 <var>2, 3, 4, 5, 6, 7</var> の制約を満たす．</p></section>
+</div>
+</span>
+</span>

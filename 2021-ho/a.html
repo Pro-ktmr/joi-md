@@ -1,0 +1,142 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>家庭菜園が趣味のビ太郎は自宅の庭でビバ草という植物を育てている．庭には <var>N</var> 株のビバ草が東西方向に一列に植えられており，西側から順に <var>1</var> から <var>N</var> までの番号が付いている．現在，ビバ草 <var>i</var> (<var>1 \leqq i \leqq N</var>) の背丈は <var>A_i</var> である．</p>
+<p>育てているビバ草は特別な品種改良の結果，水を与えるたびに背丈が <var>1</var> 伸びる．ビ太郎は庭の見栄えを良くするために水やりを複数回行い，以下の条件を満たすようにしたいと考えている．</p>
+<ul>
+<li>すべての水やりを行った後のビバ草 <var>i</var> (<var>1 \leqq i \leqq N</var>) の背丈を <var>B_i</var> とする．このとき，「<var>1 \leqq j \leqq k - 1</var> に対し <var>B_j &lt; B_{j + 1}</var>」かつ「<var>k \leqq j \leqq N - 1</var> に対し <var>B_j &gt; B_{j + 1}</var>」を満たすような整数 <var>k</var> (<var>1 \leqq k \leqq N</var>) が存在する．</li>
+</ul>
+<p>ただし，ビ太郎は不器用なため，<var>1</var> 回の水やりにおいて，ある区間上のビバ草に一斉に水を与えることしかできない．すなわち，水やりを行うたびにある整数 <var>L, R</var> (<var>1 \leqq L \leqq R \leqq N</var>) を選び，ビバ草 <var>L, L + 1, \ldots, R</var> に水を与える．</p>
+<p>ビ太郎は水やりの回数をできるだけ少なくしたい．</p>
+<p>ビバ草の数と現在の背丈の情報が与えられたとき，条件を満たすのに必要な水やりの回数の最小値を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は以下の形式で標準入力から与えられる．入力される値はすべて整数である．</p>
+<pre><var>N</var>
+<var>A_1</var> <var>\cdots</var> <var>A_N</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>必要な水やりの回数の最小値を，標準出力に <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<ul>
+<li><var>2 \leqq N \leqq 200\,000</var>．</li>
+<li><var>1 \leqq A_i \leqq 1\,000\,000\,000</var> (<var>1 \leqq i \leqq N</var>)．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<ol>
+<li>(<var>40</var> 点) <var>N \leqq 2\,000</var>．</li>
+<li>(<var>60</var> 点) 追加の制約はない．</li>
+</ol>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>5
+3 2 2 3 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>3
+</pre>
+<p>以下のように水やりを <var>3</var> 回行うことで条件を満たすことができる．</p>
+<ul>
+<li><var>L=2</var>，<var>R=5</var> として，ビバ草 <var>2, 3, 4, 5</var> に水を与える．ビバ草の背丈は西から順に <var>3, 3, 3, 4, 2</var> となる．</li>
+<li><var>L=2</var>，<var>R=3</var> として，ビバ草 <var>2, 3</var> に水を与える．ビバ草の背丈は西から順に <var>3, 4, 4, 4, 2</var> となる．</li>
+<li><var>L=3</var>，<var>R=3</var> として，ビバ草 <var>3</var> に水を与える．ビバ草の背丈は西から順に <var>3, 4, 5, 4, 2</var> となる．</li>
+</ul>
+<p><var>2</var> 回以下の水やりで条件を満たすことは不可能なので，必要な水やりの回数の最小値は <var>3</var> である．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>5
+9 7 5 3 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>0
+</pre>
+<p>すでに条件を満たしているため，必要な水やりの回数の最小値は <var>0</var> である．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>2
+2021 2021
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>1
+</pre>
+<p>1 回の水やりで条件を満たすためには，<var>L = 1</var>，<var>R = 1</var> としてビバ草 <var>1</var> に水を与えるか，または，<var>L = 2</var>，<var>R = 2</var> としてビバ草 <var>2</var> に水を与えればよい．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 4</h3>
+<pre>8
+12 2 34 85 4 91 29 85
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 4</h3>
+<pre>93
+</pre></section>
+</div>
+</span>
+</span>

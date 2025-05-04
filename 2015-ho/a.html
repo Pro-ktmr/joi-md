@@ -1,0 +1,144 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>JOI 国には <var>N</var> 個の都市があり，それぞれ <var>1, 2, \ldots, N</var> の番号が付けられている．また，鉄道が <var>N - 1</var> 本あり，それぞれ <var>1, 2, \ldots, N - 1</var> の番号が付けられている．鉄道 <var>i</var> (<var>1 \leqq i \leqq N - 1</var>) は，都市 <var>i</var> と都市 <var>i + 1</var> を双方向に結んでいる．</p>
+<p>JOI 国の鉄道に乗車する方法として，紙の切符で乗車する方法と，IC カードで乗車する方法がある．</p>
+<ul>
+<li>鉄道 <var>i</var> に紙の切符で乗車する場合の運賃は <var>A_i</var> 円である．</li>
+<li>鉄道 <var>i</var> に IC カードで乗車する場合の運賃は <var>B_i</var> 円である．ただし，IC カードで鉄道 <var>i</var> に乗車するには，鉄道 <var>i</var> で使える IC カードを事前に購入しておく必要がある．鉄道 <var>i</var> で使える IC カードを購入するには <var>C_i</var> 円かかる．一度購入した IC カードは，何度でも使用することができる．</li>
+</ul>
+<p>IC カードの方が金額の処理が簡単になるため，IC カードで乗車する場合の運賃の方が紙の切符で乗車する場合の運賃よりも安い．すなわち，<var>i = 1, 2, \ldots, N - 1</var> に対して，<var>A_i &gt; B_i</var> が成り立つ．IC カードの仕様は鉄道ごとにすべて異なるため，どの <var>i</var> に対しても，鉄道 <var>i</var> で使える IC カードを他の鉄道で使用することはできない．</p>
+<p>あなたは，JOI 国じゅうを旅行することにした．都市 <var>P_1</var> から出発し，<var>P_2, P_3, \ldots, P_M</var> の順に都市を訪れる予定である．旅行は <var>M - 1</var> 日間の行程からなる．<var>j</var> 日目 (<var>1 \leqq j \leqq M - 1</var>) に都市 <var>P_j</var> から都市 <var>P_{j + 1}</var> に鉄道で移動する．この際，いくつかの鉄道を乗り継いで移動することもある．また，同じ都市を二度以上訪れることがあるかもしれない．JOI 国の鉄道は速いので，どの都市からどの都市へも <var>1</var> 日で移動することができる．</p>
+<p>あなたは現在，どの鉄道の IC カードも持っていない．あなたは，あらかじめ，いくつかの鉄道の IC カードを購入し，この旅行にかかる金額，すなわち，IC カード購入費用と乗車した鉄道の運賃の和をできるだけ少なくしたい．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p>JOI 国の都市の数，旅行の行程，および JOI 国のそれぞれの鉄道の運賃と IC カードの価格が与えられる．このとき，旅行にかかる金額の最小値を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下のデータを読み込め．</p>
+<ul>
+<li><var>1</var> 行目には，整数 <var>N, M</var> が空白を区切りとして書かれている．これらはそれぞれ，JOI 国に都市が <var>N</var> 個あり，旅行が <var>M - 1</var> 日間の行程からなることを表す．</li>
+<li><var>2</var> 行目には，<var>M</var> 個の整数 <var>P_1, P_2, \ldots, P_M</var> が空白を区切りとして書かれている．これらは，<var>j</var> 日目 (<var>1 \leqq j \leqq M - 1</var>) に都市 <var>P_j</var> から都市 <var>P_{j + 1}</var> に鉄道で移動することを表す．</li>
+<li>続く <var>N - 1</var> 行のうちの <var>i</var> 行目 (<var>1 \leqq i \leqq N - 1</var>) には，<var>3</var> つの整数 <var>A_i, B_i, C_i</var> が空白を区切りとして書かれている．これらはそれぞれ，鉄道 <var>i</var> に紙の切符で乗車したときの運賃が <var>A_i</var> 円，IC カードで乗車したときの運賃が <var>B_i</var> 円，鉄道 <var>i</var> で使える IC カードの金額が <var>C_i</var> 円であることを表す．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，旅行にかかる金額の最小値を円単位で表す整数を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<p>すべての入力データは以下の条件を満たす．</p>
+<ul>
+<li><var>2 \leqq N \leqq 100\,000</var>．</li>
+<li><var>2 \leqq M \leqq 100\,000</var>．</li>
+<li><var>1 \leqq B_i &lt; A_i \leqq 100\,000</var> (<var>1 \leqq i \leqq N - 1</var>)．</li>
+<li><var>1 \leqq C_i \leqq 100\,000</var> (<var>1 \leqq i \leqq N - 1</var>)．</li>
+<li><var>1 \leqq P_j \leqq N</var> (<var>1 \leqq j \leqq M</var>)．</li>
+<li><var>P_j \neq P_{j + 1}</var> (<var>1 \leqq j \leqq M - 1</var>)．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<h4>小課題 1 [20 点]</h4>
+<p>以下の条件を満たす．</p>
+<ul>
+<li><var>2 \leqq N \leqq 1\,000</var>．</li>
+<li><var>M = 2</var>．</li>
+<li><var>1 \leqq B_i &lt; A_i \leqq 1\,000</var> (<var>1 \leqq i \leqq N - 1</var>)．</li>
+<li><var>1 \leqq C_i \leqq 1\,000</var> (<var>1 \leqq i \leqq N - 1</var>)．</li>
+</ul>
+<h4>小課題 2 [30 点]</h4>
+<p>以下の条件を満たす．</p>
+<ul>
+<li><var>2 \leqq N \leqq 1\,000</var>．</li>
+<li><var>2 \leqq M \leqq 1\,000</var>．</li>
+<li><var>1 \leqq B_i &lt; A_i \leqq 1\,000</var> (<var>1 \leqq i \leqq N - 1</var>)．</li>
+<li><var>1 \leqq C_i \leqq 1\,000</var> (<var>1 \leqq i \leqq N - 1</var>)．</li>
+</ul>
+<h4>小課題 3 [50 点]</h4>
+<p>追加の制限はない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>4 4
+1 3 2 4
+120 90 100
+110 50 80
+250 70 130
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>550
+</pre>
+<p>この場合，旅行にかかる金額を最小にする方法は以下のとおりである．</p>
+<ul>
+<li>鉄道 <var>2</var> と鉄道 <var>3</var> の IC カードを購入する．これには <var>80 + 130 = 210</var> 円かかる．</li>
+<li><var>1</var> 日目に，都市 <var>1</var> から都市 <var>2</var> まで紙の切符を使って移動し，次に都市 <var>2</var> から都市 <var>3</var> まで IC カードを使って移動する．これには <var>120 + 50 = 170</var> 円かかる．</li>
+<li><var>2</var> 日目に，都市 <var>3</var> から都市 <var>2</var> まで IC カードを使って移動する．これには <var>50</var> 円かかる．</li>
+<li><var>3</var> 日目に，都市 <var>2</var> から都市 <var>3</var> まで IC カードを使って移動し，次に都市 <var>3</var> から都市 <var>4</var> まで IC カードを使って移動する．これには <var>50 + 70 = 120</var> 円かかる．</li>
+</ul>
+<p>このように移動すると，旅行にかかる金額の合計は <var>210 + 170 + 50 + 120 = 550</var> 円となる．これが最小であるので，<var>550</var> と出力する．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>8 5
+7 5 3 5 4
+12 5 8
+16 2 1
+3 1 5
+17 12 17
+19 7 5
+12 2 19
+4 1 3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>81
+</pre></section>
+</div>
+</span>
+</span>

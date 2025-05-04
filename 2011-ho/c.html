@@ -1,0 +1,132 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>JOI 国には <var>N</var> 個の町があり，それらの間は <var>M</var> 本の双方向に通行可能な道路で結ばれている．<var>K</var> 個の町にはショッピングモールがあり，国民は道路を通ってそれらの町のいずれかに行き買い物をする．</p>
+<p>家の場所によっては，買い物に行くために長い距離を移動する必要があり，それは非常に不便である．国王はこの実情を把握するため，ショッピングモールのある町までの最短距離が家の場所によってどれだけ長くなりうるのかを調べることにした．家は道路の途中に建てられることもあるので (入力例 <var>1</var> の説明を参
+照)，この調査は非常に大変である．そこで国王は，優秀なプログラマーであるあなたに，調査を行うプログラムの作成を依頼した．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p>道路の情報とショッピングモールのある町の情報が与えられるとき，ショッピングモールのある町からもっとも遠い道路上の点 (端点も含む) までの距離を求めるプログラムを作成せよ．町の中を移動するのにかかる距離は無視してよい．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><var>2 \leqq N \leqq 3\,000</var>&emsp;</td>
+<td>JOI 国の町の個数</td>
+</tr>
+<tr>
+<td><var>1 \leqq M \leqq 100\,000\, (=10^5)</var>&emsp;</td>
+<td>JOI 国の道路の本数</td>
+</tr>
+<tr>
+<td><var>1 \leqq K\leqq N</var>&emsp;</td>
+<td>ショッピングモールがある町の個数</td>
+</tr>
+<tr>
+<td><var>1 \leqq l_i \leqq 1\,000</var>&emsp;</td>
+<td><var>i</var> 番目の道路の長さ</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下の入力を読み込め．</p>
+<ul>
+<li><var>1</var> 行目には整数 <var>N, M, K</var> が空白区切りで書かれている．<var>N</var> は JOI 国の町の個数を，<var>M</var> は JOI 国の道路の本数を，<var>K</var> はショッピングモールがある町の個数をそれぞれ表す．町には <var>1,2,\ldots,N</var> の番号がつけ
+られている．</li>
+<li>続く <var>M</var> 行は道路の情報を表す．<var>i + 1</var> 行目 (<var>1\leqq i \leqq M</var>) には整数 <var>a_i,b_i,l_i</var> (<var>1\leqq a_i\leqq N,1\leqq b_i\leqq N,1\leqq l_i\leqq 1000</var>) が空白区切りで書かれている．これは，<var>i</var> 本目の道路が町 <var>a_i</var> と町 <var>b_i</var> を結んでおり，長さが <var>l_i</var> であることを表す．道路の両端が同じ町であることはない．また，任意の <var>2</var> つの町 <var>p, q</var> に対し，<var>p</var> と <var>q</var> を結ぶ道路は <var>2</var> 本以上存在しない．どの町からどの町へもいくつかの道路をたどって行くことができる．</li>
+<li>続く <var>K</var> 行はショッピングモールの情報を表す．<var>i + M + 1</var> 行目 (<var>1 \leqq i \leqq K</var>) には <var>1</var> つの整数 <var>s_i</var> (<var>1 \leqq s_i \leqq N</var>) が書かれている．これは町 <var>s_i</var> にショッピングモールがあることを表す． <var>s_1,\ldots, s_K</var> の中に同じ値が <var>2</var> 回以上現れることはない．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，ショッピングモールのある町までの最短距離の最大値の小数点以下を四捨五入した整数 <var>1</var> つを出力せよ．</p>
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>採点基準</h3>
+<p>採点用データのうち，配点の <var>40</var> %分については，<var>K = 1</var> を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>3 3 1
+1 2 1
+2 3 1
+3 1 1
+1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>2
+</pre>
+<p>入力例 <var>1</var> は次のような町を表す．道路の長さはすべて <var>1</var> である．ショッピングモールは町 <var>1</var> にしかない．</p>
+<p>ショッピングモールのある町までもっとも遠い点は，町 <var>2</var> と町 <var>3</var> を結ぶ道路上の，町 <var>2</var> から距離 <var>0.5</var> の位置にある点であり，ショッピングモールのある町までの距離は <var>1.5</var> である．よって，それを四捨五入した値である <var>2</var> を出力する．</p>
+<p><img src="https://img.atcoder.jp/joi2011ho/2011ho-c01.png" class="img-responsive center-block" style="max-width: 50%"></p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>4 5 2
+1 2 4
+1 3 1
+2 3 2
+2 4 2
+3 4 1
+2
+4
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>3
+</pre></section>
+</div>
+</span>
+</span>
