@@ -1,4 +1,230 @@
 <span class="lang">
+<span class="lang-en">
+<p>Score: <var>100</var> points</p>
+
+<div class="part">
+<section>
+<h3>Problem Statement</h3>
+<p>In the JOI country, there are <var>N</var> post offices, numbered from <var>1</var> to <var>N</var>.<br />
+Each post office has an assigned "destination," and the destination of post office <var>i</var> is post office <var>P_i</var>. Note that it is possible for <var>P_i = i</var>.<br />
+If a package is sent from post office <var>i</var> at time <var>t</var>, it will arrive at post office <var>P_i</var> at time <var>t + 1</var>. However, a post office cannot send another package while it is in the process of sending a package.<br />
+Each post office can store an unlimited number of packages at any given time.  </p>
+<p>Now, <var>M</var> packages need to be delivered in the JOI country.<br />
+The <var>j</var>-th package arrives at post office <var>A_j</var> at time <var>0</var>, and it must eventually be delivered to the assigned post office <var>B_j</var>.<br />
+Given the information about the post offices and the packages, write a program to determine whether it is possible to deliver all the packages to their assigned post offices, and if so, find the smallest possible time at which the last package arrives at its assigned post office.</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3>
+<p>Read the following data from the standard input.</p>
+<pre><var>N</var>
+<var>P_1</var> <var>P_2</var> <var>\cdots</var> <var>P_N</var>
+<var>M</var>
+<var>A_1</var> <var>B_1</var>
+<var>A_2</var> <var>B_2</var>
+<var>\vdots</var>
+<var>A_M</var> <var>B_M</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Output</h3>
+<p>Output a single line to the standard output.
+If it is possible to deliver all the packages to their assigned post offices, output the smallest possible time at which the last package arrives at its assigned post office.
+Otherwise, output <code>-1</code> instead.</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>Constraints</h3>
+<ul>
+<li> <var>2 \leqq N \leqq 200 \, 000</var>.
+<li> <var>1 \leqq M \leqq 200 \, 000</var>.
+<li> <var>1 \leqq P_i \leqq N</var> (<var>1 \leqq i \leqq N</var>).
+<li> <var>1 \leqq A_j, B_j \leqq N</var> (<var>1 \leqq j \leqq M</var>).
+<li> <var>A_j \neq B_j</var> (<var>1 \leqq j \leqq M</var>).
+<li> Given values are all integers.
+</ul>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Subtasks</h3>
+<ol>
+<li> (<var>3</var> points) <var>N \leqq 3 \, 000</var>， <var>M = 1</var>.
+<li> (<var>9</var> points) <var>N \leqq 3 \, 000</var>， <var>M \leqq 3 \,000</var>.
+<li> (<var>13</var> points) <var>P = (1, 1, 2, \cdots, N-1)</var>, and <var>\max(B_1, B_2, \dots, B_M) < \min(A_1, A_2, \dots, A_M)</var>.
+<li> (<var>25</var> points) <var>P = (1, 1, 2, \cdots, N-1)</var>.
+<li> (<var>11</var> points) <var>P = (N, 1, 2, \cdots, N-1)</var>.
+<li> (<var>25</var> points) <var>P_1 = 1</var>, <var>P_i < i</var> (<var>2 \leqq i \leqq N</var>).
+<li> (<var>14</var> points) No additional constraints.
+</ol>
+
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Input 1</h3>
+<pre>5
+1 1 2 3 4
+3
+3 2
+3 1
+3 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 1</h3>
+<pre>3
+</pre>
+<p>For example, by sending the packages in the following way, all the packages can be delivered to their assigned post offices by time <var>3</var>:</p>
+<ul> <li> At time <var>0</var>, packages <var>1</var>, <var>2</var>, and <var>3</var> are at post office <var>3</var>. Send package <var>2</var> to post office <var>2</var>. <li> At time <var>1</var>, package <var>2</var> is at post office <var>2</var>, and packages <var>1</var> and <var>3</var> are at post office <var>3</var>. From post office <var>2</var>, send package <var>2</var> to post office <var>1</var>, and from post office <var>3</var>, send package <var>3</var> to post office <var>2</var>. <li> At time <var>2</var>, package <var>2</var> is at post office <var>1</var>, package <var>3</var> is at post office <var>2</var>, and package <var>1</var> is at post office <var>3</var>. From post office <var>2</var>, send package <var>3</var> to post office <var>1</var>, and from post office <var>3</var>, send package <var>1</var> to post office <var>2</var>. <li> At time <var>3</var>, packages <var>2</var> and <var>3</var> are at post office <var>1</var>, and package <var>1</var> is at post office <var>2</var>. At this point, all the packages have reached their destinations. </ul>
+
+<p>Since it is not possible to deliver all the packages to their assigned post offices by time <var>2</var>, output <var>3</var>.</p>
+<p>This sample input satisfies the constraints of Subtasks <var>2, 3, 4, 6, 7</var>.</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Input 2</h3>
+<pre>3
+2 1 3
+1
+1 3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 2</h3>
+<pre>-1
+</pre>
+<p>No matter how the packages are sent, it is impossible to deliver a package from post office <var>1</var> to post office <var>3</var>, so output <code>-1</code>.</p>
+<p>This sample input satisfies the constraints of Subtasks <var>1, 2, 7</var>.</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Input 3</h3>
+<pre>7
+1 1 2 3 4 5 6
+6
+4 2
+5 1
+5 3
+6 2
+7 3
+7 6
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 3</h3>
+<pre>5
+</pre>
+<p>This sample input satisfies the constraints of Subtasks <var>2, 4, 6, 7</var>.</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Input 4</h3>
+<pre>4
+4 1 2 3
+4
+4 1
+4 1
+2 3
+2 3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 4</h3>
+<pre>4
+</pre>
+<p>This sample input satisfies the constraints of Subtasks <var>2, 5, 7</var>.</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Input 5</h3>
+<pre>7
+1 1 1 3 3 4 4
+5
+6 1
+6 3
+7 1
+5 1
+5 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 5</h3>
+<pre>5
+</pre>
+<p>This sample input satisfies the constraints of Subtasks <var>2, 6, 7</var>.</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Input 6</h3>
+<pre>11
+3 1 2 5 6 7 8 4 4 5 10
+6
+2 1
+9 8
+11 8
+10 4
+5 6
+5 7
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 6</h3>
+<pre>6
+</pre>
+<p>This sample input satisfies the constraints of Subtasks <var>2, 7</var>.</p></section>
+</div>
+</span>
 <span class="lang-ja">
 <p>配点： <var>100</var> 点</p>
 
@@ -228,232 +454,6 @@
 <pre>6
 </pre>
 <p>この入力例は小課題 <var>2,7</var> の制約を満たす．</p></section>
-</div>
-</span>
-<span class="lang-en">
-<p>Score: <var>100</var> points</p>
-
-<div class="part">
-<section>
-<h3>Problem Statement</h3>
-<p>In the JOI country, there are <var>N</var> post offices, numbered from <var>1</var> to <var>N</var>.<br />
-Each post office has an assigned "destination," and the destination of post office <var>i</var> is post office <var>P_i</var>. Note that it is possible for <var>P_i = i</var>.<br />
-If a package is sent from post office <var>i</var> at time <var>t</var>, it will arrive at post office <var>P_i</var> at time <var>t + 1</var>. However, a post office cannot send another package while it is in the process of sending a package.<br />
-Each post office can store an unlimited number of packages at any given time.  </p>
-<p>Now, <var>M</var> packages need to be delivered in the JOI country.<br />
-The <var>j</var>-th package arrives at post office <var>A_j</var> at time <var>0</var>, and it must eventually be delivered to the assigned post office <var>B_j</var>.<br />
-Given the information about the post offices and the packages, write a program to determine whether it is possible to deliver all the packages to their assigned post offices, and if so, find the smallest possible time at which the last package arrives at its assigned post office.</p>
-<hr />
-</section>
-</div>
-
-<div class="io-style">
-<div class="part">
-<section>
-<h3>Input</h3>
-<p>Read the following data from the standard input.</p>
-<pre><var>N</var>
-<var>P_1</var> <var>P_2</var> <var>\cdots</var> <var>P_N</var>
-<var>M</var>
-<var>A_1</var> <var>B_1</var>
-<var>A_2</var> <var>B_2</var>
-<var>\vdots</var>
-<var>A_M</var> <var>B_M</var>
-</pre>
-</section>
-</div>
-</div>
-
-<div class="io-style">
-<div class="part">
-<section>
-<h3>Output</h3>
-<p>Output a single line to the standard output.
-If it is possible to deliver all the packages to their assigned post offices, output the smallest possible time at which the last package arrives at its assigned post office.
-Otherwise, output <code>-1</code> instead.</p>
-<hr />
-</section>
-</div>
-</div>
-
-<div class="part">
-<section>
-<h3>Constraints</h3>
-<ul>
-<li> <var>2 \leqq N \leqq 200 \, 000</var>.
-<li> <var>1 \leqq M \leqq 200 \, 000</var>.
-<li> <var>1 \leqq P_i \leqq N</var> (<var>1 \leqq i \leqq N</var>).
-<li> <var>1 \leqq A_j, B_j \leqq N</var> (<var>1 \leqq j \leqq M</var>).
-<li> <var>A_j \neq B_j</var> (<var>1 \leqq j \leqq M</var>).
-<li> Given values are all integers.
-</ul>
-
-</section>
-</div>
-
-<div class="part">
-<section>
-<h3>Subtasks</h3>
-<ol>
-<li> (<var>3</var> points) <var>N \leqq 3 \, 000</var>， <var>M = 1</var>.
-<li> (<var>9</var> points) <var>N \leqq 3 \, 000</var>， <var>M \leqq 3 \,000</var>.
-<li> (<var>13</var> points) <var>P = (1, 1, 2, \cdots, N-1)</var>, and <var>\max(B_1, B_2, \dots, B_M) < \min(A_1, A_2, \dots, A_M)</var>.
-<li> (<var>25</var> points) <var>P = (1, 1, 2, \cdots, N-1)</var>.
-<li> (<var>11</var> points) <var>P = (N, 1, 2, \cdots, N-1)</var>.
-<li> (<var>25</var> points) <var>P_1 = 1</var>, <var>P_i < i</var> (<var>2 \leqq i \leqq N</var>).
-<li> (<var>14</var> points) No additional constraints.
-</ol>
-
-<hr />
-</section>
-</div>
-
-<div class="part">
-<section>
-<h3>Sample Input 1</h3>
-<pre>5
-1 1 2 3 4
-3
-3 2
-3 1
-3 1
-</pre>
-</section>
-</div>
-
-<div class="part">
-<section>
-<h3>Sample Output 1</h3>
-<pre>3
-</pre>
-<p>For example, by sending the packages in the following way, all the packages can be delivered to their assigned post offices by time <var>3</var>:</p>
-<ul> <li> At time <var>0</var>, packages <var>1</var>, <var>2</var>, and <var>3</var> are at post office <var>3</var>. Send package <var>2</var> to post office <var>2</var>. <li> At time <var>1</var>, package <var>2</var> is at post office <var>2</var>, and packages <var>1</var> and <var>3</var> are at post office <var>3</var>. From post office <var>2</var>, send package <var>2</var> to post office <var>1</var>, and from post office <var>3</var>, send package <var>3</var> to post office <var>2</var>. <li> At time <var>2</var>, package <var>2</var> is at post office <var>1</var>, package <var>3</var> is at post office <var>2</var>, and package <var>1</var> is at post office <var>3</var>. From post office <var>2</var>, send package <var>3</var> to post office <var>1</var>, and from post office <var>3</var>, send package <var>1</var> to post office <var>2</var>. <li> At time <var>3</var>, packages <var>2</var> and <var>3</var> are at post office <var>1</var>, and package <var>1</var> is at post office <var>2</var>. At this point, all the packages have reached their destinations. </ul>
-
-<p>Since it is not possible to deliver all the packages to their assigned post offices by time <var>2</var>, output <var>3</var>.</p>
-<p>This sample input satisfies the constraints of Subtasks <var>2, 3, 4, 6, 7</var>.</p>
-<hr />
-</section>
-</div>
-
-<div class="part">
-<section>
-<h3>Sample Input 2</h3>
-<pre>3
-2 1 3
-1
-1 3
-</pre>
-</section>
-</div>
-
-<div class="part">
-<section>
-<h3>Sample Output 2</h3>
-<pre>-1
-</pre>
-<p>No matter how the packages are sent, it is impossible to deliver a package from post office <var>1</var> to post office <var>3</var>, so output <code>-1</code>.</p>
-<p>This sample input satisfies the constraints of Subtasks <var>1, 2, 7</var>.</p>
-<hr />
-</section>
-</div>
-
-<div class="part">
-<section>
-<h3>Sample Input 3</h3>
-<pre>7
-1 1 2 3 4 5 6
-6
-4 2
-5 1
-5 3
-6 2
-7 3
-7 6
-</pre>
-</section>
-</div>
-
-<div class="part">
-<section>
-<h3>Sample Output 3</h3>
-<pre>5
-</pre>
-<p>This sample input satisfies the constraints of Subtasks <var>2, 4, 6, 7</var>.</p>
-<hr />
-</section>
-</div>
-
-<div class="part">
-<section>
-<h3>Sample Input 4</h3>
-<pre>4
-4 1 2 3
-4
-4 1
-4 1
-2 3
-2 3
-</pre>
-</section>
-</div>
-
-<div class="part">
-<section>
-<h3>Sample Output 4</h3>
-<pre>4
-</pre>
-<p>This sample input satisfies the constraints of Subtasks <var>2, 5, 7</var>.</p>
-<hr />
-</section>
-</div>
-
-<div class="part">
-<section>
-<h3>Sample Input 5</h3>
-<pre>7
-1 1 1 3 3 4 4
-5
-6 1
-6 3
-7 1
-5 1
-5 1
-</pre>
-</section>
-</div>
-
-<div class="part">
-<section>
-<h3>Sample Output 5</h3>
-<pre>5
-</pre>
-<p>This sample input satisfies the constraints of Subtasks <var>2, 6, 7</var>.</p>
-<hr />
-</section>
-</div>
-
-<div class="part">
-<section>
-<h3>Sample Input 6</h3>
-<pre>11
-3 1 2 5 6 7 8 4 4 5 10
-6
-2 1
-9 8
-11 8
-10 4
-5 6
-5 7
-</pre>
-</section>
-</div>
-
-<div class="part">
-<section>
-<h3>Sample Output 6</h3>
-<pre>6
-</pre>
-<p>This sample input satisfies the constraints of Subtasks <var>2, 7</var>.</p></section>
 </div>
 </span>
 </span>
