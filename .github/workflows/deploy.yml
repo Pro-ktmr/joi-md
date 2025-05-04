@@ -11,13 +11,16 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout repository with submodules
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          submodules: true
-          token: |
-            ${{ secrets.GITHUB_TOKEN }}
-            ${{ secrets.GH_PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout submodule
+        uses: actions/checkout@v4
+        with:
+          repository: joi-md/joi-md-private
+          token: ${{ secrets.GH_PAT }}
+          path: joi-md-private
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
