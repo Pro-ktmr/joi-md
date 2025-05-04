@@ -1,4 +1,232 @@
 <span class="lang">
+<span class="lang-en">
+<p>Score: <var>100</var> points</p>
+
+<div class="part">
+<section>
+<h3>Problem Statement</h3>
+<p>La Paz, the capital city of Bolivia, is famous as a tourist spot and for an aerial cable car called Mi Teleférico. You are now visiting La Paz for sightseeing, and you want to visit as many sightseeing places as possible. In this task, we consider the following simplified situation.</p>
+<p>There are <var>N</var> aerial cable car stations in La Paz, numbered from <var>1</var> to <var>N</var> in ascending order of altitude. There are <var>M</var> <b>one-way</b> lines, numbered from <var>1</var> to <var>M</var>. There are <var>P</var> aerial cable car companies, numbered from <var>1</var> to <var>P</var>. Each line is managed by a single company. Line <var>i</var> (<var>1 \leq i \leq M</var>) is operated from station <var>A_i</var> to station <var>B_i</var>, and is managed by the company <var>C_i</var>. Here, the line always runs from the lower altitude station to the higher altitude station. In other words, <var>A_i &lt; B_i</var> holds.</p>
+<p>The Bureau of transportation of La Paz issued unlimited ride passes for convenience. Each ride pass contains <var>2</var> integers <var>l, r</var>, which satisfy <var>1 \leq l \leq r \leq P</var>. The pass enables the possessor to ride lines, which are managed by any one of company <var>l, l + 1, \dots, r</var>. In other words, for an integer <var>i</var> which satisfies <var>1 \leq i \leq M</var>, the pass enables the possessor to ride line <var>i</var> when <var>l \leq C_i \leq r</var> holds. It is possible to use a single pass for several lines. Let a ride pass <var>(l, r)</var> denote this ride pass.</p>
+<p>Now, <var>Q</var> tourists, numbered from <var>1</var> to <var>Q</var>, visit La Paz. Tourist <var>j</var> (<var>1 \leq j \leq Q</var>) has a ride pass <var>(L_j, R_j)</var> and <var>X_j</var> boliviano cash.</p>
+<p>Each tourist's goal is to ensure that no station cannot be travelled from station <var>1</var>, using only lines that can be ridden with the ride pass he or she has. Tourist <var>j</var> (<var>1 \leq j \leq Q</var>) can exchange his or her ride pass described in the following process to achieve their goal. Here, each tourist can exchange at most once.</p>
+<ol>
+<li> He or she chooses <var>2</var> integers <var>l', r'</var>, which satisfy <var>1 \leq l' \leq r' \leq P</var>.
+<li> He or she exchanges a ride pass <var>(L_j, R_j)</var> for a ride pass <var>(l', r')</var>. It costs <var>|L_j - l'| + |R_j - r'|</var> boliviano as a fee.
+</ol>
+
+<p>Your purpose is to determine, for each tourist, whether or not he or she can achieve his or her goal within the cash he or she has.</p>
+<p>Write a program which, given information about stations, lines, and tourists, determines whether or not he or she can achieve his or her goal within the cash he or she has for each tourist.</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Input</h3>
+<p>Read the following data from the standard input.</p>
+<pre><var>N</var> <var>M</var> <var>P</var>
+<var>A_1</var> <var>B_1</var> <var>C_1</var>
+<var>A_2</var> <var>B_2</var> <var>C_2</var>
+<var>\vdots</var>
+<var>A_M</var> <var>B_M</var> <var>C_M</var>
+<var>Q</var>
+<var>L_1</var> <var>R_1</var> <var>X_1</var>
+<var>L_2</var> <var>R_2</var> <var>X_2</var>
+<var>\vdots</var>
+<var>L_Q</var> <var>R_Q</var> <var>X_Q</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>Output</h3>
+<p>Write <var>Q</var> lines to the standard output. On the <var>j</var>-th line (<var>1 \leq j \leq Q</var>), output <code>Yes</code> if tourist <var>j</var> can achieve his or her goal, and <code>No</code> otherwise.</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>Constraints</h3>
+<ul>
+<li> <var>2 \leq N \leq 300\,000</var>.
+<li> <var>1 \leq M \leq 300\,000</var>.
+<li> <var>1 \leq P \leq 10^9</var>.
+<li> <var>1 \leq A_i < B_i \leq N</var> (<var>1 \leq i \leq M</var>).
+<li> <var>1 \leq C_i \leq P</var> (<var>1 \leq i \leq M</var>).
+<li> <var>1 \leq Q \leq 400\,000</var>.
+<li> <var>1 \leq L_j \leq R_j \leq P</var> (<var>1 \leq j \leq Q</var>).
+<li> <var>0 \leq X_j \leq 10^9</var> (<var>1 \leq j \leq Q</var>).
+<li> Given values are all integers.
+</ul>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Subtasks</h3>
+<ol>
+<li> (<var>7</var> points) <var>N \leq 50</var>, <var>M \leq 50</var>, <var>Q \leq 50</var>, <var>X_j = 0</var> (<var>1 \leq j \leq Q</var>).
+<li> (<var>8</var> points) <var>P \leq 10</var>.
+<li> (<var>11</var> points) <var>P \leq 100</var>.
+<li> (<var>23</var> points) <var>P \leq 300\,000</var>, <var>X_j = 0</var> (<var>1 \leq j \leq Q</var>).
+<li> (<var>9</var> points) <var>P \leq 300\,000</var>.
+<li> (<var>22</var> points) <var>N \leq 8\,000</var>, <var>M \leq 8\,000</var>.
+<li> (<var>20</var> points) No additional constraints.
+</ol>
+
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Input 1</h3>
+<pre>4 6 10
+1 2 3
+2 4 7
+1 2 6
+2 3 5
+3 4 2
+3 4 8
+4
+3 7 0
+5 6 0
+3 4 0
+1 9 0
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 1</h3>
+<pre>Yes
+No
+No
+Yes
+</pre>
+<p>First, tourist <var>1</var> has a ride pass <var>(3, 7)</var> and <var>0</var> boliviano cash initially. He or she can achieve his or her goal without exchange. Because, this pass enables tourist <var>1</var> to ride <var>4</var> lines, lines <var>1, 2, 3, 4</var>, and he or she can move to each stations from station <var>1</var> by using these <var>4</var> lines as follows.</p>
+<ul>
+<li> It is possible to move as station <var>1 \rightarrow 2</var> by using line <var>3</var>.
+<li> It is possible to move as station <var>1 \rightarrow 2 \rightarrow 3</var> by using lines <var>1, 4</var> in this order.
+<li> It is possible to move as station <var>1 \rightarrow 2 \rightarrow 4</var> by using lines <var>3, 2</var> in this order.
+</ul>
+
+<p>Therefore, output <code>Yes</code> on the <var>1</var>-st line.</p>
+<p>Next, tourist <var>2</var> has a ride pass <var>(5, 6)</var> and <var>0</var> boliviano cash initially. However, He or she can't achieve his or her goal. Because, this pass enables tourist <var>2</var> to ride <var>2</var> lines, lines <var>3, 4</var>, and he or she can't move station <var>4</var> from station <var>1</var> by using these <var>2</var> lines. Moreover, since tourist <var>2</var> has only <var>0</var> boliviano as cash, he or she can't exchange the pass with another pass.</p>
+<p>Hence, output <code>No</code> on the <var>2</var>-nd line.</p>
+<p>Also, tourist <var>3</var> can't achieve his or her goal, and tourist <var>4</var> can achieve his or her goal. Thus, output <code>No</code> on the <var>3</var>-rd line, and output <code>Yes</code> on the <var>4</var>-th line.</p>
+<p>This sample input satisfies the constraints of all the Subtasks.</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Input 2</h3>
+<pre>4 6 10
+1 2 3
+2 4 7
+1 2 6
+2 3 5
+3 4 2
+3 4 8
+3
+5 6 10
+3 4 1
+7 8 3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 2</h3>
+<pre>Yes
+No
+Yes
+</pre>
+<p>The information of stations and lines is the same as in the sample Input <var>1</var>.</p>
+<p>First, tourist <var>1</var> has a ride pass <var>(5, 6)</var> and <var>10</var> boliviano cash initially. He or she can achieve his or her goal with exchange as below.</p>
+<ol>
+<li> He or she chooses <var>2</var> integers <var>l' = 1, r' = 5</var>, which satisfy <var>1 \leq l' \leq r' \leq P</var>.
+<li> He or she exchange a ride pass <var>(5, 6)</var> for a ride pass <var>(1, 5)</var>. It costs <var>|5 - 1| + |6 - 5| = 5</var> boliviano as a fee.
+</ol>
+
+<p>Therefore, output <code>Yes</code> on the <var>1</var>-st line.</p>
+<p>Next, tourist <var>2</var> has a ride pass <var>(3, 4)</var> and <var>1</var> boliviano cash initially. He or she can't achieve his or her goal with any exchange.</p>
+<p>Consequently, output <code>No</code> on the <var>2</var>-nd line.</p>
+<p>Since Tourist <var>3</var> can achieve his or her goal, output <code>Yes</code> on the <var>3</var>-rd line.</p>
+<p>This sample input satisfies the constraints of Subtasks <var>2,3,5,6,7</var>.</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Input 3</h3>
+<pre>3 1 1000000000
+1 2 6
+1
+1 1000000000 1000000000
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 3</h3>
+<pre>No
+</pre>
+<p>It is not possible to move from station <var>1</var> to station <var>3</var> with these lines, so tourists can't achieve their goal regardless of their ride passes.</p>
+<p>This sample input satisfies the constraints of Subtasks <var>6,7</var>.</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Input 4</h3>
+<pre>5 9 2000
+2 3 1814
+2 3 457
+1 2 1226
+3 4 1354
+1 5 1050
+1 2 1725
+2 3 1383
+1 5 1626
+1 4 1795
+5
+850 1872 128
+82 428 1217
+487 924 573
+1639 1926 202
+202 420 25
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Sample Output 4</h3>
+<pre>Yes
+Yes
+Yes
+Yes
+No
+</pre>
+<p>This sample input satisfies the constraints of Subtasks <var>5,6,7</var>.</p></section>
+</div>
+</span>
 <span class="lang-ja">
 <p>配点： <var>100</var> 点</p>
 
@@ -226,234 +454,6 @@ Yes
 No
 </pre>
 <p>この入力例は小課題 <var>5,6,7</var> の制約を満たす．</p></section>
-</div>
-</span>
-<span class="lang-en">
-<p>Score: <var>100</var> points</p>
-
-<div class="part">
-<section>
-<h3>Problem Statement</h3>
-<p>La Paz, the capital city of Bolivia, is famous as a tourist spot and for an aerial cable car called Mi Teleférico. You are now visiting La Paz for sightseeing, and you want to visit as many sightseeing places as possible. In this task, we consider the following simplified situation.</p>
-<p>There are <var>N</var> aerial cable car stations in La Paz, numbered from <var>1</var> to <var>N</var> in ascending order of altitude. There are <var>M</var> <b>one-way</b> lines, numbered from <var>1</var> to <var>M</var>. There are <var>P</var> aerial cable car companies, numbered from <var>1</var> to <var>P</var>. Each line is managed by a single company. Line <var>i</var> (<var>1 \leq i \leq M</var>) is operated from station <var>A_i</var> to station <var>B_i</var>, and is managed by the company <var>C_i</var>. Here, the line always runs from the lower altitude station to the higher altitude station. In other words, <var>A_i &lt; B_i</var> holds.</p>
-<p>The Bureau of transportation of La Paz issued unlimited ride passes for convenience. Each ride pass contains <var>2</var> integers <var>l, r</var>, which satisfy <var>1 \leq l \leq r \leq P</var>. The pass enables the possessor to ride lines, which are managed by any one of company <var>l, l + 1, \dots, r</var>. In other words, for an integer <var>i</var> which satisfies <var>1 \leq i \leq M</var>, the pass enables the possessor to ride line <var>i</var> when <var>l \leq C_i \leq r</var> holds. It is possible to use a single pass for several lines. Let a ride pass <var>(l, r)</var> denote this ride pass.</p>
-<p>Now, <var>Q</var> tourists, numbered from <var>1</var> to <var>Q</var>, visit La Paz. Tourist <var>j</var> (<var>1 \leq j \leq Q</var>) has a ride pass <var>(L_j, R_j)</var> and <var>X_j</var> boliviano cash.</p>
-<p>Each tourist's goal is to ensure that no station cannot be travelled from station <var>1</var>, using only lines that can be ridden with the ride pass he or she has. Tourist <var>j</var> (<var>1 \leq j \leq Q</var>) can exchange his or her ride pass described in the following process to achieve their goal. Here, each tourist can exchange at most once.</p>
-<ol>
-<li> He or she chooses <var>2</var> integers <var>l', r'</var>, which satisfy <var>1 \leq l' \leq r' \leq P</var>.
-<li> He or she exchanges a ride pass <var>(L_j, R_j)</var> for a ride pass <var>(l', r')</var>. It costs <var>|L_j - l'| + |R_j - r'|</var> boliviano as a fee.
-</ol>
-
-<p>Your purpose is to determine, for each tourist, whether or not he or she can achieve his or her goal within the cash he or she has.</p>
-<p>Write a program which, given information about stations, lines, and tourists, determines whether or not he or she can achieve his or her goal within the cash he or she has for each tourist.</p>
-<hr />
-</section>
-</div>
-
-<div class="io-style">
-<div class="part">
-<section>
-<h3>Input</h3>
-<p>Read the following data from the standard input.</p>
-<pre><var>N</var> <var>M</var> <var>P</var>
-<var>A_1</var> <var>B_1</var> <var>C_1</var>
-<var>A_2</var> <var>B_2</var> <var>C_2</var>
-<var>\vdots</var>
-<var>A_M</var> <var>B_M</var> <var>C_M</var>
-<var>Q</var>
-<var>L_1</var> <var>R_1</var> <var>X_1</var>
-<var>L_2</var> <var>R_2</var> <var>X_2</var>
-<var>\vdots</var>
-<var>L_Q</var> <var>R_Q</var> <var>X_Q</var>
-</pre>
-</section>
-</div>
-</div>
-
-<div class="io-style">
-<div class="part">
-<section>
-<h3>Output</h3>
-<p>Write <var>Q</var> lines to the standard output. On the <var>j</var>-th line (<var>1 \leq j \leq Q</var>), output <code>Yes</code> if tourist <var>j</var> can achieve his or her goal, and <code>No</code> otherwise.</p>
-<hr />
-</section>
-</div>
-</div>
-
-<div class="part">
-<section>
-<h3>Constraints</h3>
-<ul>
-<li> <var>2 \leq N \leq 300\,000</var>.
-<li> <var>1 \leq M \leq 300\,000</var>.
-<li> <var>1 \leq P \leq 10^9</var>.
-<li> <var>1 \leq A_i < B_i \leq N</var> (<var>1 \leq i \leq M</var>).
-<li> <var>1 \leq C_i \leq P</var> (<var>1 \leq i \leq M</var>).
-<li> <var>1 \leq Q \leq 400\,000</var>.
-<li> <var>1 \leq L_j \leq R_j \leq P</var> (<var>1 \leq j \leq Q</var>).
-<li> <var>0 \leq X_j \leq 10^9</var> (<var>1 \leq j \leq Q</var>).
-<li> Given values are all integers.
-</ul>
-
-</section>
-</div>
-
-<div class="part">
-<section>
-<h3>Subtasks</h3>
-<ol>
-<li> (<var>7</var> points) <var>N \leq 50</var>, <var>M \leq 50</var>, <var>Q \leq 50</var>, <var>X_j = 0</var> (<var>1 \leq j \leq Q</var>).
-<li> (<var>8</var> points) <var>P \leq 10</var>.
-<li> (<var>11</var> points) <var>P \leq 100</var>.
-<li> (<var>23</var> points) <var>P \leq 300\,000</var>, <var>X_j = 0</var> (<var>1 \leq j \leq Q</var>).
-<li> (<var>9</var> points) <var>P \leq 300\,000</var>.
-<li> (<var>22</var> points) <var>N \leq 8\,000</var>, <var>M \leq 8\,000</var>.
-<li> (<var>20</var> points) No additional constraints.
-</ol>
-
-<hr />
-</section>
-</div>
-
-<div class="part">
-<section>
-<h3>Sample Input 1</h3>
-<pre>4 6 10
-1 2 3
-2 4 7
-1 2 6
-2 3 5
-3 4 2
-3 4 8
-4
-3 7 0
-5 6 0
-3 4 0
-1 9 0
-</pre>
-</section>
-</div>
-
-<div class="part">
-<section>
-<h3>Sample Output 1</h3>
-<pre>Yes
-No
-No
-Yes
-</pre>
-<p>First, tourist <var>1</var> has a ride pass <var>(3, 7)</var> and <var>0</var> boliviano cash initially. He or she can achieve his or her goal without exchange. Because, this pass enables tourist <var>1</var> to ride <var>4</var> lines, lines <var>1, 2, 3, 4</var>, and he or she can move to each stations from station <var>1</var> by using these <var>4</var> lines as follows.</p>
-<ul>
-<li> It is possible to move as station <var>1 \rightarrow 2</var> by using line <var>3</var>.
-<li> It is possible to move as station <var>1 \rightarrow 2 \rightarrow 3</var> by using lines <var>1, 4</var> in this order.
-<li> It is possible to move as station <var>1 \rightarrow 2 \rightarrow 4</var> by using lines <var>3, 2</var> in this order.
-</ul>
-
-<p>Therefore, output <code>Yes</code> on the <var>1</var>-st line.</p>
-<p>Next, tourist <var>2</var> has a ride pass <var>(5, 6)</var> and <var>0</var> boliviano cash initially. However, He or she can't achieve his or her goal. Because, this pass enables tourist <var>2</var> to ride <var>2</var> lines, lines <var>3, 4</var>, and he or she can't move station <var>4</var> from station <var>1</var> by using these <var>2</var> lines. Moreover, since tourist <var>2</var> has only <var>0</var> boliviano as cash, he or she can't exchange the pass with another pass.</p>
-<p>Hence, output <code>No</code> on the <var>2</var>-nd line.</p>
-<p>Also, tourist <var>3</var> can't achieve his or her goal, and tourist <var>4</var> can achieve his or her goal. Thus, output <code>No</code> on the <var>3</var>-rd line, and output <code>Yes</code> on the <var>4</var>-th line.</p>
-<p>This sample input satisfies the constraints of all the Subtasks.</p>
-<hr />
-</section>
-</div>
-
-<div class="part">
-<section>
-<h3>Sample Input 2</h3>
-<pre>4 6 10
-1 2 3
-2 4 7
-1 2 6
-2 3 5
-3 4 2
-3 4 8
-3
-5 6 10
-3 4 1
-7 8 3
-</pre>
-</section>
-</div>
-
-<div class="part">
-<section>
-<h3>Sample Output 2</h3>
-<pre>Yes
-No
-Yes
-</pre>
-<p>The information of stations and lines is the same as in the sample Input <var>1</var>.</p>
-<p>First, tourist <var>1</var> has a ride pass <var>(5, 6)</var> and <var>10</var> boliviano cash initially. He or she can achieve his or her goal with exchange as below.</p>
-<ol>
-<li> He or she chooses <var>2</var> integers <var>l' = 1, r' = 5</var>, which satisfy <var>1 \leq l' \leq r' \leq P</var>.
-<li> He or she exchange a ride pass <var>(5, 6)</var> for a ride pass <var>(1, 5)</var>. It costs <var>|5 - 1| + |6 - 5| = 5</var> boliviano as a fee.
-</ol>
-
-<p>Therefore, output <code>Yes</code> on the <var>1</var>-st line.</p>
-<p>Next, tourist <var>2</var> has a ride pass <var>(3, 4)</var> and <var>1</var> boliviano cash initially. He or she can't achieve his or her goal with any exchange.</p>
-<p>Consequently, output <code>No</code> on the <var>2</var>-nd line.</p>
-<p>Since Tourist <var>3</var> can achieve his or her goal, output <code>Yes</code> on the <var>3</var>-rd line.</p>
-<p>This sample input satisfies the constraints of Subtasks <var>2,3,5,6,7</var>.</p>
-<hr />
-</section>
-</div>
-
-<div class="part">
-<section>
-<h3>Sample Input 3</h3>
-<pre>3 1 1000000000
-1 2 6
-1
-1 1000000000 1000000000
-</pre>
-</section>
-</div>
-
-<div class="part">
-<section>
-<h3>Sample Output 3</h3>
-<pre>No
-</pre>
-<p>It is not possible to move from station <var>1</var> to station <var>3</var> with these lines, so tourists can't achieve their goal regardless of their ride passes.</p>
-<p>This sample input satisfies the constraints of Subtasks <var>6,7</var>.</p>
-<hr />
-</section>
-</div>
-
-<div class="part">
-<section>
-<h3>Sample Input 4</h3>
-<pre>5 9 2000
-2 3 1814
-2 3 457
-1 2 1226
-3 4 1354
-1 5 1050
-1 2 1725
-2 3 1383
-1 5 1626
-1 4 1795
-5
-850 1872 128
-82 428 1217
-487 924 573
-1639 1926 202
-202 420 25
-</pre>
-</section>
-</div>
-
-<div class="part">
-<section>
-<h3>Sample Output 4</h3>
-<pre>Yes
-Yes
-Yes
-Yes
-No
-</pre>
-<p>This sample input satisfies the constraints of Subtasks <var>5,6,7</var>.</p></section>
 </div>
 </span>
 </span>
