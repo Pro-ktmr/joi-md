@@ -1,0 +1,78 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>JOI カルデラは景観の良さが多くの登山家に愛される美しい地形である．特に，尾根と呼ばれる場所からの景観は絶景である．</p>
+<p>JOI カルデラの土地は南北 <var>H</var> キロメートル，東西 <var>W</var> キロメートルの長方形である．南北，東西に <var>1</var> キロメートルごとに JOI カルデラの土地を分け，これら <var>H \times W</var> 個の領域を区域と呼ぶ．すべての区域において，その中では標高は等しい．また，異なる区域の標高は異なる．</p>
+<p>ある区域に雨が降ると，雨水はその区域に東西南北に隣り合う最大で <var>4</var> つの区域のうち，標高がその区域より低いような区域のすべてに流れる．そのような区域がない場合，雨水はその区域に溜まる．他の区域から流れてきた雨水についても同様である．JOI カルデラの外側は，外輪山の急峻な崖に囲まれているため，雨水が JOI カルデラの外に流れ出すことはない．</p>
+<p>ある区域について，その区域のみに雨が降った場合，最終的に複数の区域に雨水が溜まるとき，その区域を尾根と呼ぶ．絶景をこよなく愛する登山家たちのために，尾根の区域がいくつあるかを求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>1 + H</var> 行からなる．</p>
+<p><var>1</var> 行目には <var>2</var> 個の整数 <var>H, W</var> (<var>1 \leqq H \leqq 1\,000</var>，<var>1 \leqq W \leqq 1\,000</var>) が空白を区切りとして書かれており，JOI カルデラが南北に <var>H</var> キロメートル，東西に <var>W</var> キロメートルにわたることを表す．</p>
+<p>続く <var>H</var> 行にはそれぞれ <var>W</var> 個の整数が空白を区切りとして書かれており，標高の情報を表す．<var>H</var> 行のうちの <var>i</var> 行目の <var>j</var> 番目 (<var>1 \leqq i \leqq H</var>，<var>1 \leqq j \leqq W</var>) の整数 <var>M_{i, j}</var> (<var>1 \leqq M_{i, j} \leqq H \times W</var>) は，JOI カルデラの北から <var>i</var> 行目，西から <var>j</var> 列目の区域の標高を表す．<var>(i, j) \neq (k, l)</var> なら，<var>M_{i, j} \neq M_{k, l}</var> を満たす．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>尾根の区域の個数を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>3 3
+2 9 4
+7 5 3
+6 1 8
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>4
+</pre>
+<p>入力例 <var>1</var> において，標高が <var>5, 7, 8, 9</var> の <var>4</var> 個の区域が尾根である．例えば，標高 <var>9</var> の区域に雨が降った場合，最終的に雨水は標高 <var>1, 2, 3</var> の <var>3</var> 個の区域に溜まる．したがって，標高 <var>9</var> の区域は尾根である．また，標高 <var>6</var> の区域に雨が降った場合，最終的に雨水は標高 <var>1</var> の区域にしか溜まらない．したがって，標高 <var>6</var> の区域は尾根ではない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>3 5
+5 3 8 2 14
+9 10 4 1 13
+12 7 11 6 15
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>4
+</pre>
+<hr />
+<p>入力例 <var>2</var> において，標高が <var>8, 10, 11, 12</var> の <var>4</var> 個の区域が尾根である．</p></section>
+</div>
+</span>
+</span>

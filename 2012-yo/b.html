@@ -1,0 +1,93 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>JOI 国ではサッカーが人気であり，JOI リーグというリーグ戦が毎週行われている．</p>
+<p>JOI リーグには <var>N</var> 個のチームが所属していて，<var>1</var> から <var>N</var> までの番号がつけられている．すべての組み合わせの試合がちょうど一度ずつ行われる．つまり，<var>N \times (N - 1) / 2</var> 試合が行われる．各試合の勝敗はそれぞれのチームの得点で決まる．勝ったチームの勝ち点は <var>3</var> 点であり，負けたチームの勝ち点は <var>0</var> 点である．引き分けの場合，両チームの勝ち点は <var>1</var> 点である．順位は各チームの獲得した勝ち点の合計で決定し，得失点差は考えない．勝ち点の合計が等しいチームの順位は上位に揃える．</p>
+<p>例として，<var>4</var> チームでのリーグ戦を考える．<var>4 \times (4 - 1) / 2 = 6</var> 試合が行われる．それらの結果が以下の表のようになったとする．ハイフンの左側はその横のチームの得点であり，右側はその縦のチームの得点である．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2012yo/2012-yo-t2-fig1.png" /></p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力の <var>1</var> 行目にはチームの個数 <var>N</var> (<var>2 \leqq N \leqq 100</var>) が書かれている．続く <var>N \times (N - 1) / 2</var> 行には各試合の結果が書かれている． <var>i + 1</var> 行目 (<var>1 \leqq i \leqq N \times (N - 1) / 2</var>) には整数 <var>A_i, B_i, C_i, D_i</var> (<var>1 \leqq A_i \leqq N</var>，<var>1 \leqq B_i \leqq N</var>，<var>0 \leqq C_i \leqq 100</var>，<var>0 \leqq D_i \leqq 100</var>) が空白を区切りとして書かれており，チーム <var>A_i</var> とチーム <var>B_i</var> が対戦し，チーム <var>A_i</var> の得点が <var>C_i</var> 点，チーム <var>B_i</var> の得点が <var>D_i</var> 点であったことを表す．全ての <var>i</var> について <var>A_i \neq B_i</var> であり，同じ組み合わせの対戦が書かれていることはない．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>出力は <var>N</var> 行からなる．各行は <var>1</var> つの整数からなり，<var>i</var> 行目 (<var>1 \leqq i \leqq N</var>) の整数はチーム <var>i</var> の順位を表す．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>4
+1 2 0 1
+1 3 2 1
+1 4 2 2
+2 3 1 1
+2 4 3 0
+3 4 1 3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>2
+1
+4
+2
+</pre>
+<p>入出力例 <var>1</var> は問題文中の例に対応している．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>5
+1 2 1 1
+3 4 3 1
+5 1 1 2
+2 3 0 0
+4 5 2 3
+1 3 0 2
+5 2 2 2
+4 1 4 5
+3 5 4 0
+2 4 0 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>2
+4
+1
+4
+3
+</pre>
+<p>入出力例 <var>2</var> における結果は以下の通りである．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2012yo/2012-yo-t2-fig2.png" /></p></section>
+</div>
+</span>
+</span>

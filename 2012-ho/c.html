@@ -1,0 +1,127 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>太郎くんは，JOI 神社で開かれる夏祭りに行くことにした．</p>
+<p>JOI 神社に向かう道に沿って，<var>N</var> 個の夜店が開かれている．それぞれの夜店には，<var>1</var> から <var>N</var> までの番号が順番についており，遊んだ時の楽しさと遊ぶのにかかる時間がそれぞれ整数で決まっている．夜店 <var>i</var> で遊んだ時の楽しさは <var>A_i</var> で，夜店 <var>i</var> で遊ぶのにかかる時間は <var>B_i</var> である．</p>
+<p>また，夏祭りのイベントとして花火大会があり，時刻 <var>S</var> に最も大きな花火が打ち上げられる．太郎くんはこの最も大きな花火を見たいと思っている．</p>
+<p>太郎くんは夜店と花火の両方を楽しむために，夏祭りに到着する時刻 <var>0</var> から夏祭りが終わる時刻 <var>T</var> までの予定を立てることにした．</p>
+<p>太郎くんは夜店の中から <var>k</var> 個 (<var>1 \leqq k \leqq N</var>) の夜店を選び，それぞれに対して訪れる時刻を整数で決める．同じ夜店を <var>2</var> 度選ぶことはできない．選ばれた夜店の番号を小さい順に <var>y_1,y_2,\ldots,y_k</var> とし，夜店 <var>y_i</var> を訪れる時刻を <var>x_{y_i}</var> とすると，太郎くんは夜店 <var>y_i</var> で時刻 <var>x_{yi}</var> から時刻 <var>x_{y_i} + B_{y_i}</var> まで遊ぶ．</p>
+<p>太郎くんは夜店の番号の小さい順に遊び，同時に <var>2</var> つの夜店では遊べない．また，夜店と夜店の間の移動にかかる時間は無視できる．</p>
+<p>時刻 <var>T</var> を超えると夏祭りが終わるので，夜店で遊ぶことはできない．また，夜店で遊んでいる間は花火を見ることはできない．ただし，時刻 <var>S</var> がある夜店で遊び始める時刻や遊び終わる時刻であった場合は，太郎くんは花火を見ることができるものとする．</p>
+<p>すなわち，予定は以下の条件を満たしていなければならない．</p>
+<ul>
+<li><var>y_1 &lt; y_2 &lt; \ldots &lt; y_k</var></li>
+<li><var>x_{y_1},x_{y_2},\ldots , x_{y_k}</var> は整数．</li>
+<li><var>0\leqq x_{y_1} &lt; x_{y_1} + B_{y_1} \leqq x_{y_2} &lt; x_{y_2} + B_{y_2} \leqq \ldots \leqq x_{y_k} &lt; x_{y_k} + B_{y_k} \leqq T</var></li>
+<li><var>x_{y_i} &lt; S &lt; x_{y_i}+B_{y_i}</var> となるような <var>i</var> は存在しない．</li>
+</ul>
+<p>選ばれた夜店の楽しさ <var>A_{y_1},A_{y_2},\ldots,A_{y_k}</var> の合計をを <var>M</var> とする．太郎くんは <var>M</var> ができるだけ大きくなるように予定を立てたいと思っている．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p><var>N</var> 個の夜店の情報と時刻 <var>S, T</var> が与えられた時，<var>M</var> の最大値を求めるプログラムを作成せよ．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><var>1 \leqq N \leqq 3000</var> &emsp;</td>
+<td>夜店の数</td>
+</tr>
+<tr>
+<td><var>1 \leqq T \leqq 3000</var> &emsp;</td>
+<td>夏祭りが終わる時刻</td>
+</tr>
+<tr>
+<td><var>0 \leqq S \leqq T</var> &emsp;</td>
+<td>最も大きな花火が打ち上げられる時刻</td>
+</tr>
+<tr>
+<td><var>0 \leqq A_i \leqq 100000 \,(= 10^5)</var> &emsp;</td>
+<td>夜店 <var>i</var> で遊んだ時の楽しさ</td>
+</tr>
+<tr>
+<td><var>0 \leqq B_i \leqq 3000</var> &emsp;</td>
+<td>夜店 <var>i</var> で遊ぶのにかかる時間</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下の入力を読み込め．</p>
+<p>入力の <var>1</var> 行目には整数 <var>N, T, S</var> が空白を区切りとして書かれており，夜店の数が <var>N</var> 個，夏祭りが終わる時刻が <var>T</var>，最も大きな花火が打ち上げられる時刻が <var>S</var> であることを表す．</p>
+<p>続く <var>N</var> 行には夜店の情報が書かれている．入力の <var>i + 1 (1\leqq i \leqq N)</var> 行目には整数 <var>A_i, B_i</var> が空白を区切りとして書かれており，夜店 <var>i</var> で遊んだ時の楽しさが <var>A_i</var> で，夜店 <var>i</var> で遊ぶのにかかる時間が <var>B_i</var> であることを表す．</p>
+<p>また，すべての入力において，<var>1</var> つ以上の予定を立てられることが保証されている．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，<var>M</var> の最大値を表す整数を <var>1</var> 行で出力せよ．</p>
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>採点基準</h3>
+<p>採点用データのうち，</p>
+<p>配点の <var>10</var> %分については，<var>N \leqq 20</var> を満たす．</p>
+<p>配点の <var>20</var> %分については，<var>S = 0</var> を満たす．</p>
+<p>配点の <var>30</var> %分については，これら <var>2</var> つの条件の少なくとも一方を満たす．また，これら <var>2</var> つの条件の両方を満たすような採点用データはない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>5 20 14
+8 9
+2 4
+7 13
+6 3
+5 8
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>16
+</pre>
+<p>この例において，</p>
+<p>夜店 <var>1</var> を時刻 <var>0</var> に訪れ，</p>
+<p>夜店 <var>2</var> を時刻 <var>9</var> に訪れ，</p>
+<p>夜店 <var>4</var> を時刻 <var>14</var> に訪れるような予定を立てると，<var>M</var> を最も大きくすることができる．</p>
+<p>このとき，<var>M = 8 + 2 + 6 = 16</var> である．</p></section>
+</div>
+</span>
+</span>

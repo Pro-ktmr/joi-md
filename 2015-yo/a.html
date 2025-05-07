@@ -1,0 +1,96 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>JOI 君が住んでいる地域には水道会社が <var>X</var> 社と <var>Y</var> 社の <var>2</var> つある．<var>2</var> つの会社の <var>1</var> ヶ月の水道料金は，<var>1</var> ヶ月の水道の使用量に応じて次のように決まる．</p>
+<ul>
+<li><var>X</var> 社：<var>1</var> リットル あたり <var>A</var> 円かかる．</li>
+<li><var>Y</var> 社：基本料金は <var>B</var> 円である．使用量が <var>C</var> リットル以下ならば，料金は基本料金 <var>B</var> 円のみがかかる．使用量が <var>C</var> リットルを超えると基本料金 <var>B</var> 円に加えて追加料金がかかる．追加料金は使用量が <var>C</var> リットルを <var>1</var> リットル超えるごとに <var>D</var> 円である．</li>
+</ul>
+<p>JOI 君の家では <var>1</var> ヶ月の水道の使用量が <var>P</var> リットルである．</p>
+<p>水道料金ができるだけ安くなるように水道会社を選ぶとき，JOI 君の家の <var>1</var> ヶ月の水道料金を求めよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>5</var> 行からなり，<var>1</var> 行に <var>1</var> つずつ整数が書かれている．</p>
+<p><var>1</var> 行目には <var>X</var> 社の <var>1</var> リットルあたりの料金 <var>A</var> が書かれている．<br />
+<var>2</var> 行目には <var>Y</var> 社の基本料金 <var>B</var> が書かれている．<br />
+<var>3</var> 行目には <var>Y</var> 社の料金が基本料金のみになる使用量の上限 <var>C</var> が書かれている．<br />
+<var>4</var> 行目には <var>Y</var> 社の <var>1</var> リットルあたりの追加料金 <var>D</var> が書かれている．<br />
+<var>5</var> 行目には JOI 君の家の <var>1</var> ヶ月の水道の使用量 <var>P</var> が書かれている．</p>
+<p>書かれている整数 <var>A, B, C, D, P</var> はすべて <var>1</var> 以上 <var>10\,000</var> 以下である．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>JOI 君の家の <var>1</var> ヶ月の水道料金を表す整数を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>9
+100
+20
+3
+10
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>90
+</pre>
+<p>入出力例 <var>1</var> では，JOI 君の家の <var>1</var> ヶ月の水道の使用量は <var>10</var> リットルである．</p>
+<ul>
+<li><var>X</var> 社の水道料金は <var>9 \times 10 = 90</var> 円である．</li>
+<li>JOI 君の家の <var>1</var> ヶ月の水道の使用量は <var>20</var> リットル以下なので，<var>Y</var> 社の水道料金は基本料金の <var>100</var> 円である．</li>
+</ul>
+<p>JOI 君の家は水道料金がより安い <var>X</var> 社を選ぶ．そのときの JOI 君の家の <var>1</var> ヶ月の水道料金は <var>90</var> 円である．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>8
+300
+100
+10
+250
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>1800
+</pre>
+<p>入出力例 <var>2</var> では，JOI 君の家の <var>1</var> ヶ月の水道の使用量は <var>250</var> リットルである．</p>
+<ul>
+<li><var>X</var> 社の水道料金は <var>8 \times 250 = 2\,000</var> 円である．</li>
+<li>JOI 君の家の <var>1</var> ヶ月の水道の使用量は <var>100</var> リットル以上で，超過量は <var>250 - 100 = 150</var> リットルである．よって，<var>Y</var> 社の水道料金は基本料金の <var>300</var> 円に加えて <var>10 \times 150 = 1\,500</var> 円の追加料金がかかり，合計の水道料金は <var>3\,00 + 1\,500 = 1\,800</var> 円である．</li>
+</ul>
+<p>JOI 君の家は水道料金がより安い <var>Y</var> 社を選ぶ．そのときの JOI 君の家の <var>1</var> ヶ月の水道料金は <var>1\,800</var> 円である．</p></section>
+</div>
+</span>
+</span>

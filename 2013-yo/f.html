@@ -1,0 +1,80 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>オーストラリアに旅行に来た JOI 君は様々な場所で観光を楽しみ，ついに帰国する日がやってきた．今，JOI 君は帰りの飛行機が出発する国際空港のある町にいる．この町は東西南北に区画整理されており，各区画には道，土産店，住宅，国際空港がある． JOI 君は最も北西の区画から出発して最も南東の区画の国際空港を目指す．</p>
+<p>JOI 君は今いる区画から隣り合った区画に移動することができるが，住宅のある区画には入ることはできない．また飛行機の時間に間に合わせるために，今いる区画の東か南の区画にのみ移動する．ただし，時間にはいくらか余裕があるため，<var>K</var> 回まで今いる区画の北か西の区画へ移動することができる．</p>
+<p>JOI 君は土産店のある区画に入ると，日本の友人たちのためにお土産を買う．JOI 君は土産店について入念に下調べをしていたので，どの土産店に行ったら何個のお土産を買うことができるかが分かっている．JOI 君が購入できるお土産の個数の最大値を求めるプログラムを作成せよ．</p>
+<p>ただし，お土産を買う時間は無視できるとし，同じ土産店に <var>2</var> 度以上訪れたときは最初に訪れたときだけお土産を買う．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>1 + H</var> 行からなる．</p>
+<p><var>1</var> 行目には，<var>3</var> つの整数 <var>H, W, K</var> (<var>2 \leqq H \leqq 50</var>，<var>2 \leqq W \leqq 50, 1 \leqq K \leqq 3</var>) が空白を区切りとして書かれている．</p>
+<p>続く <var>H</var> 行にはそれぞれ <var>W</var> 文字からなる文字列が書かれており，区画の情報を表す．北から <var>i</var> 番目，西から <var>j</var> 番目の区画を <var>(i, j)</var> と表す (<var>1 \leqq i \leqq H</var>，<var>1 \leqq j \leqq W</var>) ．<var>i</var> 行目の <var>j</var> 番目の文字は，区画 (<var>i, j</var>) が道か国際空港である場合は <code>.</code> であり，住宅である場合は <code>#</code> である． 土産店である場合は <code>1</code>，<code>2</code>，<var>\ldots</var>，<code>9</code> のいずれかであり，その土産店で買うことができるお土産の個数を表す．</p>
+<p>与えられる入力データにおいては，JOI 君がはじめにいる最も北西の区画が道であることは保証されている．また，JOI 君が国際空港にたどり着けることは保証されている．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>JOI 君が購入できるお土産の個数の最大値を表す整数を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>5 4 2
+...#
+.#.#
+.#73
+8##.
+....
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>11
+</pre>
+<p>入出力例 <var>1</var> において，JOI 君は <var>3</var> 回南へ進み区画 <var>(4, 1)</var> の土産店で買い物をした後，さらに南へ <var>1</var> 回，東へ <var>3</var> 回進み，そこから北へ <var>2</var> 回進むことで区画 <var>(3, 4)</var> の土産店で買い物をする．最後に南へ <var>2</var> 回進んで国際空港へたどり着くと，合計で <var>11</var> 個のお土産を買うことができる．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>4 4 3
+.8#9
+9.#.
+.#9.
+....
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>27
+</pre></section>
+</div>
+</span>
+</span>

@@ -1,0 +1,181 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>JOI 国には <var>N</var> 個の都市があり，それぞれ <var>1, 2, \ldots, N</var> の番号が付けられている．都市 <var>1</var> は JOI 国の首都である．</p>
+<p>また，JOI 国には鉄道会社がひとつだけあり，この会社は <var>M</var> 個の路線を運行している．これらの路線にはそれぞれ <var>1, 2, \ldots, M</var> の番号が付けられており，<var>i</var> 番目 (<var>1 \leqq i \leqq M</var>) の路線は都市 <var>U_i</var> と都市 <var>V_i</var> を双方向に結んでいる．都市と都市の間を鉄道以外で移動することはできない．また，どの都市からどの都市へもいくつかの路線を乗り継いで移動することができるようになっている．</p>
+<p>現在，どの路線の運賃も <var>1</var> 円である．経営不振に陥った鉄道会社は，今後 <var>Q</var> 年間かけていくつかの路線の運賃を値上げする計画を立てた．この計画では，計画開始から <var>j</var> 年目 (<var>1 \leqq j \leqq Q</var>) の年初めに路線 <var>R_j</var> の運賃を <var>1</var> 円から <var>2</var> 円に値上げする予定である．値上げされた路線の運賃は，その後ずっと <var>2</var> 円のままであり，再び値上げすることはない．</p>
+<p>ところで，この鉄道会社では，毎年，各都市の住民の満足度調査を行っている．計画開始前は，どの都市の住民もこの鉄道会社に満足しているが，値上げによって不満を持つ住民が現れる可能性がある．</p>
+<p>それぞれの年の満足度調査は，その年の値上げの実施後に行う．したがって，<var>j</var> 年目 (<var>1 \leqq j \leqq Q</var>) の満足度調査は，路線 <var>R_1, R_2, \ldots, R_j</var> の運賃の値上げは完了し，それ以外の路線の運賃は値上げされていない状態で行われることになる．<var>j</var> 年目 (<var>1 \leqq j \leqq Q</var>) の満足度調査では，都市 <var>k</var> (<var>2 \leqq k \leqq N</var>) の住民は，以下の条件が満たされるとき，そしてそのときに限り鉄道会社に不満を抱く．</p>
+<ul>
+<li>その時の運賃で都市 <var>k</var> から首都である都市 <var>1</var> へ移動するときの費用の最小値が，計画開始前の運賃で都市 <var>k</var> から都市 <var>1</var> へ移動するときの費用の最小値よりも大きい．</li>
+</ul>
+<p>ただし，いくつかの路線を使って移動するときの費用は，それぞれの路線の運賃の合計である．また，都市 <var>1</var> の住民が鉄道会社に対して不満を抱くことはない．値上げ後の運賃で最小の費用を達成する経路は，計画開始前の運賃で最小の費用を達成する経路と異なる可能性があることに注意せよ．</p>
+<p>計画の実行に先立って，今後 <var>Q</var> 年間の住民の満足度調査それぞれにおいて，鉄道会社に不満を抱く住民がいる都市の数を計算しておきたい．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p>JOI 国の鉄道路線の情報と，運賃の値上げ計画が与えられたとき，それぞれの満足度調査において鉄道会社に不満を抱く住民がいる都市の数を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下の入力を読み込め．</p>
+<ul>
+<li><var>1</var> 行目には，<var>3</var> 個の整数 <var>N, M, Q</var> が空白を区切りとして書かれている．これらは，JOI 国には <var>N</var> 個の都市と <var>M</var> 個の路線があり，運賃の値上げ計画が <var>Q</var> 年間に渡ることを表している．</li>
+<li>続く <var>M</var> 行のうちの <var>i</var> 行目 (<var>1 \leqq i \leqq M</var>) には，<var>2</var> 個の整数 <var>U_i, V_i</var> が空白を区切りとして書かれている．これらは，<var>i</var> 番目の路線が都市 <var>U_i</var> と都市 <var>V_i</var> を結んでいることを表している．</li>
+<li>続く <var>Q</var> 行のうちの <var>j</var> 行目 (<var>1 \leqq j \leqq Q</var>) には，整数 <var>R_j</var> が書かれている．これは，計画の <var>j</var> 年目に路線 <var>R_j</var> の運賃を値上げすることを表している．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に <var>Q</var> 行で出力せよ．<var>j</var> 行目 (<var>1 \leqq j \leqq Q</var>) には，<var>j</var> 年目の満足度調査で不満を抱く住民がいる都市の数を出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<p>すべての入力データは以下の条件を満たす．</p>
+<ul>
+<li><var>2 \leqq N \leqq 100\,000</var>．</li>
+<li><var>1 \leqq Q \leqq M \leqq 200\,000</var>．</li>
+<li><var>1 \leqq U_i \leqq N</var> (<var>1 \leqq i \leqq M</var>)．</li>
+<li><var>1 \leqq V_i \leqq N</var> (<var>1 \leqq i \leqq M</var>)．</li>
+<li><var>U_i \neq V_i</var> (<var>1 \leqq i \leqq M</var>)．</li>
+<li><var>1 \leqq R_j \leqq M</var> (<var>1 \leqq j \leqq Q</var>)．</li>
+<li><var>R_j \neq R_k</var> (<var>1 \leqq j &lt; k \leqq Q</var>)．</li>
+<li>どの <var>2</var> つの都市についても，それらを直接結ぶ路線は <var>1</var> 個以下である．</li>
+<li>どの都市についても，その都市から都市 <var>1</var> までいくつかの路線を使って移動することができる．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<h4>小課題 1 [12 点]</h4>
+<p>以下の条件を満たす．</p>
+<ul>
+<li><var>N \leqq 100</var>．</li>
+<li><var>M \leqq 4\,950</var>．</li>
+<li><var>Q \leqq 30</var>．</li>
+</ul>
+<h4>小課題 2 [14 点]</h4>
+<ul>
+<li><var>Q \leqq 30</var> を満たす．</li>
+</ul>
+<h4>小課題 3 [35 点]</h4>
+<ul>
+<li>正しい出力に現れる整数は <var>50</var> 種類以下である．</li>
+</ul>
+<h4>小課題 4 [39 点]</h4>
+<p>追加の制限はない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>5 6 5
+1 2
+1 3
+4 2
+3 2
+2 5
+5 3
+5
+2
+4
+1
+3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>0
+2
+2
+4
+4
+</pre>
+<p>この入力例では，計画開始前，及びそれぞれの満足度調査の時点でのそれぞれの都市から都市 <var>1</var> への運賃は，以下の表のようになる．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2016ho/2016-ho-t1-fig01.png" /></p>
+<p>例えば，<var>3</var> 年目の満足度調査では，都市 <var>3</var> と都市 <var>5</var> の住民が不満を抱くので，出力の <var>3</var> 行目には <var>2</var> を出力する．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>4 6 6
+1 2
+1 3
+1 4
+2 3
+2 4
+3 4
+1
+4
+2
+5
+3
+6
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>1
+1
+2
+2
+3
+3
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>2 1 1
+1 2
+1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>1
+</pre></section>
+</div>
+</span>
+</span>

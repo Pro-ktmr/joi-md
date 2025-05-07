@@ -1,0 +1,140 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題文</h3>
+<p>長さ <var>N</var> の文字列 <var>S</var> が与えられる．<var>S</var> の各文字は <code>J</code>，<code>O</code>，<code>I</code> のいずれかである．</p>
+<p>ビーバーのビ太郎は，<var>N - 1</var> 回の動作を行った．<var>i</var> 回目 (<var>1 \leqq i \leqq N - 1</var>) の動作は，次のように行われた．</p>
+<ul>
+<li><var>S</var> の <var>i + 1</var> 文字目を確認する．さらに，<var>S</var> の <var>i + 1</var> 文字目が <code>J</code> であったならば，<var>S</var> の <var>i</var> 文字目を黒板に書く．</li>
+</ul>
+<p><var>N - 1</var> 回の動作においてビ太郎が黒板に書いたすべての文字を，ビ太郎が書いた順に改行区切りで出力せよ．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<ul>
+<li><var>2 \leqq N \leqq 100</var>．</li>
+<li><var>S</var> は長さ <var>N</var> の文字列である．</li>
+<li><var>S</var> の各文字は <code>J</code>，<code>O</code>，<code>I</code> のいずれかである．</li>
+<li><var>N</var> は整数である．</li>
+<li>黒板に書かれた文字が <var>1</var> つ以上存在する．</li>
+</ul>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は以下の形式で標準入力から与えられる．</p>
+<pre><var>N</var>
+<var>S</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p><var>N - 1</var> 回の動作においてビ太郎が黒板に書いたすべての文字を，ビ太郎が書いた順に改行区切りで出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>6
+IOJOIJ
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>O
+I
+</pre>
+<p>ビ太郎は，以下のように <var>5</var> 回の動作を行った．</p>
+<ul>
+<li><var>1</var> 回目の動作では，<var>S</var> の <var>2</var> 文字目を確認した．</li>
+<li><var>2</var> 回目の動作では，<var>S</var> の <var>3</var> 文字目を確認した．さらに，<var>S</var> の <var>3</var> 文字目が <code>J</code> であったため，黒板に <var>S</var> の <var>2</var> 文字目である <code>O</code> を書いた．</li>
+<li><var>3</var> 回目の動作では，<var>S</var> の <var>4</var> 文字目を確認した．</li>
+<li><var>4</var> 回目の動作では，<var>S</var> の <var>5</var> 文字目を確認した．</li>
+<li><var>5</var> 回目の動作では，<var>S</var> の <var>6</var> 文字目を確認した．さらに，<var>S</var> の <var>6</var> 文字目が <code>J</code> であったため，黒板に <var>S</var> の <var>5</var> 文字目である <code>I</code> を書いた．</li>
+</ul>
+<p>したがって，ビ太郎が黒板に書いた <code>O</code> と <code>I</code> を，この順に改行区切りで出力する．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>4
+JJOI
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>J
+</pre>
+<p>ビ太郎は，<var>1</var> 回目の動作で <var>S</var> の <var>1</var> 文字目である <code>J</code> を黒板に書いた．<var>2</var> 回目と <var>3</var> 回目の動作では，黒板に何も書かなかった．</p>
+<p>したがって，ビ太郎が黒板に書いた <code>J</code> を出力する． </p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>7
+IOJOJOJ
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>O
+O
+O
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 4</h3>
+<pre>5
+JJJJJ
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 4</h3>
+<pre>J
+J
+J
+J
+</pre></section>
+</div>
+</span>
+</span>

@@ -1,0 +1,192 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>遠い昔，IOI 文明という高度な文明が栄えていた．しかし，火山の噴火により，この高度な文明はついに滅んでしまった．IOI 文明は直線状の河川に沿って繁栄しており，IOI 文明が滅んだとき，その地表面は平らであった．IOI 文明の跡地は座標平面の <var>x</var> 軸と見なすことができる．<var>y</var> 軸は高さ方向を表す．すなわち，座標平面において，直線 <var>y = 0</var> は地表を，領域 <var>y &gt; 0</var> は地上を，領域 <var>y &lt; 0</var> は地下を表す．また，IOI 文明が滅んだとき，<var>a</var> 年前 (<var>a \geqq 0</var>) の地層は，直線 <var>y = -a</var> の位置にあった．</p>
+<p>IOI 文明が滅んだ後，IOI 文明の跡地では <var>Q</var> 回の地殻変動が起きた．<var>i</var> 回目 (<var>1 \leqq i \leqq Q</var>) の地殻変動は，位置 <var>X_i</var>，方向 <var>D_i</var>，変動の量 <var>L_i</var> で表される．<var>D_i</var> は <var>1</var> または <var>2</var> である．<var>i</var> 回目の地殻変動は以下のように起きる．</p>
+<ul>
+<li>地層の移動が次のように起きる．<ul>
+<li><var>D_i = 1</var> のとき，断層が点 <var>(X_i, 0)</var> を通る傾き <var>1</var> の直線に沿って造られ，この直線より上の領域にある地層が，直線に沿って高さ <var>L_i</var> だけ移動する．すなわち，この直線より上の点 <var>(x, y)</var> は，点 <var>(x + L_i, y + L_i)</var> に移動する．</li>
+<li><var>D_i = 2</var> のとき，断層が点 <var>(X_i, 0)</var> を通る傾き <var>-1</var> の直線に沿って造られ，この直線より上の領域にある地層が，直線に沿って高さ <var>L_i</var> だけ移動する．すなわち，この直線より上の点 <var>(x, y)</var> は，点 <var>(x - L_i, y + L_i)</var> に移動する．</li>
+</ul>
+</li>
+<li>そのすぐ後に，領域 <var>y &gt; 0</var> の地層が風化によってすべて消える．</li>
+</ul>
+<p>時は変わり現代，考古学者の JOI 博士は IOI 文明の遺跡を発掘することにした．JOI 博士はどの位置の地表の地層が，IOI 文明が滅ぶ何年前の地層であるかを知りたい．どのような地殻変動が起きたかは分かっている．あなたの仕事は，JOI 博士にかわって，<var>1 \leqq i \leqq N</var> を満たす各整数 <var>i</var> について，点 <var>(i - 1, 0)</var> と点 <var>(i, 0)</var>の間の地表の地層が IOI 文明が滅ぶ何年前の地層であるかを求めることである．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p>IOI 文明の跡地に起きたの情報が与えられたとき，すべての整数 <var>i</var> (<var>1 \leqq i \leqq N</var>) に対し，点 <var>(i - 1, 0)</var> と点 <var>(i, 0)</var> の間の地表の地層が IOI 文明が滅ぶ何年前の地層であるかを出力せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下の入力を読み込め．</p>
+<ul>
+<li><var>1</var> 行目には，<var>2</var> 個の整数 <var>N, Q</var> が空白を区切りとして書かれている．これは，答えを求める地点の数が <var>N</var>，地殻変動の回数が <var>Q</var> であることを表す．</li>
+<li>続く <var>Q</var> 行のうちの <var>i</var> 行目 (<var>1 \leqq i \leqq Q</var>) には，<var>3</var> 個の整数 <var>X_i, D_i, L_i</var> が空白を区切りとして書かれている．これは，<var>i</var> 回目の地殻変動の位置が <var>X_i</var>，方向が <var>D_i</var>，変動の量が <var>L_i</var> であることを表す．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>出力は <var>N</var> 行からなる．標準出力の <var>i</var> 行目 (<var>1 \leqq i \leqq N</var>) には，点 <var>(i - 1, 0)</var> と点 <var>(i, 0)</var> の間の地表の地層が IOI 文明が滅ぶ何年前の地層であるかを表す整数を出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<p>すべての入力データは以下の条件を満たす．</p>
+<ul>
+<li><var>1 \leqq N \leqq 200\,000</var>．</li>
+<li><var>1 \leqq Q \leqq 200\,000</var>．</li>
+<li><var>-1\,000\,000\,000 \leqq X_i \leqq 1\,000\,000\,000</var> (<var>1 \leqq i \leqq Q</var>)．</li>
+<li><var>1 \leqq D_i \leqq 2</var> (<var>1 \leqq i \leqq Q</var>)．</li>
+<li><var>1 \leqq L_i \leqq 1\,000\,000\,000</var> (<var>1 \leqq i \leqq Q</var>)．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<h4>小課題 1 [18 点]</h4>
+<p>以下の条件を満たす．</p>
+<ul>
+<li><var>N \leqq 100</var>．</li>
+<li><var>Q \leqq 100</var>．</li>
+<li><var>-100 \leqq X_i \leqq 100</var> (<var>1 \leqq i \leqq Q</var>)．</li>
+<li><var>L_i = 1</var> (<var>1 \leqq i \leqq Q</var>)．</li>
+</ul>
+<h4>小課題 2 [16 点]</h4>
+<p>以下の条件を満たす．</p>
+<ul>
+<li><var>N \leqq 3,000</var>．</li>
+<li><var>Q \leqq 3,000</var>．</li>
+</ul>
+<h4>小課題 3 [66 点]</h4>
+<p>追加の制限はない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>10 2
+12 1 3
+2 2 2
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>3
+3
+5
+5
+5
+5
+5
+5
+2
+2
+</pre>
+<p>この入力例は，以下の図に対応する．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2016ho/2016-ho-t5-fig01.png" /></p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>10 6
+14 1 1
+17 1 1
+-6 2 1
+3 2 1
+4 1 1
+0 2 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>5
+5
+4
+5
+5
+5
+5
+5
+4
+4
+</pre>
+<p>この入力例は，小課題 <var>1</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>15 10
+28 1 7
+-24 2 1
+1 1 1
+8 1 1
+6 2 1
+20 1 3
+12 2 2
+-10 1 3
+7 2 1
+5 1 2
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>15
+14
+14
+14
+14
+12
+12
+12
+12
+12
+12
+12
+15
+15
+12
+</pre></section>
+</div>
+</span>
+</span>

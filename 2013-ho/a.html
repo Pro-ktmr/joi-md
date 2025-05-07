@@ -1,0 +1,175 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>JOI 高校の文化祭では毎年廊下に電飾が飾られる．電飾は <var>N</var> 個の電球で構成されており，電球は廊下の西側から東側に一列に並んでいる．各電球は明かりがついているか，ついていないかのいずれかの状態である．</p>
+<p>JOI 高校の倉庫には電球を操作する機械が眠っている．この機械は電飾内で連続した電球を指定すると，指定された電球のうち，明かりがついている電球全てを明かりがついていない状態にし，明かりがついていない電球全てを明かりがついている状態にする．ただし，機械は老朽化のため，<var>1</var> 回しか使用できない．</p>
+<p>JOI 高校の生徒達は明かりがついている電球とついていない電球が交互に並んだ列（このような電球の列を<strong>交互列</strong>と呼ぶ）が好きである．そこで，この機械を必要ならば <var>1</var> 回だけ使って，できるだけ長い交互列を含む電飾を作ることにした．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>例</h3>
+<p>例えば，電飾の配置が西から東に向かって</p>
+<blockquote>
+<p>○ ○ ● ● ○ ● ○ ○ ○ ●</p>
+</blockquote>
+<p>となっていたとする (○は明かりがついている電球を，●は明かりがついていない電球を表す)．
+このとき，<var>4</var> 番目から <var>7</var> 番目までの <var>4</var> 個の電球に対して機械を操作すると，</p>
+<blockquote>
+<p>○ ○ ● <span style="text-decoration: underline wavy;">○ ● ○ ●</span> ○ ○ ●</p>
+</blockquote>
+<p>となり，<var>2</var> 番目から <var>8</var> 番目までの電球が長さ <var>7</var> の交互列をなす．</p>
+<blockquote>
+<p>○ <span style="text-decoration: underline solid;">○ ● ○ ● ○ ● ○</span> ○ ●</p>
+</blockquote>
+<p>また，<var>8</var> 番目の電球のみに対して機械を操作すると，</p>
+<blockquote>
+<p>○ ○ ● ● ○ ● ○ <span style="text-decoration: underline wavy;">●</span> ○ ●</p>
+</blockquote>
+<p>となり，<var>4</var> 番目から <var>10</var> 番目までの電球が長さ7の交互列をなす．</p>
+<blockquote>
+<p>○ ○ ● <span style="text-decoration: underline solid;">● ○ ● ○ ● ○ ●</span></p>
+</blockquote>
+<p>機械を最大 <var>1</var> 回使用することで，長さが <var>8</var> 以上の交互列を作ることはできない．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p>電飾の情報が与えられたとき，機械を最大 <var>1</var> 回使用することで得られる電球の配列に含まれる交互列の長さとして考えられるものの最大値を求めるプログラムを作成せよ．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><var>2 \leqq N \leqq 100\,000</var>&emsp;</td>
+<td>電飾を構成する電球の個数</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下のデータを読み込め．</p>
+<ul>
+<li><var>1</var> 行目には，整数 <var>N</var> が書かれている．</li>
+<li>2 行目には <var>N</var> 個の <var>0</var> または <var>1</var> が空白を区切りとして書かれている．各整数は機械を操作する前における電球の情報を表している．左から <var>i</var> (<var>1 \leqq i \leqq N</var>) 番目の整数は西側から <var>i</var> 番目の電球の情報を表しており，整数が <var>1</var> ならば電球の明かりがついていて，<var>0</var> ならば明かりがついていないことを表す．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，作成可能な電球の列に含まれる交互列の長さの最大値を表す整数を <var>1</var> 行で出力せよ．</p>
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>採点基準</h3>
+<p>採点用データのうち，配点の <var>20</var> %分については，<var>N \leqq 500</var> を満たす．</p>
+<p>採点用データのうち，配点の <var>40</var> %分については，<var>N \leqq 2\,000</var> を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>10
+1 1 0 0 1 0 1 1 1 0
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>7
+</pre>
+<p>これは問題文中で説明された例である．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>10
+1 0 0 0 0 1 0 1 0 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>8
+</pre>
+<p>西側から <var>4</var> 番目の電球のみを操作すると，最大値 <var>8</var> を満たす交互列が得られる．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>5
+1 1 0 1 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>5
+</pre>
+<p>西側から数えて <var>2</var> 番目から <var>4</var> 番目までの電球を操作すると，全ての電球からなる交互列を作ることができる．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 4</h3>
+<pre>3
+0 1 0
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 4</h3>
+<pre>3
+</pre>
+<p>機械を使用しなくても良い場合があることに注意せよ．</p></section>
+</div>
+</span>
+</span>

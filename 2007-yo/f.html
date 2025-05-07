@@ -1,0 +1,61 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>太郎君の住んでいる JOI 市は，南北方向にまっすぐに伸びる <var>a</var> 本の道路と，東西方向にまっすぐに伸びる <var>b</var> 本の道路により，碁盤の目の形に区分けされている．</p>
+<p>南北方向の <var>a</var> 本の道路には，西から順に <var>1, 2, \ldots, a</var> の番号が付けられている．また，東西方向の <var>b</var> 本の道路には，南から順に <var>1, 2, \ldots, b</var> の番号が付けられている．西から <var>i</var> 番目の南北方向の道路と，南から <var>j</var> 番目の東西方向の道路が交わる交差点を <var>(i, j)</var> で表す．</p>
+<p>太郎君は，交差点 (<var>1, 1</var>) の近くに住んでおり，交差点 (<var>a, b</var>) の近くの JOI 高校に自転車で通っている．自転車は道路に沿ってのみ移動することができる．太郎君は，通学時間を短くするため，東または北にのみ向かって移動して通学している．</p>
+<p>現在，JOI 市では，<var>n</var> 個の交差点 <var>(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)</var> で工事を行っている．太郎君は工事中の交差点を通ることができない．</p>
+<p>太郎君が交差点 <var>(1, 1)</var> から交差点 <var>(a, b)</var> まで，工事中の交差点を避けながら，東または北にのみ向かって移動して通学する方法は何通りあるだろうか．太郎君の通学経路の個数 <var>m</var> を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力の <var>1</var> 行目には，空白を区切りとして <var>2</var> 個の整数 <var>a, b</var> が書かれている．これは，南北方向の道路の本数と，東西方向の道路の本数を表す．<var>a, b</var> は <var>1 \leqq a, b \leqq 16</var> をみたす．</p>
+<p><var>2</var> 行目には, 工事中の交差点の個数を表す整数 <var>n</var> が書かれている．<var>n</var> は <var>1 \leqq n \leqq 40</var> をみたす．</p>
+<p>続く <var>n</var> 行 (<var>3</var> 行目から <var>n + 2</var> 行目) には，工事中の交差点の位置が書かれている．<var>i + 2</var> 行目には空白で区切られた整数 <var>x_i, y_i</var> が書かれており，交差点 <var>(x_i, y_i)</var> が工事中であることを表す．<var>x_i, y_i</var> は <var>1 \leqq x_i, y_i \leqq 16</var> をみたす．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>出力は，太郎君の通学経路の個数 <var>m</var> だけを含む <var>1</var> 行からなる．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>5 4
+3
+2 2
+2 3
+4 2
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>5
+</pre>
+<p>下図は <var>a = 5, b = 4, n = 3</var> で，工事中の交差点が <var>(2, 2), (2, 3), (4, 2)</var> の場合を表している．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2007yo/route-fig1.png" /></p>
+<p>この場合，通学経路は <var>m = 5</var> 通りある．<var>5</var> 通りの通学経路を全て図示すると，以下の通り．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2007yo/route-fig2.png" /></p></section>
+</div>
+</span>
+</span>

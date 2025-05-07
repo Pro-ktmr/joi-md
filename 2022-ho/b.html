@@ -1,0 +1,161 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>JOI 高校一年の <var>3</var> 学期は，第 <var>1</var> 週から第 <var>M</var> 週までの <var>M</var> 週間にわたって <var>N</var> 科目の授業が行われる．それぞれの科目には <var>1</var> から <var>N</var> までの番号が付けられている．また，授業は週 <var>N</var> コマあり，各週の <var>i</var> コマ目 (<var>1 \leqq i \leqq N</var>) には科目 <var>i</var> の授業が行われる．</p>
+<p>高校一年生のビ太郎は，<var>N \times M</var> 個のコマそれぞれにおいて，以下のいずれかの行動をとることができる．</p>
+<ul>
+<li>行動 <var>1</var>：そのコマの授業に出席する．科目 <var>i</var> (<var>1 \leqq i \leqq N</var>) の授業に <var>1</var> コマ出席した場合，その科目の理解度が <var>A_i</var> 増加する．</li>
+<li>行動 <var>2</var>：そのコマの授業に出席せず，科目を自由に <var>1</var> つ選んで自習を行う．科目 <var>i</var> (<var>1 \leqq i \leqq N</var>) の自習を <var>1</var> コマ行った場合，その科目の理解度が <var>B_i</var> 増加する．</li>
+</ul>
+<p>ただし，最初の時点では全科目について理解度が <var>0</var> であるものとする．また，放課後は競技プログラミングの練習に費やしたいので，授業時間以外に勉強をしないものとする．</p>
+<p><var>3</var> 学期の授業がすべて終わると，期末試験が行われる．ビ太郎はその試験で赤点を取りたくないので，試験が行われる時点で，理解度が最も小さい科目の理解度をできるだけ大きくしたい．</p>
+<p>学期の長さ，科目数と理解度の増加分が与えられたとき，試験が行われる時点での理解度の最小値として考えられる最大の値を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は以下の形式で標準入力から与えられる．入力される値はすべて整数である．</p>
+<pre><var>N</var> <var>M</var>
+<var>A_1</var> <var>A_2</var> <var>\cdots</var> <var>A_N</var>
+<var>B_1</var> <var>B_2</var> <var>\cdots</var> <var>B_N</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，試験が行われる時点での理解度の最小値として考えられる最大の値を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<ul>
+<li><var>1 \leqq N \leqq 300\,000</var>．</li>
+<li><var>1 \leqq M \leqq 1\,000\,000\,000</var>．</li>
+<li><var>1 \leqq A_i \leqq 1\,000\,000\,000</var> (<var>1 \leqq i \leqq N</var>)．</li>
+<li><var>1 \leqq B_i \leqq 1\,000\,000\,000</var> (<var>1 \leqq i \leqq N</var>)．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<ol>
+<li>(<var>10</var> 点) <var>M = 1</var>．</li>
+<li>(<var>25</var> 点) <var>N \times M \leqq 300\,000</var>，<var>A_i = B_i</var> (<var>1 \leqq i \leqq N</var>)．</li>
+<li>(<var>27</var> 点) <var>N \times M \leqq 300\,000</var>．</li>
+<li>(<var>29</var> 点) <var>A_i = B_i</var> (<var>1 \leqq i \leqq N</var>)．</li>
+<li>(<var>9</var> 点) 追加の制約はない．</li>
+</ol>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>3 3
+19 4 5
+2 6 2
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>18
+</pre>
+<p>たとえば次のような方法で勉強をすると，試験が行われる時点で，科目 <var>1, 2, 3</var> の理解度がそれぞれ <var>19, 18, 19</var> となる．</p>
+<ul>
+<li>第 <var>1</var> 週の <var>1</var> コマ目は，科目 <var>2</var> の自習を行う．</li>
+<li>第 <var>1</var> 週の <var>2</var> コマ目は，科目 <var>2</var> の自習を行う．</li>
+<li>第 <var>1</var> 週の <var>3</var> コマ目は，科目 <var>3</var> の授業に出席する．</li>
+<li>第 <var>2</var> 週の <var>1</var> コマ目は，科目 <var>1</var> の授業に出席する．</li>
+<li>第 <var>2</var> 週の <var>2</var> コマ目は，科目 <var>3</var> の自習を行う．</li>
+<li>第 <var>2</var> 週の <var>3</var> コマ目は，科目 <var>3</var> の授業に出席する．</li>
+<li>第 <var>3</var> 週の <var>1</var> コマ目は，科目 <var>3</var> の自習を行う．</li>
+<li>第 <var>3</var> 週の <var>2</var> コマ目は，科目 <var>2</var> の自習を行う．</li>
+<li>第 <var>3</var> 週の <var>3</var> コマ目は，科目 <var>3</var> の授業に出席する．</li>
+</ul>
+<p>理解度の最小値を <var>19</var> 以上にする方法は存在しないため，<var>18</var> を出力する．</p>
+<p>この入出力例は小課題 <var>3, 5</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>2 1
+9 7
+2 6
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>7
+</pre>
+<p>この入出力例は小課題 <var>1, 3, 5</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>5 60000
+630510219 369411957 874325200 990002527 567203997
+438920902 634940661 593780254 315929832 420627496
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>41397427274960
+</pre>
+<p>この入出力例は小課題 <var>3, 5</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 4</h3>
+<pre>4 25
+1 2 3 4
+1 2 3 4
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 4</h3>
+<pre>48
+</pre>
+<p>この入出力例は小課題 <var>2, 3, 4, 5</var> の制約を満たす．</p></section>
+</div>
+</span>
+</span>

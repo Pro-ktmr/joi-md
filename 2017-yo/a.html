@@ -1,0 +1,93 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>JOI 君は食事の準備のため，<var>A</var> ℃の肉を電子レンジで <var>B</var> ℃まで温めようとしている．肉は温度が <var>0</var> ℃未満のとき凍っている．また，温度が <var>0</var> ℃より高いとき凍っていない．温度がちょうど <var>0</var> ℃のときの肉の状態は，凍っている場合と，凍っていない場合の両方があり得る．</p>
+<p>JOI 君は，肉の加熱にかかる時間は以下のようになると仮定して，肉を温めるのにかかる時間を見積もることにした．</p>
+<ul>
+<li>肉が凍っていて，その温度が <var>0</var> ℃より小さいとき： <var>C</var> 秒で <var>1</var> ℃温まる．</li>
+<li>肉が凍っていて，その温度がちょうど <var>0</var> ℃のとき： <var>D</var> 秒で肉が解凍され，凍っていない状態になる．</li>
+<li>肉が凍っていないとき： <var>E</var> 秒で <var>1</var> ℃温まる．</li>
+</ul>
+<p>この見積もりにおいて，肉を <var>B</var> ℃にするのに何秒かかるかを求めよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>5</var> 行からなり，<var>1</var> 行に <var>1</var> 個ずつ整数が書かれている．</p>
+<p><var>1</var> 行目には，もともとの肉の温度 <var>A</var> が書かれている．<br />
+<var>2</var> 行目には，目的の温度 <var>B</var> が書かれている．<br />
+<var>3</var> 行目には，凍った肉を <var>1</var> ℃温めるのにかかる時間 <var>C</var> が書かれている．<br />
+<var>4</var> 行目には，凍った肉を解凍するのにかかる時間 <var>D</var> が書かれている．<br />
+<var>5</var> 行目には，凍っていない肉を <var>1</var> ℃温めるのにかかる時間 <var>E</var> が書かれている．</p>
+<p>もともとの温度 <var>A</var> は <var>-100</var> 以上 <var>100</var> 以下，目的の温度 <var>B</var> は <var>1</var> 以上 <var>100</var> 以下であり，<var>A \neq 0</var> および <var>A &lt; B</var> を満たす．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>肉を <var>B</var> ℃にするのにかかる秒数を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>-10
+20
+5
+10
+3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>120
+</pre>
+<p>入出力例 <var>1</var> では，もともとの肉は <var>-10</var> ℃で凍っている．かかる時間は以下のようになる．</p>
+<ul>
+<li><var>-10</var> ℃から <var>0</var> ℃まで温めるのに <var>5 \times 10 = 50</var> 秒．</li>
+<li><var>0</var> ℃の肉を解凍するのに <var>10</var> 秒．</li>
+<li><var>0</var> ℃から <var>20</var> ℃まで温めるのに <var>3 \times 20 = 60</var> 秒．</li>
+</ul>
+<p>したがって，かかる時間の合計は <var>120</var> 秒である．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>35
+92
+31
+50
+11
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>627
+</pre>
+<p>入出力例 <var>2</var> では，もともとの肉は凍っていない．したがって，肉を <var>35</var> ℃から <var>92</var> ℃まで温めるのにかかる時間は <var>627</var> 秒である．</p></section>
+</div>
+</span>
+</span>

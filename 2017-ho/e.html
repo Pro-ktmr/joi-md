@@ -1,0 +1,168 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+<p>赤ちゃんの JOI くんは縄で遊んでいる．縄の長さは <var>N</var> であり，左右にまっすぐ伸びている．縄は太さ <var>1</var>，長さ <var>1</var> の紐 (ひも) が <var>N</var> 個つながってできている．縄には <var>M</var> 種類の色が使われており，左から <var>i</var> 番目の紐の色は <var>C_i</var> (<var>1 \leqq C_i \leqq M</var>) である．</p>
+<p>JOI くんは縄をより合わせて短くしていく．具体的には，以下の操作を縄の長さが <var>2</var> となるまで繰り返す．</p>
+<ul>
+<li>縄の長さを <var>L</var> とする．ある整数 <var>j</var> (<var>1 \leqq j &lt; L</var>) を取り，左から長さ <var>j</var> の位置が新たに左の端点となるよう，縄をより合わせていく．すなわち，<ul>
+<li><var>j \leqq L/2</var> のとき，各 <var>i</var> (<var>1 \leqq i \leqq j</var>) について，左から <var>i</var> 番目の紐と，左から <var>2j - i + 1</var> 番目の紐をより合わせる．このとき元々右の端点だった位置は引き続き右の端点となり，縄の長さは <var>L - j</var> となる．</li>
+<li><var>j &gt; L/2</var> のとき，各 <var>i</var> (<var>2j - L + 1 \leqq i \leqq j</var>) について，左から <var>i</var> 番目の紐と，左から <var>2j - i + 1</var> 番目の紐をより合わせる．このとき元々左の端点だった位置は右の端点となり，縄の長さは <var>j</var> となる．</li>
+</ul>
+</li>
+<li>このとき，より合わされる各紐の組について，色を揃えなければならない．紐はより合わせる直前に，任意の色に塗り替えることができるが，塗り替えた場合その太さと同じだけのコストがかかる．色を揃えたのち，紐はより合わされ，できた紐の太さはより合わされた <var>2</var> つの紐の太さの和となる．</li>
+</ul>
+<p>JOI くんは，縄の長さが <var>2</var> となるまでに行う操作のコストの総和を最小化したいと思っている．JOI くんはすべての色について，最終的な縄がその色を含むように操作を行った場合のコストの総和の最小値を求めたいと思っている．</p>
+<p>あなたの仕事は JOI くんに代わってこの問題を解くことである．</p>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p>はじめの縄を構成する紐の色が与えられたとき，それぞれの色について，縄がその色を含み，かつ長さを <var>2</var> とするのに必要なコストの最小値を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下の入力を読み込め．</p>
+<ul>
+<li><var>1</var> 行目には <var>2</var> 個の整数 <var>N, M</var> が空白を区切りとして書かれている．これらは縄を構成する紐が <var>N</var> 個あり，それらの色が <var>M</var> 種類あることを表す．</li>
+<li><var>2</var> 行目には <var>N</var> 個の整数 <var>C_1, C_2, \ldots,C_N</var> が空白を区切りとして書かれている．これらは左から <var>i</var> 番目の紐の色が <var>C_i</var> であることを表す．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に <var>M</var> 行で出力せよ．<var>M</var> 行のうちの <var>c</var> (<var>1 \leqq c \leqq M</var>) 行目には，最終的な縄の長さが <var>2</var> となり，その縄に色 <var>c</var> を含むようにより合わせるためのコストの総和の最小値を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<p>すべての入力データは以下の条件を満たす．</p>
+<ul>
+<li><var>2 \leqq N \leqq 1\,000\,000</var>．</li>
+<li><var>1 \leqq M \leqq N</var>．</li>
+<li><var>1 \leqq C_i \leqq M</var> (<var>1 \leqq i \leqq N</var>)．</li>
+<li><var>1 \leqq c \leqq M</var> を満たすすべての整数 <var>c</var> について，<var>C_i = c</var> となる <var>i</var> が存在する.</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<h4>小課題 1 [15 点]</h4>
+<p>以下の条件を満たす．</p>
+<ul>
+<li><var>N \leqq 15</var>．</li>
+<li><var>M \leqq 10</var>．</li>
+</ul>
+<h4>小課題 2 [30 点]</h4>
+<p>以下の条件を満たす．</p>
+<ul>
+<li><var>N \leqq 100\,000</var>．</li>
+<li><var>M \leqq 10</var>．</li>
+</ul>
+<h4>小課題 3 [10 点]</h4>
+<p>以下の条件を満たす．</p>
+<ul>
+<li><var>N \leqq 100\,000</var>．</li>
+<li><var>M \leqq 500</var>．</li>
+</ul>
+<h4>小課題 4 [25 点]</h4>
+<ul>
+<li><var>M \leqq 5\,000</var> を満たす．</li>
+</ul>
+<h4>小課題 5 [20 点]</h4>
+<p>追加の制限はない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>5 3
+1 2 3 3 2
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>2
+1
+1
+</pre>
+<p>以下のような操作で，色 <var>1</var> を含むようコスト <var>2</var> で長さ <var>2</var> により合わせることができる．</p>
+<ul>
+<li>左から <var>2</var> 番目の紐を色 <var>1</var> に塗り替え，左から長さ <var>1</var> の位置が端点となるようより合わせる．左から順に縄の色は <var>1, 3, 3, 2</var> となり，太さは <var>2, 1, 1, 1</var> となる．</li>
+<li>左から <var>4</var> 番目の紐の色を <var>1</var> に塗り替え，左から長さ <var>2</var> の位置が端点となるようより合わせる．左から順に縄の色は <var>3, 1</var> となり，太さは <var>2, 3</var> となる．</li>
+</ul>
+<p>また，以下のような操作で，色 <var>2, 3</var> を含むようコスト <var>1</var> で長さ <var>2</var> により合わせることができる．</p>
+<ul>
+<li>左から長さ <var>3</var> の位置が端点となるようより合わせる．左から順に縄の色は <var>3, 2, 1</var> となり，太さは <var>2, 2, 1</var> となる．</li>
+<li>左から <var>3</var> 番目の紐の色を <var>2</var> に塗り替え，左から長さ <var>2</var> の位置が端点となるようより合わせる．左から順に縄の色は <var>2, 3</var> となり，太さは <var>3, 2</var> となる．</li>
+</ul>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>7 3
+1 2 2 1 3 3 3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>2
+2
+2
+</pre>
+<p>以下のような操作で，色 <var>1</var> を含むようコスト <var>2</var> で長さ <var>2</var> により合わせることができる．</p>
+<ul>
+<li>左から長さ <var>2</var> の位置が端点となるようより合わせる．</li>
+<li>左から <var>1</var> 番目の紐の色を <var>1</var> に塗り替え，左から長さ <var>1</var> の位置が端点となるようより合わせる．塗り替える紐の太さが <var>2</var> なので，コストが <var>2</var> かかることに注意せよ．</li>
+<li>左から長さ <var>3</var> の位置が端点となるようより合わせる．</li>
+<li>左から長さ <var>1</var> の位置が端点となるようより合わせる．</li>
+</ul>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>10 3
+2 2 1 1 3 3 2 1 1 2
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>3
+3
+4
+</pre>
+<p><var>1</var> 回のより合わせの前に，複数箇所の紐を塗り替えてもよい．</p></section>
+</div>
+</span>
+</span>

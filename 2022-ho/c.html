@@ -1,0 +1,236 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>JOI 国は <var>N</var> 個の州からなり，それぞれ <var>1</var> から <var>N</var> までの番号が付けられている．<var>2022</var> 年，JOI 国では大統領選挙が開催されることになった．この選挙では各州で投票が行われ，勝った候補者がその州に割り当てられている <var>1</var> 票を獲得する．</p>
+<p>さて，大統領選挙に出馬する理恵さんは，演説によって自身への信頼度を上げ，選挙で勝とうと考えた．演説により，具体的には次のことが起こる．</p>
+<ul>
+<li>州 <var>i</var> (<var>1 \leqq i \leqq N</var>) での合計演説時間が <var>A_i</var> 時間に達すると，その州に割り当てられている <var>1</var> 票を獲得できる．</li>
+<li>州 <var>i</var> (<var>1 \leqq i \leqq N</var>) での合計演説時間が <var>B_i</var> 時間に達すると，協力者 <var>1</var> 人を得ることができる．得られた協力者は，それ以降演説を行い，合計演説時間を増やすことができる．</li>
+<li>ただし，州 <var>i</var> からの協力者を得られない場合もあり，その場合は <var>B_i = -1</var> として情報が与えられる．それ以外の場合は，<var>B_i \geqq A_i</var> であることが保証される．</li>
+</ul>
+<p>なお，州 <var>i</var> (<var>1 \leqq i \leqq N</var>) で獲得した協力者が州 <var>i</var> 以外で演説をすることや，<var>1</var> つの州で同時に <var>2</var> 人以上が演説をすることも可能である．たとえば，ある州で同時に <var>2</var> 人が <var>x</var> 時間演説をした場合，この州の合計演説時間は <var>2x</var> 時間増加する．ただし，演説時間が整数である必要はない．また，州の間を移動する時間は無視できるものとする．</p>
+<p>投票日が近いので，理恵さんは目標の <var>K</var> 票をできるだけ早く獲得したい．</p>
+<p>州の数と各州の情報が与えられたとき，<var>K</var> 票を集めるまでにかかる時間の最小値を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は以下の形式で標準入力から与えられる．入力される値はすべて整数である．</p>
+<pre><var>N</var>
+<var>K</var>
+<var>A_1</var> <var>B_1</var>
+<var>A_2</var> <var>B_2</var>
+<var>\vdots</var>
+<var>A_N</var> <var>B_N</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，<var>K</var> 票を集めるまでにかかる時間の最小値を <var>1</var> 行で出力せよ．正解との絶対誤差が <var>0.01</var> 以下であるような答えを出力すれば，正答とみなされる．出力は以下のいずれかの形式でなければならない．</p>
+<ul>
+<li>整数．（例：<code>123</code>，<code>0</code>，<code>-2022</code>）</li>
+<li>整数，半角ピリオド，<var>0</var> から <var>9</var> までの数字を並べた列，をその順にスペースなどで区切らず続けた形式．出力する小数点以下の桁数に制限はない．（例：<code>123.4</code>，<code>-123.00</code>，<code>0.00288</code>）</li>
+</ul>
+<p>たとえば，<code>1.23456e+05</code> や <code>1.23456e5</code> のような指数表記で出力してはならない．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<ul>
+<li><var>1 \leqq N \leqq 500</var>．</li>
+<li><var>1 \leqq K \leqq N</var>．</li>
+<li><var>1 \leqq A_i \leqq 1\,000</var> (<var>1 \leqq i \leqq N</var>)．</li>
+<li><var>A_i \leqq B_i \leqq 1\,000</var> または <var>B_i = -1</var> (<var>1 \leqq i \leqq N</var>)．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<ol>
+<li>(<var>5</var> 点) <var>B_i = -1</var> (<var>1 \leqq i \leqq N</var>)．</li>
+<li>(<var>5</var> 点) <var>B_i = -1</var> または <var>B_i = A_i</var> (<var>1 \leqq i \leqq N</var>)．</li>
+<li>(<var>11</var> 点) <var>N \leqq 7</var>．</li>
+<li>(<var>12</var> 点) <var>N \leqq 20</var>．</li>
+<li>(<var>33</var> 点) <var>N \leqq 100</var>．</li>
+<li>(<var>11</var> 点) <var>K = N</var>．</li>
+<li>(<var>23</var> 点) 追加の制約はない．</li>
+</ol>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>3
+3
+1 5
+2 3
+4 5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>5.500000000000000
+</pre>
+<p>以下のような順序で選挙活動を行うと，<var>5.5</var> 時間ですべての州の票を獲得することができる．</p>
+<ol>
+<li>理恵さんが州 <var>2</var> で <var>2</var> 時間演説を行い，その州の票を得る．</li>
+<li>理恵さんが州 <var>2</var> でさらに <var>1</var> 時間演説を行い，その州の協力者を得る．</li>
+<li>理恵さんと協力者 <var>1</var> 人が州 <var>3</var> で <var>2</var> 時間演説を行い，その州の票を得る．</li>
+<li>理恵さんと協力者 <var>1</var> 人が州 <var>1</var> で <var>0.5</var> 時間演説を行い，その州の票を得る．</li>
+</ol>
+<p>この入力例は小課題 <var>3, 4, 5, 6, 7</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>7
+4
+4 -1
+11 -1
+6 -1
+12 -1
+36 -1
+11 -1
+20 -1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>32.000000000000000
+</pre>
+<p>以下のような順序で選挙活動を行うと，<var>32</var> 時間で <var>4</var> 票を獲得することができる．</p>
+<ol>
+<li>理恵さんが州 <var>1</var> で <var>4</var> 時間演説を行い，その州の票を得る．</li>
+<li>理恵さんが州 <var>2</var> で <var>11</var> 時間演説を行い，その州の票を得る．</li>
+<li>理恵さんが州 <var>3</var> で <var>6</var> 時間演説を行い，その州の票を得る．</li>
+<li>理恵さんが州 <var>6</var> で <var>11</var> 時間演説を行い，その州の票を得る．</li>
+</ol>
+<p>この入力例は小課題 <var>1, 2, 3, 4, 5, 7</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>5
+3
+4 -1
+5 -1
+6 -1
+7 7
+8 8
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>11.500000000000000
+</pre>
+<p>以下のような順序で選挙活動を行うと，<var>11.5</var> 時間で <var>3</var> 票を獲得することができる．</p>
+<ol>
+<li>理恵さんが州 <var>4</var> で <var>7</var> 時間演説を行い，その州の票と協力者を得る．</li>
+<li>理恵さんが州 <var>1</var> で <var>4</var> 時間演説を行い，その州の票を得る．同時に，協力者 <var>1</var> 人が州 <var>2</var> で <var>4</var> 時間演説を行う．</li>
+<li>理恵さんと協力者 <var>1</var> 人が州 <var>2</var> で <var>0.5</var> 時間演説を行い，その州の票を得る．</li>
+</ol>
+<p>この入力例は小課題 <var>2, 3, 4, 5, 7</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 4</h3>
+<pre>7
+5
+28 36
+11 57
+20 35
+19 27
+31 33
+25 56
+38 51
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 4</h3>
+<pre>62.166666666666664
+</pre>
+<p>この入力例は小課題 <var>3, 4, 5, 7</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 5</h3>
+<pre>20
+14
+106 277
+175 217
+170 227
+164 245
+118 254
+139 261
+142 270
+185 200
+162 241
+153 239
+128 264
+103 299
+147 248
+158 236
+160 232
+183 205
+194 197
+135 260
+153 234
+128 260
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 5</h3>
+<pre>644.203571428571422
+</pre>
+<p>この入力例は小課題 <var>4, 5, 7</var> の制約を満たす．</p></section>
+</div>
+</span>
+</span>

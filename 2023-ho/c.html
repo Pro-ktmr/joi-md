@@ -1,0 +1,181 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題文</h3>
+<p>迷路を解くのが好きな K 理事長は，迷路になりそうなマス目を見つけた．マス目は縦 <var>R</var> 行，横 <var>C</var> 列の長方形の形をしており，各マスは白または黒で塗られている．上から <var>i</var> 行目 (<var>1 \leqq i \leqq R</var>)，左から <var>j</var> 列目 (<var>1 \leqq j \leqq C</var>) のマスをマス <var>(i, j)</var> と呼ぶことにする．</p>
+<p>K 理事長は，マス目の白いマスは通れるマス，黒いマスは通れないマスとして，迷路を解くことにした．具体的には，以下のようにして迷路を解く．</p>
+<ol>
+<li>白いマスの中からスタートのマス <var>(S_r, S_c)</var> とゴールのマス <var>(G_r, G_c)</var> を選ぶ．</li>
+<li>上下左右に隣接する白いマスに移動することを繰り返して，スタートのマスからゴールのマスへ移動する経路を見つける．</li>
+</ol>
+<p>K 理事長はスタートのマスとゴールのマスを決めたが，マス目の色の塗られ方によっては，白いマスのみを通ってスタートからゴールへ移動する経路が存在しない場合があることに気がついた．そこで， K 理事長の持っている <var>N \times N</var> マスの大きさのハンコを用いて以下の<strong>操作</strong>を繰り返すことで，スタートからゴールへ移動する経路が存在するようにしたい．</p>
+<p><strong>操作</strong>：マス目から <var>N \times N</var> マスの正方形の領域を選び，この領域に含まれるマスをすべて白にする．より厳密には，<var>1 \leqq a \leqq R - N + 1</var>，<var>1 \leqq b \leqq C - N + 1</var> を満たす整数 <var>a, b</var> を選び，<var>a \leqq i \leqq a + N - 1</var>，<var>b \leqq j \leqq b + N - 1</var> を満たすすべての整数の組 <var>(i, j)</var> に対して，マス <var>(i, j)</var> を白にする．</p>
+<p>ハンコを使うと手が汚れる可能性があるため，操作回数はできるだけ少なくしたい．マス目の塗られ方とハンコの大きさ，スタートのマスとゴールのマスが与えられたとき，白いマスのみを通ってスタートからゴールへ移動する経路が存在するようにするための，操作回数の最小値を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は以下の形式で標準入力から与えられる．</p>
+<pre><var>R</var> <var>C</var> <var>N</var>
+<var>S_r</var> <var>S_c</var>
+<var>G_r</var> <var>G_c</var>
+<var>A_1</var>
+<var>A_2</var>
+<var>\vdots</var>
+<var>A_R</var>
+</pre>
+<p><var>A_i</var> (<var>1 \leqq i \leqq R</var>) は <code>.</code> または <code>#</code> からなる長さ <var>C</var> の文字列である．<var>A_i</var> の <var>j</var> 文字目 (<var>1 \leqq j \leqq C</var>) はマス <var>(i, j)</var> の色を表し，<code>.</code> はそのマスの色が白であることを，<code>#</code> はそのマスの色が黒であることを表す．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，白いマスのみを通ってスタートからゴールへ移動する経路が存在するようにするための操作回数の最小値を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<ul>
+<li><var>1 \leqq N \leqq R \leqq C</var>．</li>
+<li><var>R \times C \leqq 6\,000\,000</var>．</li>
+<li><var>1 \leqq S_r \leqq R</var>．</li>
+<li><var>1 \leqq S_c \leqq C</var>．</li>
+<li><var>1 \leqq G_r \leqq R</var>．</li>
+<li><var>1 \leqq G_c \leqq C</var>．</li>
+<li><var>(S_r, S_c) \neq (G_r, G_c)</var>．</li>
+<li><var>A_i</var> (<var>1 \leqq i \leqq R</var>) は <code>.</code> または <code>#</code> からなる長さ <var>C</var> の文字列である．</li>
+<li>マス <var>(S_r, S_c)</var> の色は白である．</li>
+<li>マス <var>(G_r, G_c)</var> の色は白である．</li>
+<li><var>R, C, N, S_r, S_c, G_r, G_c</var> は整数である．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<ol>
+<li>(<var>8</var> 点) <var>N = 1</var>，<var>R \times C \leqq 1\,500\,000</var>．</li>
+<li>(<var>19</var> 点) <var>R \times C \leqq 1\,000</var>．</li>
+<li>(<var>16</var> 点) 答えは <var>10</var> 以下である，<var>R \times C \leqq 1\,500\,000</var>．</li>
+<li>(<var>19</var> 点) <var>R \times C \leqq 60\,000</var>．</li>
+<li>(<var>5</var> 点) <var>R \times C \leqq 150\,000</var>．</li>
+<li>(<var>19</var> 点) <var>R \times C \leqq 1\,500\,000</var>．</li>
+<li>(<var>8</var> 点) <var>R \times C \leqq 3\,000\,000</var>．</li>
+<li>(<var>6</var> 点) 追加の制約はない．</li>
+</ol>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>2 4 2
+1 1
+2 4
+.###
+###.
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>1
+</pre>
+<p><var>(a, b) = (1, 2)</var> を選んで <var>1</var> 回操作を行い，マス <var>(1, 2), (1, 3), (2, 2), (2, 3)</var> を白にすると，白いマスのみを通ってスタートからゴールへ移動する経路が存在するようになる．例えば，経路 <var>(1, 1) \to (1, 2) \to (1, 3) \to (2, 3) \to (2, 4)</var> はその <var>1</var> つである．</p>
+<p>操作を <var>1</var> 回も行わない場合，白いマスのみを通ってスタートからゴールへ移動する経路は存在しないから，<var>1</var> を出力する．</p>
+<p>この入力例は小課題 <var>2, 3, 4, 5, 6, 7, 8</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>6 6 1
+1 6
+6 1
+..#.#.
+##.###
+####.#
+...###
+##.##.
+.#.###
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>4
+</pre>
+<p>この入力例はすべての小課題の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>6 7 6
+6 4
+3 1
+..#.#.#
+##.##..
+.######
+#..#.#.
+.######
+..#.##.
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>1
+</pre>
+<p>この入力例は小課題 <var>2, 3, 4, 5, 6, 7, 8</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 4</h3>
+<pre>1 15 1
+1 15
+1 1
+...............
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 4</h3>
+<pre>0
+</pre>
+<p>操作を <var>1</var> 回も行わなくても，白いマスのみを通ってスタートからゴールへ移動する経路が存在する場合がある．</p>
+<p>この入力例はすべての小課題の制約を満たす．</p></section>
+</div>
+</span>
+</span>

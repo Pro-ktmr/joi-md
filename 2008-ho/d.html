@@ -1,0 +1,116 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>20</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>ある川で，一方の岸から石の上を次々と飛び移って反対側の岸まで行くという少々危険なゲームがはやっている．</p>
+<div style="text-align: center;">
+<img src="https://img.atcoder.jp/joi2008ho/6b1dc946ea492ac57ad77c6516cccc63.png" style="max-width: 100%; width: 400px;" />
+<p>図 4-1 石の位置の例</p>
+</div>
+
+<p>今，図 4-1 のように，石はマス目の上に存在すると考える．行の数は <var>n</var> である．
+図 4-1 では <var>n = 5</var> である．</p>
+<p>このゲームでは，一方の岸から始めて，通常のジャンプまたは <var>m</var> 回以下の一行飛
+ばしのジャンプをして反対側の岸まで渡る．通常のジャンプとは，今いる行の一つ先
+の行の岸または石のどれかに飛び移ることであり，一行飛ばしのジャンプとは，今
+いる行の二つ先の行の岸または石のどれかに飛び移ることである．始める岸の一つ
+先の行は <var>1</var> 行目，二つ先の行は <var>2</var> 行目であり，<var>n − 1</var> 行目の二つ先の行，及び <var>n</var> 行目の一つ先の行は反対側の岸であるとする．</p>
+<p>さて，このゲームをできるだけ安全に成し遂げるために，ジャンプの危険度とい
+うものを考えることにした．それぞれの石には，滑りやすさが定まっている．石か
+ら石へ飛び移る際のジャンプの危険度は，通常のジャンプであっても，一行飛ばし
+のジャンプであっても，</p>
+<ul>
+<li>（今いる石の滑りやすさ <var>+</var> 飛び移る先の石の滑りやすさ）<var>\times</var>（横の移動距離）
+で定める．ただし，横の移動距離とは，列の番号の差である．また，岸から石へ，あ
+るいは石から岸へ飛び移るジャンプの危険度は <var>0</var> とする．</li>
+</ul>
+<p>入力として <var>n</var>， <var>m</var>，それぞれの石の位置と滑りやすさが与えられたとき，反対側の岸まで到達する際のジャンプの危険度の合計の最小値を求めるプログラムを作成せよ．与えられる入力データは必ず反対側の岸まで到達することができるようになっており，同じマス目に石は <var>2</var> 個以上存在しない．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力ファイルのファイル名は <code>input.txt</code> である．</p>
+<p>入力ファイルの <var>1</var> 行目には，空白を区切りとして <var>2</var> 個の整数 <var>n</var>，<var>m</var> が書かれている．これは，行の数と，一行飛ばしのジャンプの許される回数を表す．<var>n</var>，<var>m</var> はそれぞれ <var>2\leqq n\leqq 150</var>，<var>0\leqq m\leqq \dfrac{(n+1)}2</var> を満たす．</p>
+<p>続く <var>n</var> 行には，それぞれの行にある石の情報が書かれている．<var>i+1</var> 行目 (<var>1 \leqq i \leqq n</var>) には，<var>1</var> つの整数 <var>k_i</var> (<var>0 \leqq k_i \leqq 10</var>) と，それに続き <var>2 \times k_i</var> 個の整数が空白で区切られ書かれている．これらは，始める岸から数えて <var>i</var> 番目の行にある石の情報を表す．</p>
+<p><var>k_i</var> はその行に存在する石の個数を表し，それに続く <var>2 \times k_i</var> 個の整数については， <var>2 \times j - 1</var> 個目 (<var>1 \leqq j \leqq k_i</var>) の整数 <var>x_{i,j}</var> はその行の <var>j</var> 個目の石の列の番号を，<var>2 \times j</var> 個目の整数 <var>d_{i,j}</var> はその行の <var>j</var> 個目の石の滑りやすさをそれぞれ表す．<var>x_{i,j}，d_{i,j}</var> はそれぞれ <var>1 \leqq x_{i,j} , d_{i,j} \leqq 1000</var> を満たす．</p>
+<p>採点用データのうち, 配点の <var>20</var> %分については, <var>n \leqq 6</var> を満たし，配点の別の <var>20</var> %分については, <var>m = 0</var> を満たす．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>出力ファイルのファイル名は <code>output.txt</code> である．</p>
+<p><code>output.txt</code> は，反対側の岸まで到達する際のジャンプの危険度の合計の最小値を表す <var>1</var> つの整数を含む <var>1</var> 行からなる．</p>
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>例</h3>
+<p>図 4-2 において，石に書かれた数字はそれぞれの石の滑りやすさを表すとする．</p>
+<p>矢印で示された順番で石を渡るとき，それぞれのジャンプの危険度は，順番に <var>0</var>，<var>(2 + 2) \times 1 = 4</var>，<var>(2 + 1) \times 1 = 3</var>，<var>(1 + 4) \times 2 = 10</var>，<var>0</var> であり，合計は <var>17</var> となる．このとき，ジャンプの危険度の合計は最小となる．</p>
+<p>この例は入出力例に対応している．</p>
+<div style="text-align: center;">
+<img src="https://img.atcoder.jp/joi2008ho/8af0165ee0ba6165cd4e817edfee2c9b.png" style="max-width: 100%; width: 320px;" />
+<p>図 4-2 経路の例</p>
+</div>
+
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>5 1
+2 1 3 2 2
+1 3 2
+1 1 7
+1 2 1
+1 4 4
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>17
+</pre>
+<p>上の例に対応する入出力は例 1 の通りである．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>5 0
+2 1 3 2 2
+1 3 2
+1 1 7
+1 2 1
+1 4 4
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>40
+</pre></section>
+</div>
+</span>
+</span>

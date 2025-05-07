@@ -43,16 +43,16 @@ $L_M$ $R_M$
 
 - $1\leqq N\leqq 100\,000$．
 - $1\leqq M\leqq 100\,000$．
-- $1\leqq A_i\leqq N$ $(1\leqq i\leqq N)$．
-- $1\leqq L_j\leqq R_j\leqq N$ $(1\leqq j\leqq M)$．
+- $1\leqq A_i\leqq N$ ($1\leqq i\leqq N$)．
+- $1\leqq L_j\leqq R_j\leqq N$ ($1\leqq j\leqq M$)．
 - 入力される値はすべて整数である．
 
 ### 小課題
 
 1. ($19$ 点) $N ≦ 400，M ≦ 400$．
 2. ($9$ 点) $N ≦ 400$．
-3. ($19$ 点) $A_i\leqq 5$ $(1\leqq i\leqq N)$．
-4. ($12$ 点) $A_i=i$ $(1\leqq i\leqq N)$．
+3. ($19$ 点) $A_i\leqq 5$ ($1\leqq i\leqq N$)．
+4. ($12$ 点) $A_i=i$ ($1\leqq i\leqq N$)．
 5. ($17$ 点) 各 $k$ ($1\leqq k\leqq N$) について，$A_i=k$ を満たす $i$ ($1\leqq i\leqq N$) の個数は高々 $5$ 個である．
 6. ($24$ 点) 追加の制約はない．
 

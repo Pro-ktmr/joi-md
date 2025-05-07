@@ -1,0 +1,174 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>IOI 王国では，王女である JOI 姫の誕生日を祝って舞踏会が開かれることになった．</p>
+<p>舞踏会には <var>N</var> 人の貴族が参加する予定である．<var>N</var> は奇数である．貴族には <var>1</var> から <var>N</var> までの番号が付けられている．それぞれの貴族には踊りのうまさという整数が定められており，貴族 <var>i</var> (<var>1 \leqq i \leqq N</var>) の踊りのうまさは <var>D_i</var> である．</p>
+<p>舞踏会では JOI 姫を含む <var>N + 1</var> 人で <var>2</var> 人ずつ組を作って踊る．IOI 王国では，上級者が初級者を補助できるように，伝統的に以下の方法で踊りの組を決定している．</p>
+<ul>
+<li>最初に，<var>N</var> 人の貴族が <var>1</var> 列に並ぶ．</li>
+<li>列に並んでいる貴族が <var>1</var> 人になるまで，以下の操作を繰り返す．<ul>
+<li>列の先頭から <var>3</var> 人の貴族の踊りのうまさを調べる．</li>
+<li>その <var>3</var> 人の貴族の中で，最も踊りのうまさが大きい貴族を <var>A</var> とおく．ただし，複数いる場合は，最も踊りのうまさが大きい貴族の中で，最も番号の小さい貴族 を <var>A</var> とおく．</li>
+<li>その <var>3</var> 人の貴族の中で，最も踊りのうまさが小さい貴族を <var>B</var> とおく．ただし，複数いる場合は，最も踊りのうまさが小さい貴族の中で，最も番号の大きい貴族 を <var>B</var> とおく．</li>
+<li><var>A</var> と <var>B</var> が列から抜けて組になる．</li>
+<li>残った <var>1</var> 人は列の最後尾に移動する．</li>
+</ul>
+</li>
+<li>最終的に残った <var>1</var> 人が JOI 姫と組になる．貴族 <var>1</var> から貴族 <var>M</var> (<var>1 \leqq M \leqq N - 2</var>) の <var>M</var> 人の貴族については，すでに初期状態で列の何番目に並ぶのかが決まっている．残りの <var>N - M</var> 人の貴族の並び方は国王が自由に決めることができる．</li>
+</ul>
+<p>JOI 姫は踊りを学んだばかりなので，国王は JOI 姫と組になる貴族の踊りのうまさをできるだけ大きくしたいと考えている．JOI 姫と組になる貴族の踊りのうまさとして考えられる最大値を求めよ．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p>それぞれの貴族の踊りのうまさと，<var>M</var> 人の貴族の初期状態で並ぶ場所が与えられたとき，JOI 姫と組になる貴族の踊りのうまさとして考えられる最大値を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下のデータを読み込め．</p>
+<ul>
+<li><var>1</var> 行目には，<var>2</var> 個の整数 <var>N, M</var> が空白を区切りとして書かれている．これは舞踏会に貴族が <var>N</var> 人参加し，列に並ぶ場所がすでに決まっている貴族が <var>M</var> 人いることを表す．</li>
+<li>続く <var>M</var> 行のうちの <var>i</var> 行目 (<var>1 \leqq i \leqq M</var>) には，<var>2</var> 個の整数 <var>D_i, P_i</var> が空白を区切りとして書かれている．これは貴族 <var>i</var> の踊りのうまさが <var>D_i</var> で，貴族 <var>i</var> が初期状態で列の先頭から <var>P_i</var> 番目に並ぶことを表す．</li>
+<li>続く <var>N - M</var> 行のうちの <var>i</var> 行目 (<var>1 \leqq i \leqq N - M</var>) には，整数 <var>D_{i + M}</var> が書かれている．これは貴族 (<var>i + M</var>) の踊りのうまさが <var>D_{i + M}</var> であることを表す．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，JOI 姫と組になる貴族の踊りのうまさとして考えられる最大値を表す整数を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<p>すべての入力データは以下の条件を満たす．</p>
+<ul>
+<li><var>3 \leqq N \leqq 99\,999</var>．</li>
+<li><var>N</var> は奇数である．</li>
+<li><var>1 \leqq M \leqq N - 2</var>．</li>
+<li><var>1 \leqq D_i \leqq 1\,000\,000\,000</var> (<var>1 \leqq i \leqq N</var>)．</li>
+<li><var>1 \leqq P_i \leqq N</var> (<var>1 \leqq i \leqq M</var>)．</li>
+<li><var>P_i \neq P_j</var> (<var>1 \leqq i &lt; j \leqq M</var>)．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<h4>小課題 1 [8 点]</h4>
+<ul>
+<li><var>N \leqq 9</var> を満たす．</li>
+</ul>
+<h4>小課題 2 [16 点]</h4>
+<ul>
+<li><var>N \leqq 19</var> を満たす．</li>
+</ul>
+<h4>小課題 3 [44 点]</h4>
+<ul>
+<li><var>N \leqq 1\,999</var> を満たす．</li>
+</ul>
+<h4>小課題 4 [32 点]</h4>
+<p>追加の制限はない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>7 3
+5 2
+5 5
+8 6
+6
+2
+8
+9
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>8
+</pre>
+<p>初期状態では <var>3</var> 人の貴族の並ぶ場所がすでに決まっている．</p>
+<p><img alt="括弧内の数字は踊りのうまさを表す．左端が列の先頭である．" src="https://img.atcoder.jp/joi2015ho/d-1.png" /></p>
+<p>例えば，先頭から順に貴族 <var>5</var>，貴族 <var>1</var>，貴族 <var>4</var>，貴族 <var>6</var>，貴族 <var>2</var>，貴族 <var>3</var>，貴族 <var>7</var> という順番に並んだ場合を考える．</p>
+<p><img alt="すべての貴族が並んだあとの配置" src="https://img.atcoder.jp/joi2015ho/d-2.png" /></p>
+<p>この場合，以下のように列が変化していく．</p>
+<ul>
+<li>列の先頭の <var>3</var> 人の貴族 (貴族 <var>5</var>，貴族 <var>1</var>，貴族 <var>4</var>) 中で，最も踊りのうまさが大きい貴族 <var>4</var> と最も踊りのうまさが小さい貴族 <var>5</var> が組になり，残った貴族 <var>1</var> が最後尾に移動する．</li>
+<li>次に，列の先頭の <var>3</var> 人の貴族 (貴族 <var>6</var>，貴族 <var>2</var>，貴族 <var>3</var>) の中で，最も踊りのうまさが大きい貴族は貴族 <var>6</var> と貴族 <var>3</var> の <var>2</var> 人であり，このうち番号の小さい貴族は貴族 <var>3</var> である．また，列の先頭の <var>3</var> 人の貴族のうち最も踊りのうまさが小さい貴族は貴族 <var>2</var> である．貴族 <var>3</var> と貴族 <var>2</var> が組になり，残った貴族 <var>6</var> が最後尾に移動する．</li>
+<li>次に，列の先頭の <var>3</var> 人の貴族 (貴族 <var>7</var>，貴族 <var>1</var>，貴族 <var>6</var>) の中で，最も踊りのうまさが大きい貴族 <var>7</var> と最も踊りのうまさが小さい貴族 <var>1</var> が組になり，残った貴族 <var>6</var> が最後尾に移動する．</li>
+<li>最終的に貴族 <var>6</var> が残り，JOI 姫と組になる．貴族 <var>6</var> の踊りのうまさは <var>8</var> である．この値が JOI 姫と組になる貴族の踊りのうまさとして考えられる最大値である．</li>
+</ul>
+<p><img alt="列の変化の様子" src="https://img.atcoder.jp/joi2015ho/d-3.png" /></p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>3 1
+5 3
+5
+5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>5
+</pre>
+<p>どのような順番で並んでも，貴族 <var>2</var> と JOI 姫が組になる．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>7 2
+32 4
+27 6
+37
+41
+41
+30
+27
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>37
+</pre></section>
+</div>
+</span>
+</span>

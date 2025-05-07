@@ -1,0 +1,136 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>JOI 君は，砂浜で砂の城を作って遊んだ．JOI 君が作った城は，砂浜のある長方形の領域に含まれている．この長方形の領域は縦 <var>H</var> 行，横 <var>W</var> 列に区切られたマス目として表され，縦方向は南北方向に平行であり，横方向は東西方向に平行である．北から <var>i</var> 行目 (<var>1 \leqq i \leqq H</var>)，西から <var>j</var> 列目 (<var>1 \leqq j \leqq W</var>) のマスの高さは <var>A_{i, j}</var> である．<strong>ただし，<var>A_{i, j}</var> の値はすべて相異なる．</strong></p>
+<p>この砂の城に対し，JOI 君は以下の行動を行った．</p>
+<ol>
+<li>あるマスを選び，そのマスの上からスタートする．</li>
+<li>その後，東西南北に隣接する<strong>より低い</strong>マスの上に移動することを，<var>0</var> 回以上繰り返す．</li>
+</ol>
+<p>最終的に JOI 君が訪れたマスの領域を上から見ると，これは <var>1</var> つの長方形で表された．</p>
+<p>各マスの高さ <var>A_{i, j}</var> の情報が与えられたとき，JOI 君が訪れたマスの長方形領域としてあり得るものが何通りあるかを求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は以下の形式で標準入力から与えられる．入力される値はすべて整数である．</p>
+<pre><var>H</var> <var>W</var>
+<var>A_{1, 1}</var> <var>A_{1, 2}</var> <var>\cdots</var> <var>A_{1, W}</var>
+<var>A_{2, 1}</var> <var>A_{2, 2}</var> <var>\cdots</var> <var>A_{2, W}</var>
+<var>\vdots</var>
+<var>A_{H, 1}</var> <var>A_{H, 2}</var> <var>\cdots</var> <var>A_{H, W}</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，JOI 君が訪れたマスの長方形領域としてあり得るものが何通りあるかを，<var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<ul>
+<li><var>H \geqq 1</var>．</li>
+<li><var>W \geqq 1</var>．</li>
+<li><var>H \times W \leqq 50\,000</var>．</li>
+<li><var>1 \leqq A_{i, j} \leqq 10\,000\,000</var> (<var>1 \leqq i \leqq H</var>，<var>1 \leqq j \leqq W</var>)．</li>
+<li><var>A_{i_1, j_1} \neq A_{i_2, j_2}</var> (<var>1 \leqq i_1 \leqq H</var>，<var>1 \leqq j_1 \leqq W</var>，<var>1 \leqq i_2 \leqq H</var>，<var>1 \leqq j_2 \leqq W</var>，<var>(i_1, j_1) \neq (i_2, j_2)</var>)．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<ol>
+<li>(<var>9</var> 点) <var>H = 1</var>．</li>
+<li>(<var>10</var> 点) <var>H \times W \leqq 100</var>．</li>
+<li>(<var>5</var> 点) <var>H \times W \leqq 1\,500</var>．</li>
+<li>(<var>56</var> 点) <var>H \times W \leqq 7\,000</var>．</li>
+<li>(<var>20</var> 点) 追加の制約はない．</li>
+</ol>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>1 5
+2 4 7 1 5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>10
+</pre>
+<p>JOI 君が訪れたマスの長方形領域として，以下の <var>10</var> 通りがあり得るため，<var>10</var> を出力する．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2022ho/t5-1.png" /></p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>3 2
+18 10
+19 12
+17 13
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>15
+</pre>
+<p>JOI 君が訪れたマスの長方形領域として，以下の <var>15</var> 通りがあり得るため，<var>15</var> を出力する．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2022ho/t5-2.png" /></p>
+<p>この入力例は小課題 <var>2, 3, 4, 5</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>3 5
+83 47 36 38 40
+13 10 26 68 67
+15 19 20 70 90
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>65
+</pre>
+<p>例えば，以下の長方形領域が考えられる．それ以外のものも含めると全部で <var>65</var> 通りあるため，<var>65</var> を出力する．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2022ho/t5-3.png" /></p>
+<p>この入力例は小課題 <var>2, 3, 4, 5</var> の制約を満たす．</p></section>
+</div>
+</span>
+</span>

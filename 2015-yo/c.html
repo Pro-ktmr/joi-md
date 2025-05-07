@@ -1,0 +1,92 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>JOI 市は南北方向に <var>H</var> キロメートル，東西方向に <var>W</var> キロメートルの長方形の形をしており，<var>H \times W</var> 個の <var>1</var> キロメートル四方の小区画に区切られている．北から <var>i</var> 番目，西から <var>j</var> 番目の小区画を <var>(i, j)</var> と表す．</p>
+<p>各小区画は上空に雲があるか雲がないかのどちらかである．すべての雲は，<var>1</var> 分経つごとに <var>1</var> キロメートル東に移動する．今日は実に天気が良いため，JOI 市の外から JOI 市内に雲が移動してくることはない．</p>
+<p>今，各小区画の上空に雲があるかないかがわかっている．気象予報士であるあなたは，各小区画について，今から何分後に初めてその小区画の上空に雲が来るかを予測することになった．</p>
+<p>各小区画について，今から何分後に初めてその小区画の上空に雲が来るか求めよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>1 + H</var> 行からなる．</p>
+<p><var>1</var> 行目には，整数 <var>H, W</var> (<var>1 \leqq H \leqq 100</var>，<var>1 \leqq W \leqq 100</var>) が空白を区切りとして書かれている．これは，JOI 市が <var>H \times W</var> 個の <var>1</var> キロメートル四方の小区画に区切られていることを表す．</p>
+<p>続く <var>H</var> 行のうちの <var>i</var> 行目 (<var>1 \leqq i \leqq H</var>) には <var>W</var> 文字からなる文字列が書かれている．<var>W</var> 文字のうちの <var>j</var> 文字目 (<var>1 \leqq j \leqq W</var>) は，小区画 <var>(i, j)</var> の上空に，今，雲があるかどうかを表す．雲がある場合は文字 <code>c</code> (英小文字) が，雲がない場合は文字 <code>.</code> (ピリオド) が書かれている．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>出力は <var>H</var> 行からなり，それぞれの行は空白を区切りとした <var>W</var> 個の整数からなる．出力の <var>i</var> 行目の <var>j</var> 番目の整数 (<var>1 \leqq i \leqq H</var>，<var>1 \leqq j \leqq W</var>) は，今から何分後に初めて小区画 <var>(i, j)</var> の上空に雲が来るかを表さなければならない．ただし，今すでに小区画 <var>(i, j)</var> の上空に雲がある場合は <var>0</var> を，何分経っても小区画 <var>(i, j)</var> の上空に雲が来ない場合は <var>-1</var> を出力せよ．</p>
+<p>出力の各行の行頭と行末には余計な空白を入れないこと．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>3 4
+c..c
+..c.
+....
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>0 1 2 0
+-1 -1 0 1
+-1 -1 -1 -1
+</pre>
+<p>入出力例 <var>1</var> では，JOI 市は <var>3 \times 4</var> 個の小区画に区切られている．今の JOI 市の雲の状況は以下の通りである．図の上が北を表す．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2015yo/2015-yo-t3-fig01.png" /></p>
+<p>この後，<var>1</var> 分ごとに雲は以下のように移動する．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2015yo/2015-yo-t3-fig02.png" />
+<img alt="" src="https://img.atcoder.jp/joi2015yo/2015-yo-t3-fig03.png" />
+<img alt="" src="https://img.atcoder.jp/joi2015yo/2015-yo-t3-fig04.png" /></p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>6 8
+.c......
+........
+.ccc..c.
+....c...
+..c.cc..
+....c...
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>-1 0 1 2 3 4 5 6
+-1 -1 -1 -1 -1 -1 -1 -1
+-1 0 0 0 1 2 0 1
+-1 -1 -1 -1 0 1 2 3
+-1 -1 0 1 0 0 1 2
+-1 -1 -1 -1 0 1 2 3
+</pre></section>
+</div>
+</span>
+</span>

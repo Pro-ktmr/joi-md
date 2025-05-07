@@ -1,0 +1,337 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題文</h3>
+<p>JOI 市には，無限に長い <var>H</var> 本の東西方向の道路と <var>W</var> 本の南北方向の道路からなる格子状の道路網がある．北から <var>i</var> 本目 (<var>1 \leqq i \leqq H</var>) の東西方向の道路と，西から <var>j</var> 本目 (<var>1 \leqq j \leqq W</var>) の南北方向の道路が交わる交差点を交差点 <var>(i, j)</var> と呼ぶことにする．</p>
+<p>現在，道路の一部は整備不良により通行止めになっている．具体的な通行止めの状況は以下の通りである．</p>
+<ul>
+<li> 北から <var>i</var> 本目 (<var>1 \leqq i \leqq H</var>) の東西方向の道路の，交差点 <var>(i, j)</var> と交差点 <var>(i, j + 1)</var> を繋ぐ部分 (<var>1 \leqq j \leqq W - 1</var>) は，<var>A_{i, j} = 0</var> のとき通行止めで，<var>A_{i, j} = 1</var> のとき通行可能である．
+<li> 西から <var>j</var> 本目 (<var>1 \leqq j \leqq W</var>) の南北方向の道路の，交差点 <var>(i, j)</var> と交差点 <var>(i + 1, j)</var> を繋ぐ部分 (<var>1 \leqq i \leqq H - 1</var>) は，<var>B_{i, j} = 0</var> のとき通行止めで，<var>B_{i, j} = 1</var> のとき通行可能である．
+<li> 道路のその他の部分，すなわち <var>H \times W</var> 個の交差点の外側の部分はすべて通行止めである．
+</ul>
+
+<p>JOI 市の市長である K 理事長は，この道路網の<b>整備計画</b>を作ることにした．整備計画は，<var>0</var> 回以上の<b>整備</b>からなる．
+<var>1</var> 回の整備では，<var>1 \leqq i \leqq H</var> を満たす整数 <var>i</var> を <var>1</var> つ選び，以下のことを行う：</p>
+<p style="padding-left: 4rem">
+<var>1 \leqq j \leqq W - 1</var> を満たす<b>すべての</b>整数 <var>j</var> について，北から <var>i</var> 本目の東西方向の道路の，交差点 <var>(i, j)</var> と交差点 <var>(i, j + 1)</var> を繋ぐ部分を（もし通行止めであれば）通行可能にする．これには全体で <var>C_i</var> 日間かかる．ただし，<var>C_i</var> は <var>1</var> または <var>2</var> である．
+</p>
+
+<p>整備計画に含まれる複数の整備を同時に並行して行うことはできない．したがって，整備計画の実行に必要な日数は，整備計画に含まれるすべての整備にかかる日数の合計である．</p>
+<p>K 理事長は，まず市の重要施設の間を行き来できるようにするため，あなたに <var>Q</var> 個の質問をした． <var>k</var> 個目 (<var>1 \leqq k \leqq Q</var>) の質問は以下のようなものである．</p>
+<p style="padding-left: 4rem">
+<var>T_k</var> 個の交差点 <var>(X_{k, 1}, Y_{k, 1}), (X_{k, 2}, Y_{k, 2}), \dots, (X_{k, T_k}, Y_{k, T_k})</var> の間を，道路の通行可能な部分のみを通って行き来できるようにするような整備計画は存在するか．
+存在するならば，そのような整備計画の実行に必要な日数として考えられる最小値は何日間か．
+</p>
+
+<p>道路網の通行止めの状況，東西方向の各道路の整備にかかる日数，K 理事長の質問の内容が与えられたとき，K 理事長の質問にすべて答えるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は以下の形式で標準入力から与えられる．</p>
+<pre><var>H</var> <var>W</var> <var>Q</var> 
+<var>A_{1,1}A_{1,2}\cdots A_{1,W - 1}</var> 
+<var>A_{2,1}A_{2,2}\cdots A_{2,W - 1}</var> 
+<var>\vdots</var> 
+<var>A_{H,1}A_{H,2}\cdots A_{H,W - 1}</var> 
+<var>B_{1,1}B_{1,2}\cdots B_{1,W}</var> 
+<var>B_{2,1}B_{2,2}\cdots B_{2,W}</var> 
+<var>\vdots</var> 
+<var>B_{H - 1,1}B_{H - 1,2}\cdots B_{H - 1,W}</var> 
+<var>C_1</var> <var>C_2</var> <var>\cdots</var> <var>C_H</var> 
+<var>\mathrm{Query}_1</var> 
+<var>\mathrm{Query}_2</var> 
+<var>\vdots</var> 
+<var>\mathrm{Query}_Q</var>
+</pre>
+<p>ただし，各 <var>\mathrm{Query}_k</var> (<var>1 \leqq k \leqq Q</var>) は以下の形式である．</p>
+<pre><var>T_k</var> 
+<var>X_{k,1}</var> <var>Y_{k,1}</var> 
+<var>X_{k,2}</var> <var>Y_{k,2}</var> 
+<var>\vdots</var> 
+<var>X_{k,T_k}</var> <var>Y_{k,T_k}</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に <var>Q</var> 行で出力せよ．<var>k</var> 行目 (<var>1 \leqq k \leqq Q</var>) には，<var>T_k</var> 個の交差点 <var>(X_{k, 1}, Y_{k, 1}), (X_{k, 2}, Y_{k, 2}), \dots, (X_{k, T_k}, Y_{k, T_k})</var> の間を，
+道路の通行可能な部分のみを通って行き来できるようにするような整備計画が存在するならば，そのような整備計画の実行に必要な日数の最小値を出力し，そうでないならば <code>-1</code> を出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<ul>
+<li> <var>2 \leqq H</var>．
+<li> <var>2 \leqq W</var>．
+<li> <var>H \times W \leqq 1\,000\,000</var>．
+<li> <var>1 \leqq Q \leqq 100\,000</var>．
+<li> <var>A_{i, j}</var> は <var>0</var> または <var>1</var> (<var>1 \leqq i \leqq H, 1 \leqq j \leqq W - 1</var>)．
+<li> <var>B_{i, j}</var> は <var>0</var> または <var>1</var> (<var>1 \leqq i \leqq H - 1, 1 \leqq j \leqq W</var>)．
+<li> <var>C_i</var> は <var>1</var> または <var>2</var> (<var>1 \leqq i \leqq H</var>)．
+<li> <var>2 \leqq T_k</var> (<var>1 \leqq k \leqq Q</var>)．
+<li> <var>T_1 + T_2 + \cdots + T_Q \leqq 200\,000</var>．
+<li> <var>1 \leqq X_{k, l} \leqq H</var> (<var>1 \leqq k \leqq Q, 1 \leqq l \leqq T_k</var>)．
+<li> <var>1 \leqq Y_{k, l} \leqq W</var> (<var>1 \leqq k \leqq Q, 1 \leqq l \leqq T_k</var>)．
+<li> <var>(X_{k, 1}, Y_{k, 1}), (X_{k, 2}, Y_{k, 2}), \dots, (X_{k, T_k}, Y_{k, T_k})</var> は相異なる (<var>1 \leqq k \leqq Q</var>)．
+<li> 入力される値はすべて整数である．
+</ul>
+
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<ol>
+<li> (<var>10</var> 点) <var>C_i = 1</var> (<var>1 \leqq i \leqq H</var>)，<var>Q \leqq 5</var>，<var>T_k = 2</var> (<var>1 \leqq k \leqq Q</var>)，<var>A_{i, j} = 0</var> (<var>1 \leqq i \leqq H, 1 \leqq j \leqq W - 1</var>)．
+<li> (<var>6</var> 点) <var>C_i = 1</var> (<var>1 \leqq i \leqq H</var>)，<var>Q \leqq 5</var>，<var>T_k = 2</var> (<var>1 \leqq k \leqq Q</var>)．
+<li> (<var>15</var> 点) <var>C_i = 1</var> (<var>1 \leqq i \leqq H</var>)，<var>Q \leqq 5</var>．
+<li> (<var>11</var> 点) <var>C_i = 1</var> (<var>1 \leqq i \leqq H</var>)，<var>T_k = 2</var> (<var>1 \leqq k \leqq Q</var>)．
+<li> (<var>6</var> 点) <var>C_i = 1</var> (<var>1 \leqq i \leqq H</var>)．
+<li> (<var>12</var> 点) <var>Q \leqq 5</var>．
+<li> (<var>26</var> 点) <var>T_k = 2</var> (<var>1 \leqq k \leqq Q</var>)．
+<li> (<var>14</var> 点) 追加の制約はない．
+</ol>
+
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>4 3 4
+00
+00
+00
+00
+100
+001
+000
+1 1 1 1
+2
+1 1
+3 3
+2
+3 1
+1 2
+2
+2 3
+3 3
+2
+4 2
+3 2
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>1
+3
+0
+-1
+</pre>
+<p>以下の図は，現在の通行止めの状況である．灰色は通行止めを表し，青色は通行可能を表している．</p>
+<p><img src="https://img.atcoder.jp/joi2024ho/73ebcf5587737422992c1ccd10f5e1ff.png"/></p>
+<ul>
+<li> <var>1</var> 個目の質問では，整数 <var>i</var> として <var>2</var> を選ぶような整備を行うと通行止めの状況は下図のようになり，交差点 <var>(1, 1), (3, 3)</var> の間を互いに行き来できるようになる．
+<br><img src="https://img.atcoder.jp/joi2024ho/c5f1d272e8103beee21f2bb2c00a7891.png"/><br>この <var>1</var> 回の整備のみからなる整備計画の実行に必要な日数は <var>1</var> であり，これより少ない日数で交差点 <var>(1, 1), (3, 3)</var> の間を互いに行き来できるようにするような整備計画は存在しないため，<var>1</var> を出力する．
+<li> <var>2</var> 個目の質問では，整数 <var>i</var> としてそれぞれ <var>1, 2, 3</var> を選ぶような <var>3</var> 回の整備を行うと，交差点 <var>(3, 1), (1, 2)</var> の間を互いに行き来できるようになる．
+この <var>3</var> 回の整備からなる整備計画の実行に必要な日数は <var>3</var> であり，これより少ない日数で交差点 <var>(3, 1), (1, 2)</var> の間を互いに行き来できるようにするような整備計画は存在しないため，<var>3</var> を出力する．
+<li> <var>3</var> 個目の質問では，整備を <var>1</var> 回も行わなくても交差点 <var>(2, 3), (3, 3)</var> の間を互いに行き来できるので，<var>0</var> を出力する．
+<li> <var>4</var> 個目の質問では，交差点 <var>(4, 2), (3, 2)</var> の間を互いに行き来できるようにするような整備計画は存在しないため，<var>-1</var> を出力する．
+</ul>
+
+<p>この入力例は小課題 <var>1, 2, 3, 4, 5, 6, 7, 8</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>4 4 4
+100
+110
+011
+010
+0010
+1001
+0101
+1 1 1 1
+2
+1 2
+3 1
+2
+1 4
+4 1
+2
+3 2
+1 2
+2
+4 3
+1 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>1
+3
+2
+2
+</pre>
+<p>この入力例は小課題 <var>2, 3, 4, 5, 6, 7, 8</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>7 3 3
+10
+00
+00
+10
+00
+01
+00
+110
+101
+011
+001
+110
+100
+1 1 1 1 1 1 1
+3
+7 2
+3 1
+3 2
+3
+3 1
+6 3
+2 3
+7
+2 2
+1 3
+7 3
+5 2
+1 2
+7 2
+3 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>3
+2
+4
+</pre>
+<p>この入力例は小課題 <var>3, 5, 6, 8</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 4</h3>
+<pre>4 3 3
+00
+00
+10
+00
+110
+011
+001
+1 2 2 2
+2
+1 1
+3 1
+2
+4 3
+2 1
+2
+4 1
+1 3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 4</h3>
+<pre>1
+2
+5
+</pre>
+<p>この入力例は小課題 <var>6, 7, 8</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 5</h3>
+<pre>7 3 2
+01
+00
+00
+00
+00
+10
+01
+100
+110
+011
+001
+101
+001
+1 1 2 1 1 2 2
+3
+7 2
+1 3
+5 1
+5
+1 1
+2 2
+3 1
+2 3
+4 2
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 5</h3>
+<pre>4
+1
+</pre>
+<p>この入力例は小課題 <var>6, 8</var> の制約を満たす．</p></section>
+</div>
+</span>
+</span>

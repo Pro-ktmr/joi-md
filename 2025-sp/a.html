@@ -1,0 +1,183 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>JOI 美術館では，近々絵の展覧会が開催される予定である．
+美術館には <var>1</var> から <var>N</var> までの番号が付けられた <var>N</var> 枚の絵が所蔵されており，絵 <var>i</var> (<var>1 \leqq i \leqq N</var>) の <strong>美しさ</strong> は <var>A_i</var> である．
+展覧会ではこれらの絵を左から右に一列に並べて展示するが，並べる順番はまだ決まっていない．</p>
+<p>展覧会には <var>M</var> 誌の雑誌が取材に来る予定である．
+これらの雑誌には発信力が高い順に <var>1</var> から <var>M</var> までの番号が付けられており，各雑誌は一列に並べられた絵のうちある区間に含まれる絵の写真を掲載する予定である．
+具体的には，雑誌 <var>j</var> (<var>1 \leqq j \leqq M</var>) は左から <var>L_j, L_j+1, \dots, R_j</var> 番目に並べられた絵の写真を掲載する．
+ここで，雑誌 <var>j</var> (<var>1 \leqq j \leqq M</var>) の記事の <strong>魅力度</strong> は，雑誌 <var>j</var> が写真を掲載する絵の美しさの最大値として定義される．</p>
+<p>JOI 美術館の館長である JOI 君は，絵の並べ方を工夫し，これらの雑誌により魅力度の高い記事を書いてもらうことで，より多くの人に展覧会への興味を持ってもらおうと考えている．
+ただし，発信力が高い雑誌ほどより多くの人の目にとまると考えられるので，発信力が高い雑誌に魅力度の高い記事を書いてもらうことを優先したい．
+より正確には，雑誌 <var>j</var> (<var>1 \leqq j \leqq M</var>) の記事の魅力度を <var>b_j</var> としたとき，JOI 君は数列 <var>b=(b_1,b_2,\dots,b_M)</var> が辞書順で最大となるように絵を並べる．
+ここで，相異なる数列 <var>b=(b_1,b_2,\dots,b_M)</var> および <var>b'=(b'_1,b'_2,\dots,b'_M)</var> に対して <var>b</var> が <var>b'</var> より <strong>辞書順で大きい</strong> とは，<var>b_k \neq b'_k</var> であるような最小の <var>k</var> (<var>1\leqq k\leqq M</var>) に対して <var>b_k &gt; b'_k</var> であることをいう．</p>
+<p>展覧会で展示される絵および取材に来る雑誌の情報が与えられたとき，数列 <var>b=(b_1,b_2,\dots,b_M)</var> が辞書順で最大となるように絵を並べたときの各雑誌の記事の魅力度を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は以下の形式で標準入力から与えられる．</p>
+<pre><var>N</var> <var>M</var>
+<var>A_1</var> <var>A_2</var> <var>\ldots</var> <var>A_N</var>
+<var>L_1</var> <var>R_1</var>
+<var>L_2</var> <var>R_2</var>
+<var>\vdots</var>
+<var>L_M</var> <var>R_M</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に <var>M</var> 行で出力せよ．
+雑誌 <var>j</var> (<var>1 \leqq j \leqq M</var>) の記事の魅力度を <var>b_j</var> として，<var>j</var> 行目 (<var>1 \leqq j \leqq M</var>) には <var>b_j</var> を出力せよ．
+ただし，数列 <var>b=(b_1,b_2,\dots,b_M)</var> は辞書順で最大でなければならない．</p>
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<ul>
+<li><var>1\leqq N\leqq 100\,000</var>．</li>
+<li><var>1\leqq M\leqq 100\,000</var>．</li>
+<li><var>1\leqq A_i\leqq N</var> (<var>1\leqq i\leqq N</var>)．</li>
+<li><var>1\leqq L_j\leqq R_j\leqq N</var> (<var>1\leqq j\leqq M</var>)．</li>
+<li>入力される値はすべて整数である．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<ol>
+<li>(<var>19</var> 点) <var>N ≦ 400，M ≦ 400</var>．</li>
+<li>(<var>9</var> 点) <var>N ≦ 400</var>．</li>
+<li>(<var>19</var> 点) <var>A_i\leqq 5</var> (<var>1\leqq i\leqq N</var>)．</li>
+<li>(<var>12</var> 点) <var>A_i=i</var> (<var>1\leqq i\leqq N</var>)．</li>
+<li>(<var>17</var> 点) 各 <var>k</var> (<var>1\leqq k\leqq N</var>) について，<var>A_i=k</var> を満たす <var>i</var> (<var>1\leqq i\leqq N</var>) の個数は高々 <var>5</var> 個である．</li>
+<li>(<var>24</var> 点) 追加の制約はない．</li>
+</ol>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>4 4
+1 2 1 2
+1 1
+2 3
+4 4
+3 4
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>2
+2
+1
+2
+</pre>
+<p>左から絵 <var>2,3,4,1</var> の順に並べたとき，各雑誌の記事の魅力度は以下のようになる．</p>
+<ul>
+<li>雑誌 <var>1</var>：絵 <var>2</var> の写真を掲載する．この絵の美しさは <var>2</var> であるため，記事の魅力度は <var>2</var> である．</li>
+<li>雑誌 <var>2</var>：絵 <var>3,4</var> の写真を掲載する．これらの絵の美しさはそれぞれ <var>1,2</var> であるため，記事の魅力度は <var>2</var> である．</li>
+<li>雑誌 <var>3</var>：絵 <var>1</var> の写真を掲載する．この絵の美しさは <var>1</var> であるため，記事の魅力度は <var>1</var> である．</li>
+<li>雑誌 <var>4</var>：絵 <var>4,1</var> の写真を掲載する．これらの絵の美しさはそれぞれ <var>2,1</var> であるため，記事の魅力度は <var>2</var> である．</li>
+</ul>
+<p>このとき，数列 <var>b</var> は <var>(2,2,1,2)</var> となる．数列 <var>b</var> がこれより辞書順で大きくなるような絵の並べ方は存在しないため，<var>2,2,1,2</var> をこの順に改行区切りで出力する．</p>
+<p>この入力例は小課題 <var>1,2,3,5,6</var> の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>4 8
+1 2 3 4
+1 2
+2 3
+4 4
+1 1
+2 4
+3 3
+3 3
+4 4
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>4
+4
+3
+2
+4
+1
+1
+3
+</pre>
+<p>この入力例はすべての小課題の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>12 10
+6 2 2 5 2 5 2 3 3 3 2 2
+3 5
+10 12
+12 12
+2 4
+8 9
+10 11
+1 3
+7 9
+9 10
+10 11
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>6
+5
+5
+6
+5
+3
+6
+5
+5
+3
+</pre>
+<p>この入力例は小課題 <var>1,2,6</var> の制約を満たす．</p></section>
+</div>
+</span>
+</span>

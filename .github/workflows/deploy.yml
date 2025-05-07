@@ -1,0 +1,43 @@
+name: Deploy to AtCoder
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout submodule
+        uses: actions/checkout@v4
+        with:
+          repository: joi-md/joi-md-private
+          token: ${{ secrets.GH_PAT }}
+          path: joi-md-private
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+          cache-dependency-path: './joi-md-private/requirements.txt'
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -U -r ./joi-md-private/requirements.txt
+      - name: Run a deploy script
+        run: python3 ./joi-md-private/deploy.py ${{ secrets.USERNAME }} ${{ secrets.REVEL_SESSION }} tasks.yaml
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: '--force */*.html'
+          committer_name: 'github-actions[bot]'
+          committer_email: 'github-actions[bot]@users.noreply.github.com'
+          message: 'Auto update HTML by workflow'
+          push: true

@@ -1,0 +1,148 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>JOI 氏のコレクションルームには非常に大きな机があり，その上には何枚もの貴重なコインがある．机の掃除をするために，JOI 氏はコインを整理して並べることにした．</p>
+<p>机は <var>2\,000\,000\,001 \times 2\,000\,000\,001</var> のマス目になっている．列には左から順に <var>-1\,000\,000\,000</var> から <var>1\,000\,000\,000</var> までの番号がつけられており，行には下から順に <var>-1\,000\,000\,000</var> から <var>1\,000\,000\,000</var> までの番号がつけられている．列の番号が <var>x</var>，行の番号が <var>y</var> であるマスを (<var>x, y</var>) で表すことにする．</p>
+<p>コインは <var>2N</var> 枚あり，現在，<var>i</var> 番目 (<var>1 \leqq i \leqq 2N</var>) のコインはマス (<var>X_i, Y_i</var>) に置かれている．JOI 氏の目標は，<var>1 \leqq x \leqq N</var> かつ <var>1 \leqq y \leqq 2</var> を満たす (<var>x, y</var>) で表される <var>2N</var> 個のマスに，それぞれコインが <var>1</var> 枚ずつ置かれている状態にすることである．コインを傷つけないようにするため，「コインを <var>1</var> 枚選び，それが置かれているマスと辺で隣り合ったマスのいずれかに，そのコインを移動させる」という操作のみができる．途中，複数のコインが同じマスに置かれていてもよい．JOI 氏は，できるだけ少ない回数の操作で目標を達成したい．</p>
+<p>コインの枚数と，現在コインが置かれているマスが与えられたとき，目標を達成するために必要な操作回数の最小値を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は以下の形式で標準入力から与えられる．</p>
+<pre><var>N</var>
+<var>X_1</var> <var>Y_1</var>
+<var>\vdots</var>
+<var>X_{2N}</var> <var>Y_{2N}</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，目標を達成するために必要な操作回数の最小値を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<ul>
+<li><var>1 \leqq N \leqq 100\,000</var>．</li>
+<li><var>-1\,000\,000\,000 \leqq X_i \leqq 1\,000\,000\,000</var> (<var>1 \leqq i \leqq 2N</var>)．</li>
+<li><var>-1\,000\,000\,000 \leqq Y_i \leqq 1\,000\,000\,000</var> (<var>1 \leqq i \leqq 2N</var>)．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<ol>
+<li>(<var>8</var> 点) <var>N \leqq 10</var>．</li>
+<li>(<var>29</var> 点) <var>N \leqq 1\,000</var>．</li>
+<li>(<var>63</var> 点) 追加の制約はない．</li>
+</ol>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>3
+0 0
+0 4
+4 0
+2 1
+2 5
+-1 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>15
+</pre>
+<p>この入力例では，<var>6</var> 個のコインが下図のように置かれている．太枠で示した位置にコインを集めるのが目標である．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2019ho/2019-ho-t4-fig01.png" /></p>
+<p>例えば，コインを以下のように移動させると，<var>15</var> 回の操作で目標を達成できる：</p>
+<ul>
+<li><var>1</var> 番目のコイン：(<var>0, 0</var>) → (<var>1, 0</var>) → (<var>1, 1</var>) → (<var>1, 2</var>)</li>
+<li><var>2</var> 番目のコイン：(<var>0, 4</var>) → (<var>1, 4</var>) → (<var>1, 3</var>) → (<var>2, 3</var>) → (<var>3, 3</var>) → (<var>3, 2</var>)</li>
+<li><var>3</var> 番目のコイン：(<var>4, 0</var>) → (<var>4, 1</var>) → (<var>3, 1</var>)</li>
+<li><var>5</var> 番目のコイン：(<var>2, 5</var>) → (<var>2, 4</var>) → (<var>2, 3</var>) → (<var>2, 2</var>)</li>
+<li><var>6</var> 番目のコイン：(<var>-1, 1</var>) → (<var>0, 1</var>) → (<var>1, 1</var>)</li>
+</ul>
+<p><var>14</var> 回以下の操作で目標を達成することはできないので，<var>15</var> を出力する．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>4
+2 1
+2 1
+2 1
+3 1
+3 1
+3 1
+3 1
+3 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>9
+</pre>
+<p>同じマスに複数のコインが置かれているかもしれない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>5
+1000000000 1000000000
+-1000000000 1000000000
+-1000000000 -1000000000
+1000000000 -1000000000
+-1 -5
+-2 2
+2 8
+4 7
+-2 5
+7 3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>8000000029
+</pre></section>
+</div>
+</span>
+</span>

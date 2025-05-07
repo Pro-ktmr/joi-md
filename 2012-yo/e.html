@@ -1,0 +1,82 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>JOI 社の建物は図のような <var>1</var> 辺 <var>1</var> メートルの正六角形をつなぎ合わせた形である．クリスマスが近づいているので，JOI 社では建物の壁面をイルミネーションで飾り付けることにした．ただし，外から見えない部分にイルミネーションを施すのは無駄なので，イルミネーションは外から建物の中を通らずに行くことのできる壁面にのみ飾り付けることにした．</p>
+<p><img alt="JOI 社の建物の配置の例" src="https://img.atcoder.jp/joi2012yo/2012-yo-t5-fig01.png" /></p>
+<p>上の図は上空から見た JOI 社の建物の配置の例である．正六角形内の数字は座標を表す．灰色の正六角形は建物がある場所を表し，白色の正六角形は建物がない場所を表す．この例では，赤の実線で示される部分がイルミネーションで飾り付けを行う壁面となり，その壁面の長さの合計は <var>64</var> メートルとなる．</p>
+<p>JOI 社の建物の配置を表す地図が与えられたとき，飾り付けを行う壁面の長さの合計を求めるプログラムを作成せよ．ただし，地図の外側は自由に行き来できるものとし，隣接した建物の間は通ることはできないものとする．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力ファイルの <var>1</var> 行目には <var>2</var> つの整数 <var>W, H</var> (<var>1 \leqq W \leqq 100</var>，<var>1 \leqq H \leqq 100</var>) が空白を区切りとして書かれている．続く <var>H</var> 行には JOI 社の建物の配置が書かれている．<var>i + 1</var> 行目 (<var>1 \leqq i \leqq H</var>) には <var>W</var> 個の整数が空白を区切りとして書かれており，<var>j</var> 個目 (<var>1 \leqq j \leqq W</var>) の整数は座標 <var>(j, i)</var> の正六角形に建物がある時は <var>1</var> であり，ない時は <var>0</var> である．また，与えられる入力データには建物が必ず <var>1</var> つ以上ある．</p>
+<p>地図は以下の規則によって記述されている．<br />
+地図の最も北の行の最も西の正六角形は座標 <var>(1, 1)</var> である．<br />
+座標 <var>(x, y)</var> の正六角形に隣接する東隣の正六角形は座標 <var>(x + 1, y)</var> である．<br />
+<var>y</var> が奇数の時，座標 <var>(x, y)</var> の正六角形に隣接する南西の正六角形の座標は <var>(x, y + 1)</var> である．<br />
+<var>y</var> が偶数の時，座標 <var>(x, y)</var> の正六角形に隣接する南東の正六角形の座標は <var>(x, y + 1)</var> である．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>イルミネーションで飾り付けを行う壁面の長さの合計を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>8 4
+0 1 0 1 0 1 1 1
+0 1 1 0 0 1 0 0
+1 0 1 0 1 1 1 1
+0 1 1 0 1 0 1 0
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>64
+</pre>
+<p>入出力例 <var>1</var> は問題文中の例に対応しており，イルミネーションで飾り付けを行う壁面の長さの合計は <var>64</var> メートルである．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>8 5
+0 1 1 1 0 1 1 1
+0 1 0 0 1 1 0 0
+1 0 0 1 1 1 1 1
+0 1 0 1 1 0 1 0
+0 1 1 0 1 1 0 0
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>56
+</pre></section>
+</div>
+</span>
+</span>

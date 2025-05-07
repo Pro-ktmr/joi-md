@@ -1,0 +1,139 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>JOI 商店街には大通りに沿って <var>N</var> 個の店があり，JOI 商店街の入口から出口に向かってそれぞれ <var>1, 2, \ldots, N</var> の番号が付けられている．JOI 商店街は一方通行で，入口から出口方向へしか移動することはできない．</p>
+<p>まちおこしのため，JOI 商店街でスタンプラリーを行うことになった．このスタンプラリーでは，それぞれの店は <code>J</code>，<code>O</code>，<code>I</code> のいずれかのスタンプを用意し，店で買い物をした人はスタンプカードにスタンプを押してもらう．スタンプラリーに参加する人はちょうど <var>3</var> つの店に入る．商店街の入口では <var>3</var> つの欄のあるスタンプカードを配り，<var>1</var> 回目に入った店，<var>2</var> 回目に入った店，<var>3</var> 回目に入った店のスタンプを押してもらう．商店街の出口でスタンプカードを回収し，押されたスタンプが先に入った店のものから順に <code>J</code>，<code>O</code>，<code>I</code> になっているとき，出口で商品券がもらえるキャンペーンを実施することになった．押されたスタンプの種類や順番が異なるときは商品券はもらえない．</p>
+<p>すでに <var>N</var> 個のすべての店はどのスタンプを用意するか決めたが，新たに <var>1</var> つの店を JOI 商店街に出すことになり，新しく出店する場所と，その店が用意するスタンプを決めることになった．新しい店を出す場所は，店 <var>i</var> と店 <var>i + 1</var> の間 (<var>1 \leqq i \leqq N - 1</var>)，入口と店 <var>1</var> の間，店 <var>N</var> と出口の間のいずれかから決める．また，新しい店のスタンプは <code>J</code>，<code>O</code>，<code>I</code> の 3 通りから決める．</p>
+<p>商品券をもらえるような店の選び方の数が大きいほど，スタンプラリーが盛り上がると商店街は考えた．そこで，新しく出す店の場所と用意するスタンプを決めたときの，上記の店の選び方の数の最大値を求めたい．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p>JOI 商店街のすでにある店が用意したスタンプの情報が与えられたとき，新しく出す店の場所と用意するスタンプを決めたときの，商品券をもらえるような店の選び方の数の最大値を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下の入力を読み込め．</p>
+<ul>
+<li><var>1</var> 行目には，<var>1</var> つの整数 <var>N</var> が書かれている．これは，JOI 商店街には現在 <var>N</var> 個の店があることを意味
+する．</li>
+<li><var>2</var> 行目には，<var>N</var> 文字の半角英大文字 <code>J</code>，<code>O</code>，<code>I</code> のみからなる文字列 <var>S</var> が書かれている．文字列 <var>S</var> の左から <var>i</var> 文字目 (<var>1 \leqq i \leqq N</var>) は，店 <var>i</var> が用意したスタンプの種類を表す．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>商品券をもらえるような店の選び方の数の最大値を標準出力に <var>1</var> 行で出力せよ．</p>
+<p>商品券をもらえるような店の選び方の数が <var>32</var> ビット符号付き整数の範囲に収まるとは限らないことに注意せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<p>すべての入力データは以下の条件を満たす．</p>
+<ul>
+<li><var>3 \leqq N \leqq 100\,000</var>．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<h4>小課題 1 [30 点]</h4>
+<ul>
+<li><var>N \leqq 200</var> を満たす．</li>
+</ul>
+<h4>小課題 2 [20 点]</h4>
+<ul>
+<li><var>N \leqq 3\,000</var> を満たす．</li>
+</ul>
+<h4>小課題 3 [50 点]</h4>
+<p>追加の制限はない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>5
+JOIOI
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>6
+</pre>
+<p>入力例 <var>1</var> では，店 <var>1</var> と店 <var>2</var> の間に，スタンプ <code>J</code> を用意する新しい店を出したとき，店が用意したスタンプを入口から順に並べると <code>JJOIOI</code> となる．</p>
+<p>このとき，商品券をもらえるような店の選び方は以下の <var>6</var> 通りである．</p>
+<ul>
+<li><var>1, 3, 4</var> 番目の店に行く．</li>
+<li><var>1, 3, 6</var> 番目の店に行く．</li>
+<li><var>1, 5, 6</var> 番目の店に行く．</li>
+<li><var>2, 3, 4</var> 番目の店に行く．</li>
+<li><var>2, 3, 6</var> 番目の店に行く．</li>
+<li><var>2, 5, 6</var> 番目の店に行く．</li>
+</ul>
+<p>入力例 <var>1</var> において，商品券をもらえるような店の選び方が <var>7</var> 通り以上になることはない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>7
+JJJOIII
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>18
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>4
+OIIJ
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>2
+</pre>
+<p>入力例 <var>3</var> では，入口と店 <var>1</var> の間にスタンプ <code>J</code> を用意する新しい店を出したとき，商品券をもらえるような店の選び方の数が最大となる．</p></section>
+</div>
+</span>
+</span>

@@ -1,0 +1,142 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>JOI (日本情報オリンピック) の本選に向けてプログラミングの練習をしていたあなたは，今年度の JOI の予選の問題には数値を扱う問題ばかりが出題され，文字列を扱う問題がなかったことに気がついた．そこであなたは，こっそり文字列の問題に強くなってライバルたちに差をつけることにした．</p>
+<p>JOIの過去問を眺めていると，<code>J</code>，<code>O</code>，<code>I</code> の <var>3</var> 種類の文字からなる文字列に慣れておく必要がありそうなことがわかった．そこで，そのような文字列について考えよう．あなたは「与えられた文字列が <code>JOI</code> という部分文字列をもつかどうかを答えよ」という問題を思いついたものの，これはすぐに解けてしまった．もっとレベルの高い問題を解きたいあなたは，以下のような問題を作った．</p>
+<p>文字列 <var>t</var> が文字列 <var>s</var> の<strong>部分文字列</strong>であるとは，<var>t</var> の先頭および末尾に何文字か (<var>0</var> 文字でもよい) を付け足すと <var>s</var> になることである．たとえば，<code>JJOOII</code> は <code>OJJOOIIOJOI</code> の部分文字列である．一方，<code>JOI</code> は <code>JOOI</code> の部分文字列ではない．</p>
+<p>また，<var>0</var> 以上の整数 <var>k</var> に対し，<strong>レベル <var>k</var> の JOI 列</strong>とは，<var>k</var> 個の文字 <code>J</code>，<var>k</var> 個の文字 <code>O</code>，<var>k</var> 個の文字 <code>I</code> をこの順に並べた文字列のことであるとする．たとえば，<code>JJOOII</code> はレベル <var>2</var> の JOI 列である．</p>
+<p>与えられた文字列の部分文字列である JOI 列のうち，レベルが最大のものを求めたい．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p><code>J</code>，<code>O</code>，<code>I</code> の <var>3</var> 種類の文字からなる長さ <var>N</var> の文字列 <var>S</var> が与えられたとき，レベル <var>k</var> の JOI 列が <var>S</var> の部分文字列であるような最大の <var>k</var> の値を求めるプログラムを作成せよ．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><var>1 \leqq N \leqq 1000000 \,(= 10^6)</var>&emsp;</td>
+<td><var>S</var> の長さ</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下のデータを読み込め．</p>
+<ul>
+<li><var>1</var> 行目には <code>J</code>，<code>O</code>，<code>I</code> の <var>3</var> 種類の文字からなる文字列 <var>S</var> が書かれている．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，レベル <var>k</var> の JOI 列が <var>S</var> の部分文字列であるような最大の <var>k</var> の値を表す整数を <var>1</var> 行で出力せよ．</p>
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>採点基準</h3>
+<p>採点用データのうち，配点の <var>20</var> %分については，<var>N \leqq 100</var> を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>OJJOOIIOJOI
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>2
+</pre>
+<p><code>OJJOOIIOJOI</code> はレベル <var>2</var> の JOI 列である <code>JJOOII</code> を部分文字列として含んでおり，
+レベル <var>3</var> 以上の JOI 列は部分文字列として含まない．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>IJJIIJJJ
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>0
+</pre>
+<p>レベル <var>0</var> の JOI 列は長さ <var>0</var> の文字列である．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>JOIJOIJOIJOIJOI
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>1
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 4</h3>
+<pre>OOJJJJJJJOOOOIIIII
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 4</h3>
+<pre>4
+</pre></section>
+</div>
+</span>
+</span>

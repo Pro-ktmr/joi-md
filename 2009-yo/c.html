@@ -1,0 +1,92 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>次のようなゲームがある．</p>
+<p>あるキャラクターが縦 <var>1</var> 列に <var>N</var> 個並んでいる．これらのキャラクターの色は赤，青，黄のいずれかであり，初期状態で同じ色のキャラクターが <var>4</var> つ以上連続して並んでいることはない．プレーヤーは，ある位置のキャラクターを選び他の色に変更することができる．この操作により同じ色のキャラクターが <var>4</var> つ以上連続して並ぶとそれらのキャラクターは消滅する．キャラクターが消滅することにより新たに同じ色のキャラクターが <var>4</var> つ以上連続して並ぶとそれらのキャラクターも消滅し，同じ色のキャラクターが4つ以上連続して並んでいる箇所がなくなるまでこの連鎖は続く．このゲームの目的は，消滅しないで残っているキャラクター数をなるべく少なくすることである．</p>
+<p>例えば，下図の左端の状態で，上から <var>6</var> 番目のキャラクターの色を黄色から青に変更すると，青のキャラクターが <var>5</var> つ連続するので消滅し，最終的に <var>3</var> つのキャラクターが消滅せずに残る．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2009yo/2009-yo-t3.png" /></p>
+<p>初期状態における <var>N</var> 個のキャラクターの色の並びが与えられたとき，<var>1</var> 箇所だけキャラクターの色を変更した場合の，消滅しないで残っているキャラクター数の最小値 <var>M</var> を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p><var>1</var> 行目はキャラクター数 <var>N</var> (<var>1 \leqq N \leqq 10\,000</var>) だけからなる．続く <var>N</var> 行には <var>1, 2, 3</var> のいずれか <var>1</var> つの整数が書かれており，<var>i + 1</var> 行目 (<var>1 \leqq i \leqq N</var>) は初期状態における上から <var>i</var> 番目のキャラクターの色を表す（<var>1</var> は赤を，<var>2</var> は青を，<var>3</var> は黄を表す）．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>消滅しないで残っているキャラクター数の最小値 <var>M</var> を出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>12
+3
+2
+1
+1
+2
+3
+2
+2
+2
+1
+1
+3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>3
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>12
+3
+2
+1
+1
+2
+3
+2
+1
+3
+2
+1
+3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>12
+</pre></section>
+</div>
+</span>
+</span>

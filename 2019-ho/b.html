@@ -1,0 +1,175 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>あなたは，絵の展覧会を開催しようとしている．展覧会では，いくつかの絵を額縁に入れ，左から右に一列に並べて展示する．</p>
+<p>展覧会で展示する候補となる絵が <var>N</var> 枚あり，<var>1</var> から <var>N</var> までの番号が付けられている．絵 <var>i</var> (<var>1 \leqq i \leqq N</var>) の大きさは <var>S_i</var>，価値は <var>V_i</var> である．</p>
+<p>また，これらの絵を入れるための額縁が <var>M</var> 枚あり，<var>1</var> から <var>M</var> までの番号が付けられている．額縁 <var>j</var> (<var>1 \leqq j \leqq M</var>) の大きさは <var>C_j</var> である．額縁 <var>j</var> には，大きさが <var>C_j</var> 以下の絵のみを入れることができる．<var>1</var> 枚の額縁には高々 <var>1</var> 枚の絵しか入れることができない．</p>
+<p>展示する絵はすべて何らかの額縁に入っていなければならない．見栄えを良くするため，展示する絵は以下の条件を満たさなければならない：</p>
+<ul>
+<li>左右に隣り合うどの <var>2</var> 枚の絵についても，右側の絵が入っている額縁の大きさは左側の絵が入っている額縁の大きさ以上である．</li>
+<li>左右に隣り合うどの <var>2</var> 枚の絵についても，右側の絵の価値は左側の絵の価値以上である．</li>
+</ul>
+<p>あなたは，できるだけ多くの絵を展示したい．</p>
+<p>展示候補の絵の枚数，額縁の枚数，及びそれらの大きさや価値が与えられたとき，展示する絵の枚数の最大値を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は以下の形式で標準入力から与えられる．</p>
+<pre><var>N</var> <var>M</var>
+<var>S_1</var> <var>V_1</var>
+<var>\vdots</var>
+<var>S_N</var> <var>V_N</var>
+<var>C_1</var>
+<var>\vdots</var>
+<var>C_M</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，展覧会に展示する絵の枚数の最大値を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<ul>
+<li><var>1 \leqq N \leqq 100\,000</var>．</li>
+<li><var>1 \leqq M \leqq 100\,000</var>．</li>
+<li><var>1 \leqq S_i \leqq 1\,000\,000\,000</var> (<var>1 \leqq i \leqq N</var>)．</li>
+<li><var>1 \leqq V_i \leqq 1\,000\,000\,000</var> (<var>1 \leqq i \leqq N</var>)．</li>
+<li><var>1 \leqq C_j \leqq 1\,000\,000\,000</var> (<var>1 \leqq j \leqq M</var>)．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<ol>
+<li>(<var>10</var> 点) <var>N \leqq 10</var>，<var>M \leqq 10</var>．</li>
+<li>(<var>40</var> 点) <var>N \leqq 1\,000</var>，<var>M \leqq 1\,000</var>．</li>
+<li>(<var>50</var> 点) 追加の制約はない．</li>
+</ol>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>3 4
+10 20
+5 1
+3 5
+4
+6
+10
+4
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>2
+</pre>
+<p>この入出力例では，左から順に (絵 <var>2</var>, 額縁 <var>2</var>)，(絵 <var>1</var>, 額縁 <var>3</var>) と並べることで，<var>2</var> 枚の絵を展示することができる．<var>3</var> 枚以上の絵を展示することはできないので，<var>2</var> を出力する．ここで，(絵 <var>i</var>, 額縁 <var>j</var>) は，額縁 <var>j</var> に入った絵 <var>i</var> を表す．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>3 2
+1 2
+1 2
+1 2
+1
+1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>2
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>4 2
+28 1
+8 8
+6 10
+16 9
+4
+3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>0
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 4</h3>
+<pre>8 8
+508917604 35617051
+501958939 840246141
+485338402 32896484
+957730250 357542366
+904165504 137209882
+684085683 775621730
+552953629 20004459
+125090903 607302990
+433255278
+979756183
+28423637
+856448848
+276518245
+314201319
+666094038
+149542543
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 4</h3>
+<pre>3
+</pre></section>
+</div>
+</span>
+</span>

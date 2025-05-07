@@ -1,0 +1,120 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>IOI 国ではこのたび新たに鉄道を敷設した．IOI 国の鉄道を走る列車はいくつかの車両が連結されたものであり，車両には <code>I</code>，<code>O</code> の <var>2</var> 種類がある．車両はそれぞれ異なる種類の車両としか連結できない．また，列車に運転席を設ける関係上，列車の両端の車両は種類 <code>I</code> でなければならない．列車は車両の種類を表す文字を順につなげた文字列で表され，列車の長さはその文字列の長さであるとする．たとえば， <code>IOIOI</code> の順に車両を連結すると長さ <var>5</var> の列車を編成でき，また車両 <code>I</code> は単独で長さ <var>1</var> の列車である．車両を <code>OIOI</code> や <code>IOOI</code> といった順に並べても列車を編成することはできない．</p>
+<p>いくつかの車両が <var>2</var> つの車庫に格納されている．それぞれの車庫の中には車両が一列に並んでいる．列車を編成するときは車庫から車両を出してきて車庫前で連結していく．車庫から出せる車両は最も車庫の入り口に近い車両のみであるが，どちらの車庫から車両を出すかの順番については自由である．</p>
+<p>列車を編成する前に，車両を好きなだけ車庫から出して別の待機用レールに移すことができる．一度待機用レールに移した車両は今後列車を編成するために使うことはできない．また，一度列車の編成を始めるとその編成が終わるまでの間は車両を車庫から待機用レールに移すことはできない．</p>
+<p>列車を編成するとき，車庫内の全ての車両を使い切る必要はない．すなわち，列車の編成を終えた後，車庫内に使われなかった車両が残っていても構わない．</p>
+<p>IOI 国では鉄道に乗る人がとてもたくさんいると考えられているので，できるだけ長い列車を編成したい．</p>
+<p><img alt="列車を編成している途中であり，このとき車庫にある車両を待機用レールに移すことはできない．この図は入出力例 <var>1</var> に対応している．" src="https://img.atcoder.jp/joi2013ho/8a93b9876215c928512cd8aede7b4cb0.png" /></p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p>車庫に格納された車両の情報が与えられたとき，編成できる列車の長さの最大値を求めるプログラムを作成せよ．それぞれの車庫に格納された車両の列は <var>2</var> 種類の文字 <code>I</code>，<code>O</code> のみからなる文字列で表され，<var>2</var> つの車庫の情報はそれぞれ長さ <var>M</var> の文字列 <var>S</var> および長さ <var>N</var> の文字列 <var>T</var> として与えられる．各文字が <var>1</var> つの車両を表し，その文字は車両の種類と同じである．文字列の <var>1</var> 文字目は最も車庫の入り口に近い車両を表し，末尾の文字が車庫の最も奥にある車両を表す．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><var>1 \leqq M \leqq 2\,000</var>&emsp;</td>
+<td>文字列 <var>S</var> の長さ</td>
+</tr>
+<tr>
+<td><var>1 \leqq N \leqq 2\,000</var>&emsp;</td>
+<td>文字列 <var>T</var> の長さ</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下のデータを読み込め．</p>
+<ul>
+<li><var>1</var> 行目には <var>M, N</var> が空白区切りで書かれている．</li>
+<li><var>2</var> 行目には文字列 <var>S</var> が書かれている．</li>
+<li><var>3</var> 行目には文字列 <var>T</var> が書かれている．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，編成できる列車の長さの最大値を表す整数を <var>1</var> 行で出力せよ． 列車が <var>1</var> つも編成できない場合は，<var>0</var> を出力せよ．</p>
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>採点基準</h3>
+<p>採点用データのうち，配点の <var>20</var> %分については，<var>M \leqq 10</var>，<var>N \leqq 10</var> を満たす．</p>
+<p>採点用データのうち，配点の <var>50</var> %分については，<var>M \leqq 50</var>，<var>N \leqq 50</var> を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>5 5
+OIOOI
+OOIOI
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>7
+</pre>
+<p><var>S</var> によって表される車庫を車庫 S とし，<var>T</var> によって表される車庫を車庫 T としよう．このとき，たとえば車庫 S から最初の <var>1</var> 車両，車庫 T から最初の <var>2</var> 車両を出して待機させた後，車庫 S，車庫 S，車庫 T，車庫 S，車庫 S，車庫 T，車庫 T の順番に車両を出せば，長さ <var>7</var> の列車 <code>IOIOIOI</code> を編成できる．</p>
+<p>他にも，車庫 S から最初の <var>1</var> 車両，車庫 T から最初の <var>2</var> 車両を出して待機させた後，車庫 T，車庫 T，車庫 S，車庫 S，車庫 T，車庫 S，車庫 S の順番に車両を出すことでも長さ <var>7</var> の列車を編成できる．これより長い列車を編成することはできないので <var>7</var> を出力する．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>5 9
+IIIII
+IIIIIIIII
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>1
+</pre>
+<p><var>1</var> つの車両のみからなる列車 <code>I</code> も列車としての条件を満たすことに注意せよ．</p></section>
+</div>
+</span>
+</span>

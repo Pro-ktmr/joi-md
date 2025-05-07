@@ -1,0 +1,99 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>JOI 国には東西に走る <var>1</var> 本の十分に長い道路がある．JOI 国の王宮が道路沿いにあり，JOI 国における道路沿いの位置は整数 <var>A</var> で表される．<var>A = 0</var> のときは王宮の位置を表す．<var>A &gt; 0</var> のときは，王宮から東へ <var>A</var> メートル進んだ位置を表す．<var>A &lt; 0</var> のときは，王宮から西へ <var>-A</var> メートル進んだ位置を表す．</p>
+<p>JOI 国の道路沿いには <var>N</var> 軒の家があり，家には西から順に <var>1</var> から <var>N</var> までの番号が付けられている．JOI 国には <var>N</var> 人の国民がいて，国民には <var>1</var> から <var>N</var> までの番号が付けられている．家 <var>i</var> には国民 <var>i</var> が住んでいる．家 <var>i</var> の位置は <var>0</var> でない偶数 <var>A_i</var> で表される．<var>A_1, \ldots, A_N</var> は全て異なる．</p>
+<p>JOI 国では，近年国民の運動不足が問題になっている．国民の健康が気になった JOI 国の王様は，国民全員に散歩をする命令を出した．王様が命令を出すと，全ての国民は一斉に東向きまたは西向きに歩き始める．それぞれの国民がどちらの向きに歩き始めるかは，国民ごとに決まっている．全ての国民は，歩くときは <var>1</var> 秒あたり <var>1</var> メートルの速度で歩く．</p>
+<p>JOI 国の国民は皆おしゃべりが大好きである．散歩の途中にほかの国民に出会うと，その場所で立ち止まって世間話を始めてしまう．すでに立ち止まっている国民に出会った場合も同様である．一度立ち止まった国民は，再び歩き出すことはない．</p>
+<p>JOI 国には <var>Q</var> 人の重要人物がいる．JOI 国の王様は，命令が出されてから <var>T</var> 秒後の，<var>Q</var> 人の重要人物の位置を把握しておきたい．命令が出されてから <var>T</var> 秒後の，<var>Q</var> 人の重要人物の位置を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は，<var>1 + N + Q</var> 行からなる．</p>
+<p><var>1</var> 行目には，<var>3</var> つの整数 <var>N，T，Q</var> (<var>1 \leqq N \leqq 100\,000 \ (= 10^5)</var>，<var>0 \leqq T \leqq 10^{18}</var>，<var>1 \leqq Q \leqq 1\,000</var>，<var>1 \leqq Q \leqq N</var>) が空白を区切りとして書かれている．これは，JOI 国に家が <var>N</var> 軒あり，王様が命令を出してから <var>T</var> 秒後の，<var>Q</var> 人の重要人物の位置を把握しておきたいことを表す．</p>
+<p>続く <var>N</var> 行のうち <var>i</var> 行目には，<var>2</var> つの整数 <var>A_i, D_i</var> (<var>-10^{18} \leqq A_i \leqq 10^{18}</var>，<var>A_i</var> は <var>0</var> でない偶数，<var>1 \leqq D_i \leqq 2</var>) が空白を区切りとして書かれている．<var>A_i</var> は家 <var>i</var> の位置を表す偶数である．すべての <var>i</var> (<var>1 \leqq i \leqq N - 1</var>) について，<var>A_i &lt; A_{i + 1}</var> を満たす．<var>D_i</var> は命令が出された後に国民 <var>i</var> が歩き始める方向を表す．<var>D_i = 1</var> のときは国民 <var>i</var> は東向きに歩き始める．<var>D_i = 2</var> のときは国民 <var>i</var> は西向きに歩き始める．</p>
+<p>続く <var>Q</var> 行のうち <var>i</var> 行目には，整数 <var>X_i</var> (<var>1 \leqq X_i \leqq N</var>) が書かれている．これは，<var>i</var> 番目の重要人物が家 <var>X_i</var> に住んでいることを表す．すべての <var>i</var> (<var>1 \leqq i \leqq Q - 1</var>) について，<var>X_i &lt; X_{i + 1}</var> を満たす．</p>
+<p>与えられる <var>5</var> つの入力データのうち，入力 <var>1</var> では <var>N \leqq 100</var>，<var>T \leqq 10\,000</var> を満たす．また，入力 <var>2</var> では <var>N \leqq 5\,000</var> を満たす．また，入力 <var>3</var> では，ある整数 <var>M</var> (<var>1 \leqq M \leqq N - 1</var>) があって，すべての <var>i</var> (<var>1 \leqq i \leqq M</var>) について <var>D_i = 1</var>，すべての <var>j</var> (<var>M + 1 \leqq j \leqq N</var>) について <var>D_j = 2</var> を満たす．また，入力 <var>1, 2, 3</var> では，入力に与えられる整数の絶対値は <var>1\,000\,000\,000 \ (= 10^9)</var> を超えない．入力 <var>4, 5</var> では，与えられる整数が <var>32</var> ビット符号付き整数の範囲に収まらないことに注意せよ．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>出力は <var>Q</var> 行からなる．</p>
+<p><var>i</var> 行目 (<var>1 \leqq i \leqq Q</var>) には，王様が命令を出してから <var>T</var> 秒後の，<var>i</var> 番目の重要人物の位置を表す整数を出力せよ．この値が整数であることは，問題文の条件より保証されている．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>5 5 3
+-8 1
+-4 2
+-2 2
+4 2
+10 1
+1
+3
+5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>-6
+-6
+15
+</pre>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>7 18 5
+-100 1
+-56 2
+-34 1
+-30 1
+-22 1
+-4 2
+18 2
+1
+3
+4
+5
+7
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>-82
+-16
+-13
+-13
+0
+</pre></section>
+</div>
+</span>
+</span>

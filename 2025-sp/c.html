@@ -1,0 +1,241 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>JOI 山脈にはたくさんの山が整列している．
+JOI 山脈は縦 <var>H</var> 行，横 <var>W</var> 列に区切られたマス目として表され，
+縦方向は南北方向に平行であり，横方向は東西方向に平行である．
+北から <var>i</var> 行目 (<var>1 \leqq i \leqq H</var>)，西から <var>j</var> 列目 (<var>1\leqq j\leqq W</var>) のマスのことをマス <var>(i, j)</var> と呼ぶ．
+<var>1</var> つのマスにはちょうど <var>1</var> つの山があり，
+マス <var>(i, j)</var> にある山の山頂の高さは <var>T_{i, j}</var> である．</p>
+<p>ビ太郎のジャンプ力は <var>L</var> である．ビ太郎は山の山頂にいるとき， <strong>ハイジャンプ</strong> を行い，別の山の山頂に移動することができる． <strong>ハイジャンプ</strong> とは以下の操作を順に行うことを指す．</p>
+<ul>
+<li>今いる山の山頂から真上に飛び上がる．今いる山の山頂の高さが <var>x</var> であったとき，ビ太郎はそのマスの高さ <var>x + L + 0.5</var> の位置に浮遊する．</li>
+<li>東西南北のいずれかに隣接するマスに高さを変えずに移動することを <var>0</var> 回以上繰り返す．この際に訪れるすべてのマスについて，それらのマスにある山の山頂の高さは，ビ太郎が浮遊している高さより低くなければならない．</li>
+<li>今いるマスにある山の山頂に着地する．</li>
+</ul>
+<p>ビ太郎は <var>Q</var> 回の旅を計画している．
+<var>k</var> 回目 (<var>1\leqq k \leqq Q</var>) の旅の内容は，
+マス <var>(A_{k}, B_{k})</var> にある山の山頂から
+マス <var>(C_{k}, D_{k})</var> にある山の山頂へハイジャンプだけを使って移動するというものである．
+ビ太郎はこの旅を成功させることができるのかが知りたい．また，ハイジャンプの飛び上がる操作は非常に体力を使う操作であるため，
+旅が成功するならば最小何回のハイジャンプが必要かが知りたい．</p>
+<p>JOI 山脈の山とビ太郎のジャンプ力とビ太郎の旅の計画の情報が与えられたとき，
+それぞれの計画について，
+旅が成功するか判定し，旅が成功するならば必要なハイジャンプの回数の最小値を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は以下の形式で標準入力から与えられる．</p>
+<pre><var>H</var> <var>W</var> <var>L</var>
+<var>T_{1,1}</var> <var>T_{1,2}</var> <var>\ldots</var> <var>T_{1,W}</var>
+<var>T_{2,1}</var> <var>T_{2,2}</var> <var>\ldots</var> <var>T_{2,W}</var>
+<var>\vdots</var>
+<var>T_{H,1}</var> <var>T_{H,2}</var> <var>\ldots</var> <var>T_{H,W}</var>
+<var>Q</var>
+<var>A_1</var> <var>B_1</var> <var>C_1</var> <var>D_1</var>
+<var>A_2</var> <var>B_2</var> <var>C_2</var> <var>D_2</var>
+<var>\vdots</var>
+<var>A_Q</var> <var>B_Q</var> <var>C_Q</var> <var>D_Q</var>
+</pre>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，<var>Q</var> 行出力せよ．
+<var>k</var> 行目 (<var>1\leqq k \leqq Q</var>) には，
+<var>k</var> 回目の旅を成功させるのに必要なハイジャンプの回数の最小値を出力せよ．
+ただし，旅が成功しない場合は，<code>-1</code> を出力せよ．</p>
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3>
+<ul>
+<li><var>1\leqq H</var>．</li>
+<li><var>1\leqq W</var>．</li>
+<li><var>2\leqq H\times W \leqq 300\,000</var>．</li>
+<li><var>1\leqq L\leqq 10^{9}</var>．</li>
+<li><var>1\leqq T_{i, j}\leqq 10^{9}</var> (<var>1\leqq i\leqq H,1\leqq j\leqq W</var>)．</li>
+<li><var>1\leqq Q \leqq 300\,000</var>．</li>
+<li><var>1\leqq A_{k} \leqq H</var> (<var>1\leqq k \leqq Q</var>)．</li>
+<li><var>1\leqq B_{k} \leqq W</var> (<var>1\leqq k \leqq Q</var>)．</li>
+<li><var>1\leqq C_{k} \leqq H</var> (<var>1\leqq k \leqq Q</var>)．</li>
+<li><var>1\leqq D_{k} \leqq W</var> (<var>1\leqq k \leqq Q</var>)．</li>
+<li><var>(A_{k}, B_{k})\neq (C_{k}, D_{k})</var> (<var>1\leqq k \leqq Q</var>)．</li>
+<li>入力される値はすべて整数である．</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>小課題</h3>
+<ol>
+<li>(<var>10</var> 点) <var>H\times W \leqq 300</var>，<var>Q\leqq 150\,000</var>．</li>
+<li>(<var>20</var> 点) <var>H\times W \leqq 3\,000</var>，<var>Q\leqq 150\,000</var>．</li>
+<li>(<var>20</var> 点) <var>H\times W \leqq 150\,000</var>，<var>Q\leqq 150\,000</var>，<var>(A_{k}, B_{k}) = (1, 1)</var> (<var>1\leqq k \leqq Q</var>)．</li>
+<li>(<var>30</var> 点) <var>H\times W \leqq 150\,000</var>，<var>Q\leqq 150\,000</var>．</li>
+<li>(<var>20</var> 点) 追加の制約はない．</li>
+</ol>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>2 4 5
+1 3 22 1
+8 13 6 16
+6
+1 1 2 2
+1 1 1 3
+1 1 2 3
+1 1 2 4
+1 1 1 4
+1 1 1 2
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>3
+-1
+3
+4
+4
+1
+</pre>
+<p><var>1</var> 回目の旅の計画では以下のようにハイジャンプを <var>3</var> 回することで，マス <var>(1, 1)</var> にある山の山頂からマス <var>(2, 2)</var> にある山の山頂へ移動することができる．</p>
+<ul>
+<li><var>1</var> 回目のハイジャンプ<ul>
+<li>マス <var>(1, 1)</var> にある山の山頂から真上に飛び上がる．このとき，ビ太郎の高さは <var>6.5</var> である．</li>
+<li>マス <var>(1, 2)</var> に移動する．マス <var>(1, 2)</var> にある山の高さ <var>3</var> は <var>6.5</var> より小さいため移動が可能である．</li>
+<li>マス <var>(1, 2)</var> にある山の山頂に着地する．</li>
+</ul>
+</li>
+<li><var>2</var> 回目のハイジャンプ<ul>
+<li>マス <var>(1, 2)</var> にある山の山頂から真上に飛び上がる．このとき，ビ太郎の高さは <var>8.5</var> である．</li>
+<li>マス <var>(1, 1)</var> に移動する．</li>
+<li>マス <var>(2, 1)</var> に移動する．</li>
+<li>マス <var>(2, 1)</var> にある山の山頂に着地する．</li>
+</ul>
+</li>
+<li><var>3</var> 回目のハイジャンプ<ul>
+<li>マス <var>(2, 1)</var> にある山の山頂から真上に飛び上がる．このとき，ビ太郎の高さは <var>13.5</var> である．</li>
+<li>マス <var>(2, 2)</var> に移動する．</li>
+<li>マス <var>(2, 2)</var> にある山の山頂に着地する．</li>
+</ul>
+</li>
+</ul>
+<p>ハイジャンプをする回数を <var>3</var> 回未満で <var>1</var> 回目の旅を成功させることはできないので，<var>1</var> 行目には <var>3</var> を出力する．</p>
+<p><var>2</var> 回目の旅を成功させることはできないので，<var>2</var> 行目には <code>-1</code> を出力する．</p>
+<p>この入力例はすべての小課題の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>6 5 11
+175 100 110 117 158
+144 133 123 150 191
+167 252 219 181 346
+231 241 280 201 209
+261 332 325 225 338
+269 298 315 291 308
+12
+1 1 4 2
+1 1 1 5
+1 1 5 1
+1 1 5 4
+1 1 3 4
+1 1 6 4
+1 1 2 5
+1 1 3 1
+1 1 4 4
+1 1 5 5
+1 1 6 2
+1 1 6 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>8
+1
+10
+6
+1
+13
+2
+1
+3
+19
+14
+11
+</pre>
+<p>この入力例はすべての小課題の制約を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 3</h3>
+<pre>4 4 5
+53 55 51 49
+56 60 89 45
+54 57 92 43
+96 99 95 92
+9
+1 4 2 3
+4 1 3 2
+2 4 2 3
+2 1 4 1
+1 2 1 1
+2 4 1 1
+4 1 2 3
+3 4 1 1
+1 3 1 4
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 3</h3>
+<pre>-1
+1
+-1
+-1
+1
+3
+1
+4
+1
+</pre>
+<p>この入力例は小課題 <var>1,2,4,5</var> の制約を満たす．</p></section>
+</div>
+</span>
+</span>

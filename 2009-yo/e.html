@@ -1,0 +1,81 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p><var>1</var> から <var>n</var> までの番号が書かれた <var>n</var> 枚のカードがある．まず，一番上が番号 <var>1</var> のカード，上から <var>2</var> 枚目が番号 <var>2</var> のカード，<var>\ldots</var>，一番下が番号 <var>n</var> のカードとなるように順番に重ねて，カードの山を作る．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2009yo/2009-yo-t5-1.png" /></p>
+<p>カードの山に対して，「シャッフル <var>(x, y)</var> 」と呼ばれる次のような操作を行うことで，カードを並び替える（<var>x, y</var> は <var>1 \leqq x &lt; y &lt; n</var> をみたす整数）．</p>
+<h4>シャッフル <var>(x, y)</var></h4>
+<p><var>n</var> 枚のカードを，一番上から <var>x</var> 枚目までのカードからなる山 A，<var>x + 1</var> 枚目から <var>y</var> 枚目のカードからなる山 B，<var>y + 1</var> 枚目から <var>n</var> 枚目のカードからなる山 C  の <var>3</var> つの山に分ける．そして，山 A の上に山 B を重ね，さらにその上に山 C を重ねる．</p>
+<p>例えば，順番に並んでいる <var>9</var> 枚のカードに対して「シャッフル <var>(3, 5)</var>」を行うと，<var>9</var> 枚のカードに書かれた番号は，上から順番に <var>6, 7, 8, 9, 4, 5, 1, 2, 3</var> となる．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2009yo/2009-yo-t5-2.png" /></p>
+<p>最初の山の状態から <var>m</var> 回のシャッフル「シャッフル <var>(x_1, y_1)</var>」「シャッフル <var>(x_2, y_2)</var>」<var>\cdots</var>「シャッフル <var>(x_m, y_m)</var>」を順番に行った後のカードの山において，上から数えて <var>p</var> 枚目から <var>q</var> 枚目のカードの中に番号が <var>r</var> 以下のカードが何枚含まれているかを求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>m + 3</var> 行からなる．<var>1</var> 行目にはカードの枚数 <var>n</var> が書かれている (<var>3 \leqq n \leqq 1\,000\,000\,000 = 10^9</var>) ．<var>2</var> 行目にはシャッフルの回数を表す整数 <var>m</var> が書かれている (<var>1 \leqq m \leqq 5000</var>)．<var>3</var> 行目には整数 <var>p, q, r</var> が書かれている (<var>1 \leqq p \leqq q \leqq n</var>，<var>1 \leqq r \leqq n</var>)．<var>i + 3</var> 行目 (<var>1 \leqq i \leqq m</var>) には <var>2</var> つの整数 <var>x_i, y_i</var> (<var>1 \leqq x_i &lt; y_i &lt; n</var>) が空白を区切りとして書かれている．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p><var>m</var> 回のシャッフル後のカードの山において，上から数えて <var>p</var> 枚目から <var>q</var> 枚目のカードの中に含まれている番号が <var>r</var> 以下のカードの枚数を出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>9
+1
+3 7 4
+3 5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>2
+</pre>
+<p>入力例 <var>1</var> の山に対して, 「シャッフル <var>(3, 5)</var>」を行うと，カードは上から順番に <var>6, 7, 8, 9, 4, 5, 1, 2, 3</var> となる．上から数えて <var>3</var> 枚目から <var>7</var> 枚目に含まれる番号が <var>4</var> 以下のカードは，番号 <var>4</var> と番号 <var>1</var> の <var>2</var> 枚である．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>12
+3
+3 8 5
+3 8
+2 5
+6 10
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>3
+</pre>
+<p>入力例 <var>2</var> の山に対して, 「シャッフル <var>(3, 8)</var>」「シャッフル <var>(2, 5)</var>」「シャッフル <var>(6, 10)</var>」を順番に行うと，カードは上から順番に <var>9, 10, 3, 11, 12, 4, 5, 6, 7, 8, 1, 2</var> となる．上から数えて <var>3</var> 枚目から <var>8</var> 枚目に含まれる番号が <var>5</var> 以下のカードは <var>3</var> 枚である．</p></section>
+</div>
+</span>
+</span>

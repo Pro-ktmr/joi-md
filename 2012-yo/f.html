@@ -1,0 +1,73 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>正の整数を (先頭に <var>0</var> をつけずに) <var>10</var> 進法で書いて桁の数字を順番に見ていくと増加と減少を交互に繰り返しているとき，その数は「ジグザグ数」であると呼ぶことにしよう．たとえば，<var>2947</var> は桁の数字が <var>2</var> → <var>9</var> → <var>4</var> → <var>7</var> と，増加 → 減少 → 増加 の順になっているのでジグザグ数である．また，<var>71\,946</var> は 減少 → 増加 → 減少 → 増加 の順なのでジグザグ数である．一方，<var>123</var> や <var>71\,446</var> や <var>71\,442</var> や <var>88</var> はジグザグ数ではない．なお，<var>1</var> 桁の正の整数はジグザグ数であると考えることとする．</p>
+<p><var>A</var> 以上 <var>B</var> 以下の <var>M</var> の倍数のうち，ジグザグ数の個数を <var>10\,000</var> で割った余りを求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>3</var> 行からなり，<var>1</var> 行に <var>1</var> つずつ正の整数が書かれている．</p>
+<p><var>1</var> 行目の整数は <var>A</var> を，<var>2</var> 行目の整数は <var>B</var> を，<var>3</var> 行目の整数は <var>M</var> を表す．これらは <var>1 \leqq A \leqq B \leqq 10^{500}</var> ，<var>1 \leqq M \leqq 500</var> を満たす．</p>
+<p>※ <var>A</var> や <var>B</var> の値は，通常の整数を表すデータ型には収まらない可能性があることに注意せよ．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p><var>A</var> 以上 <var>B</var> 以下の <var>M</var> の倍数のうち，ジグザグ数の個数を <var>10\,000</var> で割った余りを <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>100
+200
+5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>13
+</pre>
+<p>入出力例 <var>1</var> において，<var>100</var> 以上 <var>200</var> 以下の <var>5</var> の倍数であるジグザグ数は，<var>105, 120, 130, 140, 150, 160, 165, 170, 175, 180, 185, 190, 195</var> の <var>13</var> 個である．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>6
+1234567
+3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>246
+</pre>
+<p>入出力例 <var>2</var> において，<var>6</var> 以上 <var>1\,234\,567</var> 以下の <var>3</var> の倍数であるジグザグ数は <var>50\,246</var> 個あるので，それを <var>10\,000</var> で割った余りである <var>246</var> を出力する．</p></section>
+</div>
+</span>
+</span>

@@ -1,0 +1,111 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>あなたを乗せた超時空移民船は長旅の末，ついに居住可能と思われる惑星を発見した．JOI 星と名付けられたその惑星は，その名の通り「ジャングル (Jungle)」，「海 (Ocean)」，「氷 (Ice)」の <var>3</var> 種類の地形が入り組んだ過酷な惑星である．簡単な調査により，居住予定地近辺の地図が作成された．</p>
+<p>居住予定地は南北 <var>M</var> km，東西 <var>N</var> km の長方形の形をしており，<var>1</var> km 四方の正方形の区画に分けられている．区画は全部で <var>MN</var> 個あり，北から <var>p</var> 行目，西から <var>q</var> 列目の区画を <var>(p, q)</var> で表す．北西の角の区画が <var>(1, 1)</var> であり，南東の角の区画が <var>(M, N)</var> である．各区画の地形は，「ジャングル」，「海」，「氷」のいずれかであり，「ジャングル」は <code>J</code>，「海」は <code>O</code>，「氷」は <code>I</code> の英字 <var>1</var> 文字で表される.</p>
+<p>さて，詳細な移住計画を立てるにあたり，<var>K</var> 箇所の長方形領域内に「ジャングル」，「海」，「氷」がそれぞれ何区画含まれるかを調べることにした．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p>居住予定地の情報と，調査対象となる領域の情報が与えられたとき，それぞれの領域について，「ジャングル」，「海」，「氷」が何区画含まれているかを求めるプログラムを作成せよ．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><var>1 \leqq M \leqq 1\,000</var>&emsp;</td>
+<td>居住予定地の南北の長さ (km)</td>
+</tr>
+<tr>
+<td><var>1 \leqq N \leqq 1\,000</var>&emsp;</td>
+<td>居住予定地の東西の長さ (km)</td>
+</tr>
+<tr>
+<td><var>1 \leqq K \leqq 100\,000</var>&emsp;</td>
+<td>調査対象となる領域の個数</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下のデータを読み込め．</p>
+<ul>
+<li><var>1</var> 行目には整数 <var>M, N</var> が空白を区切りとして書かれており，居住予定地が南北に <var>M</var> km，東西に <var>N</var> km の広さであることを表す．</li>
+<li><var>2</var> 行目には整数 <var>K</var> が書かれており，調査対象となる領域の個数を表す．</li>
+<li>続く <var>M</var> 行には居住予定地の情報が書かれている．<var>i + 2</var> 行目 (<var>1 \leqq i \leqq M</var>) には，居住予定地の北から <var>i</var> 行目に位置する <var>N</var> 区画の情報を表す <code>J</code>，<code>O</code>，<code>I</code> からなる <var>N</var> 文字の文字列が書かれている．</li>
+<li>続く <var>K</var> 行には調査対象となる領域が書かれている．<var>j + M + 2</var> 行目 (<var>1 \leqq j \leqq K</var>) には，<var>j</var> 番目の領域を表す正整数 <var>a_j, b_j, c_j, d_j</var> が空白を区切りとして書かれている．<var>(a_j, b_j)</var> は調査領域の北西の角の区画を，<var>(c_j, d_j)</var> は調査領域の南東の角の区画を表す．ただし，<var>a_j, b_j, c_j, d_j</var> は，<var>1 \leqq a_j \leqq c_j \leqq M</var>，<var>1 \leqq b_j \leqq d_j \leqq N</var> を満たす．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に調査の結果を表す <var>K</var> 行を出力せよ．出力の <var>j</var> 行目には，<var>j</var> 番目の調査領域に含まれる「ジャングル」(<code>J</code>) の区画数，「海」(<code>O</code>) の区画数，「氷」(<code>I</code>) の区画数を表す <var>3</var> つの整数を，この順に空白を区切りとして書け．</p>
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>採点基準</h3>
+<p>採点用データのうち，配点の <var>30</var> %分については，<var>M \leqq 50</var> かつ <var>K \leqq 100</var> を満たす．配点の <var>50</var> %分については，<var>M \leqq 50</var> を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>4 7
+4
+JIOJOIJ
+IOJOIJO
+JOIJOOI
+OOJJIJO
+3 5 4 7
+2 2 3 6
+2 2 2 2
+1 1 4 7
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>1 3 2
+3 5 2
+0 1 0
+10 11 7
+</pre>
+<p><img alt="" src="https://img.atcoder.jp/joi2011ho/e49255ca4684c5e6be34240da39319ed.png" /></p>
+<p>この入力例では， <var>2</var> 番目の領域は上図のように「ジャングル」を <var>3</var> 区画，「海」を <var>5</var> 区画，「氷」を <var>2</var> 区画含む．</p></section>
+</div>
+</span>
+</span>

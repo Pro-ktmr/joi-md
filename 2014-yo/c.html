@@ -1,0 +1,83 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>JOI 君は，IOI 国にある超都という都市の観光ツアーを計画することになった．</p>
+<p>超都は，南北方向にまっすぐに伸びる <var>W</var> 本の道路と，東西方向にまっすぐに伸びる <var>H</var> 本の道路により，碁盤の目の形に区分けされている．</p>
+<p>南北方向の <var>W</var> 本の道路には，西から順に <var>1, 2, \ldots, W</var> の番号が付けられている．また，東西方向の <var>H</var> 本の道路には，南から順に <var>1, 2, \ldots, H</var> の番号が付けられている．西から <var>i</var> 番目の南北方向の道路と，南から <var>j</var> 番目の東西方向の道路との交差点を <var>(i, j)</var> で表す．</p>
+<p>さらに，下図のように，各交差点からは１つ北東の交差点への道がある（最も北の道路上の交差点と最も東の道路上の交差点を除く）．また，１つ南西の交差点への道もある（最も南の道路上の交差点と最も西の道路上の交差点を除く）．すなわち，交差点 <var>(i, j)</var> からは，もし交差点 <var>(i - 1, j)</var>, <var>(i + 1, j)</var>, <var>(i, j - 1)</var>, <var>(i, j + 1)</var> があるときは，それらの交差点へ１本の道を使って行くことが出来る．それに加え，もし交差点 <var>(i - 1, j - 1)</var>, <var>(i + 1, j + 1)</var> があるときは，それらの交差点へも１本の道を使って行くことが出来る．</p>
+<p><img alt="" src="https://img.atcoder.jp/joi2014yo/2014-yo-t3-fig01.png" /></p>
+<p>JOI 君はツアーの計画として既に <var>N</var> 個の観光スポットをどのような順番で訪れるかを決めている．<var>i</var> 番目 (<var>1 \leqq i \leqq N</var>) に訪れる観光スポットは交差点 <var>(X_i, Y_i)</var> にある．JOI 君は，ツアーにかかる時間をできるだけ短くするために，通らなければならない道の本数を少なくしたい．観光スポットを事前に決めた順番で訪れるために通らなければならない道の本数の合計の最小値を求めるプログラムを作成せよ．</p>
+<p>ただし，ツアーの開始地点は交差点 <var>(X_1, Y_1)</var> である．また，ツアーの途中で超都の外へ移動してはならないものとする．また，JOI 君は，観光スポットのある交差点を，観光スポットを訪れずに通過することもできる．</p>
+<p><strong>（予選競技実施後に追記）</strong> 「道の本数の合計」についての補足．ツアーの途中で同じ道を <var>2</var> 回以上通ることもできる．その場合，「道の本数の合計」としては，その道については通った回数だけ重複して数えるものとする．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>1 + N</var> 行からなる．</p>
+<p><var>1</var> 行目には，空白を区切りとして <var>3</var> つの整数 <var>W, H, N</var> (<var>2 \leqq W \leqq 10\,000</var>，<var>2 \leqq H \leqq 10\,000</var>，<var>1 \leqq N \leqq 1\,000</var>) が書かれている．</p>
+<p>続く <var>N</var> 行のうちの <var>i</var> 行目 (<var>1 \leqq i \leqq N</var>) には， <var>2</var> つの整数 <var>X_i, Y_i</var> (<var>1 \leqq X_i \leqq W</var>，<var>1 \leqq Y_i \leqq H</var>) が空白を区切りとして書かれている．これは， <var>i</var> 番目に訪れる観光スポットのある交差点が <var>(X_i, Y_i)</var> であることを表す．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>観光スポットを順番に訪れるために通る道の本数の合計の最小値を <var>1</var> 行で出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>4 3 3
+1 1
+3 3
+4 1
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>5
+</pre>
+<p>入出力例 <var>1</var> では，例えば <var>(1, 1)</var>, <var>(2, 2)</var>, <var>(3, 3)</var>, <var>(3, 2)</var>, <var>(4, 2)</var>, <var>(4, 1)</var> の順で交差点を訪れれば良い．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>4 3 5
+1 3
+4 3
+2 2
+2 2
+1 3
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>7
+</pre>
+<p>入出力例 <var>2</var> のように，同じ交差点に複数回訪れることもある．</p></section>
+</div>
+</span>
+</span>

@@ -1,0 +1,166 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3></h3>
+<p>あなたの町には JOI 古本店という老舗の古本屋があり，あなたは JOI 古本店をよく利用している．それぞれの本には基準価格が定まっており，JOI 古本店に行けばその価格で買い取ってもらえる．</p>
+<p>JOI 古本店では，本を小説・漫画・雑誌など <var>10</var> 種類のジャンルに分類して扱っている．ジャンルには <var>1</var> から <var>10</var> までの番号が付けられている．JOI 古本店には，同じジャンルの本をまとめて買い取ってもらうと高値で買い取ってくれるというサービスがある．具体的には，同じジャンルの本をまとめて <var>T</var> 冊買い取ってもらう場合，そのジャンルの本の一冊あたりの買取価格が基準価格より <var>T − 1</var> 円高くなる．例えば，同じジャンルで基準価格 <var>100</var> 円，<var>120</var> 円，<var>150</var> 円の本をまとめて JOI 古本店に売ったとすると，買取価格はそれぞれ <var>102</var> 円，<var>122</var> 円，<var>152</var> 円となる．</p>
+<p>さて，あなたは一身上の都合で急遽引越しをすることになった．あなたは <var>N</var> 冊の本を持っているが，新しい住居にすべての本を持っていくことは困難なため，<var>N</var> 冊の本のうち <var>K</var> 冊を JOI 古本店に売ることにした．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>課題</h3>
+<p><var>N</var> 冊の本それぞれの基準価格とジャンルの番号が与えられるとき，合計買取価格の最大値を求めるプログラムを作成せよ．</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>制限</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><var>2 \leqq N \leqq 2\,000</var>&emsp;</td>
+<td>あなたが持っている本の冊数</td>
+</tr>
+<tr>
+<td><var>1 \leqq K &lt; N</var>&emsp;</td>
+<td>JOI 古本店に売る本の冊数</td>
+</tr>
+<tr>
+<td><var>1 \leqq C_i \leqq 100\,000\,(=10^5)</var>&emsp;</td>
+<td><var>i</var> 番目の本の基準価格</td>
+</tr>
+<tr>
+<td><var>1 \leqq G_i \leqq 10</var>&emsp;</td>
+<td><var>i</var> 番目の本のジャンルの番号</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>標準入力から以下の入力を読み込め．</p>
+<ul>
+<li><var>1</var> 行目には整数 <var>N, K</var> が空白を区切りとして書かれており，あなたの持っている本の冊数が <var>N</var> で，そのうち <var>K</var> 冊を JOI 古本店に売ることを表す．</li>
+<li>続く <var>N</var> 行にはあなたの持っている本の情報が書かれている．<var>i + 1</var> 行目 (<var>1\leqq i\leqq N</var>) には，整数 <var>C_i,G_i</var> が空白を区切りとして書かれており，<var>i</var> 番目の本の基準価格が <var>C_i</var> で，ジャンルの番号が <var>G_i</var> であることを表す．</li>
+</ul>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>標準出力に，合計買取価格の最大値を表す整数を <var>1</var> 行で出力せよ．</p>
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>採点基準</h3>
+<p>採点用データのうち，</p>
+<p>配点の <var>20</var> %分については，<var>N\leqq 20</var> を満たす．</p>
+<p>配点の <var>20</var> %分については，すべての本のジャンルは <var>1</var> または <var>2</var> である．</p>
+<p>配点の <var>10</var> %分については，これら <var>2</var> つの条件の両方を満たす．</p>
+<p>配点の <var>30</var> %分については，これら <var>2</var> つの条件の少なくとも一方を満たす．</p>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>7 4
+14 1
+13 2
+12 3
+14 2
+8 2
+16 3
+11 2
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>60
+</pre>
+<p>この入力例では，<var>2</var> 番目，<var>4</var> 番目，<var>6</var> 番目，<var>7</var> 番目の <var>4</var> 冊の本を売ったとき，ジャンル <var>2</var> の本の買取価格が <var>1</var> 冊あたり <var>2</var> 円高くなるので，これらの本の買取価格は以下のようになる．</p>
+<style>
+style + table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    margin: 1em;
+    th {
+        border: 1px solid black;
+    }
+    td {
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+    }
+    th, td {
+        padding: 0.2rem 1rem;
+    }
+}
+</style>
+
+<table>
+<thead>
+<tr>
+<th>番号</th>
+<th>基準価格</th>
+<th>ジャンル</th>
+<th>買取価格</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>13</td>
+<td>2</td>
+<td>15</td>
+</tr>
+<tr>
+<td>4</td>
+<td>14</td>
+<td>2</td>
+<td>16</td>
+</tr>
+<tr>
+<td>6</td>
+<td>16</td>
+<td>3</td>
+<td>16</td>
+</tr>
+<tr>
+<td>7</td>
+<td>11</td>
+<td>2</td>
+<td>13</td>
+</tr>
+</tbody>
+</table>
+<p>よって合計買取価格は <var>15 + 16 + 16 + 13 = 60</var> 円である．このとき合計買取価格は最大となる．</p></section>
+</div>
+</span>
+</span>

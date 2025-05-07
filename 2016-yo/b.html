@@ -1,0 +1,117 @@
+<span class="lang">
+<span class="lang-ja">
+<p>配点： <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題</h3>
+<p>JOI 高校の <var>N</var> 人の生徒が東西に一列に並んでいる．列の西の端から <var>i</var> 番目の生徒が生徒 <var>i</var> である．それぞれの生徒は整数が <var>1</var> つ書かれたゼッケンを付けている．最初，生徒 <var>i</var> のゼッケンには整数 <var>A_i</var> が書かれている．</p>
+<p>バトンが <var>M</var> 個あり，バトンには <var>1</var> から <var>M</var> までの番号が付けられている．<var>k = 1, 2, \ldots, M</var> に対し，以下の操作を行う．バトン <var>k</var> (<var>2 \leqq k \leqq M</var>) に関する操作は，バトン <var>k - 1</var> に関する操作が終わってから行う．</p>
+<ol>
+<li>先生がバトン <var>k</var> を生徒 <var>1</var> に渡す．</li>
+<li>バトンを受け取った生徒は，以下のルールに従ってバトンを渡す．<ul>
+<li>ルール：生徒 <var>i</var> がバトン <var>k</var> を受け取ったとする．<ul>
+<li><var>1 \leqq i \leqq N - 1</var> のとき: 生徒 <var>i</var> のゼッケンの整数を <var>k</var> で割った余りが，生徒 <var>i + 1</var> のゼッケンの整数を <var>k</var> で割った余りよりも大きいとき，生徒 <var>i</var> と生徒 <var>i + 1</var> がゼッケンを交換し，生徒 <var>i</var> は生徒 <var>i + 1</var> にバトンを渡す．そうでないときは，ゼッケンを交換せずに，生徒 <var>i</var> は生徒 <var>i + 1</var> にバトンを渡す．</li>
+<li><var>i = N</var> のとき: 生徒 <var>N</var> はバトンを先生に渡す．</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>先生が生徒 <var>N</var> からバトン <var>k</var> を受け取ったら，バトン <var>k</var> に関する操作は終わりである．</li>
+</ol>
+<p>生徒のゼッケンに最初に書かれていた整数とバトンの個数 <var>M</var> が与えられたとき，先生が生徒 <var>N</var> からバトン <var>M</var> を受け取った後の，それぞれの生徒のゼッケンの整数を求めるプログラムを作成せよ．</p>
+<hr />
+</section>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>入力</h3>
+<p>入力は <var>1 + N</var> 行からなる．</p>
+<p><var>1</var> 行目には整数 <var>N, M</var> (<var>1 \leqq N \leqq 100</var>，<var>1 \leqq M \leqq 100</var>) が空白を区切りとして書かれており，それぞれ生徒の人数とバトンの個数を表す．</p>
+<p>続く <var>N</var> 行のうちの <var>i</var> 行目 (<var>1 \leqq i \leqq N</var>) には整数 <var>A_i</var> (<var>1 \leqq A_i \leqq 1000</var>) が書かれており，生徒 <var>i</var> のゼッケンに最初に書かれている整数 <var>A_i</var> を表す．</p>
+</section>
+</div>
+</div>
+
+<div class="io-style">
+<div class="part">
+<section>
+<h3>出力</h3>
+<p>出力は <var>N</var> 行からなる．<var>i</var> 行目 (<var>1 \leqq i \leqq N</var>) には，先生が生徒 <var>N</var> からバトン <var>M</var> を受け取った後の，生徒 <var>i</var> のゼッケンの整数を出力せよ．</p>
+<hr />
+</section>
+</div>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 1</h3>
+<pre>6 4
+3
+2
+8
+3
+1
+5
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 1</h3>
+<pre>2
+3
+1
+8
+5
+3
+</pre>
+<p>入出力例 <var>1</var> では <var>6</var> 人の生徒がいる．最初，生徒のゼッケンは順に <var>3, 2, 8, 3, 1, 5</var> である．バトンは <var>4</var> 個ある．</p>
+<ul>
+<li>バトン <var>1</var> に関する操作が終了した時点での生徒のゼッケンは順に <var>3, 2, 8, 3, 1, 5</var> である．</li>
+<li>バトン <var>2</var> に関する操作が終了した時点での生徒のゼッケンは順に <var>2, 8, 3, 3, 1, 5</var> である．</li>
+<li>バトン <var>3</var> に関する操作が終了した時点での生徒のゼッケンは順に <var>2, 3, 3, 1, 8, 5</var> である．</li>
+<li>バトン <var>4</var> に関する操作が終了した時点での生徒のゼッケンは順に <var>2, 3, 1, 8, 5, 3</var> である．</li>
+</ul>
+<hr />
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>入力例 2</h3>
+<pre>10 6
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>出力例 2</h3>
+<pre>6
+1
+2
+3
+10
+4
+8
+7
+9
+5
+</pre></section>
+</div>
+</span>
+</span>
