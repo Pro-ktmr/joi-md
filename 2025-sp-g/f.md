@@ -80,18 +80,18 @@ $R_N$ $C_N$
 
 以下の図は最初の時点での海域の状況である．塗りつぶされたマスが陸を表し，空白のマスが海を表す．
 
-<img src="https://img.atcoder.jp/joigsp2025/33c09866b226eb567a7d94bd83c55c3e.png" class="img-responsive center-block" style="width: 630px; max-width: 50%">
+![width:300](https://img.atcoder.jp/joigsp2025/33c09866b226eb567a7d94bd83c55c3e.png)
 
 $1$ 回目の地殻変動で新たに陸となるのはマス $(2, 1), (2, 3), (4, 2), (4, 3)$ の $4$ 個である．
 $1$ 回目の地殻変動の直後ではマス $(1, 1)$ からマス $(4, 4)$ などに東西南北に隣り合っている陸のみを辿って到達できないため，日本列島は連結ではない．
 以下の図は $1$ 回目の地殻変動の直後の海域の状況である．新たに斜線部のマスが陸となり，それ以外のマスは変化しない．
 
-<img src="https://img.atcoder.jp/joigsp2025/60e4f4b495347e769f52c974bcfd60c2.png" class="img-responsive center-block" style="width: 630px; max-width: 50%">
+![width:300](https://img.atcoder.jp/joigsp2025/60e4f4b495347e769f52c974bcfd60c2.png)
 
 $2$ 回目の地殻変動で新たに陸となるのはマス $(3, 1)$ の $1$ 個である．
 $2$ 回目の直後の海域の状況は以下の図のようになる．
 
-<img src="https://img.atcoder.jp/joigsp2025/ccb260441c5aaba18d776ed62984d820.png" class="img-responsive center-block" style="width: 630px; max-width: 50%">
+![width:300](https://img.atcoder.jp/joigsp2025/ccb260441c5aaba18d776ed62984d820.png)
 
 $2$ 回目の地殻変動で初めて日本列島が連結になるため，$2$ を出力する．
 
