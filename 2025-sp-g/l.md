@@ -1,6 +1,6 @@
 配点： $100$ 点
 
-> [配布ファイル](https://img.atcoder.jp/joigsp2025/circuit.zip)
+[配布ファイル](https://img.atcoder.jp/joigsp2025/circuit.zip)
 
 ---
 
@@ -134,14 +134,14 @@ $T$
 ### 小課題
 
 1. ($1$ 点) $N = 1$．
-2. ($4$ 点) $N \leqq 1\,000$，$R = 1$．
-3. ($5$ 点) $N \leqq 1\,000$．
-4. ($17$ 点) $U_i = i + 1$，$V_i = N + 1 + i$ ($0 \leqq i \leqq N - 1$)，$R \leqq 70$．
-5. ($8$ 点) $U_i = i + 1$，$V_i = N + 1 + i$ ($0 \leqq i \leqq N - 1$)．
-6. ($23$ 点) $U_i = 2i + 1$，$V_i = 2i + 2$ ($0 \leqq i \leqq N - 1$)，$R \leqq 70$．
-7. ($8$ 点) $U_i = 2i + 1$，$V_i = 2i + 2$ ($0 \leqq i \leqq N - 1$)．
-8. ($27$ 点) $R \leqq 70$．
-9. ($7$ 点) 追加の制約はない．
+2. ($8$ 点) $N \leqq 1\,000$，$R = 1$．
+3. ($10$ 点) $N \leqq 1\,000$．
+4. ($21$ 点) $U_i = i + 1$，$V_i = N + 1 + i$ ($0 \leqq i \leqq N - 1$)，$R \leqq 70$．
+5. ($9$ 点) $U_i = i + 1$，$V_i = N + 1 + i$ ($0 \leqq i \leqq N - 1$)．
+6. ($25$ 点) $U_i = 2i + 1$，$V_i = 2i + 2$ ($0 \leqq i \leqq N - 1$)，$R \leqq 70$．
+7. ($9$ 点) $U_i = 2i + 1$，$V_i = 2i + 2$ ($0 \leqq i \leqq N - 1$)．
+8. ($14$ 点) $R \leqq 70$．
+9. ($3$ 点) 追加の制約はない．
 
 ---
 
